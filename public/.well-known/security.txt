@@ -1,0 +1,3 @@
+Contact: mailto:info@millecam.be
+Preferred-Languages: nl, en
+Canonical: https://millecam.be/.well-known/security.txt
