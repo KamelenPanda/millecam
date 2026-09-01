@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
   title: "Over | Millecam",
@@ -24,11 +25,14 @@ export default function OverPage() {
           AVG-vraagstukken bij KMO&apos;s in uiteenlopende sectoren, van bouw en transport tot voeding
           en tech. Erkend Data Protection Officer (DPI-gecertificeerd, februari 2025).
         </p>
-        <p className="font-serif text-xl italic text-terracotta">
-          Compliance hoort geen doel op zich te zijn. Het is een middel om aantoonbaar in controle te
-          zijn: naar een toezichthouder, een klant, of jezelf. Vandaar de belofte: Govern with
-          confidence.
-        </p>
+        <div>
+          <PillarGlyph className="h-5 w-4" />
+          <p className="mt-3 font-serif text-xl italic text-terracotta">
+            Compliance hoort geen doel op zich te zijn. Het is een middel om aantoonbaar in controle te
+            zijn: naar een toezichthouder, een klant, of jezelf. Vandaar de belofte: Govern with
+            confidence.
+          </p>
+        </div>
       </div>
 
       <div className="mt-14 max-w-2xl">

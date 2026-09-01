@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
   title: "Aanpak | Millecam",
@@ -60,8 +61,8 @@ export default function AanpakPage() {
         <h2 className="font-serif text-3xl font-semibold">Wat je van Millecam mag verwachten</h2>
         <ul className="mt-8 grid gap-4 md:grid-cols-2">
           {PRINCIPES.map((p) => (
-            <li key={p} className="flex gap-3 text-sm text-paper/80">
-              <span className="text-terracotta-light">—</span>
+            <li key={p} className="flex items-center gap-3 text-sm text-paper/80">
+              <PillarGlyph className="h-4 w-3 shrink-0" color="#D97A52" />
               {p}
             </li>
           ))}
@@ -69,8 +70,9 @@ export default function AanpakPage() {
       </Section>
 
       <Section className="bg-white">
-        <div className="mx-auto max-w-md border-t border-line pt-14 text-center">
-          <h2 className="font-serif text-2xl font-semibold text-ink">
+        <div className="mx-auto max-w-md pt-14 text-center">
+          <PillarGlyph className="mx-auto h-6 w-5" />
+          <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">
             Benieuwd hoe dat er voor jouw organisatie uitziet?
           </h2>
           <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">

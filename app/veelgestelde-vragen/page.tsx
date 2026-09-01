@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
   title: "Veelgestelde vragen | Millecam",
@@ -72,8 +73,9 @@ export default function FAQPage() {
         ))}
       </div>
 
-      <div className="mx-auto mt-16 max-w-md border-t border-line pt-14 text-center">
-        <h2 className="font-serif text-2xl font-semibold text-ink">Nog een andere vraag?</h2>
+      <div className="mx-auto mt-16 max-w-md pt-14 text-center">
+        <PillarGlyph className="mx-auto h-6 w-5" />
+        <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Nog een andere vraag?</h2>
         <p className="mt-3 text-sm text-ink/70">
           Een kort gesprek beantwoordt vaak meer dan een lijst met vragen.
         </p>

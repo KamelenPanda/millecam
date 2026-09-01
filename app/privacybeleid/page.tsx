@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
+import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
   title: "Privacybeleid | Millecam",
@@ -11,6 +12,14 @@ function H2({ children }: { children: string }) {
 }
 function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-3 text-sm leading-relaxed text-ink/75">{children}</p>;
+}
+function LI({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-3">
+      <PillarGlyph className="mt-1 h-3.5 w-2.5 shrink-0" />
+      <span>{children}</span>
+    </li>
+  );
 }
 
 export default function PrivacybeleidPage() {
@@ -55,18 +64,18 @@ export default function PrivacybeleidPage() {
           Je gegevens worden in principe enkel door Robin Millecam ingezien. Voor de technische
           werking van deze website doen we beroep op twee verwerkers:
         </P>
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink/75">
-          <li>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink/75">
+          <LI>
             <span className="font-medium text-ink">Resend</span>: verzendt de e-mail die het
             contactformulier genereert. Resend kan hierbij optreden als verwerker buiten de EU;
             we maken enkel gebruik van partijen die passende waarborgen bieden (zoals
             modelcontractbepalingen).
-          </li>
-          <li>
+          </LI>
+          <LI>
             <span className="font-medium text-ink">Vercel</span>: host deze website en
             verwerkt daarbij technische gegevens (zoals IP-adressen in servertoegangslogs) die
             nodig zijn om de site te laten functioneren.
-          </li>
+          </LI>
         </ul>
 
         <H2>Bewaartermijn</H2>
@@ -92,13 +101,13 @@ export default function PrivacybeleidPage() {
 
         <H2>Jouw rechten</H2>
         <P>Onder de AVG heb je met betrekking tot je persoonsgegevens het recht op:</P>
-        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink/75">
-          <li>Inzage in de gegevens die we van je verwerken</li>
-          <li>Correctie van onjuiste of onvolledige gegevens</li>
-          <li>Verwijdering van je gegevens (&apos;recht om vergeten te worden&apos;)</li>
-          <li>Beperking van de verwerking</li>
-          <li>Bezwaar tegen de verwerking</li>
-          <li>Overdraagbaarheid van je gegevens (dataportabiliteit)</li>
+        <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-ink/75">
+          <LI>Inzage in de gegevens die we van je verwerken</LI>
+          <LI>Correctie van onjuiste of onvolledige gegevens</LI>
+          <LI>Verwijdering van je gegevens (&apos;recht om vergeten te worden&apos;)</LI>
+          <LI>Beperking van de verwerking</LI>
+          <LI>Bezwaar tegen de verwerking</LI>
+          <LI>Overdraagbaarheid van je gegevens (dataportabiliteit)</LI>
         </ul>
         <P>
           Om een van deze rechten uit te oefenen, mail je naar{" "}

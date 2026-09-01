@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import PillarGlyph from "@/components/PillarGlyph";
 
 export default function NotFound() {
   return (
     <Section className="pb-24 pt-24 text-center">
-      <p className="font-serif text-6xl font-bold text-terracotta">404</p>
+      <PillarGlyph className="mx-auto h-8 w-6" />
+      <p className="mt-4 font-serif text-6xl font-bold text-terracotta">404</p>
       <h1 className="mx-auto mt-4 max-w-md font-serif text-2xl font-semibold text-ink">
         Deze pagina bestaat niet, of niet meer.
       </h1>

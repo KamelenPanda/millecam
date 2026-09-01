@@ -3,6 +3,7 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 import FrameworkList from "@/components/FrameworkList";
+import PillarGlyph from "@/components/PillarGlyph";
 
 const DIENSTEN = [
   {
@@ -114,19 +115,22 @@ export default function HomePage() {
         <h2 className="max-w-2xl font-serif text-3xl font-semibold">Een specialist, geen callcenter</h2>
         <ul className="mt-10 grid gap-6 md:grid-cols-3">
           <li className="text-paper/80">
-            <p className="text-sm">
+            <PillarGlyph className="h-5 w-4" color="#D97A52" />
+            <p className="mt-3 text-sm">
               Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
               escalatieketen.
             </p>
           </li>
           <li className="text-paper/80">
-            <p className="text-sm">
+            <PillarGlyph className="h-5 w-4" color="#D97A52" />
+            <p className="mt-3 text-sm">
               Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
               zelf opnemen.
             </p>
           </li>
           <li className="text-paper/80">
-            <p className="text-sm">
+            <PillarGlyph className="h-5 w-4" color="#D97A52" />
+            <p className="mt-3 text-sm">
               Bewezen aanpak bij CyFun-, ISO 27001- en NIS2-trajecten, van GAP-analyse tot volledige
               implementatie.
             </p>
@@ -157,8 +161,9 @@ export default function HomePage() {
 
       {/* Slot CTA */}
       <Section className="bg-white">
-        <div className="mx-auto max-w-md border-t border-line pt-14 text-center">
-          <h2 className="font-serif text-2xl font-semibold text-ink">Klaar om te starten?</h2>
+        <div className="mx-auto max-w-md pt-14 text-center">
+          <PillarGlyph className="mx-auto h-6 w-5" />
+          <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Klaar om te starten?</h2>
           <p className="mt-3 text-sm text-ink/70">
             Een vrijblijvend gesprek van dertig minuten is genoeg om te weten of, en hoe, Millecam kan
             helpen.

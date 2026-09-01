@@ -106,6 +106,11 @@ default-patronen:
   sluiten een sectie af met een lijn erboven, niet met een zwevend kader.
   Herhaling van hetzelfde "vakje" voor elk soort content is zelf ook een
   herkenbaar sjabloonpatroon, ook zonder afgeronde hoeken of schaduw.
+- **Het pijler-motief (`PillarGlyph.tsx`) keert bewust terug** op plekken waar
+  toch al een opsommingsteken, scheidingslijn of accent nodig was: als bullet
+  in lijsten (Aanpak, Privacybeleid), als opener boven elke CTA-sectie, als
+  quote-marker op de Over-pagina, en als kleine signatuur boven "404". Nooit
+  toegevoegd als pure decoratie op een plek die niets nodig had.
 
 Blijf hier waakzaam voor bij toekomstige uitbreidingen: het is makkelijk om
 onbewust weer in een eyebrow of een middelpunt-rijtje te vervallen.

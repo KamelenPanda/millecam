@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
+import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
   title: "Diensten | Millecam",
@@ -81,8 +82,9 @@ export default function DienstenPage() {
       </Section>
 
       <Section className="bg-white">
-        <div className="mx-auto max-w-md border-t border-line pt-14 text-center">
-          <h2 className="font-serif text-2xl font-semibold text-ink">Niet zeker welke dienst past?</h2>
+        <div className="mx-auto max-w-md pt-14 text-center">
+          <PillarGlyph className="mx-auto h-6 w-5" />
+          <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Niet zeker welke dienst past?</h2>
           <p className="mt-3 text-sm text-ink/70">
             Plan een vrijblijvend gesprek. Binnen dertig minuten weet je welke aanpak bij jouw situatie
             past.
