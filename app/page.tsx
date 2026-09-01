@@ -100,7 +100,7 @@ export default function HomePage() {
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
           Van eerste inzicht tot doorlopende ondersteuning
         </h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {DIENSTEN.map((d) => (
             <ServiceCard key={d.naam} {...d} />
           ))}
