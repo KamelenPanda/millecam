@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Section from "@/components/Section";
-import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
+import FrameworkList from "@/components/FrameworkList";
 
 const DIENSTEN = [
   {
@@ -62,8 +62,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <Section className="pb-16 pt-20">
-        <Eyebrow>Governance · Risk · Compliance</Eyebrow>
+      <Section className="pb-16 pt-24">
         <h1 className="max-w-2xl font-serif text-5xl font-bold italic text-terracotta">
           Govern with confidence.
         </h1>
@@ -71,9 +70,7 @@ export default function HomePage() {
           Onafhankelijke GRC-expertise voor KMO&apos;s die compliance niet zelf kunnen opbouwen — maar wel
           moeten aantonen.
         </p>
-        <p className="mt-4 text-sm font-medium tracking-wide text-muted">
-          NIS2 · ISO 27001 · CyFun · GDPR
-        </p>
+        <FrameworkList items={["NIS2", "ISO 27001", "CyFun", "GDPR"]} className="mt-7" />
         <Button href="/contact" variant="primary" className="mt-8">
           Plan een gratis kennismaking
         </Button>
@@ -108,7 +105,7 @@ export default function HomePage() {
           ))}
         </div>
         <Link href="/diensten" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
-          Bekijk alle diensten →
+          Bekijk alle diensten
         </Link>
       </Section>
 
@@ -154,7 +151,7 @@ export default function HomePage() {
           ))}
         </div>
         <Link href="/aanpak" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
-          Lees meer over de aanpak →
+          Lees meer over de aanpak
         </Link>
       </Section>
 

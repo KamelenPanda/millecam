@@ -24,18 +24,20 @@ app/
   aanpak/page.tsx       Aanpak
   over/page.tsx         Over
   contact/page.tsx      Contact (formulier)
-  privacybeleid/page.tsx  Privacybeleid
-  cookiebeleid/page.tsx    Cookiebeleid
+  privacybeleid/page.tsx        Privacybeleid
+  cookiebeleid/page.tsx          Cookiebeleid
+  algemene-voorwaarden/page.tsx  Algemene voorwaarden
   api/contact/route.ts  Formulier-handler (Resend)
   icon.svg              Favicon (Next.js App Router-conventie)
 components/
   Logo.tsx             Wordmark — vaste vector-paths, GEEN font-dependency (zie hieronder)
   Mark.tsx              "||"-merkteken alleen
+  FrameworkList.tsx      NIS2/ISO 27001/CyFun/GDPR-rijtje — pijler-scheidingsteken i.p.v. "·"
   Nav.tsx / Footer.tsx
   CookieBanner.tsx       Melding (geen consent-gate — zie toelichting hieronder)
-  Button.tsx / Section.tsx / Container.tsx / Eyebrow.tsx
+  Button.tsx / Section.tsx / Container.tsx
   ServiceCard.tsx / StatCard.tsx / StatusBadge.tsx
-  ContactForm.tsx        Client component, post't naar /api/contact
+  ContactForm.tsx        Client component, onderlijnde "ledger"-velden, post't naar /api/contact
 public/
   logo.svg / logo-inverse.svg     Losse SVG-bestanden (social previews, e-mail, enz.)
   mark-light.svg / mark-dark.svg  "||"-merkteken los
@@ -70,6 +72,34 @@ nieuwe waarde voor de `variant`-prop, niet als losse tekstcomponent.
 - Beide beleidsteksten zijn een **werkdocument, geen juridisch sluitend
   advies** — gezien je eigen DPO-achtergrond de aangewezen persoon om ze
   definitief te checken, met name de bewaartermijn en de verwerkersclausules.
+
+## Algemene voorwaarden
+
+`/algemene-voorwaarden` dekt de standaardclausules voor een B2B-adviesbureau:
+totstandkoming, prijs/betaling, aansprakelijkheidsbeperking, IE, vertrouwelijkheid,
+opzegtermijn, toepasselijk recht. Ook dit is een **werkdocument** — met name de
+aansprakelijkheidsbeperking (punt 6) heeft in België specifieke geldigheidsvereisten;
+laat dit door een jurist checken voor je opdrachten via deze voorwaarden factureert.
+
+## Designprincipes — waarom dit er niet "gevibe-code" uitziet
+
+Een paar bewuste keuzes om weg te blijven van herkenbare AI-gegenereerde
+default-patronen:
+- **Geen "eyebrow"-labels** (ALL-CAPS tracked label boven elke titel) — die
+  voegden geen informatie toe, enkel decoratie.
+- **Geen "A · B · C"-middelpunt-rijtjes** — `FrameworkList.tsx` gebruikt een
+  dun verticaal streepje, een verwijzing naar de pijlers in de wordmark zelf,
+  in plaats van een generieke scheiding.
+- **Geen "→" achter link-tekst.**
+- **Formuliervelden zijn onderlijnd, geen boxen** — het berichtveld heeft
+  zelfs een subtiele gelinieerde achtergrond, een echo van een papieren
+  ledger in plaats van een standaard `<textarea>`.
+- Genummerde stappen (1/2/3) staan er wél nog — maar alleen waar de inhoud
+  ook echt een volgorde is (het GAP-analyse → implementatie → ondersteuning-
+  traject), niet als decoratie.
+
+Blijf hier waakzaam voor bij toekomstige uitbreidingen: het is makkelijk om
+onbewust weer in een eyebrow of een middelpunt-rijtje te vervallen.
 
 ## Wat is hergebruikt uit `millecam-ai`
 

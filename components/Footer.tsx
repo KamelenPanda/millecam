@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import FrameworkList from "./FrameworkList";
 
 export default function Footer() {
   return (
@@ -11,14 +12,15 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-sm font-semibold">Diensten</p>
-            <p className="mt-3 text-sm text-paper/60">NIS2 · ISO 27001 · CyFun · GDPR</p>
+            <FrameworkList items={["NIS2", "ISO 27001", "CyFun", "GDPR"]} tone="paper" className="mt-3" />
           </div>
           <div>
             <p className="text-sm font-semibold">Contact</p>
             <p className="mt-3 text-sm text-paper/60">© {new Date().getFullYear()} Millecam</p>
-            <div className="mt-3 flex gap-3 text-xs text-paper/50">
+            <div className="mt-3 flex flex-wrap gap-3 text-xs text-paper/50">
               <a href="/privacybeleid" className="hover:text-paper hover:underline">Privacybeleid</a>
               <a href="/cookiebeleid" className="hover:text-paper hover:underline">Cookiebeleid</a>
+              <a href="/algemene-voorwaarden" className="hover:text-paper hover:underline">Algemene voorwaarden</a>
             </div>
           </div>
         </div>

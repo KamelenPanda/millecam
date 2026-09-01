@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
-import Eyebrow from "@/components/Eyebrow";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <Section className="pb-24 pt-16">
-      <Eyebrow>Contact</Eyebrow>
       <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">
         Klaar voor een vrijblijvend gesprek?
       </h1>

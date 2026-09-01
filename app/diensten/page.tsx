@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
-import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 
@@ -53,7 +52,6 @@ export default function DienstenPage() {
   return (
     <>
       <Section className="pb-10 pt-16">
-        <Eyebrow>Diensten</Eyebrow>
         <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">
           Van een eerste GAP-analyse tot doorlopende ondersteuning
         </h1>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
-import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 export default function OverPage() {
   return (
     <Section className="pb-24 pt-16">
-      <Eyebrow>Over Millecam</Eyebrow>
       <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">Over Millecam</h1>
 
       <div className="mt-8 max-w-2xl space-y-6 text-ink/80">

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
-import Eyebrow from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
   title: "Cookiebeleid — Millecam",
@@ -18,7 +17,6 @@ export default function CookiebeleidPage() {
   return (
     <Section className="pb-24 pt-16">
       <div className="mx-auto w-full max-w-3xl">
-        <Eyebrow>Juridisch</Eyebrow>
         <h1 className="font-serif text-4xl font-bold text-ink">Cookiebeleid</h1>
         <p className="mt-4 text-sm text-muted">Laatst bijgewerkt: [datum invullen]</p>
 

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
-import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
@@ -37,7 +36,6 @@ export default function AanpakPage() {
   return (
     <>
       <Section className="pb-10 pt-16">
-        <Eyebrow>Aanpak</Eyebrow>
         <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">
           Hoe een traject bij Millecam verloopt
         </h1>
