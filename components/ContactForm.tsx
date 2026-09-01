@@ -44,7 +44,7 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="border border-line bg-white p-8 text-center">
+      <div className="border-l-2 border-status-conform bg-[#FBF9F4] py-6 pl-5 pr-4">
         <p className="font-serif text-xl font-semibold text-ink">Bericht verstuurd.</p>
         <p className="mt-2 text-sm text-ink/70">Je krijgt binnen de 24 uur een reactie.</p>
       </div>

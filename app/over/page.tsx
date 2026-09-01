@@ -33,7 +33,7 @@ export default function OverPage() {
 
       <div className="mt-14 max-w-2xl">
         <h2 className="font-serif text-lg font-semibold text-ink">Credentials</h2>
-        <div className="mt-4 border border-line bg-white p-6">
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4">
           <div className="flex items-baseline justify-between gap-4">
             <p className="font-serif text-lg font-semibold text-ink">
               Erkend Data Protection Officer

@@ -100,6 +100,12 @@ default-patronen:
 - Genummerde stappen (1/2/3) staan er wél nog — maar alleen waar de inhoud
   ook echt een volgorde is (het GAP-analyse → implementatie → ondersteuning-
   traject), niet als decoratie.
+- **Geen "elk blok een omkaderd vakje"** — service- en frameworkkaarten, het
+  credentials-blok en CTA-secties gebruiken een linker accentstreep met een
+  zacht getinte vulling (`#FBF9F4`) in plaats van een volledige rand. CTA's
+  sluiten een sectie af met een lijn erboven, niet met een zwevend kader.
+  Herhaling van hetzelfde "vakje" voor elk soort content is zelf ook een
+  herkenbaar sjabloonpatroon, ook zonder afgeronde hoeken of schaduw.
 
 Blijf hier waakzaam voor bij toekomstige uitbreidingen: het is makkelijk om
 onbewust weer in een eyebrow of een middelpunt-rijtje te vervallen.

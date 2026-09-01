@@ -81,13 +81,13 @@ export default function DienstenPage() {
       </Section>
 
       <Section className="bg-white">
-        <div className="border border-line p-10 text-center">
+        <div className="mx-auto max-w-md border-t border-line pt-14 text-center">
           <h2 className="font-serif text-2xl font-semibold text-ink">Niet zeker welke dienst past?</h2>
-          <p className="mx-auto mt-3 max-w-md text-sm text-ink/70">
+          <p className="mt-3 text-sm text-ink/70">
             Plan een vrijblijvend gesprek. Binnen dertig minuten weet je welke aanpak bij jouw situatie
             past.
           </p>
-          <Button href="/contact" variant="primary" className="mt-6">
+          <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">
             Plan een vrijblijvend gesprek
           </Button>
         </div>

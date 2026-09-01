@@ -72,9 +72,9 @@ export default function FAQPage() {
         ))}
       </div>
 
-      <div className="mt-14 border border-line bg-white p-10 text-center">
+      <div className="mx-auto mt-16 max-w-md border-t border-line pt-14 text-center">
         <h2 className="font-serif text-2xl font-semibold text-ink">Nog een andere vraag?</h2>
-        <p className="mx-auto mt-3 max-w-md text-sm text-ink/70">
+        <p className="mt-3 text-sm text-ink/70">
           Een kort gesprek beantwoordt vaak meer dan een lijst met vragen.
         </p>
         <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">

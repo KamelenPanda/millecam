@@ -81,9 +81,9 @@ export default function HomePage() {
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
           Compliance is verplicht. Zelf opbouwen is dat niet.
         </h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x md:divide-line">
           {HERKENNING.map((h) => (
-            <div key={h.titel} className="border border-line p-6">
+            <div key={h.titel} className="md:pl-8 md:first:pl-0">
               <h3 className="font-serif text-lg font-semibold text-ink">{h.titel}</h3>
               <p className="mt-3 text-sm text-ink/70">{h.tekst}</p>
             </div>
@@ -156,14 +156,14 @@ export default function HomePage() {
       </Section>
 
       {/* Slot CTA */}
-      <Section>
-        <div className="border border-line bg-white p-10 text-center">
+      <Section className="bg-white">
+        <div className="mx-auto max-w-md border-t border-line pt-14 text-center">
           <h2 className="font-serif text-2xl font-semibold text-ink">Klaar om te starten?</h2>
-          <p className="mx-auto mt-3 max-w-md text-sm text-ink/70">
+          <p className="mt-3 text-sm text-ink/70">
             Een vrijblijvend gesprek van dertig minuten is genoeg om te weten of, en hoe, Millecam kan
             helpen.
           </p>
-          <Button href="/contact" variant="primary" className="mt-6">
+          <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">
             Plan een gratis kennismaking
           </Button>
         </div>

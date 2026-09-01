@@ -69,11 +69,11 @@ export default function AanpakPage() {
       </Section>
 
       <Section className="bg-white">
-        <div className="border border-line p-10 text-center">
+        <div className="mx-auto max-w-md border-t border-line pt-14 text-center">
           <h2 className="font-serif text-2xl font-semibold text-ink">
             Benieuwd hoe dat er voor jouw organisatie uitziet?
           </h2>
-          <Button href="/contact" variant="primary" className="mt-6">
+          <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">
             Plan een gesprek
           </Button>
         </div>
