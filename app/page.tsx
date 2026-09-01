@@ -4,6 +4,9 @@ import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 import FrameworkList from "@/components/FrameworkList";
 import PillarGlyph from "@/components/PillarGlyph";
+import HeroWatermark from "@/components/HeroWatermark";
+import TornDivider from "@/components/TornDivider";
+import MaturityGauge from "@/components/MaturityGauge";
 
 const DIENSTEN = [
   {
@@ -64,12 +67,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <Section className="relative overflow-hidden pb-16 pt-24">
-        <div
-          className="pointer-events-none absolute -right-6 -top-6 hidden opacity-[0.06] md:block"
-          aria-hidden="true"
-        >
-          <PillarGlyph className="h-[22rem] w-[16rem]" color="#211D18" />
-        </div>
+        <HeroWatermark />
         <h1 className="animate-hero-in max-w-2xl font-serif text-5xl font-bold italic text-terracotta">
           Govern with confidence.
         </h1>
@@ -91,9 +89,10 @@ export default function HomePage() {
           </Button>
         </div>
       </Section>
+      <TornDivider color="#FFFFFF" />
 
       {/* Probleemherkenning */}
-      <Section className="bg-white">
+      <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
           Compliance is verplicht. Zelf opbouwen is dat niet.
         </h2>
@@ -106,12 +105,31 @@ export default function HomePage() {
           ))}
         </div>
         <p className="mt-8 italic text-muted">
-          Herken je een van deze? Dan is dat precies waar Millecam voor bestaat.
+          Herken je een van deze? Dan is dat precies waar Millecam voor bestaat. Niet zeker of NIS2
+          voor jou geldt?{" "}
+          <Link href="/nis2-check" className="not-italic text-terracotta hover:underline">
+            Doe de korte NIS2-check
+          </Link>
+          .
         </p>
       </Section>
 
-      {/* Diensten teaser */}
+      {/* Voorbeeld GAP-analyse */}
       <Section>
+        <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
+          Zo ziet een GAP-analyse eruit
+        </h2>
+        <p className="mt-4 max-w-xl text-ink/70">
+          Geen rapport vol jargon: een score per domein, meteen duidelijk waar de prioriteit ligt.
+        </p>
+        <div className="mt-10">
+          <MaturityGauge />
+        </div>
+        <p className="mt-6 text-xs text-muted">Voorbeeldweergave: elke GAP-analyse krijgt dit overzicht, met je eigen resultaten.</p>
+      </Section>
+
+      {/* Diensten teaser */}
+      <Section className="bg-white">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
           Van eerste inzicht tot doorlopende ondersteuning
         </h2>
@@ -152,22 +170,30 @@ export default function HomePage() {
           </li>
         </ul>
       </Section>
+      <TornDivider color="#FFFFFF" />
 
       {/* Aanpak teaser */}
-      <Section className="bg-white">
+      <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">Hoe een traject verloopt</h2>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {STAPPEN.map((s, i) => (
-            <div key={s.naam} className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif font-bold text-paper">
-                {i + 1}
-              </span>
-              <div>
-                <p className="font-serif text-lg font-semibold text-ink">{s.naam}</p>
-                <p className="mt-1 text-sm text-ink/70">{s.tekst}</p>
+        <div className="relative mt-10">
+          <div
+            className="absolute top-5 hidden h-px bg-line md:block"
+            style={{ left: "16.5%", right: "16.5%" }}
+            aria-hidden="true"
+          />
+          <div className="grid gap-8 md:grid-cols-3">
+            {STAPPEN.map((s, i) => (
+              <div key={s.naam} className="flex gap-4">
+                <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif font-bold text-paper">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="font-serif text-lg font-semibold text-ink">{s.naam}</p>
+                  <p className="mt-1 text-sm text-ink/70">{s.tekst}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <Link href="/aanpak" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Lees meer over de aanpak

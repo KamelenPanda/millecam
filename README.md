@@ -28,6 +28,7 @@ app/
   cookiebeleid/page.tsx          Cookiebeleid
   algemene-voorwaarden/page.tsx  Algemene voorwaarden
   veelgestelde-vragen/page.tsx   FAQ (native <details>/<summary>, geen JS-accordion)
+  nis2-check/page.tsx            Interactieve NIS2-checker
   not-found.tsx          Eigen 404-pagina
   opengraph-image.png     Social-share-afbeelding (LinkedIn, etc.)
   api/contact/route.ts  Formulier-handler (Resend)
@@ -35,8 +36,13 @@ app/
 components/
   Logo.tsx             Wordmark — vaste vector-paths, GEEN font-dependency (zie hieronder)
   Mark.tsx              "||"-merkteken alleen
+  PillarGlyph.tsx        Los "||"-glyph voor bullets/accenten (klein, geen achtergrond)
   FrameworkList.tsx      NIS2/ISO 27001/CyFun/GDPR-rijtje — pijler-scheidingsteken i.p.v. "·"
-  Nav.tsx / Footer.tsx
+  TornDivider.tsx        Gekartelde sectie-overgang (2x gebruikt, niet overal)
+  HeroWatermark.tsx      Hero-achtergrondmerk met muis-parallax (client component)
+  MaturityGauge.tsx      Illustratieve GAP-analyse-gauge + domeinbalkjes
+  Nis2Checker.tsx        De interactieve checker zelf (client component)
+  Nav.tsx / Footer.tsx / MobileMenu.tsx
   CookieBanner.tsx       Melding (geen consent-gate — zie toelichting hieronder)
   Button.tsx / Section.tsx / Container.tsx
   ServiceCard.tsx / StatCard.tsx / StatusBadge.tsx
@@ -133,18 +139,42 @@ onbewust weer in een eyebrow of een middelpunt-rijtje te vervallen.
   op de tweede rij; nu twee kolommen (2-2-1) i.p.v. drie (3-2).
 - **Aanpak-pagina consistent gemaakt** met de rest van de site (linker
   accentstreep + genummerde cirkel), was nog in de oude kale stijl blijven staan.
-- **Eén moderne, ingetogen laag toegevoegd** — bewust maar één plek gekozen
-  (zie "spend your boldness in one place" in de frontend-design skill):
-  - Een groot, subtiel pijler-watermerk (6% dekking) rechtsboven in de hero —
-    het merk zelf als grafisch element, verborgen op mobiel (`hidden md:block`)
-    zodat het de kleine viewport niet overweldigt.
-  - Eenmalige, gefaseerde intro-animatie voor de hero (titel → subtekst →
-    frameworks → knop), met `prefers-reduced-motion` gerespecteerd.
-  - Knoppen: subtiele lift + schaduw bij hover i.p.v. enkel kleurverandering.
-  - Navigatielinks: animerend onderlijntje bij hover.
-  - Bewust *niet* toegevoegd: scroll-triggered fade-ins per sectie of
-    hover-effecten op niet-klikbare kaarten — dat is precies het generieke
-    "elke sectie fade't in" patroon dat de skill afraadt.
+- **Eerste (te voorzichtige) moderniseringspass** — hero-watermerk, een
+  eenmalige intro-animatie, en hover-polish op knoppen/links. Achteraf
+  ingeschat als veilige, oppervlakkige polish die het "statische" gevoel niet
+  echt wegnam — de onderliggende structuur (rechte kleurbanden, alles even
+  symmetrisch) bleef ongemoeid. Zie de uitgebreidere pass hieronder.
+
+## Een echte moderniseringspass (structuur, niet enkel polish)
+
+Na een tussentijdse reflectie (was de eerste pass echt het beste wat kon?)
+vijf structurele toevoegingen, elk gekozen omdat het iets **specifieks aan
+Millecam** oplost, niet omdat het "een animatie" is:
+
+- **`Nis2Checker.tsx`** (`/nis2-check`) — een echte interactieve tool (3 vragen,
+  een verdict, een CTA naar een GAP-analyse), geen tekst die enkel gelezen
+  wordt. Het enige element dat de site iets laat *doen* i.p.v. laten lezen.
+  Uitkomst is expliciet een indicatie, geen juridisch sluitend antwoord —
+  bewaar die disclaimer als je de vragen/logica ooit uitbreidt.
+- **`TornDivider.tsx`** — een gekartelde "afgescheurde ledger-pagina"-rand
+  tussen twee secties, in plaats van een harde kleurblok-snede. Gebruikt op
+  precies twee plekken (na de hero, na de donkere sectie) — bewust niet
+  overal, anders wordt het zelf weer een sjabloon-tic.
+- **`HeroWatermark.tsx`** — het bestaande pijler-watermerk in de hero
+  beweegt nu subtiel mee met de muis (`prefers-reduced-motion` gerespecteerd).
+  Eén interactieve laag op het ene element dat we al als "bold choice" hadden
+  gekozen, geen nieuwe decoratie.
+- **`MaturityGauge.tsx`** — een halfronde meter + domeinbalkjes die toont wat
+  een GAP-analyse oplevert, i.p.v. het enkel te beschrijven. Illustratief/
+  statisch, expliciet gelabeld als voorbeeld (geen live data).
+- **Tijdlijn i.p.v. drie losse blokken** — "Hoe een traject verloopt" heeft nu
+  een echte verbindingslijn: horizontaal op de homepage-teaser, verticaal
+  doorlopend op de volledige Aanpak-pagina (`flex flex-col` + `flex-1` tussen
+  de cirkels, past zich automatisch aan ongeacht tekstlengte per stap).
+
+Bewust géén zesde/zevende toevoeging meer — vijf structurele elementen is al
+veel voor één pagina; nog meer zou opnieuw de "spend your boldness in one
+place"-regel schenden.
 
 ## Body & professionaliteit toegevoegd
 

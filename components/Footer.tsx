@@ -19,6 +19,9 @@ export default function Footer() {
             <a href="/veelgestelde-vragen" className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
               Veelgestelde vragen
             </a>
+            <a href="/nis2-check" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+              NIS2-check
+            </a>
           </div>
           <div>
             <p className="text-sm font-semibold">Contact</p>

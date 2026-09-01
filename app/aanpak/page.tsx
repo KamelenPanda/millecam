@@ -50,16 +50,19 @@ export default function AanpakPage() {
       </Section>
 
       <Section className="bg-white pt-0">
-        <div className="space-y-5">
-          {STAPPEN.map((s) => (
-            <div key={s.naam} className="border-l-2 border-terracotta bg-[#FBF9F4] py-6 pl-6 pr-5">
-              <div className="flex items-center gap-4">
+        <div className="space-y-2">
+          {STAPPEN.map((s, i) => (
+            <div key={s.naam} className="flex gap-6">
+              <div className="flex flex-col items-center">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif text-sm font-bold text-paper">
                   {s.nummer}
                 </span>
-                <h2 className="font-serif text-2xl font-semibold text-ink">{s.naam}</h2>
+                {i < STAPPEN.length - 1 && <div className="mt-2 w-px flex-1 bg-line" />}
               </div>
-              <p className="mt-3 max-w-2xl text-ink/70">{s.tekst}</p>
+              <div className="flex-1 border-l-2 border-terracotta bg-[#FBF9F4] py-6 pl-6 pr-5">
+                <h2 className="font-serif text-2xl font-semibold text-ink">{s.naam}</h2>
+                <p className="mt-3 max-w-2xl text-ink/70">{s.tekst}</p>
+              </div>
             </div>
           ))}
         </div>
