@@ -5,6 +5,7 @@ import Button from "./Button";
 const LINKS = [
   { href: "/diensten", label: "Diensten" },
   { href: "/aanpak", label: "Aanpak" },
+  { href: "/veelgestelde-vragen", label: "FAQ" },
   { href: "/over", label: "Over" },
   { href: "/contact", label: "Contact" },
 ];

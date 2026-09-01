@@ -31,6 +31,21 @@ export default function OverPage() {
         </p>
       </div>
 
+      <div className="mt-14 max-w-2xl">
+        <h2 className="font-serif text-lg font-semibold text-ink">Credentials</h2>
+        <div className="mt-4 border border-line bg-white p-6">
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="font-serif text-lg font-semibold text-ink">
+              Erkend Data Protection Officer
+            </p>
+            <p className="whitespace-nowrap text-xs text-muted">Sinds februari 2025</p>
+          </div>
+          <p className="mt-1 text-sm text-ink/70">
+            Data Protection Institute (DPI): certificaat geldig 3 jaar, verlengbaar.
+          </p>
+        </div>
+      </div>
+
       <Button href="/contact" variant="primary" className="mt-10">
         Robin rechtstreeks spreken? Plan een kennismaking.
       </Button>

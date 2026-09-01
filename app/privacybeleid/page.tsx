@@ -22,8 +22,8 @@ export default function PrivacybeleidPage() {
 
         <P>
           Millecam is een eenmanszaak van Robin Millecam, gevestigd te Sinte Annalaan 34, 9300
-          Aalst. Voor vragen over dit beleid of over hoe we met jouw gegevens omgaan, kan je
-          terecht op <a className="text-terracotta hover:underline" href="mailto:privacy@millecam.be">privacy@millecam.be</a>.
+          Aalst (BTW BE 1026.876.048). Voor vragen over dit beleid of over hoe we met jouw gegevens
+          omgaan, kan je terecht op <a className="text-terracotta hover:underline" href="mailto:privacy@millecam.be">privacy@millecam.be</a>.
         </P>
 
         <H2>Welke gegevens verzamelen we</H2>

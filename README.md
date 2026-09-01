@@ -27,6 +27,9 @@ app/
   privacybeleid/page.tsx        Privacybeleid
   cookiebeleid/page.tsx          Cookiebeleid
   algemene-voorwaarden/page.tsx  Algemene voorwaarden
+  veelgestelde-vragen/page.tsx   FAQ (native <details>/<summary>, geen JS-accordion)
+  not-found.tsx          Eigen 404-pagina
+  opengraph-image.png     Social-share-afbeelding (LinkedIn, etc.)
   api/contact/route.ts  Formulier-handler (Resend)
   icon.svg              Favicon (Next.js App Router-conventie)
 components/
@@ -101,6 +104,24 @@ default-patronen:
 Blijf hier waakzaam voor bij toekomstige uitbreidingen: het is makkelijk om
 onbewust weer in een eyebrow of een middelpunt-rijtje te vervallen.
 
+## Body & professionaliteit toegevoegd
+
+- **BTW-nummer** (BE 1026.876.048) in footer, privacybeleid en algemene voorwaarden —
+  wettelijk verplicht zichtbaar op een Belgische bedrijfswebsite. Klikbaar naar de
+  geverifieerde KBO-pagina van de onderneming zelf.
+- **Structured data (JSON-LD)** in `app/layout.tsx` — `ProfessionalService`-schema
+  met naam, adres, vatID, oprichter. Enkel bevestigde velden; telefoon/LinkedIn
+  bewust weggelaten tot ze echt ingevuld zijn (een placeholder in structured data
+  wordt letterlijk genomen door zoekmachines).
+- **Open Graph-afbeelding** (`opengraph-image.png`) — hoe de site oogt wanneer
+  gedeeld op LinkedIn; zonder dit bestand toont zo'n link niets.
+- **Eigen 404-pagina** (`not-found.tsx`) in plaats van de kale Next.js-standaard.
+- **Credentials-blok** op de Over-pagina — enkel de bevestigde DPO-erkenning,
+  bewust geen certificeringen vermeld die nog niet gestart zijn.
+- **FAQ-pagina** (`/veelgestelde-vragen`) — acht inhoudelijke vragen, gebouwd met
+  het native `<details>/<summary>`-element in plaats van een JS-accordion:
+  toegankelijk by default, geen extra dependency.
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie
@@ -121,7 +142,7 @@ onbewust weer in een eyebrow of een middelpunt-rijtje te vervallen.
 - [ ] Telefoonnummer en LinkedIn-link invullen (Contact-pagina, Footer)
 - [ ] Privacybeleid en cookiebeleid laten nalezen/afvinken (bewaartermijn, verwerkersclausule Resend)
 - [ ] `RESEND_API_KEY` instellen in Vercel-projectinstellingen
-- [ ] BTW-nummer/adresgegevens op de website checken indien wettelijk vereist
+- [ ] BTW-nummer al verwerkt — enkel nog checken of adresgegevens correct/actueel blijven
 - [ ] Open Graph-afbeelding toevoegen (`app/opengraph-image.png` of vergelijkbaar)
 - [ ] Echte inhoud i.p.v. `[in te vullen]`-placeholders doorzoeken vóór livegang
 

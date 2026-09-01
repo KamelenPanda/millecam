@@ -27,8 +27,8 @@ export default function AlgemeneVoorwaardenPage() {
 
         <P>
           Deze voorwaarden zijn van toepassing op elke offerte en overeenkomst tussen Millecam
-          (Robin Millecam, eenmanszaak, Sinte Annalaan 34, 9300 Aalst, hierna &quot;Millecam&quot;)
-          en een opdrachtgever, tenzij schriftelijk anders overeengekomen.
+          (Robin Millecam, eenmanszaak, Sinte Annalaan 34, 9300 Aalst, BTW BE 1026.876.048, hierna
+          &quot;Millecam&quot;) en een opdrachtgever, tenzij schriftelijk anders overeengekomen.
         </P>
 
         <H2 n="1">Toepassingsgebied</H2>
