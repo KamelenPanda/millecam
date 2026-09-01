@@ -6,6 +6,7 @@ import MobileMenu from "./MobileMenu";
 const LINKS = [
   { href: "/diensten", label: "Diensten" },
   { href: "/aanpak", label: "Aanpak" },
+  { href: "/nis2-check", label: "NIS2-check" },
   { href: "/veelgestelde-vragen", label: "FAQ" },
   { href: "/over", label: "Over" },
   { href: "/contact", label: "Contact" },
