@@ -24,12 +24,15 @@ app/
   aanpak/page.tsx       Aanpak
   over/page.tsx         Over
   contact/page.tsx      Contact (formulier)
+  privacybeleid/page.tsx  Privacybeleid
+  cookiebeleid/page.tsx    Cookiebeleid
   api/contact/route.ts  Formulier-handler (Resend)
   icon.svg              Favicon (Next.js App Router-conventie)
 components/
   Logo.tsx             Wordmark — vaste vector-paths, GEEN font-dependency (zie hieronder)
   Mark.tsx              "||"-merkteken alleen
   Nav.tsx / Footer.tsx
+  CookieBanner.tsx       Melding (geen consent-gate — zie toelichting hieronder)
   Button.tsx / Section.tsx / Container.tsx / Eyebrow.tsx
   ServiceCard.tsx / StatCard.tsx / StatusBadge.tsx
   ContactForm.tsx        Client component, post't naar /api/contact
@@ -51,6 +54,23 @@ Met vaste paths ziet het logo er altijd exact hetzelfde uit, overal.
 tekst + een lettertype.** Wil je een derde kleurvariant, voeg die toe als een
 nieuwe waarde voor de `variant`-prop, niet als losse tekstcomponent.
 
+## Privacybeleid, cookiebeleid & cookiemelding
+
+- `/privacybeleid` — volledige AVG-tekst: verwerkingsverantwoordelijke (Robin Millecam,
+  Sinte Annalaan 34, 9300 Aalst), verwerkte gegevens, rechtsgrond, verwerkers
+  (Resend, Vercel), bewaartermijn, alle AVG-rechten, klachtprocedure bij de GBA.
+- `/cookiebeleid` — legt uit dat de site geen trackingcookies gebruikt; Vercel
+  Analytics is cookieless en verwerkt geen persoonsgegevens, dus geen
+  toestemming nodig onder de ePrivacy-richtlijn.
+- `CookieBanner.tsx` toont daarom een **melding**, geen Accept/Reject-keuze —
+  er is niets niet-noodzakelijks om toestemming voor te vragen. Voeg je later
+  wél trackingcookies toe (marketingpixel, volledige Google Analytics, ...),
+  bouw dit dan om tot een echte consent-gate vóór die scripts geladen worden,
+  en werk `/cookiebeleid` bij.
+- Beide beleidsteksten zijn een **werkdocument, geen juridisch sluitend
+  advies** — gezien je eigen DPO-achtergrond de aangewezen persoon om ze
+  definitief te checken, met name de bewaartermijn en de verwerkersclausules.
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie
@@ -69,6 +89,7 @@ nieuwe waarde voor de `variant`-prop, niet als losse tekstcomponent.
 - [ ] Domeinkoppeling: `millecam.be` (overname van vorige eigenaar) als primair,
       `millecam.eu` als redirect, `millecam.ai` voorlopig redirecten naar `.be`
 - [ ] Telefoonnummer en LinkedIn-link invullen (Contact-pagina, Footer)
+- [ ] Privacybeleid en cookiebeleid laten nalezen/afvinken (bewaartermijn, verwerkersclausule Resend)
 - [ ] `RESEND_API_KEY` instellen in Vercel-projectinstellingen
 - [ ] BTW-nummer/adresgegevens op de website checken indien wettelijk vereist
 - [ ] Open Graph-afbeelding toevoegen (`app/opengraph-image.png` of vergelijkbaar)

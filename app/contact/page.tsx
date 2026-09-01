@@ -28,6 +28,10 @@ export default function ContactPage() {
             <p>info@millecam.be</p>
           </div>
           <div>
+            <p className="font-semibold text-ink">Adres</p>
+            <p>Sinte Annalaan 34, 9300 Aalst</p>
+          </div>
+          <div>
             <p className="font-semibold text-ink">Telefoon</p>
             <p>[in te vullen]</p>
           </div>

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Source_Serif_4, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 const serif = Source_Serif_4({
   subsets: ["latin"],
@@ -32,6 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );

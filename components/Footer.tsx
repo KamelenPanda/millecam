@@ -16,6 +16,10 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold">Contact</p>
             <p className="mt-3 text-sm text-paper/60">© {new Date().getFullYear()} Millecam</p>
+            <div className="mt-3 flex gap-3 text-xs text-paper/50">
+              <a href="/privacybeleid" className="hover:text-paper hover:underline">Privacybeleid</a>
+              <a href="/cookiebeleid" className="hover:text-paper hover:underline">Cookiebeleid</a>
+            </div>
           </div>
         </div>
       </div>
