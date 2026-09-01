@@ -63,18 +63,33 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <Section className="pb-16 pt-24">
-        <h1 className="max-w-2xl font-serif text-5xl font-bold italic text-terracotta">
+      <Section className="relative overflow-hidden pb-16 pt-24">
+        <div
+          className="pointer-events-none absolute -right-6 -top-6 hidden opacity-[0.06] md:block"
+          aria-hidden="true"
+        >
+          <PillarGlyph className="h-[22rem] w-[16rem]" color="#211D18" />
+        </div>
+        <h1 className="animate-hero-in max-w-2xl font-serif text-5xl font-bold italic text-terracotta">
           Govern with confidence.
         </h1>
-        <p className="mt-6 max-w-xl text-lg text-ink/80">
+        <p
+          className="animate-hero-in mt-6 max-w-xl text-lg text-ink/80"
+          style={{ animationDelay: "0.1s" }}
+        >
           Onafhankelijke GRC-expertise voor KMO&apos;s die compliance niet zelf kunnen opbouwen, maar wel
           moeten aantonen.
         </p>
-        <FrameworkList items={["NIS2", "ISO 27001", "CyFun", "GDPR"]} className="mt-7" />
-        <Button href="/contact" variant="primary" className="mt-8">
-          Plan een gratis kennismaking
-        </Button>
+        <FrameworkList
+          items={["NIS2", "ISO 27001", "CyFun", "GDPR"]}
+          className="animate-hero-in mt-7"
+          style={{ animationDelay: "0.2s" }}
+        />
+        <div className="animate-hero-in" style={{ animationDelay: "0.3s" }}>
+          <Button href="/contact" variant="primary" className="mt-8">
+            Plan een gratis kennismaking
+          </Button>
+        </div>
       </Section>
 
       {/* Probleemherkenning */}

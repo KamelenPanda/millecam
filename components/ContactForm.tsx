@@ -14,10 +14,11 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 // Shared underline treatment for text/email/tel/select fields — a ruled
 // field instead of a boxed input, closer to a paper form than a default
-// web-form control.
+// web-form control. Focus swaps to a thicker terracotta rule (not just a
+// color change) so keyboard focus stays clearly visible without a boxy ring.
 const fieldClass =
-  "w-full rounded-none border-0 border-b border-line bg-transparent px-0 py-2 text-sm text-ink " +
-  "transition-colors focus:border-ink focus:outline-none focus:ring-0";
+  "w-full appearance-none rounded-none border-x-0 border-t-0 border-b border-line bg-transparent px-0 py-2 text-sm text-ink " +
+  "transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none focus:ring-0";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -94,7 +95,7 @@ export default function ContactForm() {
           name="bericht"
           required
           rows={5}
-          className="w-full resize-none border-0 border-b border-line bg-transparent py-2 text-sm leading-7 text-ink outline-none focus:border-ink"
+          className="w-full appearance-none resize-none border-x-0 border-t-0 border-b border-line bg-transparent py-2 text-sm leading-7 text-ink transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none"
           style={{
             backgroundImage:
               "repeating-linear-gradient(to bottom, transparent, transparent calc(1.75rem - 1px), #DCD3BF calc(1.75rem - 1px), #DCD3BF 1.75rem)",

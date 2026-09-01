@@ -10,7 +10,9 @@ type ButtonProps = {
 
 /** Brand rule: at most one primary (terracotta) CTA per screen. Use "secondary" for anything else. */
 export default function Button({ href, children, variant = "primary", className = "" }: ButtonProps) {
-  const base = "inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-colors";
+  const base =
+    "inline-flex items-center justify-center px-6 py-3 text-sm font-medium " +
+    "transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(33,29,24,0.18)]";
   const styles =
     variant === "primary"
       ? "bg-terracotta text-paper hover:bg-terracotta-light"

@@ -1,9 +1,10 @@
-import { Fragment } from "react";
+import { Fragment, CSSProperties } from "react";
 
 type FrameworkListProps = {
   items: string[];
   tone?: "ink" | "paper";
   className?: string;
+  style?: CSSProperties;
 };
 
 /**
@@ -13,12 +14,12 @@ type FrameworkListProps = {
  * reaching for the generic "A · B · C" pattern — a small thing, but it ties
  * this specific piece of chrome back to the brand instead of a default.
  */
-export default function FrameworkList({ items, tone = "ink", className = "" }: FrameworkListProps) {
+export default function FrameworkList({ items, tone = "ink", className = "", style }: FrameworkListProps) {
   const textColor = tone === "ink" ? "text-ink/70" : "text-paper/70";
   const ruleColor = tone === "ink" ? "bg-terracotta" : "bg-terracotta-light";
 
   return (
-    <div className={`flex flex-wrap items-center gap-4 ${className}`}>
+    <div className={`flex flex-wrap items-center gap-4 ${className}`} style={style}>
       {items.map((item, i) => (
         <Fragment key={item}>
           {i > 0 && <span className={`h-3.5 w-[3px] ${ruleColor}`} aria-hidden="true" />}

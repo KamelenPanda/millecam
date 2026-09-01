@@ -115,6 +115,37 @@ default-patronen:
 Blijf hier waakzaam voor bij toekomstige uitbreidingen: het is makkelijk om
 onbewust weer in een eyebrow of een middelpunt-rijtje te vervallen.
 
+## Mobiel, toegankelijkheid & een moderne laag
+
+- **Mobiel navigatiemenu** (`MobileMenu.tsx`) — de header toonde op smartphone
+  voorheen enkel het logo: geen links, geen CTA, geen hamburgermenu. Volledig
+  functionele hamburger/kruis-toggle toegevoegd, met een `z-50` op het
+  uitklappaneel (zonder die z-index lag het menu ONDER de paginatekst in
+  plaats van erboven — check dit als je het paneel ooit herbouwt).
+- **Focus-zichtbaarheid in het formulier** — velden hadden geen `appearance-none`,
+  waardoor sommige browsers een eigen "native" focusring tekenen die auteurs-CSS
+  negeert. Opgelost, met `focus:!outline-none` (met `!important`) omdat een
+  gewone `outline-none` niet in elke browserconfiguratie sterk genoeg is om de
+  ingebouwde focusbescherming te overschrijven — dat is bewuste browserbescherming
+  tegen onzichtbare focus, dus omzeil dit nooit zonder een duidelijk alternatief
+  (hier: de dikkere terracotta onderlijn).
+- **Rastergat opgelost** — vijf diensten in drie kolommen liet een lege plek open
+  op de tweede rij; nu twee kolommen (2-2-1) i.p.v. drie (3-2).
+- **Aanpak-pagina consistent gemaakt** met de rest van de site (linker
+  accentstreep + genummerde cirkel), was nog in de oude kale stijl blijven staan.
+- **Eén moderne, ingetogen laag toegevoegd** — bewust maar één plek gekozen
+  (zie "spend your boldness in one place" in de frontend-design skill):
+  - Een groot, subtiel pijler-watermerk (6% dekking) rechtsboven in de hero —
+    het merk zelf als grafisch element, verborgen op mobiel (`hidden md:block`)
+    zodat het de kleine viewport niet overweldigt.
+  - Eenmalige, gefaseerde intro-animatie voor de hero (titel → subtekst →
+    frameworks → knop), met `prefers-reduced-motion` gerespecteerd.
+  - Knoppen: subtiele lift + schaduw bij hover i.p.v. enkel kleurverandering.
+  - Navigatielinks: animerend onderlijntje bij hover.
+  - Bewust *niet* toegevoegd: scroll-triggered fade-ins per sectie of
+    hover-effecten op niet-klikbare kaarten — dat is precies het generieke
+    "elke sectie fade't in" patroon dat de skill afraadt.
+
 ## Body & professionaliteit toegevoegd
 
 - **BTW-nummer** (BE 1026.876.048) in footer, privacybeleid en algemene voorwaarden —
