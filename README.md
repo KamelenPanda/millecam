@@ -150,7 +150,7 @@ onbewust weer in een eyebrow of een middelpunt-rijtje te vervallen.
 
 - [ ] Domeinkoppeling: `millecam.be` (overname van vorige eigenaar) als primair,
       `millecam.eu` als redirect, `millecam.ai` voorlopig redirecten naar `.be`
-- [ ] Telefoonnummer en LinkedIn-link invullen (Contact-pagina, Footer)
+- [x] Telefoonnummer en LinkedIn-links ingevuld (Contact-pagina, Footer, JSON-LD)
 - [ ] Privacybeleid en cookiebeleid laten nalezen/afvinken (bewaartermijn, verwerkersclausule Resend)
 - [ ] `RESEND_API_KEY` instellen in Vercel-projectinstellingen
 - [ ] BTW-nummer al verwerkt — enkel nog checken of adresgegevens correct/actueel blijven

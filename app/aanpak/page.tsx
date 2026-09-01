@@ -10,17 +10,20 @@ export const metadata: Metadata = {
 
 const STAPPEN = [
   {
-    naam: "1. GAP-analyse",
+    nummer: "1",
+    naam: "GAP-analyse",
     tekst:
       "Documentenreview, interviews met verantwoordelijken, en een tweedimensionale scoring (documentatie én implementatie) per control. Resultaat: een helder beeld, geen jargon-rapport.",
   },
   {
-    naam: "2. Implementatie",
+    nummer: "2",
+    naam: "Implementatie",
     tekst:
       "Vertaling van bevindingen naar een concreet stappenplan: beleid, procedures, technische maatregelen. Millecam coördineert, jij houdt overzicht: geen zwarte-doostraject.",
   },
   {
-    naam: "3. Ondersteuning",
+    nummer: "3",
+    naam: "Ondersteuning",
     tekst:
       "Compliance stopt niet bij een handtekening. Via DPO-as-a-Service of fractional ondersteuning blijft er een vast aanspreekpunt, zonder dat je iemand aanwerft.",
   },
@@ -47,10 +50,15 @@ export default function AanpakPage() {
       </Section>
 
       <Section className="bg-white pt-0">
-        <div className="space-y-10">
+        <div className="space-y-5">
           {STAPPEN.map((s) => (
-            <div key={s.naam} className="border-b border-line pb-10 last:border-none">
-              <h2 className="font-serif text-2xl font-semibold text-ink">{s.naam}</h2>
+            <div key={s.naam} className="border-l-2 border-terracotta bg-[#FBF9F4] py-6 pl-6 pr-5">
+              <div className="flex items-center gap-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif text-sm font-bold text-paper">
+                  {s.nummer}
+                </span>
+                <h2 className="font-serif text-2xl font-semibold text-ink">{s.naam}</h2>
+              </div>
               <p className="mt-3 max-w-2xl text-ink/70">{s.tekst}</p>
             </div>
           ))}

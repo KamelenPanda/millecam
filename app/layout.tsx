@@ -27,10 +27,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://millecam.be"),
 };
 
-// Structured data (schema.org). Only confirmed, real values go in here — a
-// placeholder telephone number or a guessed social link would be taken
-// literally by search engines, so fields we haven't filled in yet (phone,
-// LinkedIn) are left out entirely rather than stubbed.
+// Structured data (schema.org). Only confirmed, real values go in here —
+// this now includes phone and LinkedIn since those were filled in.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -39,6 +37,7 @@ const jsonLd = {
     "Onafhankelijk GRC-adviesbureau voor KMO's: NIS2, ISO 27001, CyFun en GDPR.",
   url: "https://millecam.be",
   email: "info@millecam.be",
+  telephone: "+32472338990",
   vatID: "BE1026876048",
   address: {
     "@type": "PostalAddress",
@@ -51,7 +50,9 @@ const jsonLd = {
     "@type": "Person",
     name: "Robin Millecam",
     jobTitle: "GRC Advisor & Data Protection Officer",
+    sameAs: ["https://www.linkedin.com/in/robin-millecam-909156b2/"],
   },
+  sameAs: ["https://www.linkedin.com/company/108526083"],
   areaServed: "BE",
   knowsAbout: ["NIS2", "ISO 27001", "CyFun", "GDPR"],
 };

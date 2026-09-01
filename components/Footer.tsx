@@ -9,6 +9,9 @@ export default function Footer() {
           <div>
             <Logo variant="paper" className="h-7 w-auto" />
             <p className="mt-4 text-sm text-paper/60">info@millecam.be · millecam.be</p>
+            <p className="mt-1 text-sm text-paper/60">
+              <a href="tel:+32472338990" className="hover:text-paper">0472 33 89 90</a>
+            </p>
           </div>
           <div>
             <p className="text-sm font-semibold">Diensten</p>
@@ -20,7 +23,11 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold">Contact</p>
             <p className="mt-3 text-sm text-paper/60">© {new Date().getFullYear()} Millecam</p>
-            <div className="mt-3 flex flex-wrap gap-3 text-xs text-paper/50">
+            <div className="mt-3 flex flex-col gap-1 text-sm text-paper/60">
+              <a href="https://www.linkedin.com/in/robin-millecam-909156b2/" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">LinkedIn: Robin Millecam</a>
+              <a href="https://www.linkedin.com/company/108526083" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">LinkedIn: Millecam</a>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-3 text-xs text-paper/50">
               <a href="/privacybeleid" className="hover:text-paper hover:underline">Privacybeleid</a>
               <a href="/cookiebeleid" className="hover:text-paper hover:underline">Cookiebeleid</a>
               <a href="/algemene-voorwaarden" className="hover:text-paper hover:underline">Algemene voorwaarden</a>
