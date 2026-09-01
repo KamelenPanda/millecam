@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Section from "@/components/Section";
 
 export const metadata: Metadata = {
-  title: "Algemene voorwaarden — Millecam",
+  title: "Algemene voorwaarden | Millecam",
   description: "De voorwaarden die van toepassing zijn op opdrachten bij Millecam.",
 };
 
@@ -27,7 +27,7 @@ export default function AlgemeneVoorwaardenPage() {
 
         <P>
           Deze voorwaarden zijn van toepassing op elke offerte en overeenkomst tussen Millecam
-          (Robin Millecam, eenmanszaak, Sinte Annalaan 34, 9300 Aalst — hierna &quot;Millecam&quot;)
+          (Robin Millecam, eenmanszaak, Sinte Annalaan 34, 9300 Aalst, hierna &quot;Millecam&quot;)
           en een opdrachtgever, tenzij schriftelijk anders overeengekomen.
         </P>
 
@@ -49,7 +49,7 @@ export default function AlgemeneVoorwaardenPage() {
         <H2 n="3">Uitvoering van de opdracht</H2>
         <P>
           Millecam voert de opdracht uit naar best vermogen, op basis van een inspanningsverbintenis
-          — niet een resultaatsverbintenis, tenzij uitdrukkelijk anders overeengekomen. De
+          (niet een resultaatsverbintenis), tenzij uitdrukkelijk anders overeengekomen. De
           opdrachtgever bezorgt tijdig de informatie, documenten en toegang die redelijkerwijs nodig
           zijn voor de uitvoering. Vertraging die het gevolg is van laattijdige medewerking van de
           opdrachtgever kan niet aan Millecam worden toegerekend.
@@ -100,15 +100,15 @@ export default function AlgemeneVoorwaardenPage() {
 
         <H2 n="9">Verwerking van persoonsgegevens</H2>
         <P>
-          Voor de verwerking van persoonsgegevens in het kader van een opdracht — en waar van
-          toepassing, een verwerkersovereenkomst — verwijst Millecam naar het{" "}
+          Voor de verwerking van persoonsgegevens in het kader van een opdracht (en, waar van
+          toepassing, een verwerkersovereenkomst) verwijst Millecam naar het{" "}
           <a className="text-terracotta hover:underline" href="/privacybeleid">privacybeleid</a>.
         </P>
 
         <H2 n="10">Overmacht</H2>
         <P>
           Geen van beide partijen is aansprakelijk voor een tekortkoming die het gevolg is van
-          overmacht — een omstandigheid buiten haar redelijke controle die de uitvoering van de
+          overmacht: een omstandigheid buiten haar redelijke controle die de uitvoering van de
           opdracht tijdelijk of blijvend verhindert.
         </P>
 

@@ -13,7 +13,7 @@ export default function Nav() {
   return (
     <header className="border-b border-line bg-paper">
       <div className="mx-auto flex max-w-container items-center justify-between px-6 py-5">
-        <Link href="/" aria-label="Millecam — home">
+        <Link href="/" aria-label="Millecam homepage">
           <Logo variant="ink" className="h-8 w-auto" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">

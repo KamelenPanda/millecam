@@ -21,9 +21,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Millecam — Govern with confidence.",
+  title: "Millecam: Govern with confidence.",
   description:
-    "Onafhankelijke GRC-expertise voor KMO's die compliance niet zelf kunnen opbouwen — maar wel moeten aantonen. NIS2 · ISO 27001 · CyFun · GDPR.",
+    "Onafhankelijke GRC-expertise voor KMO's die compliance niet zelf kunnen opbouwen, maar wel moeten aantonen. NIS2 · ISO 27001 · CyFun · GDPR.",
   metadataBase: new URL("https://millecam.be"),
 };
 

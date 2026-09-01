@@ -3,7 +3,7 @@ import Section from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Millecam",
+  title: "Contact | Millecam",
   description: "Plan een vrijblijvend gesprek met Millecam.",
 };
 
@@ -14,7 +14,7 @@ export default function ContactPage() {
         Klaar voor een vrijblijvend gesprek?
       </h1>
       <p className="mt-4 max-w-xl text-ink/70">
-        Stuur een bericht of plan direct een moment in de agenda — binnen de 24 uur reactie.
+        Stuur een bericht of plan direct een moment in de agenda. Je krijgt binnen de 24 uur een reactie.
       </p>
 
       <div className="mt-12 grid gap-12 md:grid-cols-[1fr_320px]">

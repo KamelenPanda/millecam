@@ -15,7 +15,7 @@ const DIENSTEN = [
     naam: "Implementatietraject",
     vorm: "Projectbasis",
     voorWie: "Organisaties die van bevindingen naar aantoonbare compliance willen.",
-    watJeKrijgt: "Begeleiding bij beleid, documentatie en technische maatregelen — jij houdt de regie.",
+    watJeKrijgt: "Begeleiding bij beleid, documentatie en technische maatregelen. Jij houdt de regie.",
   },
   {
     naam: "DPO-as-a-Service",
@@ -40,7 +40,7 @@ const DIENSTEN = [
 const HERKENNING = [
   {
     titel: "NIS2 of CyFun raakt jouw organisatie",
-    tekst: "Je valt onder de NIS2-richtlijn of een klant/verzekeraar vraagt aantoonbaarheid — maar een interne compliance-officer heb je niet.",
+    tekst: "Je valt onder de NIS2-richtlijn of een klant/verzekeraar vraagt aantoonbaarheid, maar een interne compliance-officer heb je niet.",
   },
   {
     titel: "Je hebt een DPO nodig, geen fulltime rol",
@@ -67,7 +67,7 @@ export default function HomePage() {
           Govern with confidence.
         </h1>
         <p className="mt-6 max-w-xl text-lg text-ink/80">
-          Onafhankelijke GRC-expertise voor KMO&apos;s die compliance niet zelf kunnen opbouwen — maar wel
+          Onafhankelijke GRC-expertise voor KMO&apos;s die compliance niet zelf kunnen opbouwen, maar wel
           moeten aantonen.
         </p>
         <FrameworkList items={["NIS2", "ISO 27001", "CyFun", "GDPR"]} className="mt-7" />
@@ -115,13 +115,13 @@ export default function HomePage() {
         <ul className="mt-10 grid gap-6 md:grid-cols-3">
           <li className="text-paper/80">
             <p className="text-sm">
-              Rechtstreeks contact met de persoon die het werk doet — geen junior-consultant, geen
+              Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
               escalatieketen.
             </p>
           </li>
           <li className="text-paper/80">
             <p className="text-sm">
-              Erkend Data Protection Officer (DPI-gecertificeerd) — niet elke GRC-consultant kan die rol
+              Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
               zelf opnemen.
             </p>
           </li>
@@ -160,7 +160,7 @@ export default function HomePage() {
         <div className="border border-line bg-white p-10 text-center">
           <h2 className="font-serif text-2xl font-semibold text-ink">Klaar om te starten?</h2>
           <p className="mx-auto mt-3 max-w-md text-sm text-ink/70">
-            Een vrijblijvend gesprek van dertig minuten is genoeg om te weten of — en hoe — Millecam kan
+            Een vrijblijvend gesprek van dertig minuten is genoeg om te weten of, en hoe, Millecam kan
             helpen.
           </p>
           <Button href="/contact" variant="primary" className="mt-6">

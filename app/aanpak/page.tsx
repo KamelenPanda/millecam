@@ -3,7 +3,7 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Aanpak — Millecam",
+  title: "Aanpak | Millecam",
   description: "Hoe een traject bij Millecam verloopt: GAP-analyse, implementatie, ondersteuning.",
 };
 
@@ -16,7 +16,7 @@ const STAPPEN = [
   {
     naam: "2. Implementatie",
     tekst:
-      "Vertaling van bevindingen naar een concreet stappenplan: beleid, procedures, technische maatregelen. Millecam coördineert, jij houdt overzicht — geen zwarte-doostraject.",
+      "Vertaling van bevindingen naar een concreet stappenplan: beleid, procedures, technische maatregelen. Millecam coördineert, jij houdt overzicht: geen zwarte-doostraject.",
   },
   {
     naam: "3. Ondersteuning",
@@ -26,10 +26,10 @@ const STAPPEN = [
 ];
 
 const PRINCIPES = [
-  "Eén vast aanspreekpunt — geen wisselende consultants",
-  "Concrete rapportage — geen tachtig pagina's compliance-jargon",
-  "Realistisch tempo — afgestemd op wat een KMO aankan, niet op een corporate draaiboek",
-  "Framework-onafhankelijk advies — het kader volgt de situatie, niet omgekeerd",
+  "Eén vast aanspreekpunt: geen wisselende consultants",
+  "Concrete rapportage: geen tachtig pagina's compliance-jargon",
+  "Realistisch tempo, afgestemd op wat een KMO aankan, niet op een corporate draaiboek",
+  "Framework-onafhankelijk advies: het kader volgt de situatie, niet omgekeerd",
 ];
 
 export default function AanpakPage() {

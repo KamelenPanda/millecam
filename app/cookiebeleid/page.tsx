@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Section from "@/components/Section";
 
 export const metadata: Metadata = {
-  title: "Cookiebeleid — Millecam",
+  title: "Cookiebeleid | Millecam",
   description: "Welke cookies deze website gebruikt (bijna geen).",
 };
 
@@ -22,7 +22,7 @@ export default function CookiebeleidPage() {
 
         <P>
           Deze website plaatst geen trackingcookies en toont daarom geen cookie-toestemming die
-          echt iets te kiezen geeft — er is simpelweg niets niet-noodzakelijks om toestemming
+          echt iets te kiezen geeft. Er is simpelweg niets niet-noodzakelijks om toestemming
           voor te vragen.
         </P>
 
@@ -37,7 +37,7 @@ export default function CookiebeleidPage() {
 
         <H2>Strikt noodzakelijke cookies</H2>
         <P>
-          Deze website gebruikt op dit moment geen enkele cookie — ook geen functionele of
+          Deze website gebruikt op dit moment geen enkele cookie, ook geen functionele of
           noodzakelijke. Mocht dat in de toekomst veranderen (bijvoorbeeld bij een
           inlogfunctionaliteit), dan werken we dit cookiebeleid bij en, indien nodig, ook de
           toestemmingsmelding op de site.

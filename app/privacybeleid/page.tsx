@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Section from "@/components/Section";
 
 export const metadata: Metadata = {
-  title: "Privacybeleid — Millecam",
+  title: "Privacybeleid | Millecam",
   description: "Hoe Millecam met persoonsgegevens omgaat.",
 };
 
@@ -31,13 +31,13 @@ export default function PrivacybeleidPage() {
           Wanneer je het contactformulier op deze website gebruikt, verzamelen we de gegevens die
           je zelf invult: naam, bedrijfsnaam, e-mailadres, telefoonnummer (optioneel), het
           onderwerp van je vraag, en je bericht. We verzamelen geen gegevens via cookies of
-          trackingtechnologie — zie het <a className="text-terracotta hover:underline" href="/cookiebeleid">cookiebeleid</a> voor meer uitleg.
+          trackingtechnologie. Zie het <a className="text-terracotta hover:underline" href="/cookiebeleid">cookiebeleid</a> voor meer uitleg.
         </P>
 
         <H2>Waarvoor gebruiken we deze gegevens</H2>
         <P>
-          Uitsluitend om te reageren op je vraag of aanvraag, en om — indien daaruit een
-          samenwerking volgt — die samenwerking op te starten en op te volgen. We gebruiken je
+          Uitsluitend om te reageren op je vraag of aanvraag, en om (indien daaruit een
+          samenwerking volgt) die samenwerking op te starten en op te volgen. We gebruiken je
           gegevens niet voor marketingdoeleinden zonder je uitdrukkelijke toestemming, en we
           verkopen of verhuren je gegevens nooit aan derden.
         </P>
@@ -45,8 +45,8 @@ export default function PrivacybeleidPage() {
         <H2>Rechtsgrond</H2>
         <P>
           De verwerking van je contactgegevens is gebaseerd op ons gerechtvaardigd belang om
-          vragen van (potentiële) klanten te beantwoorden, en — zodra een opdracht wordt
-          besproken of aangegaan — op de uitvoering van (voor)contractuele maatregelen op jouw
+          vragen van (potentiële) klanten te beantwoorden, en, zodra een opdracht wordt
+          besproken of aangegaan, op de uitvoering van (voor)contractuele maatregelen op jouw
           verzoek (art. 6.1.b en 6.1.f AVG).
         </P>
 
@@ -57,13 +57,13 @@ export default function PrivacybeleidPage() {
         </P>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink/75">
           <li>
-            <span className="font-medium text-ink">Resend</span> — verzendt de e-mail die het
+            <span className="font-medium text-ink">Resend</span>: verzendt de e-mail die het
             contactformulier genereert. Resend kan hierbij optreden als verwerker buiten de EU;
             we maken enkel gebruik van partijen die passende waarborgen bieden (zoals
             modelcontractbepalingen).
           </li>
           <li>
-            <span className="font-medium text-ink">Vercel</span> — host deze website en
+            <span className="font-medium text-ink">Vercel</span>: host deze website en
             verwerkt daarbij technische gegevens (zoals IP-adressen in servertoegangslogs) die
             nodig zijn om de site te laten functioneren.
           </li>
@@ -109,7 +109,7 @@ export default function PrivacybeleidPage() {
         <P>
           Ben je niet tevreden over hoe we met je gegevens omgaan? Neem dan eerst contact met ons
           op. Je hebt daarnaast steeds het recht om een klacht in te dienen bij de
-          Gegevensbeschermingsautoriteit (GBA): Drukpersstraat 35, 1000 Brussel —{" "}
+          Gegevensbeschermingsautoriteit (GBA): Drukpersstraat 35, 1000 Brussel,{" "}
           <a className="text-terracotta hover:underline" href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noreferrer">
             gegevensbeschermingsautoriteit.be
           </a>.
