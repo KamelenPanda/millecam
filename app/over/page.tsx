@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Over — Millecam",
-  description: "Millecam is het onafhankelijke GRC-adviesbureau van Robin.",
+  description: "Millecam is het onafhankelijke GRC-adviesbureau van Robin Millecam.",
 };
 
 export default function OverPage() {
@@ -16,9 +16,10 @@ export default function OverPage() {
 
       <div className="mt-8 max-w-2xl space-y-6 text-ink/80">
         <p>
-          Millecam is het onafhankelijke GRC-adviesbureau van Robin — één vast aanspreekpunt in plaats
-          van een wisselend team, voor organisaties die compliance-expertise nodig hebben zonder een
-          interne rol te creëren.
+          Achter Millecam staat één naam: Robin Millecam. Geen toeval — Millecam is niet enkel de
+          merknaam, het is ook gewoon wie er aan de andere kant van de lijn zit. Eén vast
+          aanspreekpunt in plaats van een wisselend team, voor organisaties die
+          compliance-expertise nodig hebben zonder een interne rol te creëren.
         </p>
         <p>
           Jarenlange ervaring met NIS2-scoping, CyFun-gapanalyses, ISO 27001-documentatie en
