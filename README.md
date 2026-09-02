@@ -176,6 +176,29 @@ Bewust géén zesde/zevende toevoeging meer — vijf structurele elementen is al
 veel voor één pagina; nog meer zou opnieuw de "spend your boldness in one
 place"-regel schenden.
 
+## Nog een ronde: illustraties, diepte, paginaovergangen
+
+Op vraag om het "fancier" te maken (zonder terug te vallen in generieke
+SaaS-clichés):
+
+- **`components/illustrations/`** — drie custom, geometrische illustraties
+  voor de Aanpak-stappen (assessment-matrix, oplopende balkjes, pijler-brug),
+  opgebouwd uit dezelfde vlakke vormentaal als de maturity-gauge en het
+  pijler-glyph. Bewust geen stockiconen (vergrootglas, tandwiel, handdruk) —
+  dat zou meteen weer generiek ogen.
+- **Zwevende diepte** — een zachte, warm-getinte schaduw
+  (`shadow-[0_14px_34px_rgba(33,29,24,0.09)]`) toegevoegd aan ServiceCard,
+  het credentials-blok, de NIS2-check-resultaatkaart en de Aanpak-panelen, en
+  een iets zwaardere variant op de gauge-kaart. Blijft een statische
+  eigenschap (geen hover-triggered lift op niet-klikbare kaarten) — dat zou
+  opnieuw het "hover-effect op elke kaart"-patroon zijn dat de skill afraadt.
+- **Paginaovergangen** (`app/template.tsx`) — Next.js remount't dit bestand
+  bij elke navigatie (in tegenstelling tot `layout.tsx`, dat blijft staan),
+  dus Nav/Footer flikkeren nooit mee; enkel de paginainhoud zelf vervaagt/rijst
+  in (0,35s, `prefers-reduced-motion` gerespecteerd).
+- Illustraties zijn verborgen op mobiel (`hidden sm:block`) — op een smalle
+  viewport voegen ze weinig toe naast de tekst en nemen ze kostbare ruimte in.
+
 ## Body & professionaliteit toegevoegd
 
 - **BTW-nummer** (BE 1026.876.048) in footer, privacybeleid en algemene voorwaarden —

@@ -112,7 +112,7 @@ export default function Nis2Checker() {
   if (step >= steps.length) {
     const v = verdict(answers);
     return (
-      <div className="border-l-2 border-terracotta bg-[#FBF9F4] px-6 py-8 sm:px-8">
+      <div className="border-l-2 border-terracotta bg-[#FBF9F4] px-6 py-8 shadow-[0_14px_34px_rgba(33,29,24,0.09)] sm:px-8">
         <PillarGlyph className="h-5 w-4" />
         <p className="mt-3 font-serif text-2xl font-semibold text-ink">{v.titel}</p>
         <p className="mt-3 max-w-xl text-ink/70">{v.tekst}</p>

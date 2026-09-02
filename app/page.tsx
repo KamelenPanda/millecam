@@ -122,7 +122,7 @@ export default function HomePage() {
         <p className="mt-4 max-w-xl text-ink/70">
           Geen rapport vol jargon: een score per domein, meteen duidelijk waar de prioriteit ligt.
         </p>
-        <div className="mt-10">
+        <div className="mt-10 bg-white p-8 shadow-[0_20px_50px_rgba(33,29,24,0.10)] sm:p-10">
           <MaturityGauge />
         </div>
         <p className="mt-6 text-xs text-muted">Voorbeeldweergave: elke GAP-analyse krijgt dit overzicht, met je eigen resultaten.</p>
