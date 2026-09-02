@@ -258,6 +258,44 @@ weeg dat dan bewust af tegen "spend your boldness in one place" — dat
 principe is precies waarom de rest van de site nu weer rustig oogt naast een
 prominente hero, in plaats van dat alles even hard roept.
 
+## Twee bugs uit live screenshots, direct na de hero-herziening
+
+- **Verbindingslijn liep door de teksten** (`ScrollTimeline.tsx`) — cirkel en
+  titel stonden inline naast elkaar op dezelfde hoogte, dus een doorlopende
+  horizontale lijn kruiste onvermijdelijk door de middelste kolom heen
+  (cirkel én tekst). Fix: titel staat nu onder de cirkel (`mt-4`) i.p.v.
+  ernaast, zodat de lijnhoogte (`top-5`) altijd boven alle tekst blijft,
+  ongeacht kolombreedte of tekstlengte. Zelfde patroon geldt niet voor
+  `ScrollTimelineVertical.tsx` (Aanpak-pagina) — die lijn loopt verticaal
+  tussen de cirkels, niet door tekst heen.
+- **Te veel witruimte tussen "Hoe een traject verloopt" en de slot-CTA** —
+  het waren twee aparte `<Section>`-componenten met dezelfde (`bg-white`)
+  achtergrond, dus twee keer `py-20` (Section's default) stapelde op boven
+  de CTA's eigen `pt-14`. Samengevoegd tot één Section; alleen wanneer twee
+  opeenvolgende secties een *verschillende* achtergrondkleur hebben (bv.
+  Diensten- en Aanpak-pagina's slot-CTA, na een `dark`- of standaardsectie)
+  is die dubbele padding wél bedoeld — de kleurwissel rechtvaardigt de
+  langere adempauze. Check dit bij nieuwe secties: twee opeenvolgende
+  `<Section>`s met identieke achtergrond is bijna nooit wat je wil.
+
+## Formuliervalidatie (contactformulier)
+
+- **E-mailveld valideert nu echt** — daarvoor was `type="email"` wel gezet,
+  maar dat gaf enkel de kale, Engelstalige browser-popup (`Please include an
+  '@'...`), niet gestileerd, niet in het Nederlands. `noValidate` op de
+  `<form>` schakelt die native validatie uit; alle velden (naam, e-mail,
+  bericht) worden nu volledig zelf gecontroleerd, met een foutmelding in de
+  merkkleur (`text-status-kritiek`) direct onder het veld.
+- **Ook server-side gecontroleerd** in `app/api/contact/route.ts` — client-side
+  validatie is altijd te omzeilen (JS uit, of een directe POST-aanvraag), dus
+  de API-route weigert een ongeldig e-mailadres zelf ook, met status 400.
+  Zelfde eenvoudige regex aan beide kanten (`/^[^\s@]+@[^\s@]+\.[^\s@]+$/`) —
+  bewust geen volledige RFC 5322-implementatie, dat wijst vaker geldige
+  adressen af dan dat het iets wint.
+- Als je later nog een veld met specifiek formaat toevoegt (bv. een
+  BTW-nummer-veld), volg hetzelfde patroon: valideer aan beide kanten, nooit
+  enkel client-side.
+
 ## Body & professionaliteit toegevoegd
 
 - **BTW-nummer** (BE 1026.876.048) in footer, privacybeleid en algemene voorwaarden —

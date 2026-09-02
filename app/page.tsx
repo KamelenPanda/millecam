@@ -177,18 +177,15 @@ export default function HomePage() {
       </Section>
       <TornDivider color="#FFFFFF" />
 
-      {/* Aanpak teaser */}
+      {/* Aanpak teaser + Slot CTA */}
       <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">Hoe een traject verloopt</h2>
         <ScrollTimeline stappen={STAPPEN} />
         <Link href="/aanpak" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Lees meer over de aanpak
         </Link>
-      </Section>
 
-      {/* Slot CTA */}
-      <Section className="bg-white">
-        <div className="mx-auto max-w-md pt-14 text-center">
+        <div className="mx-auto mt-16 max-w-md pt-10 text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Klaar om te starten?</h2>
           <p className="mt-3 text-sm text-ink/70">

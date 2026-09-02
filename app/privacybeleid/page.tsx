@@ -27,7 +27,7 @@ export default function PrivacybeleidPage() {
     <Section className="pb-24 pt-16">
       <div className="mx-auto w-full max-w-3xl">
         <h1 className="font-serif text-4xl font-bold text-ink">Privacybeleid</h1>
-        <p className="mt-4 text-sm text-muted">Laatst bijgewerkt: [datum invullen]</p>
+        <p className="mt-4 text-sm text-muted">Laatst bijgewerkt: 02/09/2026</p>
 
         <P>
           Millecam is een eenmanszaak van Robin Millecam, gevestigd te Sinte Annalaan 34, 9300

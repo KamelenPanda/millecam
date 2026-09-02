@@ -35,17 +35,17 @@ export default function ScrollTimeline({ stappen }: { stappen: Stap[] }) {
         {stappen.map((s, i) => (
           <div
             key={s.naam}
-            className="flex gap-4 transition-all duration-500 ease-out"
+            className="transition-all duration-500 ease-out"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(10px)",
               transitionDelay: visible ? `${i * 200 + 200}ms` : "0ms",
             }}
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif font-bold text-paper">
+            <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif font-bold text-paper">
               {i + 1}
             </span>
-            <div>
+            <div className="mt-4">
               <p className="font-serif text-lg font-semibold text-ink">{s.naam}</p>
               <p className="mt-1 text-sm text-ink/70">{s.tekst}</p>
             </div>

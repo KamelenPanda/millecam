@@ -1,11 +1,20 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+// Bewust eenvoudig (geen volledige RFC 5322-regex): dekt alle realistische
+// adressen en weigert overduidelijk foutieve invoer, zonder legitieme
+// adressen ten onrechte af te wijzen.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export async function POST(req: Request) {
   const { naam, bedrijf, email, telefoon, onderwerp, bericht } = await req.json();
 
   if (!naam || !email || !bericht) {
     return NextResponse.json({ error: "Verplichte velden ontbreken." }, { status: 400 });
+  }
+
+  if (typeof email !== "string" || !EMAIL_RE.test(email.trim())) {
+    return NextResponse.json({ error: "Vul een geldig e-mailadres in." }, { status: 400 });
   }
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -24,7 +33,7 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "Millecam website <noreply@millecam.be>",
       to,
-      reply_to: email,
+      reply_to: email.trim(),
       subject: `Nieuw contactformulier: ${onderwerp || "Algemene vraag"}`,
       text: [
         `Naam: ${naam}`,

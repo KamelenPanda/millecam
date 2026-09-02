@@ -10,7 +10,12 @@ const ONDERWERPEN = [
   "Andere vraag",
 ];
 
+// Zelfde eenvoudige check als aan de serverkant (app/api/contact/route.ts) —
+// hier enkel voor directe feedback, de server blijft de bron van waarheid.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 type Status = "idle" | "sending" | "sent" | "error";
+type Errors = { naam?: string; email?: string; bericht?: string };
 
 // Shared underline treatment for text/email/tel/select fields — a ruled
 // field instead of a boxed input, closer to a paper form than a default
@@ -22,12 +27,30 @@ const fieldClass =
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [errors, setErrors] = useState<Errors>({});
 
+  // Native browservalidatie (type="email"/required) toont een eigen,
+  // Engelstalige, ongestileerde melding vóór onze JS de kans krijgt —
+  // daarom noValidate op de form en de volledige controle hieronder.
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sending");
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    const naam = String(data.naam || "").trim();
+    const email = String(data.email || "").trim();
+    const bericht = String(data.bericht || "").trim();
+
+    const nextErrors: Errors = {};
+    if (!naam) nextErrors.naam = "Vul je naam in.";
+    if (!EMAIL_RE.test(email)) nextErrors.email = "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.be.";
+    if (!bericht) nextErrors.bericht = "Vul een bericht in.";
+
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      return;
+    }
+    setErrors({});
+    setStatus("sending");
 
     try {
       const res = await fetch("/api/contact", {
@@ -43,6 +66,10 @@ export default function ContactForm() {
     }
   }
 
+  function clearError(field: keyof Errors) {
+    if (errors[field]) setErrors((e) => ({ ...e, [field]: undefined }));
+  }
+
   if (status === "sent") {
     return (
       <div className="border-l-2 border-status-conform bg-[#FBF9F4] py-6 pl-5 pr-4">
@@ -53,13 +80,26 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-7">
+    <form onSubmit={handleSubmit} noValidate className="space-y-7">
       <div className="grid gap-7 sm:grid-cols-2">
-        <Field label="Naam" name="naam" required />
+        <Field
+          label="Naam"
+          name="naam"
+          required
+          error={errors.naam}
+          onChange={() => clearError("naam")}
+        />
         <Field label="Bedrijf" name="bedrijf" />
       </div>
       <div className="grid gap-7 sm:grid-cols-2">
-        <Field label="E-mailadres" name="email" type="email" required />
+        <Field
+          label="E-mailadres"
+          name="email"
+          type="email"
+          required
+          error={errors.email}
+          onChange={() => clearError("email")}
+        />
         <Field label="Telefoonnummer" name="telefoon" type="tel" />
       </div>
 
@@ -93,8 +133,10 @@ export default function ContactForm() {
         <textarea
           id="bericht"
           name="bericht"
-          required
           rows={5}
+          onChange={() => clearError("bericht")}
+          aria-invalid={!!errors.bericht}
+          aria-describedby={errors.bericht ? "bericht-error" : undefined}
           className="w-full appearance-none resize-none border-x-0 border-t-0 border-b border-line bg-transparent py-2 text-sm leading-7 text-ink transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none"
           style={{
             backgroundImage:
@@ -102,6 +144,11 @@ export default function ContactForm() {
             backgroundPositionY: "0.6rem",
           }}
         />
+        {errors.bericht && (
+          <p id="bericht-error" className="mt-1.5 text-xs text-status-kritiek">
+            {errors.bericht}
+          </p>
+        )}
       </div>
 
       {status === "error" && (
@@ -126,18 +173,35 @@ function Field({
   name,
   type = "text",
   required = false,
+  error,
+  onChange,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  error?: string;
+  onChange?: () => void;
 }) {
   return (
     <div>
       <label className="block text-xs text-muted" htmlFor={name}>
         {label} {required && "*"}
       </label>
-      <input id={name} name={name} type={type} required={required} className={fieldClass} />
+      <input
+        id={name}
+        name={name}
+        type={type}
+        onChange={onChange}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${name}-error` : undefined}
+        className={`${fieldClass} ${error ? "border-status-kritiek" : ""}`}
+      />
+      {error && (
+        <p id={`${name}-error`} className="mt-1.5 text-xs text-status-kritiek">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

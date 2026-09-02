@@ -23,7 +23,7 @@ export default function AlgemeneVoorwaardenPage() {
     <Section className="pb-24 pt-16">
       <div className="mx-auto w-full max-w-3xl">
         <h1 className="font-serif text-4xl font-bold text-ink">Algemene voorwaarden</h1>
-        <p className="mt-4 text-sm text-muted">Laatst bijgewerkt: [datum invullen]</p>
+        <p className="mt-4 text-sm text-muted">Laatst bijgewerkt: 02/09/2026</p>
 
         <P>
           Deze voorwaarden zijn van toepassing op elke offerte en overeenkomst tussen Millecam
