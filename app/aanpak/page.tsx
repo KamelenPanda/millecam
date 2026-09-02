@@ -5,6 +5,7 @@ import PillarGlyph from "@/components/PillarGlyph";
 import IllustrationGap from "@/components/illustrations/IllustrationGap";
 import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
 import IllustrationSupport from "@/components/illustrations/IllustrationSupport";
+import ScrollTimelineVertical from "@/components/ScrollTimelineVertical";
 
 export const metadata: Metadata = {
   title: "Aanpak | Millecam",
@@ -17,21 +18,21 @@ const STAPPEN = [
     naam: "GAP-analyse",
     tekst:
       "Documentenreview, interviews met verantwoordelijken, en een tweedimensionale scoring (documentatie én implementatie) per control. Resultaat: een helder beeld, geen jargon-rapport.",
-    Illustratie: IllustrationGap,
+    illustratie: <IllustrationGap className="hidden h-20 w-20 shrink-0 sm:block" />,
   },
   {
     nummer: "2",
     naam: "Implementatie",
     tekst:
       "Vertaling van bevindingen naar een concreet stappenplan: beleid, procedures, technische maatregelen. Millecam coördineert, jij houdt overzicht: geen zwarte-doostraject.",
-    Illustratie: IllustrationBuild,
+    illustratie: <IllustrationBuild className="hidden h-20 w-20 shrink-0 sm:block" />,
   },
   {
     nummer: "3",
     naam: "Ondersteuning",
     tekst:
       "Compliance stopt niet bij een handtekening. Via DPO-as-a-Service of fractional ondersteuning blijft er een vast aanspreekpunt, zonder dat je iemand aanwerft.",
-    Illustratie: IllustrationSupport,
+    illustratie: <IllustrationSupport className="hidden h-20 w-20 shrink-0 sm:block" />,
   },
 ];
 
@@ -56,25 +57,7 @@ export default function AanpakPage() {
       </Section>
 
       <Section className="bg-white pt-0">
-        <div className="space-y-2">
-          {STAPPEN.map((s, i) => (
-            <div key={s.naam} className="flex gap-6">
-              <div className="flex flex-col items-center">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif text-sm font-bold text-paper">
-                  {s.nummer}
-                </span>
-                {i < STAPPEN.length - 1 && <div className="mt-2 w-px flex-1 bg-line" />}
-              </div>
-              <div className="flex flex-1 flex-wrap items-center justify-between gap-4 border-l-2 border-terracotta bg-[#FBF9F4] py-6 pl-6 pr-5 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
-                <div>
-                  <h2 className="font-serif text-2xl font-semibold text-ink">{s.naam}</h2>
-                  <p className="mt-3 max-w-xl text-ink/70">{s.tekst}</p>
-                </div>
-                <s.Illustratie className="hidden h-20 w-20 shrink-0 sm:block" />
-              </div>
-            </div>
-          ))}
-        </div>
+        <ScrollTimelineVertical stappen={STAPPEN} />
       </Section>
 
       <Section dark>

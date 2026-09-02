@@ -199,6 +199,35 @@ SaaS-clichés):
 - Illustraties zijn verborgen op mobiel (`hidden sm:block`) — op een smalle
   viewport voegen ze weinig toe naast de tekst en nemen ze kostbare ruimte in.
 
+## Van "tonen" naar "bedienen": interactieve laag
+
+Op de vraag om het nog innovatiever/interactiever te maken — bewust gekozen
+voor dingen die de bezoeker zelf **bedient**, niet enkel een mooiere versie
+van hetzelfde plaatje:
+
+- **`SelfAssessment.tsx`** — de statische `MaturityGauge` (nog steeds
+  beschikbaar als component, maar niet meer gebruikt op de homepage) werd een
+  echte mini-zelfassessment: klik de balkjes per domein aan, de meter en het
+  gemiddelde updaten live. `BarRating` is een bewust bespoke rating-control
+  (vijf oplopende balkjes, dezelfde vormentaal als de illustraties en
+  domeinbalkjes) in plaats van een generieke `<input type="range">`.
+- **`ScrollTimeline.tsx`** (homepage, horizontaal) en
+  **`ScrollTimelineVertical.tsx`** (Aanpak-pagina, verticaal) — de
+  verbindingslijn en stappen verschijnen pas zodra de sectie in beeld komt
+  (`IntersectionObserver`, eenmalig, niet herhaald bij terugscrollen). Let op
+  bij het doorgeven van de stappen-data vanuit een server component: de
+  illustraties moeten al gerenderd zijn (`illustratie: <IllustrationGap ... />`
+  als JSX-element) vóór ze als prop naar een client component gaan — een
+  component-**referentie** (`Illustratie: IllustrationGap`) kan niet over de
+  server/client-grens, dat gaf een build error.
+- **`Nis2Checker.tsx`** uitgebreid met een gepersonaliseerd "Mogelijk traject"
+  per verdict: drie tot twee fases met periode + activiteit, gebaseerd op het
+  antwoordpatroon. Verbindt de checker en het aanpak-concept tot één
+  outputmoment in plaats van twee losse onderdelen.
+- **`HeroWatermark.tsx`** ging van 2D-verschuiving naar echte 3D-tilt
+  (`perspective` + `rotateX`/`rotateY` op basis van cursorpositie) — subtiel
+  (8% dekking), maar met echte diepte i.p.v. een platte verschuiving.
+
 ## Body & professionaliteit toegevoegd
 
 - **BTW-nummer** (BE 1026.876.048) in footer, privacybeleid en algemene voorwaarden —

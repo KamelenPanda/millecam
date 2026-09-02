@@ -26,8 +26,9 @@ const GROOTTES = [
 const AANTOONBAARHEID = ["Ja", "Nee", "Niet zeker"];
 
 type Answers = { sector?: string; grootte?: string; aantoonbaarheid?: string };
+type Fase = { periode: string; activiteit: string };
 
-function verdict(a: Answers): { titel: string; tekst: string } {
+function verdict(a: Answers): { titel: string; tekst: string; tijdlijn: Fase[] } {
   const inSector = a.sector !== "Andere / geen van deze";
   const groot = a.grootte !== GROOTTES[0];
 
@@ -36,6 +37,11 @@ function verdict(a: Answers): { titel: string; tekst: string } {
       titel: "Waarschijnlijk NIS2-plichtig",
       tekst:
         "Op basis van je sector en omvang val je vermoedelijk onder NIS2. Dat vraagt een formele aantoonbaarheid van je cybersecuritymaatregelen: een GAP-analyse brengt precies in kaart wat daarvoor nog nodig is.",
+      tijdlijn: [
+        { periode: "Maand 1", activiteit: "GAP-analyse" },
+        { periode: "Maand 2 tot 4", activiteit: "Implementatie" },
+        { periode: "Doorlopend", activiteit: "Ondersteuning" },
+      ],
     };
   }
   if (inSector && !groot) {
@@ -43,6 +49,11 @@ function verdict(a: Answers): { titel: string; tekst: string } {
       titel: "Waarschijnlijk (nog) niet NIS2-plichtig door je omvang",
       tekst:
         "Voor de meeste organisaties in jouw sector geldt een ondergrens qua omvang, al bestaan er uitzonderingen voor kritieke diensten. CyFun is dan vaak een goede, toegankelijke basis om toch aantoonbaar te zijn.",
+      tijdlijn: [
+        { periode: "Maand 1", activiteit: "CyFun-zelfevaluatie" },
+        { periode: "Maand 2", activiteit: "Lichte implementatie" },
+        { periode: "Jaarlijks", activiteit: "Herevaluatie" },
+      ],
     };
   }
   if (!inSector && a.aantoonbaarheid === "Ja") {
@@ -50,12 +61,21 @@ function verdict(a: Answers): { titel: string; tekst: string } {
       titel: "Niet noodzakelijk NIS2-plichtig, maar wel iets om uit te klaren",
       tekst:
         "NIS2 lijkt niet meteen van toepassing, maar de vraag van je klant of verzekeraar wijst eerder richting ISO 27001 of CyFun. Een GAP-analyse legt uit welk kader het beste past.",
+      tijdlijn: [
+        { periode: "Maand 1", activiteit: "GAP-analyse (ISO 27001/CyFun)" },
+        { periode: "Maand 2 tot 3", activiteit: "Aantoonbaarheid opbouwen" },
+        { periode: "Doorlopend", activiteit: "Onderhoud" },
+      ],
     };
   }
   return {
     titel: "Waarschijnlijk niet NIS2-plichtig",
     tekst:
       "Op basis van je antwoorden lijkt NIS2 nu niet van toepassing. Dat kan wijzigen naarmate je groeit. De AVG (GDPR) blijft in elk geval gelden, ongeacht sector of omvang.",
+    tijdlijn: [
+      { periode: "Nu", activiteit: "AVG blijft van toepassing" },
+      { periode: "Bij groei", activiteit: "Herevalueer NIS2" },
+    ],
   };
 }
 
@@ -116,7 +136,21 @@ export default function Nis2Checker() {
         <PillarGlyph className="h-5 w-4" />
         <p className="mt-3 font-serif text-2xl font-semibold text-ink">{v.titel}</p>
         <p className="mt-3 max-w-xl text-ink/70">{v.tekst}</p>
-        <p className="mt-4 text-xs text-muted">
+
+        <p className="mt-8 text-xs font-semibold uppercase tracking-wide text-muted">Mogelijk traject</p>
+        <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+          {v.tijdlijn.map((f) => (
+            <div key={f.activiteit} className="flex items-start gap-3 sm:flex-1 sm:flex-col sm:gap-2">
+              <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-terracotta sm:mt-0" />
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">{f.periode}</p>
+                <p className="text-sm text-ink">{f.activiteit}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-8 text-xs text-muted">
           Dit is een eerste indicatie op basis van drie vragen, geen juridisch sluitend antwoord.
           Een GAP-analyse geeft zekerheid.
         </p>

@@ -6,7 +6,8 @@ import FrameworkList from "@/components/FrameworkList";
 import PillarGlyph from "@/components/PillarGlyph";
 import HeroWatermark from "@/components/HeroWatermark";
 import TornDivider from "@/components/TornDivider";
-import MaturityGauge from "@/components/MaturityGauge";
+import SelfAssessment from "@/components/SelfAssessment";
+import ScrollTimeline from "@/components/ScrollTimeline";
 
 const DIENSTEN = [
   {
@@ -117,15 +118,15 @@ export default function HomePage() {
       {/* Voorbeeld GAP-analyse */}
       <Section>
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
-          Zo ziet een GAP-analyse eruit
+          Probeer het zelf: zo werkt de scoring
         </h2>
         <p className="mt-4 max-w-xl text-ink/70">
           Geen rapport vol jargon: een score per domein, meteen duidelijk waar de prioriteit ligt.
+          Klik de balkjes aan en zie het gemiddelde meebewegen.
         </p>
         <div className="mt-10 bg-white p-8 shadow-[0_20px_50px_rgba(33,29,24,0.10)] sm:p-10">
-          <MaturityGauge />
+          <SelfAssessment />
         </div>
-        <p className="mt-6 text-xs text-muted">Voorbeeldweergave: elke GAP-analyse krijgt dit overzicht, met je eigen resultaten.</p>
       </Section>
 
       {/* Diensten teaser */}
@@ -175,26 +176,7 @@ export default function HomePage() {
       {/* Aanpak teaser */}
       <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">Hoe een traject verloopt</h2>
-        <div className="relative mt-10">
-          <div
-            className="absolute top-5 hidden h-px bg-line md:block"
-            style={{ left: "16.5%", right: "16.5%" }}
-            aria-hidden="true"
-          />
-          <div className="grid gap-8 md:grid-cols-3">
-            {STAPPEN.map((s, i) => (
-              <div key={s.naam} className="flex gap-4">
-                <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif font-bold text-paper">
-                  {i + 1}
-                </span>
-                <div>
-                  <p className="font-serif text-lg font-semibold text-ink">{s.naam}</p>
-                  <p className="mt-1 text-sm text-ink/70">{s.tekst}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ScrollTimeline stappen={STAPPEN} />
         <Link href="/aanpak" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Lees meer over de aanpak
         </Link>
