@@ -228,6 +228,36 @@ van hetzelfde plaatje:
   (`perspective` + `rotateX`/`rotateY` op basis van cursorpositie) — subtiel
   (8% dekking), maar met echte diepte i.p.v. een platte verschuiving.
 
+## De hero herzien: van "netjes" naar een echt eerste-indruk-moment
+
+Na feedback dat de site ondanks alle voorgaande toevoegingen nog te "netjes
+overal even veel" aanvoelde — geen "wow"-moment — bleek het probleem niet een
+ontbrekend effect, maar dat elke sectie ongeveer evenveel visueel gewicht
+had. Screenshots van de **live** site (niet mijn lokale Georgia-render)
+bevestigden dat alles correct rendert; het was een compositie-probleem, geen
+bug. Aanpak, bewust nog steeds zonder kleur/glas/gradients toe te voegen —
+enkel schaal, materiaal en aanwezigheid:
+
+- **Hero op (bijna) volledige schermhoogte** (`md:min-h-[88vh]`), koptekst
+  fors groter (`lg:text-[5.5rem]` i.p.v. `text-5xl`).
+- **`SelfAssessment` verhuisd ín de hero** — als zwevende witte kaart met
+  duidelijke schaduw naast de tekst, in tweekoloms layout. De losse
+  "Probeer het zelf"-sectie verderop op de pagina is dus weg (was anders
+  dubbel) — dit ís nu die sectie, alleen bovenaan i.p.v. na twee keer
+  scrollen.
+- **`HeroWatermark` drastisch opgeschaald**: van `22rem × 16rem` in een
+  hoek naar `78vh × 56vh`, gecentreerd en rechts uitlopend buiten beeld
+  (`justify-end` + negatieve marge). Dekking bewust nog steeds laag (7%) en
+  de tilt-hoek verkleind (van 20°/14° naar 10°/7°) — op deze schaal zou de
+  oorspronkelijke hoek te veel bewegen.
+
+Dit is bewust de "flashy uitzondering, enkel in de hero"-route: de rest van
+de site (Diensten, Aanpak, FAQ, ...) bleef ongemoeid. Als een volgende ronde
+feedback vraagt om diezelfde schaal/aanwezigheid ook elders door te trekken,
+weeg dat dan bewust af tegen "spend your boldness in one place" — dat
+principe is precies waarom de rest van de site nu weer rustig oogt naast een
+prominente hero, in plaats van dat alles even hard roept.
+
 ## Body & professionaliteit toegevoegd
 
 - **BTW-nummer** (BE 1026.876.048) in footer, privacybeleid en algemene voorwaarden —

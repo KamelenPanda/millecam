@@ -67,27 +67,45 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <Section className="relative overflow-hidden pb-16 pt-24">
+      <Section className="relative overflow-hidden pb-20 pt-14 md:flex md:min-h-[88vh] md:items-center md:pb-24 md:pt-20">
         <HeroWatermark />
-        <h1 className="animate-hero-in max-w-2xl font-serif text-5xl font-bold italic text-terracotta">
-          Govern with confidence.
-        </h1>
-        <p
-          className="animate-hero-in mt-6 max-w-xl text-lg text-ink/80"
-          style={{ animationDelay: "0.1s" }}
-        >
-          Onafhankelijke GRC-expertise voor KMO&apos;s die compliance niet zelf kunnen opbouwen, maar wel
-          moeten aantonen.
-        </p>
-        <FrameworkList
-          items={["NIS2", "ISO 27001", "CyFun", "GDPR"]}
-          className="animate-hero-in mt-7"
-          style={{ animationDelay: "0.2s" }}
-        />
-        <div className="animate-hero-in" style={{ animationDelay: "0.3s" }}>
-          <Button href="/contact" variant="primary" className="mt-8">
-            Plan een gratis kennismaking
-          </Button>
+        <div className="grid items-center gap-14 md:grid-cols-[1.15fr_0.95fr] md:gap-10">
+          <div>
+            <h1 className="animate-hero-in font-serif text-6xl font-bold italic leading-[1.05] text-terracotta sm:text-7xl lg:text-[5.5rem]">
+              Govern with confidence.
+            </h1>
+            <p
+              className="animate-hero-in mt-7 max-w-lg text-lg text-ink/80"
+              style={{ animationDelay: "0.1s" }}
+            >
+              Onafhankelijke GRC-expertise voor KMO&apos;s die compliance niet zelf kunnen opbouwen, maar
+              wel moeten aantonen.
+            </p>
+            <FrameworkList
+              items={["NIS2", "ISO 27001", "CyFun", "GDPR"]}
+              className="animate-hero-in mt-8"
+              style={{ animationDelay: "0.2s" }}
+            />
+            <div className="animate-hero-in" style={{ animationDelay: "0.3s" }}>
+              <Button href="/contact" variant="primary" className="mt-9">
+                Plan een gratis kennismaking
+              </Button>
+            </div>
+          </div>
+
+          <div className="animate-hero-in" style={{ animationDelay: "0.25s" }}>
+            <div className="bg-white p-6 shadow-[0_28px_70px_rgba(33,29,24,0.14)] sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">
+                Probeer het zelf
+              </p>
+              <p className="mt-1 text-sm text-ink/70">
+                Zo werkt de scoring in een GAP-analyse.
+              </p>
+              <div className="mt-6">
+                <SelfAssessment />
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
       <TornDivider color="#FFFFFF" />
@@ -113,20 +131,6 @@ export default function HomePage() {
           </Link>
           .
         </p>
-      </Section>
-
-      {/* Voorbeeld GAP-analyse */}
-      <Section>
-        <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
-          Probeer het zelf: zo werkt de scoring
-        </h2>
-        <p className="mt-4 max-w-xl text-ink/70">
-          Geen rapport vol jargon: een score per domein, meteen duidelijk waar de prioriteit ligt.
-          Klik de balkjes aan en zie het gemiddelde meebewegen.
-        </p>
-        <div className="mt-10 bg-white p-8 shadow-[0_20px_50px_rgba(33,29,24,0.10)] sm:p-10">
-          <SelfAssessment />
-        </div>
       </Section>
 
       {/* Diensten teaser */}

@@ -28,20 +28,20 @@ export default function HeroWatermark() {
     return () => window.removeEventListener("mousemove", handleMove);
   }, []);
 
-  const rotateY = reduced ? 0 : tilt.x * 20;
-  const rotateX = reduced ? 0 : -tilt.y * 14;
+  const rotateY = reduced ? 0 : tilt.x * 10;
+  const rotateX = reduced ? 0 : -tilt.y * 7;
 
   return (
     <div
-      className="pointer-events-none absolute -right-6 -top-6 hidden md:block"
-      style={{ perspective: "900px" }}
+      className="pointer-events-none absolute inset-0 hidden items-center justify-end md:flex"
+      style={{ perspective: "1400px" }}
       aria-hidden="true"
     >
       <div
-        className="opacity-[0.08] transition-transform duration-300 ease-out"
+        className="mr-[-3vh] opacity-[0.07] transition-transform duration-300 ease-out"
         style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}
       >
-        <PillarGlyph className="h-[22rem] w-[16rem]" color="#211D18" />
+        <PillarGlyph className="h-[78vh] w-[56vh]" color="#211D18" />
       </div>
     </div>
   );
