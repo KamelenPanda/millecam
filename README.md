@@ -314,6 +314,38 @@ prominente hero, in plaats van dat alles even hard roept.
   het native `<details>/<summary>`-element in plaats van een JS-accordion:
   toegankelijk by default, geen extra dependency.
 
+## Framework-glyphs: NIS2, ISO 27001, CyFun, GDPR
+
+De frameworkkaarten op `/diensten` ("Waarin Millecam gespecialiseerd is")
+waren tot nu toe de enige kaarten op de site zonder de "zwevende diepte"-
+behandeling (zachte vulling + schaduw) die ServiceCard, het credentials-blok
+en de NIS2-check-resultaatkaart al wél hadden — nu rechtgetrokken.
+
+Elk framework kreeg daarnaast een eigen klein glyph
+(`components/illustrations/IllustrationNis2|Iso27001|Cyfun|Gdpr.tsx`), in
+dezelfde vlakke vormentaal als de bestaande illustraties (rechthoeken,
+cirkels, bogen — geen stockiconen):
+
+- **NIS2** — een hub-and-spoke netwerkje: de gereguleerde entiteit als
+  middelste knoop, verbonden naar buiten. Letterlijk een netwerk, wat NIS2
+  ook regelt (Network and Information Systems).
+- **ISO 27001** — een zeshoekig zegel met een lint erover: een
+  certificerings-/normmarkering, geometrisch in plaats van een medaille- of
+  vinkje-icoon.
+- **CyFun** — drie gestapelde, verbredende balken: de drie
+  assurance-niveaus (Basic/Important/Essential) als letterlijke
+  niveaustructuur. Horizontaal gestapeld (i.p.v. verticaal zoals
+  `IllustrationBuild`) om visueel onderscheiden te blijven.
+- **GDPR/AVG** — een hangslot, opgebouwd uit dezelfde boog- en
+  rechthoek-primitieven als `IllustrationSupport`. Het enige framework waar
+  een slot de eerlijke, ondubbelzinnige lezing is (gegevensbescherming),
+  dus bewust wél een herkenbaar slot in plaats van een abstracter
+  alternatief.
+
+Bewust alleen toegepast op de Diensten-pagina, niet ook in `FrameworkList`
+(hero/footer) — dat blijft compacte chrome, geen ruimte voor illustraties
+zonder het "spend your boldness in one place"-principe te schenden.
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie
@@ -335,8 +367,8 @@ prominente hero, in plaats van dat alles even hard roept.
 - [ ] Privacybeleid en cookiebeleid laten nalezen/afvinken (bewaartermijn, verwerkersclausule Resend)
 - [ ] `RESEND_API_KEY` instellen in Vercel-projectinstellingen
 - [ ] BTW-nummer al verwerkt — enkel nog checken of adresgegevens correct/actueel blijven
-- [ ] Open Graph-afbeelding toevoegen (`app/opengraph-image.png` of vergelijkbaar)
-- [ ] Echte inhoud i.p.v. `[in te vullen]`-placeholders doorzoeken vóór livegang
+- [x] Open Graph-afbeelding toegevoegd (`app/opengraph-image.png` bestaat al)
+- [x] Gecontroleerd op `[in te vullen]`-placeholders — geen gevonden
 
 ## Niet meegenomen in dit skelet
 

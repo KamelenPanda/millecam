@@ -3,6 +3,10 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 import PillarGlyph from "@/components/PillarGlyph";
+import IllustrationNis2 from "@/components/illustrations/IllustrationNis2";
+import IllustrationIso27001 from "@/components/illustrations/IllustrationIso27001";
+import IllustrationCyfun from "@/components/illustrations/IllustrationCyfun";
+import IllustrationGdpr from "@/components/illustrations/IllustrationGdpr";
 
 export const metadata: Metadata = {
   title: "Diensten | Millecam",
@@ -43,10 +47,26 @@ const DIENSTEN = [
 ];
 
 const FRAMEWORKS = [
-  { naam: "NIS2", tekst: "Europese cybersecurity-richtlijn voor essentiële en belangrijke entiteiten, relevant vanaf een bepaalde omvang of sector." },
-  { naam: "ISO 27001", tekst: "Internationale norm voor informatiebeveiliging. Vaak een contractvoorwaarde bij klanten of aanbestedingen." },
-  { naam: "CyFun", tekst: "Het Belgische CyberFundamentals-kader van het Centre for Cybersecurity Belgium: een toegankelijk alternatief voor NIS2-aantoonbaarheid." },
-  { naam: "GDPR / AVG", tekst: "Europese privacywetgeving, van toepassing op vrijwel elke organisatie die persoonsgegevens verwerkt." },
+  {
+    naam: "NIS2",
+    tekst: "Europese cybersecurity-richtlijn voor essentiële en belangrijke entiteiten, relevant vanaf een bepaalde omvang of sector.",
+    glyph: <IllustrationNis2 className="h-10 w-10 shrink-0" />,
+  },
+  {
+    naam: "ISO 27001",
+    tekst: "Internationale norm voor informatiebeveiliging. Vaak een contractvoorwaarde bij klanten of aanbestedingen.",
+    glyph: <IllustrationIso27001 className="h-10 w-10 shrink-0" />,
+  },
+  {
+    naam: "CyFun",
+    tekst: "Het Belgische CyberFundamentals-kader van het Centre for Cybersecurity Belgium: een toegankelijk alternatief voor NIS2-aantoonbaarheid.",
+    glyph: <IllustrationCyfun className="h-10 w-10 shrink-0" />,
+  },
+  {
+    naam: "GDPR / AVG",
+    tekst: "Europese privacywetgeving, van toepassing op vrijwel elke organisatie die persoonsgegevens verwerkt.",
+    glyph: <IllustrationGdpr className="h-10 w-10 shrink-0" />,
+  },
 ];
 
 export default function DienstenPage() {
@@ -73,9 +93,15 @@ export default function DienstenPage() {
         <h2 className="font-serif text-3xl font-semibold text-ink">Waarin Millecam gespecialiseerd is</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {FRAMEWORKS.map((f) => (
-            <div key={f.naam} className="border-l-2 border-terracotta pl-5">
-              <p className="font-serif text-lg font-semibold text-ink">{f.naam}</p>
-              <p className="mt-1 text-sm text-ink/70">{f.tekst}</p>
+            <div
+              key={f.naam}
+              className="flex items-start gap-5 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]"
+            >
+              {f.glyph}
+              <div>
+                <p className="font-serif text-lg font-semibold text-ink">{f.naam}</p>
+                <p className="mt-1 text-sm text-ink/70">{f.tekst}</p>
+              </div>
             </div>
           ))}
         </div>
