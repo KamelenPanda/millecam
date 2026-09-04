@@ -89,7 +89,26 @@ export default function HomePage() {
               className="animate-hero-in mt-8"
               style={{ animationDelay: "0.2s" }}
             />
-            <div className="animate-hero-in" style={{ animationDelay: "0.3s" }}>
+            <div
+              className="animate-hero-in mt-6 flex flex-wrap gap-3"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <Link
+                href="/over"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+              >
+                Erkend Data Protection Officer
+              </Link>
+              <a
+                href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+              >
+                KBO BE 1026.876.048
+              </a>
+            </div>
+            <div className="animate-hero-in" style={{ animationDelay: "0.4s" }}>
               <Button href="/contact" variant="primary" className="mt-9">
                 Plan een gratis kennismaking
               </Button>

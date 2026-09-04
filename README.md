@@ -395,6 +395,25 @@ groot) viewporthoogte triggert de `IntersectionObserver` niet voor content
 die daarbuiten valt — enkel een écht scrollende headless-browser (of een
 menselijke bezoeker) doet dat betrouwbaar.
 
+## "Glazen" credential-badges in de hero
+
+Naar het voorbeeld van review-badges op andere sites (blur + transparantie
+over een foto), maar aangepast aan twee dingen die Millecam niet heeft:
+geen hero-foto om overheen te leggen, en geen rounded-full-vormentaal
+(Button, ServiceCard, alles op de site is hoekig — bewust, zie de
+designprincipes hierboven). De badges nemen dus enkel het glas-*materiaal*
+over (`bg-white/40 backdrop-blur-md border border-white/70`), niet de
+ronde vorm.
+
+Twee badges, beide échte, verifieerbare feiten — geen verzonnen cijfers:
+- **"Erkend Data Protection Officer"** — linkt naar `/over`, waar de DPI-
+  certificering wordt toegelicht.
+- **"KBO BE 1026.876.048"** — linkt naar de officiële KBO-pagina, zoals de
+  footer dat al deed.
+
+Ingevoegd tussen `FrameworkList` en de CTA-knop in de hero, met dezelfde
+`animate-hero-in`-sequentie (de knop schoof een stap op naar 0.4s).
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie
