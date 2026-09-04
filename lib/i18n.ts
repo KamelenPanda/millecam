@@ -13,6 +13,17 @@ export function localeHref(locale: Locale, path: string): string {
   return `${prefix}${path}` || "/";
 }
 
+/** Detects the locale from a pathname, e.g. "/en/diensten" -> "en". */
+export function localeFromPath(pathname: string): Locale {
+  for (const locale of locales) {
+    if (locale === defaultLocale) continue;
+    if (pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)) {
+      return locale;
+    }
+  }
+  return defaultLocale;
+}
+
 /** Strips a leading /en or /fr segment, e.g. "/en/diensten" -> "/diensten". */
 export function stripLocaleFromPath(pathname: string): string {
   for (const locale of locales) {

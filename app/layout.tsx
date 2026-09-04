@@ -6,9 +6,8 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import LocaleHtmlSync from "@/components/LocaleHtmlSync";
 import { defaultLocale, type Locale } from "@/lib/i18n";
-import * as en from "@/lib/content/en";
-import * as fr from "@/lib/content/fr";
 
 const serif = Source_Serif_4({
   subsets: ["latin"],
@@ -62,8 +61,10 @@ const jsonLd = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // Initial SSR value only (first paint / hard reload). Client-side
+  // navigation between locales is kept in sync by LocaleHtmlSync, since
+  // this Server Component itself doesn't re-render on every navigation.
   const locale = (headers().get("x-locale") as Locale) || defaultLocale;
-  const dicts = locale === "en" ? en : locale === "fr" ? fr : null;
 
   return (
     <html lang={locale} className={`${serif.variable} ${sans.variable}`}>
@@ -72,22 +73,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {dicts ? (
-          <Nav locale={locale} dict={dicts.nav} />
-        ) : (
-          <Nav />
-        )}
+        <LocaleHtmlSync />
+        <Nav />
         <main>{children}</main>
-        {dicts ? (
-          <Footer locale={locale} dict={dicts.footer} />
-        ) : (
-          <Footer />
-        )}
-        {dicts ? (
-          <CookieBanner locale={locale} dict={dicts.cookieBanner} />
-        ) : (
-          <CookieBanner />
-        )}
+        <Footer />
+        <CookieBanner />
         <Analytics />
       </body>
     </html>

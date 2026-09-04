@@ -60,7 +60,7 @@ export default function AanpakPage() {
         </p>
       </Section>
 
-      <Section className="bg-white pt-0">
+      <Section className="bg-white pt-10">
         <ScrollTimelineVertical stappen={STAPPEN} />
       </Section>
 

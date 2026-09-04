@@ -1,7 +1,12 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import FrameworkList from "./FrameworkList";
-import { localeHref, type Locale } from "@/lib/i18n";
+import { localeHref, localeFromPath, type Locale } from "@/lib/i18n";
 import type { FooterDict } from "@/lib/content/types";
+import { footer as enFooter } from "@/lib/content/en";
+import { footer as frFooter } from "@/lib/content/fr";
 
 const NL_DICT: FooterDict = {
   servicesHeading: "Diensten",
@@ -18,9 +23,13 @@ const NL_DICT: FooterDict = {
   vatLabel: "BTW",
 };
 
-type FooterProps = { locale?: Locale; dict?: FooterDict };
+const DICTS: Record<Locale, FooterDict> = { nl: NL_DICT, en: enFooter, fr: frFooter };
 
-export default function Footer({ locale = "nl", dict = NL_DICT }: FooterProps) {
+/** Locale is derived from the live pathname — see Nav.tsx for why. */
+export default function Footer() {
+  const pathname = usePathname();
+  const locale = localeFromPath(pathname);
+  const dict = DICTS[locale];
   const href = (path: string) => localeHref(locale, path);
 
   return (

@@ -5,8 +5,10 @@ import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import Button from "./Button";
 import MobileMenu from "./MobileMenu";
-import { locales, localeHref, stripLocaleFromPath, type Locale } from "@/lib/i18n";
+import { locales, localeHref, localeFromPath, stripLocaleFromPath, type Locale } from "@/lib/i18n";
 import type { NavDict } from "@/lib/content/types";
+import { nav as enNav } from "@/lib/content/en";
+import { nav as frNav } from "@/lib/content/fr";
 
 const NL_DICT: NavDict = {
   links: [
@@ -23,12 +25,22 @@ const NL_DICT: NavDict = {
   menuClose: "Menu sluiten",
 };
 
+const DICTS: Record<Locale, NavDict> = { nl: NL_DICT, en: enNav, fr: frNav };
 const LOCALE_LABEL: Record<Locale, string> = { nl: "NL", en: "EN", fr: "FR" };
 
-type NavProps = { locale?: Locale; dict?: NavDict };
-
-export default function Nav({ locale = "nl", dict = NL_DICT }: NavProps) {
+/**
+ * Locale is derived from the live pathname rather than passed down from the
+ * root layout: that layout is a Server Component that Next.js does not
+ * re-render on client-side navigation between routes it already rendered
+ * once (it's the same shared layout segment for every locale), so a
+ * server-computed `locale` prop would go stale after the first navigation.
+ * usePathname() stays reactive across navigations, so deriving here keeps
+ * the language switcher (and everything else) in sync.
+ */
+export default function Nav() {
   const pathname = usePathname();
+  const locale = localeFromPath(pathname);
+  const dict = DICTS[locale];
   const basePath = stripLocaleFromPath(pathname);
   const homeHref = locale === "nl" ? "/" : `/${locale}`;
 

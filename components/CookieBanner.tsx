@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { localeHref, type Locale } from "@/lib/i18n";
+import { localeHref, localeFromPath, type Locale } from "@/lib/i18n";
 import type { CookieBannerDict } from "@/lib/content/types";
+import { cookieBanner as enCookieBanner } from "@/lib/content/en";
+import { cookieBanner as frCookieBanner } from "@/lib/content/fr";
 
 const STORAGE_KEY = "millecam-cookie-notice-seen";
 
@@ -15,7 +18,7 @@ const NL_DICT: CookieBannerDict = {
   moreInfo: "Meer info",
 };
 
-type CookieBannerProps = { locale?: Locale; dict?: CookieBannerDict };
+const DICTS: Record<Locale, CookieBannerDict> = { nl: NL_DICT, en: enCookieBanner, fr: frCookieBanner };
 
 /**
  * This is a notice, not a consent gate: the site only uses Vercel Analytics,
@@ -23,8 +26,13 @@ type CookieBannerProps = { locale?: Locale; dict?: CookieBannerDict };
  * There is nothing non-essential to opt into, so we show one "Begrepen" button
  * instead of a fake Accept/Reject choice. If real tracking cookies are added
  * later, turn this into an actual consent gate and update /cookiebeleid first.
+ *
+ * Locale is derived from the live pathname — see Nav.tsx for why.
  */
-export default function CookieBanner({ locale = "nl", dict = NL_DICT }: CookieBannerProps) {
+export default function CookieBanner() {
+  const pathname = usePathname();
+  const locale = localeFromPath(pathname);
+  const dict = DICTS[locale];
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
