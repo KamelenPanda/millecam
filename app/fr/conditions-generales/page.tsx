@@ -101,7 +101,7 @@ export default function TermsPage() {
         <P>
           Pour le traitement des données à caractère personnel dans le cadre d&apos;une mission (et, le
           cas échéant, d&apos;un contrat de sous-traitance), Millecam renvoie à sa{" "}
-          <a className="text-terracotta hover:underline" href="/fr/privacybeleid">politique de confidentialité</a>.
+          <a className="text-terracotta hover:underline" href="/fr/politique-de-confidentialite">politique de confidentialité</a>.
         </P>
 
         <H2 n="10">Force majeure</H2>

@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import FrameworkList from "./FrameworkList";
-import { localeHref, localeFromPath, type Locale } from "@/lib/i18n";
+import { pageHref, localeFromPath, type Locale } from "@/lib/i18n";
 import type { FooterDict } from "@/lib/content/types";
 import { footer as enFooter } from "@/lib/content/en";
 import { footer as frFooter } from "@/lib/content/fr";
@@ -30,7 +30,6 @@ export default function Footer() {
   const pathname = usePathname();
   const locale = localeFromPath(pathname);
   const dict = DICTS[locale];
-  const href = (path: string) => localeHref(locale, path);
 
   return (
     <footer className="bg-ink text-paper">
@@ -46,10 +45,10 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold">{dict.servicesHeading}</p>
             <FrameworkList items={dict.frameworks} tone="paper" className="mt-3" />
-            <a href={href("/veelgestelde-vragen")} className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
+            <a href={pageHref(locale, "faq")} className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
               {dict.faqLink}
             </a>
-            <a href={href("/nis2-check")} className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+            <a href={pageHref(locale, "nis2check")} className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
               {dict.nis2CheckLink}
             </a>
           </div>
@@ -61,9 +60,9 @@ export default function Footer() {
               <a href="https://www.linkedin.com/company/108526083" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">{dict.linkedinCompany}</a>
             </div>
             <div className="mt-4 flex flex-wrap gap-3 text-xs text-paper/50">
-              <a href={href("/privacybeleid")} className="hover:text-paper hover:underline">{dict.privacy}</a>
-              <a href={href("/cookiebeleid")} className="hover:text-paper hover:underline">{dict.cookies}</a>
-              <a href={href("/algemene-voorwaarden")} className="hover:text-paper hover:underline">{dict.terms}</a>
+              <a href={pageHref(locale, "privacy")} className="hover:text-paper hover:underline">{dict.privacy}</a>
+              <a href={pageHref(locale, "cookies")} className="hover:text-paper hover:underline">{dict.cookies}</a>
+              <a href={pageHref(locale, "terms")} className="hover:text-paper hover:underline">{dict.terms}</a>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import Button from "./Button";
 import MobileMenu from "./MobileMenu";
-import { locales, localeHref, localeFromPath, stripLocaleFromPath, type Locale } from "@/lib/i18n";
+import { locales, pageHref, localeFromPath, pageKeyFromPath, type Locale } from "@/lib/i18n";
 import type { NavDict } from "@/lib/content/types";
 import { nav as enNav } from "@/lib/content/en";
 import { nav as frNav } from "@/lib/content/fr";
@@ -41,7 +41,7 @@ export default function Nav() {
   const pathname = usePathname();
   const locale = localeFromPath(pathname);
   const dict = DICTS[locale];
-  const basePath = stripLocaleFromPath(pathname);
+  const pageKey = pageKeyFromPath(pathname);
   const homeHref = locale === "nl" ? "/" : `/${locale}`;
 
   return (
@@ -66,18 +66,18 @@ export default function Nav() {
                 {l === locale ? (
                   <span className="font-semibold text-terracotta">{LOCALE_LABEL[l]}</span>
                 ) : (
-                  <Link href={localeHref(l, basePath)} className="hover:text-terracotta">
+                  <Link href={pageKey ? pageHref(l, pageKey) : l === "nl" ? "/" : `/${l}`} className="hover:text-terracotta">
                     {LOCALE_LABEL[l]}
                   </Link>
                 )}
               </span>
             ))}
           </div>
-          <Button href={localeHref(locale, "/contact")} variant="primary" className="inline-flex">
+          <Button href={pageHref(locale, "contact")} variant="primary" className="inline-flex">
             {dict.cta}
           </Button>
         </div>
-        <MobileMenu links={dict.links} cta={dict.cta} locale={locale} basePath={basePath} menuOpenLabel={dict.menuOpen} menuCloseLabel={dict.menuClose} />
+        <MobileMenu links={dict.links} cta={dict.cta} locale={locale} pageKey={pageKey} menuOpenLabel={dict.menuOpen} menuCloseLabel={dict.menuClose} />
       </div>
     </header>
   );

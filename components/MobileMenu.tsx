@@ -3,13 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import Button from "./Button";
-import { locales, localeHref, type Locale } from "@/lib/i18n";
+import { locales, pageHref, type Locale, type PageKey } from "@/lib/i18n";
 
 type MobileMenuProps = {
   links: { href: string; label: string }[];
   cta?: string;
   locale?: Locale;
-  basePath?: string;
+  pageKey?: PageKey | null;
   menuOpenLabel?: string;
   menuCloseLabel?: string;
 };
@@ -20,7 +20,7 @@ export default function MobileMenu({
   links,
   cta = "Plan gesprek",
   locale = "nl",
-  basePath = "/",
+  pageKey = null,
   menuOpenLabel = "Menu openen",
   menuCloseLabel = "Menu sluiten",
 }: MobileMenuProps) {
@@ -64,14 +64,14 @@ export default function MobileMenu({
                 {l === locale ? (
                   <span className="font-semibold text-terracotta">{LOCALE_LABEL[l]}</span>
                 ) : (
-                  <Link href={localeHref(l, basePath)} onClick={() => setOpen(false)} className="hover:text-terracotta">
+                  <Link href={pageKey ? pageHref(l, pageKey) : l === "nl" ? "/" : `/${l}`} onClick={() => setOpen(false)} className="hover:text-terracotta">
                     {LOCALE_LABEL[l]}
                   </Link>
                 )}
               </span>
             ))}
           </div>
-          <Button href={localeHref(locale, "/contact")} variant="primary" className="mt-4 w-full">
+          <Button href={pageHref(locale, "contact")} variant="primary" className="mt-4 w-full">
             {cta}
           </Button>
         </div>

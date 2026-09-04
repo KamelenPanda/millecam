@@ -98,7 +98,7 @@ export default function TermsPage() {
         <P>
           For the processing of personal data in the context of an engagement (and, where applicable, a
           data processing agreement), Millecam refers to the{" "}
-          <a className="text-terracotta hover:underline" href="/en/privacybeleid">Privacy Policy</a>.
+          <a className="text-terracotta hover:underline" href="/en/privacy-policy">Privacy Policy</a>.
         </P>
 
         <H2 n="10">Force majeure</H2>

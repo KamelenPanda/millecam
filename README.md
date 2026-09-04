@@ -507,7 +507,31 @@ Frans (tegenover het informele "je/jij" in het Nederlands).
 **URL-structuur — bewust afwijkend van `millecam-ai`'s uniforme
 `/nl`-`/en`-`/fr`-aanpak:** NL blijft ongeprefixed op de root (`/`,
 `/diensten`, ...) om de bestaande SEO en live URLs niet te breken; EN en FR
-zitten onder `/en` en `/fr` (`/en/diensten`, `/fr/diensten`, ...).
+zitten onder `/en` en `/fr`, en kregen ook **eigen, idiomatische slugs** in
+plaats van de Nederlandse woorden mee te slepen — dus `/en/services` en
+`/fr/approche`, niet `/en/diensten` of `/fr/aanpak`:
+
+| pagina | NL | EN | FR |
+|---|---|---|---|
+| Diensten | `/diensten` | `/en/services` | `/fr/services` |
+| Aanpak | `/aanpak` | `/en/approach` | `/fr/approche` |
+| Over | `/over` | `/en/about` | `/fr/a-propos` |
+| Contact | `/contact` | `/en/contact` | `/fr/contact` |
+| NIS2-check | `/nis2-check` | `/en/nis2-check` | `/fr/verification-nis2` |
+| FAQ | `/veelgestelde-vragen` | `/en/faq` | `/fr/faq` |
+| Privacybeleid | `/privacybeleid` | `/en/privacy-policy` | `/fr/politique-de-confidentialite` |
+| Cookiebeleid | `/cookiebeleid` | `/en/cookie-policy` | `/fr/politique-de-cookies` |
+| Algemene voorwaarden | `/algemene-voorwaarden` | `/en/terms-and-conditions` | `/fr/conditions-generales` |
+
+Dit was aanvankelijk bewust *niet* gedaan (zie de trade-off die hierboven
+stond: identieke slugs betekenen één link-lijst i.p.v. een per-taal
+slug-map) — maar op verzoek alsnog toegevoegd. `lib/i18n.ts` houdt een
+`PageKey`-enum en een `SLUGS`-tabel (`Record<Locale, Record<PageKey,
+string>>`) bij; `pageHref(locale, key)` bouwt de juiste URL, en
+`pageKeyFromPath(pathname)` doet het omgekeerde — nodig voor de
+taalwisselaar, die anders bij het wisselen van bv. `/fr/approche` naar EN
+zou proberen naar `/en/approche` te linken (bestaat niet) in plaats van
+`/en/approach`.
 
 **Architectuur, zonder de bestaande NL-paginabestanden te verplaatsen**
 (dat had een Next.js "multiple root layouts"-routegroep-herstructurering
@@ -520,7 +544,7 @@ vereist, met regressierisico op de live site):
 - **Trade-off**: `headers()` in de root layout maakt de hele site dynamisch
   (`ƒ` i.p.v. `○` in de build-output). Voor deze kleine marketingsite is dat
   aanvaard.
-- `lib/i18n.ts` (`Locale`-type, `localeHref()`, `stripLocaleFromPath()`) en
+- `lib/i18n.ts` (`Locale`-type, `pageHref()`, `pageKeyFromPath()`) en
   `lib/content/{en,fr}.ts` (dictionaries, getypeerd via
   `lib/content/types.ts`) bevatten de vertalingen voor de gedeelde
   interactieve componenten (Nav, Footer, CookieBanner, ContactForm,
@@ -540,3 +564,15 @@ functie (`(step, total) => string`). Zodra een Server Component-pagina
 over de Server→Client-serialisatiegrens. Opgelost door er een
 template-string van te maken (`"Question {step} of {total}"`) die de client
 component zelf invult met `.replace()`.
+
+**Tweede bug onderweg, opgelost**: de taalwisselaar bleef na een
+client-side navigatie op de eerder geladen taal staan (bv. NL bleef
+gemarkeerd na klikken naar EN). Oorzaak: de root-`layout.tsx` is een Server
+Component die Next.js **niet** opnieuw rendert bij client-side navigatie
+tussen routes die dezelfde layout delen (en dat is hier elke route, want er
+is maar één root layout) — de `locale`/`dict`-props die via `headers()`
+berekend werden, bleven dus hangen op de taal van de eerste paginalaad.
+Opgelost door `Nav`, `Footer` en `CookieBanner` de locale zelf te laten
+afleiden uit `usePathname()` (die wél reactief blijft bij elke navigatie),
+in plaats van een prop van de layout aan te nemen. `LocaleHtmlSync` houdt
+`<html lang>` op dezelfde manier synchroon.

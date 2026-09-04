@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { localeHref, localeFromPath, type Locale } from "@/lib/i18n";
+import { pageHref, localeFromPath, type Locale } from "@/lib/i18n";
 import type { CookieBannerDict } from "@/lib/content/types";
 import { cookieBanner as enCookieBanner } from "@/lib/content/en";
 import { cookieBanner as frCookieBanner } from "@/lib/content/fr";
@@ -67,7 +67,7 @@ export default function CookieBanner() {
         >
           {dict.accept}
         </button>
-        <Link href={localeHref(locale, "/cookiebeleid")} className="text-xs text-ink/60 hover:text-terracotta hover:underline">
+        <Link href={pageHref(locale, "cookies")} className="text-xs text-ink/60 hover:text-terracotta hover:underline">
           {dict.moreInfo}
         </Link>
       </div>

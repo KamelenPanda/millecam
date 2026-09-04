@@ -103,7 +103,7 @@ export default function HomePage() {
               style={{ animationDelay: "0.3s" }}
             >
               <Link
-                href="/en/over"
+                href="/en/about"
                 className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Certified Data Protection Officer
@@ -177,7 +177,7 @@ export default function HomePage() {
             <ServiceCard key={d.naam} {...d} />
           ))}
         />
-        <Link href="/en/diensten" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
+        <Link href="/en/services" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           View all services
         </Link>
       </Section>
@@ -220,7 +220,7 @@ export default function HomePage() {
       <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">How an engagement unfolds</h2>
         <ScrollTimeline stappen={STAPPEN} />
-        <Link href="/en/aanpak" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
+        <Link href="/en/approach" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Read more about the approach
         </Link>
 

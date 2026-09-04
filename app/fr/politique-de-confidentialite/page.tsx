@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
           fournissez vous-même : nom, nom de l&apos;entreprise, adresse e-mail, numéro de téléphone
           (facultatif), l&apos;objet de votre demande, et votre message. Nous ne collectons aucune donnée
           via des cookies ou des technologies de suivi. Consultez la{" "}
-          <a className="text-terracotta hover:underline" href="/fr/cookiebeleid">politique en matière de cookies</a> pour
+          <a className="text-terracotta hover:underline" href="/fr/politique-de-cookies">politique en matière de cookies</a> pour
           plus de détails.
         </P>
 

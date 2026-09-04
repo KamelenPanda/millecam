@@ -9,11 +9,11 @@ import type {
 
 export const nav: NavDict = {
   links: [
-    { href: "/en/diensten", label: "Services" },
-    { href: "/en/aanpak", label: "Approach" },
+    { href: "/en/services", label: "Services" },
+    { href: "/en/approach", label: "Approach" },
     { href: "/en/nis2-check", label: "NIS2 check" },
-    { href: "/en/veelgestelde-vragen", label: "FAQ" },
-    { href: "/en/over", label: "About" },
+    { href: "/en/faq", label: "FAQ" },
+    { href: "/en/about", label: "About" },
     { href: "/en/contact", label: "Contact" },
   ],
   cta: "Book a call",

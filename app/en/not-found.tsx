@@ -19,7 +19,7 @@ export default function NotFound() {
       </Button>
       <p className="mt-6 text-xs text-muted">
         Looking for a service?{" "}
-        <Link href="/en/diensten" className="text-terracotta hover:underline">
+        <Link href="/en/services" className="text-terracotta hover:underline">
           View the offering
         </Link>
         .

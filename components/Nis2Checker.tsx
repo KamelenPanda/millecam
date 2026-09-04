@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import PillarGlyph from "./PillarGlyph";
-import { localeHref, type Locale } from "@/lib/i18n";
+import { pageHref, type Locale } from "@/lib/i18n";
 import type { Nis2CheckerDict, Nis2Verdict } from "@/lib/content/types";
 
 const NL_DICT: Nis2CheckerDict = {
@@ -154,7 +154,7 @@ export default function Nis2Checker({ locale = "nl", dict = NL_DICT }: Nis2Check
 
         <p className="mt-8 text-xs text-muted">{dict.disclaimer}</p>
         <div className="mt-6 flex flex-wrap gap-4">
-          <Button href={localeHref(locale, "/contact")} variant="primary">
+          <Button href={pageHref(locale, "contact")} variant="primary">
             {dict.ctaPrimary}
           </Button>
           <button

@@ -53,7 +53,7 @@ export default function CookiePolicyPage() {
           Questions about this cookie policy? Email{" "}
           <a className="text-terracotta hover:underline" href="mailto:privacy@millecam.be">privacy@millecam.be</a>. See
           also our{" "}
-          <a className="text-terracotta hover:underline" href="/en/privacybeleid">Privacy Policy</a> for how we handle
+          <a className="text-terracotta hover:underline" href="/en/privacy-policy">Privacy Policy</a> for how we handle
           data from the contact form.
         </P>
       </div>

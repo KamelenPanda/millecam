@@ -55,7 +55,7 @@ export default function CookiePolicyPage() {
           Des questions sur cette politique de cookies ? Écrivez à{" "}
           <a className="text-terracotta hover:underline" href="mailto:privacy@millecam.be">privacy@millecam.be</a>. Consultez
           également notre{" "}
-          <a className="text-terracotta hover:underline" href="/fr/privacybeleid">politique de confidentialité</a> pour
+          <a className="text-terracotta hover:underline" href="/fr/politique-de-confidentialite">politique de confidentialité</a> pour
           savoir comment nous traitons les données issues du formulaire de contact.
         </P>
       </div>

@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
           When you use the contact form on this website, we collect the data you provide yourself:
           name, company name, email address, phone number (optional), the subject of your enquiry, and
           your message. We don&apos;t collect any data via cookies or tracking technology. See the{" "}
-          <a className="text-terracotta hover:underline" href="/en/cookiebeleid">Cookie Policy</a> for more
+          <a className="text-terracotta hover:underline" href="/en/cookie-policy">Cookie Policy</a> for more
           details.
         </P>
 

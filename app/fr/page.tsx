@@ -103,7 +103,7 @@ export default function HomePage() {
               style={{ animationDelay: "0.3s" }}
             >
               <Link
-                href="/fr/over"
+                href="/fr/a-propos"
                 className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Délégué à la protection des données certifié
@@ -159,7 +159,7 @@ export default function HomePage() {
         <p className="mt-8 italic text-muted">
           Vous vous reconnaissez dans l&apos;une de ces situations ? C&apos;est exactement pour cela que
           Millecam existe. Vous n&apos;êtes pas sûr(e) que NIS2 vous concerne ?{" "}
-          <Link href="/fr/nis2-check" className="not-italic text-terracotta hover:underline">
+          <Link href="/fr/verification-nis2" className="not-italic text-terracotta hover:underline">
             Faites la courte vérification NIS2
           </Link>
           .
@@ -177,7 +177,7 @@ export default function HomePage() {
             <ServiceCard key={d.naam} {...d} />
           ))}
         />
-        <Link href="/fr/diensten" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
+        <Link href="/fr/services" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Voir tous les services
         </Link>
       </Section>
@@ -221,7 +221,7 @@ export default function HomePage() {
       <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">Comment se déroule un trajet</h2>
         <ScrollTimeline stappen={STAPPEN} />
-        <Link href="/fr/aanpak" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
+        <Link href="/fr/approche" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           En savoir plus sur l&apos;approche
         </Link>
 
