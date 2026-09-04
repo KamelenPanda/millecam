@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
@@ -6,6 +7,8 @@ import IllustrationGap from "@/components/illustrations/IllustrationGap";
 import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
 import IllustrationSupport from "@/components/illustrations/IllustrationSupport";
 import ScrollTimelineVertical from "@/components/ScrollTimelineVertical";
+import Reveal from "@/components/Reveal";
+import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
   title: "Aanpak | Millecam",
@@ -62,18 +65,22 @@ export default function AanpakPage() {
 
       <Section dark>
         <h2 className="font-serif text-3xl font-semibold">Wat je van Millecam mag verwachten</h2>
-        <ul className="mt-8 grid gap-4 md:grid-cols-2">
-          {PRINCIPES.map((p) => (
-            <li key={p} className="flex items-center gap-3 text-sm text-paper/80">
+        <RevealGroup
+          as="ul"
+          itemAs="li"
+          className="mt-8 grid gap-4 md:grid-cols-2"
+          itemClassName="flex items-center gap-3 text-sm text-paper/80"
+          items={PRINCIPES.map((p) => (
+            <Fragment key={p}>
               <PillarGlyph className="h-4 w-3 shrink-0" color="#D97A52" />
               {p}
-            </li>
+            </Fragment>
           ))}
-        </ul>
+        />
       </Section>
 
       <Section className="bg-white">
-        <div className="mx-auto max-w-md pt-14 text-center">
+        <Reveal className="mx-auto max-w-md pt-14 text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">
             Benieuwd hoe dat er voor jouw organisatie uitziet?
@@ -81,7 +88,7 @@ export default function AanpakPage() {
           <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">
             Plan een gesprek
           </Button>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

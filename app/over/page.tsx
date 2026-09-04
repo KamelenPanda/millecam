@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import PillarGlyph from "@/components/PillarGlyph";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Over | Millecam",
@@ -13,7 +14,7 @@ export default function OverPage() {
     <Section className="pb-24 pt-16">
       <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">Over Millecam</h1>
 
-      <div className="mt-8 max-w-2xl space-y-6 text-ink/80">
+      <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
         <p>
           Achter Millecam staat één naam: Robin Millecam. Geen toeval: Millecam is niet enkel de
           merknaam, het is ook gewoon wie er aan de andere kant van de lijn zit. Eén vast
@@ -33,9 +34,9 @@ export default function OverPage() {
             confidence.
           </p>
         </div>
-      </div>
+      </Reveal>
 
-      <div className="mt-14 max-w-2xl">
+      <Reveal className="mt-14 max-w-2xl">
         <h2 className="font-serif text-lg font-semibold text-ink">Credentials</h2>
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <div className="flex items-baseline justify-between gap-4">
@@ -48,7 +49,7 @@ export default function OverPage() {
             Data Protection Institute (DPI): certificaat geldig 3 jaar, verlengbaar.
           </p>
         </div>
-      </div>
+      </Reveal>
 
       <Button href="/contact" variant="primary" className="mt-10">
         Robin rechtstreeks spreken? Plan een kennismaking.

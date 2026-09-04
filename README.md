@@ -367,6 +367,34 @@ toe — exact hetzelfde eenmalige `IntersectionObserver`-patroon als
 `ScrollTimeline.tsx`, nu ook op deze sectie toegepast in plaats van dat de
 kaarten enkel statisch aanwezig zijn zodra je scrollt.
 
+## Scroll-reveal op elke sectie, niet enkel de tijdlijn
+
+Alle secties buiten de hero waren tot nu toe statisch aanwezig zodra je
+ernaartoe scrolde — enkel `ScrollTimeline`/`ScrollTimelineVertical` en
+`FrameworkGrid` beloonden het scrollen met beweging. Twee nieuwe, generieke
+componenten passen hetzelfde eenmalige `IntersectionObserver`-patroon nu
+overal toe, zonder de bestaande drie te herschrijven:
+
+- **`Reveal.tsx`** — één blok (een CTA, het credentials-blok, een
+  paragraaf) dat in zijn geheel in-fade't zodra het in beeld komt.
+- **`RevealGroup.tsx`** — de gestaggerde variant voor een grid of lijst.
+  `as`/`itemAs` laten toe de container/items als `div` of als `ul`/`li` te
+  renderen, zodat een `<ul><li>`-lijst (bv. "Wat je van Millecam mag
+  verwachten") dit kan gebruiken zonder een niet-semantische wrapper die
+  de markup breekt.
+
+Toegepast op: Home (Probleemherkenning-grid, Diensten-teaser-grid, "Een
+specialist, geen callcenter"-lijst, slot-CTA), Diensten (dienstenkaarten-
+grid, slot-CTA), Aanpak ("Wat je mag verwachten"-lijst, slot-CTA), Over
+(introtekst, credentials-blok). Bewust **niet** toegepast op FAQ, Contact
+of NIS2-check — die pagina's zijn al interactief (accordion, formulier,
+checker) en hebben dat "iets gebeurt bij scrollen"-probleem niet.
+
+Let op bij het testen: een screenshot-tool met een vaste (ook al is ze
+groot) viewporthoogte triggert de `IntersectionObserver` niet voor content
+die daarbuiten valt — enkel een écht scrollende headless-browser (of een
+menselijke bezoeker) doet dat betrouwbaar.
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie

@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
@@ -8,6 +9,8 @@ import HeroWatermark from "@/components/HeroWatermark";
 import TornDivider from "@/components/TornDivider";
 import SelfAssessment from "@/components/SelfAssessment";
 import ScrollTimeline from "@/components/ScrollTimeline";
+import Reveal from "@/components/Reveal";
+import RevealGroup from "@/components/RevealGroup";
 
 const DIENSTEN = [
   {
@@ -115,14 +118,16 @@ export default function HomePage() {
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
           Compliance is verplicht. Zelf opbouwen is dat niet.
         </h2>
-        <div className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x md:divide-line">
-          {HERKENNING.map((h) => (
-            <div key={h.titel} className="md:pl-8 md:first:pl-0">
+        <RevealGroup
+          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x md:divide-line"
+          itemClassName="md:pl-8 md:first:pl-0"
+          items={HERKENNING.map((h) => (
+            <Fragment key={h.titel}>
               <h3 className="font-serif text-lg font-semibold text-ink">{h.titel}</h3>
               <p className="mt-3 text-sm text-ink/70">{h.tekst}</p>
-            </div>
+            </Fragment>
           ))}
-        </div>
+        />
         <p className="mt-8 italic text-muted">
           Herken je een van deze? Dan is dat precies waar Millecam voor bestaat. Niet zeker of NIS2
           voor jou geldt?{" "}
@@ -138,11 +143,12 @@ export default function HomePage() {
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
           Van eerste inzicht tot doorlopende ondersteuning
         </h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {DIENSTEN.map((d) => (
+        <RevealGroup
+          className="mt-10 grid gap-6 md:grid-cols-2"
+          items={DIENSTEN.map((d) => (
             <ServiceCard key={d.naam} {...d} />
           ))}
-        </div>
+        />
         <Link href="/diensten" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Bekijk alle diensten
         </Link>
@@ -151,29 +157,35 @@ export default function HomePage() {
       {/* Waarom Millecam */}
       <Section dark>
         <h2 className="max-w-2xl font-serif text-3xl font-semibold">Een specialist, geen callcenter</h2>
-        <ul className="mt-10 grid gap-6 md:grid-cols-3">
-          <li className="text-paper/80">
-            <PillarGlyph className="h-5 w-4" color="#D97A52" />
-            <p className="mt-3 text-sm">
-              Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
-              escalatieketen.
-            </p>
-          </li>
-          <li className="text-paper/80">
-            <PillarGlyph className="h-5 w-4" color="#D97A52" />
-            <p className="mt-3 text-sm">
-              Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
-              zelf opnemen.
-            </p>
-          </li>
-          <li className="text-paper/80">
-            <PillarGlyph className="h-5 w-4" color="#D97A52" />
-            <p className="mt-3 text-sm">
-              Bewezen aanpak bij CyFun-, ISO 27001- en NIS2-trajecten, van GAP-analyse tot volledige
-              implementatie.
-            </p>
-          </li>
-        </ul>
+        <RevealGroup
+          as="ul"
+          itemAs="li"
+          className="mt-10 grid gap-6 md:grid-cols-3"
+          itemClassName="text-paper/80"
+          items={[
+            <Fragment key="1">
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
+              <p className="mt-3 text-sm">
+                Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
+                escalatieketen.
+              </p>
+            </Fragment>,
+            <Fragment key="2">
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
+              <p className="mt-3 text-sm">
+                Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
+                zelf opnemen.
+              </p>
+            </Fragment>,
+            <Fragment key="3">
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
+              <p className="mt-3 text-sm">
+                Bewezen aanpak bij CyFun-, ISO 27001- en NIS2-trajecten, van GAP-analyse tot volledige
+                implementatie.
+              </p>
+            </Fragment>,
+          ]}
+        />
       </Section>
       <TornDivider color="#FFFFFF" />
 
@@ -185,7 +197,7 @@ export default function HomePage() {
           Lees meer over de aanpak
         </Link>
 
-        <div className="mx-auto mt-16 max-w-md pt-10 text-center">
+        <Reveal className="mx-auto mt-16 max-w-md pt-10 text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Klaar om te starten?</h2>
           <p className="mt-3 text-sm text-ink/70">
@@ -195,7 +207,7 @@ export default function HomePage() {
           <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">
             Plan een gratis kennismaking
           </Button>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

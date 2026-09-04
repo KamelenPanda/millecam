@@ -4,6 +4,8 @@ import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 import PillarGlyph from "@/components/PillarGlyph";
 import FrameworkGrid from "@/components/FrameworkGrid";
+import Reveal from "@/components/Reveal";
+import RevealGroup from "@/components/RevealGroup";
 import IllustrationNis2 from "@/components/illustrations/IllustrationNis2";
 import IllustrationIso27001 from "@/components/illustrations/IllustrationIso27001";
 import IllustrationCyfun from "@/components/illustrations/IllustrationCyfun";
@@ -83,11 +85,12 @@ export default function DienstenPage() {
       </Section>
 
       <Section className="bg-white pt-10">
-        <div className="grid gap-6 md:grid-cols-2">
-          {DIENSTEN.map((d) => (
+        <RevealGroup
+          className="grid gap-6 md:grid-cols-2"
+          items={DIENSTEN.map((d) => (
             <ServiceCard key={d.naam} {...d} />
           ))}
-        </div>
+        />
       </Section>
 
       <Section>
@@ -98,7 +101,7 @@ export default function DienstenPage() {
       </Section>
 
       <Section className="bg-white">
-        <div className="mx-auto max-w-md pt-14 text-center">
+        <Reveal className="mx-auto max-w-md pt-14 text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Niet zeker welke dienst past?</h2>
           <p className="mt-3 text-sm text-ink/70">
@@ -108,7 +111,7 @@ export default function DienstenPage() {
           <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">
             Plan een vrijblijvend gesprek
           </Button>
-        </div>
+        </Reveal>
       </Section>
     </>
   );
