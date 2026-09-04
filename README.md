@@ -414,6 +414,35 @@ Twee badges, beide échte, verifieerbare feiten — geen verzonnen cijfers:
 Ingevoegd tussen `FrameworkList` en de CTA-knop in de hero, met dezelfde
 `animate-hero-in`-sequentie (de knop schoof een stap op naar 0.4s).
 
+## Een duotone portret van Robin op de Over-pagina
+
+Eerste échte foto op de site — bewust met terughoudendheid gekozen. Geen
+stockfoto's (die zouden precies het generieke "SaaS met stockbeelden"-gevoel
+oproepen dat de rest van de site vermijdt), en geen willekeurige
+bedrijfsfoto's. Wel een portret van Robin zelf: dat onderbouwt letterlijk de
+kernpositionering ("één vast aanspreekpunt, geen callcenter, rechtstreeks
+contact met de persoon die het werk doet") beter dan tekst alleen kan.
+
+- **Bron**: `Foto Robin.png` uit de `millecam-ai`-repo (de vorige, volledig
+  vervangen merkidentiteit — zie "Wat volledig vervangen is" verderop). Enkel
+  de foto zelf is herbruikt, niet de rest van die repo: logo's, social-media-
+  assets en het "workflow-pattern"-netwerkmotief horen bij de oude
+  teal/donkere AI-automatiseringsstijl en botsen met de huidige Ledger-kleuren
+  — bewust niet meegenomen.
+- **Duotone-behandeling** (`public/images/robin.jpg`): grijswaarden gemaakt,
+  dan gekleurd van ink (`#211D18`, schaduwen) naar terracotta-light
+  (`#D97A52`, lichten) — dezelfde twee kleuren die de rest van de site al
+  gebruikt, dus geen nieuwe kleur toegevoegd. Twee andere varianten
+  (ink→paper, ink→volle terracotta) zijn overwogen: die eerste oogde als
+  gewoon zwart-wit (geen band met de huisstijl), de tweede te donker/muf om
+  details te onderscheiden.
+- **Plaatsing** (`app/over/page.tsx`): tweekoloms grid naast de introtekst,
+  zelfde `[1.3fr_0.9fr]`-verhouding als de hero. Het portret zit in een wit
+  "kader" (`bg-white p-3` + dezelfde zwevende schaduw als elders) — hetzelfde
+  "foto op papier gemonteerd"-motief in plaats van een randloze, bleedende
+  foto. Op mobiel staat de foto vóór de tekst (`order-1`/`order-2`), zodat het
+  gezicht meteen zichtbaar is in plaats van pas na een lange tekstblok.
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie

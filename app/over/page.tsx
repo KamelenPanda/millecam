@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import PillarGlyph from "@/components/PillarGlyph";
@@ -12,29 +13,46 @@ export const metadata: Metadata = {
 export default function OverPage() {
   return (
     <Section className="pb-24 pt-16">
-      <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">Over Millecam</h1>
+      <div className="grid gap-10 md:grid-cols-[1.3fr_0.9fr] md:items-start md:gap-14">
+        <div className="order-2 md:order-1">
+          <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">Over Millecam</h1>
 
-      <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
-        <p>
-          Achter Millecam staat één naam: Robin Millecam. Geen toeval: Millecam is niet enkel de
-          merknaam, het is ook gewoon wie er aan de andere kant van de lijn zit. Eén vast
-          aanspreekpunt in plaats van een wisselend team, voor organisaties die
-          compliance-expertise nodig hebben zonder een interne rol te creëren.
-        </p>
-        <p>
-          Jarenlange ervaring met NIS2-scoping, CyFun-gapanalyses, ISO 27001-documentatie en
-          AVG-vraagstukken bij KMO&apos;s in uiteenlopende sectoren, van bouw en transport tot voeding
-          en tech. Erkend Data Protection Officer (DPI-gecertificeerd, februari 2025).
-        </p>
-        <div>
-          <PillarGlyph className="h-5 w-4" />
-          <p className="mt-3 font-serif text-xl italic text-terracotta">
-            Compliance hoort geen doel op zich te zijn. Het is een middel om aantoonbaar in controle te
-            zijn: naar een toezichthouder, een klant, of jezelf. Vandaar de belofte: Govern with
-            confidence.
-          </p>
+          <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
+            <p>
+              Achter Millecam staat één naam: Robin Millecam. Geen toeval: Millecam is niet enkel de
+              merknaam, het is ook gewoon wie er aan de andere kant van de lijn zit. Eén vast
+              aanspreekpunt in plaats van een wisselend team, voor organisaties die
+              compliance-expertise nodig hebben zonder een interne rol te creëren.
+            </p>
+            <p>
+              Jarenlange ervaring met NIS2-scoping, CyFun-gapanalyses, ISO 27001-documentatie en
+              AVG-vraagstukken bij KMO&apos;s in uiteenlopende sectoren, van bouw en transport tot voeding
+              en tech. Erkend Data Protection Officer (DPI-gecertificeerd, februari 2025).
+            </p>
+            <div>
+              <PillarGlyph className="h-5 w-4" />
+              <p className="mt-3 font-serif text-xl italic text-terracotta">
+                Compliance hoort geen doel op zich te zijn. Het is een middel om aantoonbaar in controle te
+                zijn: naar een toezichthouder, een klant, of jezelf. Vandaar de belofte: Govern with
+                confidence.
+              </p>
+            </div>
+          </Reveal>
         </div>
-      </Reveal>
+
+        <Reveal className="order-1 mx-auto w-full max-w-xs md:order-2 md:max-w-none">
+          <div className="bg-white p-3 shadow-[0_28px_70px_rgba(33,29,24,0.14)]">
+            <Image
+              src="/images/robin.jpg"
+              alt="Robin Millecam"
+              width={900}
+              height={1125}
+              className="w-full"
+              sizes="(min-width: 768px) 30vw, 320px"
+            />
+          </div>
+        </Reveal>
+      </div>
 
       <Reveal className="mt-14 max-w-2xl">
         <h2 className="font-serif text-lg font-semibold text-ink">Credentials</h2>
