@@ -1,7 +1,28 @@
 import Logo from "./Logo";
 import FrameworkList from "./FrameworkList";
+import { localeHref, type Locale } from "@/lib/i18n";
+import type { FooterDict } from "@/lib/content/types";
 
-export default function Footer() {
+const NL_DICT: FooterDict = {
+  servicesHeading: "Diensten",
+  frameworks: ["NIS2", "ISO 27001", "CyFun", "GDPR"],
+  faqLink: "Veelgestelde vragen",
+  nis2CheckLink: "NIS2-check",
+  contactHeading: "Contact",
+  rights: "Millecam",
+  linkedinPerson: "LinkedIn: Robin Millecam",
+  linkedinCompany: "LinkedIn: Millecam",
+  privacy: "Privacybeleid",
+  cookies: "Cookiebeleid",
+  terms: "Algemene voorwaarden",
+  vatLabel: "BTW",
+};
+
+type FooterProps = { locale?: Locale; dict?: FooterDict };
+
+export default function Footer({ locale = "nl", dict = NL_DICT }: FooterProps) {
+  const href = (path: string) => localeHref(locale, path);
+
   return (
     <footer className="bg-ink text-paper">
       <div className="mx-auto max-w-container px-6 py-14">
@@ -14,31 +35,31 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold">Diensten</p>
-            <FrameworkList items={["NIS2", "ISO 27001", "CyFun", "GDPR"]} tone="paper" className="mt-3" />
-            <a href="/veelgestelde-vragen" className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
-              Veelgestelde vragen
+            <p className="text-sm font-semibold">{dict.servicesHeading}</p>
+            <FrameworkList items={dict.frameworks} tone="paper" className="mt-3" />
+            <a href={href("/veelgestelde-vragen")} className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
+              {dict.faqLink}
             </a>
-            <a href="/nis2-check" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-              NIS2-check
+            <a href={href("/nis2-check")} className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+              {dict.nis2CheckLink}
             </a>
           </div>
           <div>
-            <p className="text-sm font-semibold">Contact</p>
-            <p className="mt-3 text-sm text-paper/60">© {new Date().getFullYear()} Millecam</p>
+            <p className="text-sm font-semibold">{dict.contactHeading}</p>
+            <p className="mt-3 text-sm text-paper/60">© {new Date().getFullYear()} {dict.rights}</p>
             <div className="mt-3 flex flex-col gap-1 text-sm text-paper/60">
-              <a href="https://www.linkedin.com/in/robin-millecam-909156b2/" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">LinkedIn: Robin Millecam</a>
-              <a href="https://www.linkedin.com/company/108526083" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">LinkedIn: Millecam</a>
+              <a href="https://www.linkedin.com/in/robin-millecam-909156b2/" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">{dict.linkedinPerson}</a>
+              <a href="https://www.linkedin.com/company/108526083" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">{dict.linkedinCompany}</a>
             </div>
             <div className="mt-4 flex flex-wrap gap-3 text-xs text-paper/50">
-              <a href="/privacybeleid" className="hover:text-paper hover:underline">Privacybeleid</a>
-              <a href="/cookiebeleid" className="hover:text-paper hover:underline">Cookiebeleid</a>
-              <a href="/algemene-voorwaarden" className="hover:text-paper hover:underline">Algemene voorwaarden</a>
+              <a href={href("/privacybeleid")} className="hover:text-paper hover:underline">{dict.privacy}</a>
+              <a href={href("/cookiebeleid")} className="hover:text-paper hover:underline">{dict.cookies}</a>
+              <a href={href("/algemene-voorwaarden")} className="hover:text-paper hover:underline">{dict.terms}</a>
             </div>
           </div>
         </div>
         <div className="mt-10 border-t border-paper/10 pt-6 text-xs text-paper/40">
-          Millecam · Robin Millecam · Sinte Annalaan 34, 9300 Aalst · BTW{" "}
+          Millecam · Robin Millecam · Sinte Annalaan 34, 9300 Aalst · {dict.vatLabel}{" "}
           <a
             href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
             target="_blank"

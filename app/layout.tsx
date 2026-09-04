@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Source_Serif_4, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { headers } from "next/headers";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import { defaultLocale, type Locale } from "@/lib/i18n";
+import * as en from "@/lib/content/en";
+import * as fr from "@/lib/content/fr";
 
 const serif = Source_Serif_4({
   subsets: ["latin"],
@@ -58,17 +62,32 @@ const jsonLd = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = (headers().get("x-locale") as Locale) || defaultLocale;
+  const dicts = locale === "en" ? en : locale === "fr" ? fr : null;
+
   return (
-    <html lang="nl" className={`${serif.variable} ${sans.variable}`}>
+    <html lang={locale} className={`${serif.variable} ${sans.variable}`}>
       <body className="font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Nav />
+        {dicts ? (
+          <Nav locale={locale} dict={dicts.nav} />
+        ) : (
+          <Nav />
+        )}
         <main>{children}</main>
-        <Footer />
-        <CookieBanner />
+        {dicts ? (
+          <Footer locale={locale} dict={dicts.footer} />
+        ) : (
+          <Footer />
+        )}
+        {dicts ? (
+          <CookieBanner locale={locale} dict={dicts.cookieBanner} />
+        ) : (
+          <CookieBanner />
+        )}
         <Analytics />
       </body>
     </html>

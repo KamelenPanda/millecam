@@ -490,7 +490,53 @@ assessment-context gebruikt worden.
 
 ## Niet meegenomen in dit skelet
 
-- Meertaligheid (NL/EN/FR) — de oude repo had dit al opgezet, maar de copy in
-  dit skelet is enkel Nederlandstalig. Toevoegen zodra de EN/FR-vertalingen
-  van de vijf pagina's klaar zijn (zie Sitemap & pagina-copy-document).
 - Cases/referenties-pagina — bewust nog niet gebouwd, zie Sitemap-document.
+
+## Meertaligheid: NL (root) + EN (`/en`) + FR (`/fr`)
+
+De site is nu ook in het Engels en Frans beschikbaar. Belangrijk om te weten:
+de `millecam-ai`-repo had wél al drie talen staan, maar die EN/FR-copy hoorde
+bij de vorige, volledig vervangen positionering (AI-automatisering voor kmo's)
+— niet bij de huidige GRC/compliance-content. Er is dus enkel het
+*technische i18n-patroon* van die repo hergebruikt, niet de tekst zelf: alle
+copy in `app/en/` en `app/fr/` is opnieuw en volledig vertaald, met
+aandacht voor consistente terminologie (NIS2/ISO 27001/CyFun blijven
+letterlijk, GDPR → RGPD in het Frans) en een formeel "vous"-register in het
+Frans (tegenover het informele "je/jij" in het Nederlands).
+
+**URL-structuur — bewust afwijkend van `millecam-ai`'s uniforme
+`/nl`-`/en`-`/fr`-aanpak:** NL blijft ongeprefixed op de root (`/`,
+`/diensten`, ...) om de bestaande SEO en live URLs niet te breken; EN en FR
+zitten onder `/en` en `/fr` (`/en/diensten`, `/fr/diensten`, ...).
+
+**Architectuur, zonder de bestaande NL-paginabestanden te verplaatsen**
+(dat had een Next.js "multiple root layouts"-routegroep-herstructurering
+vereist, met regressierisico op de live site):
+- `middleware.ts` leest het padprefix en zet een `x-locale`-request-header.
+- De ene bestaande root-`layout.tsx` leest die header via `headers()` en
+  geeft op basis daarvan `<html lang>` en gelokaliseerde `dict`-props door
+  aan `Nav`/`Footer`/`CookieBanner` — of niets, wat het bestaande
+  NL-gedrag ongewijzigd laat.
+- **Trade-off**: `headers()` in de root layout maakt de hele site dynamisch
+  (`ƒ` i.p.v. `○` in de build-output). Voor deze kleine marketingsite is dat
+  aanvaard.
+- `lib/i18n.ts` (`Locale`-type, `localeHref()`, `stripLocaleFromPath()`) en
+  `lib/content/{en,fr}.ts` (dictionaries, getypeerd via
+  `lib/content/types.ts`) bevatten de vertalingen voor de gedeelde
+  interactieve componenten (Nav, Footer, CookieBanner, ContactForm,
+  Nis2Checker, SelfAssessment). Pagina-specifieke marketingcopy staat gewoon
+  inline in elke `app/en/...`/`app/fr/...`-pagina, net als bij NL — geen
+  generieke dictionary-laag voor tekst die toch maar één keer gerenderd
+  wordt.
+- Elke aangepaste shared component kreeg optionele `locale`/`dict`-props
+  **met NL als default-waarde**, zodat alle bestaande NL-call-sites
+  ongewijzigd blijven werken.
+- Taalwisselaar zit ingebouwd in `Nav`/`MobileMenu` (desktop en mobiel).
+
+**Bug onderweg, opgelost**: `Nis2CheckerDict.questionOf` was aanvankelijk een
+functie (`(step, total) => string`). Zodra een Server Component-pagina
+(`app/en/nis2-check/page.tsx`) zo'n dict doorgeeft aan de
+`"use client"`-`Nis2Checker`, faalt de statische build: functies kunnen niet
+over de Server→Client-serialisatiegrens. Opgelost door er een
+template-string van te maken (`"Question {step} of {total}"`) die de client
+component zelf invult met `.replace()`.
