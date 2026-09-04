@@ -138,7 +138,7 @@ export default function HomePage() {
           Compliance is verplicht. Zelf opbouwen is dat niet.
         </h2>
         <RevealGroup
-          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x md:divide-line"
+          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x-2 md:divide-terracotta-light"
           itemClassName="md:pl-8 md:first:pl-0"
           items={HERKENNING.map((h) => (
             <Fragment key={h.titel}>

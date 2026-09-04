@@ -76,8 +76,10 @@ export default function DienstenPage() {
   return (
     <>
       <Section className="pb-10 pt-16">
+        <PillarGlyph className="mb-4 h-6 w-5" />
         <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">
-          Van een eerste GAP-analyse tot doorlopende ondersteuning
+          Van een eerste <span className="text-terracotta">GAP-analyse</span> tot doorlopende
+          ondersteuning
         </h1>
         <p className="mt-4 max-w-xl text-ink/70">
           Een aanbod dat meegroeit met wat je nodig hebt, niet met wat een pakket toevallig bevat.

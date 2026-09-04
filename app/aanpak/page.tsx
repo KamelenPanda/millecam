@@ -50,8 +50,9 @@ export default function AanpakPage() {
   return (
     <>
       <Section className="pb-10 pt-16">
+        <PillarGlyph className="mb-4 h-6 w-5" />
         <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">
-          Hoe een traject bij Millecam verloopt
+          Hoe een traject bij <span className="text-terracotta">Millecam</span> verloopt
         </h1>
         <p className="mt-4 max-w-xl text-ink/70">
           Geen generieke methodiek van de plank. Elk traject start met dezelfde vraag: waar sta je

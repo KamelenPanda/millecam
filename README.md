@@ -443,6 +443,27 @@ contact met de persoon die het werk doet") beter dan tekst alleen kan.
   foto. Op mobiel staat de foto vóór de tekst (`order-1`/`order-2`), zodat het
   gezicht meteen zichtbaar is in plaats van pas na een lange tekstblok.
 
+## Iets rijker kleurgebruik op enkele puur ink/paper-secties
+
+Eerste poging was te subtiel om zonder inzoomen te zien (een klein
+PillarGlyph-accent, een kolomscheiding op 30% dekking) — teruggedraaid en
+opnieuw met meer gewicht:
+
+- **Kernwoord in terracotta binnen de intro-titel** op Diensten
+  ("GAP-analyse") en Aanpak ("Millecam") — dezelfde behandeling als de
+  hero's kop, nu als klein accent i.p.v. de volledige titel.
+- **PillarGlyph-accent** (`h-6 w-5`, vol terracotta) boven diezelfde
+  intro-titels, net als op de Over-pagina/CTA-secties.
+- **Kolomscheiding op de homepage** ("Probleemherkenning"): van neutraal
+  `divide-line` naar `divide-x-2 divide-terracotta-light` — duidelijk
+  zichtbaar in plaats van een dun grijs lijntje.
+
+**Bewust niet gebruikt: de status-kleuren** (`status-conform`/`aandacht`/
+`kritiek`). Die zijn specifiek bedoeld om compliance-status weer te geven
+(zie `StatusBadge.tsx`) — als decoratie in gewone marketingsecties zou dat
+hun betekenis verwateren en verwarrend worden zodra ze ooit in een echte
+assessment-context gebruikt worden.
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie
