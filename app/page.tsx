@@ -49,14 +49,17 @@ const HERKENNING = [
   {
     titel: "NIS2 of CyFun raakt jouw organisatie",
     tekst: "Je valt onder de NIS2-richtlijn of een klant/verzekeraar vraagt aantoonbaarheid, maar een interne compliance-officer heb je niet.",
+    hoeHelpt: "Een GAP-analyse brengt in kaart of, en op welk niveau, NIS2 of CyFun voor jou geldt — met een concreet stappenplan als resultaat.",
   },
   {
     titel: "Je hebt een DPO nodig, geen fulltime rol",
     tekst: "De AVG verplicht een functionaris gegevensbescherming, maar dat vult geen volledige werkweek.",
+    hoeHelpt: "Via DPO-as-a-Service nemen wij die rol extern op: een vast aanspreekpunt, op maandbasis, zonder dat je iemand aanwerft.",
   },
   {
     titel: "Een klant of aanbesteding vraagt ISO 27001",
     tekst: "Certificering is een contractvoorwaarde geworden, geen interne prioriteit.",
+    hoeHelpt: "Wij begeleiden het volledige traject, van GAP-analyse tot aantoonbare certificering — jij houdt de regie.",
   },
 ];
 
@@ -144,6 +147,12 @@ export default function HomePage() {
             <Fragment key={h.titel}>
               <h3 className="font-serif text-lg font-semibold text-ink">{h.titel}</h3>
               <p className="mt-3 text-sm text-ink/70">{h.tekst}</p>
+              <div className="mt-4 border-l-2 border-terracotta-light/60 bg-[#FBF9F4]/60 py-3 pl-4 pr-3 shadow-[0_6px_16px_rgba(33,29,24,0.05)]">
+                <p className="text-[0.65rem] font-semibold uppercase tracking-wide text-terracotta-light">
+                  Hoe Millecam helpt
+                </p>
+                <p className="mt-1.5 text-sm text-ink/70">{h.hoeHelpt}</p>
+              </div>
             </Fragment>
           ))}
         />
