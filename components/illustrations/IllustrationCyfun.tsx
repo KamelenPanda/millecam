@@ -8,7 +8,7 @@ type Props = { className?: string };
  */
 export default function IllustrationCyfun({ className = "h-24 w-24" }: Props) {
   const tiers = [
-    { x: 40, w: 40, fill: "#DCD3BF" },
+    { x: 40, w: 40, fill: "#E9C6AC" },
     { x: 25, w: 70, fill: "#D97A52" },
     { x: 10, w: 100, fill: "#B2532E" },
   ];

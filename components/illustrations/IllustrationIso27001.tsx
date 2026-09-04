@@ -11,7 +11,7 @@ export default function IllustrationIso27001({ className = "h-24 w-24" }: Props)
       <polygon
         points="104,60 82,98 38,98 16,60 38,22 82,22"
         fill="none"
-        stroke="#211D18"
+        stroke="#D97A52"
         strokeWidth="6"
         strokeLinejoin="round"
       />

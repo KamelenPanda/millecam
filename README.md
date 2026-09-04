@@ -346,6 +346,27 @@ Bewust alleen toegepast op de Diensten-pagina, niet ook in `FrameworkList`
 (hero/footer) — dat blijft compacte chrome, geen ruimte voor illustraties
 zonder het "spend your boldness in one place"-principe te schenden.
 
+**Bewust geen officiële logo's van ISO, CCB/CyFun of een "GDPR-compliant"-
+badge** — geopperd, maar afgewezen. Het ISO-logo en CyFun-label zijn
+beschermde merken die enkel getoond mogen worden na een échte, geaccrediteerde
+certificering; NIS2 (een richtlijn) en GDPR hebben sowieso geen officieel
+logo om te tonen. Voor een GRC-/DPO-adviesbureau zou het suggereren van een
+certificering die er niet is, precies het risico blootleggen dat klanten net
+willen vermijden. De custom glyphs hierboven zijn de geoorloofde vervanger:
+herkenbaar zonder een merk te claimen.
+
+**Opvolgende ronde — groter, meer kleur, scroll-reveal:** de glyphs bleken
+met `h-10 w-10` klein en met enkel ink+terracotta vrij mono-kleurig. Nu
+`h-14 w-14`, en de ink-accenten (`#211D18`) vervangen door terracotta-light
+(`#D97A52`) zodat elk glyph binnen dezelfde terracotta-familie meer
+kleurvariatie krijgt — geen nieuwe kleur toegevoegd aan het palet, enkel een
+extra tint ervan (CyFun's lichtste balk kreeg om diezelfde reden een pale
+terracotta-tint, `#E9C6AC`, in plaats van het neutrale `#DCD3BF`).
+`components/FrameworkGrid.tsx` (client component) voegt een scroll-reveal
+toe — exact hetzelfde eenmalige `IntersectionObserver`-patroon als
+`ScrollTimeline.tsx`, nu ook op deze sectie toegepast in plaats van dat de
+kaarten enkel statisch aanwezig zijn zodra je scrollt.
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie
