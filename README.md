@@ -314,6 +314,156 @@ prominente hero, in plaats van dat alles even hard roept.
   het native `<details>/<summary>`-element in plaats van een JS-accordion:
   toegankelijk by default, geen extra dependency.
 
+## Framework-glyphs: NIS2, ISO 27001, CyFun, GDPR
+
+De frameworkkaarten op `/diensten` ("Waarin Millecam gespecialiseerd is")
+waren tot nu toe de enige kaarten op de site zonder de "zwevende diepte"-
+behandeling (zachte vulling + schaduw) die ServiceCard, het credentials-blok
+en de NIS2-check-resultaatkaart al wél hadden — nu rechtgetrokken.
+
+Elk framework kreeg daarnaast een eigen klein glyph
+(`components/illustrations/IllustrationNis2|Iso27001|Cyfun|Gdpr.tsx`), in
+dezelfde vlakke vormentaal als de bestaande illustraties (rechthoeken,
+cirkels, bogen — geen stockiconen):
+
+- **NIS2** — een hub-and-spoke netwerkje: de gereguleerde entiteit als
+  middelste knoop, verbonden naar buiten. Letterlijk een netwerk, wat NIS2
+  ook regelt (Network and Information Systems).
+- **ISO 27001** — een zeshoekig zegel met een lint erover: een
+  certificerings-/normmarkering, geometrisch in plaats van een medaille- of
+  vinkje-icoon.
+- **CyFun** — drie gestapelde, verbredende balken: de drie
+  assurance-niveaus (Basic/Important/Essential) als letterlijke
+  niveaustructuur. Horizontaal gestapeld (i.p.v. verticaal zoals
+  `IllustrationBuild`) om visueel onderscheiden te blijven.
+- **GDPR/AVG** — een hangslot, opgebouwd uit dezelfde boog- en
+  rechthoek-primitieven als `IllustrationSupport`. Het enige framework waar
+  een slot de eerlijke, ondubbelzinnige lezing is (gegevensbescherming),
+  dus bewust wél een herkenbaar slot in plaats van een abstracter
+  alternatief.
+
+Bewust alleen toegepast op de Diensten-pagina, niet ook in `FrameworkList`
+(hero/footer) — dat blijft compacte chrome, geen ruimte voor illustraties
+zonder het "spend your boldness in one place"-principe te schenden.
+
+**Bewust geen officiële logo's van ISO, CCB/CyFun of een "GDPR-compliant"-
+badge** — geopperd, maar afgewezen. Het ISO-logo en CyFun-label zijn
+beschermde merken die enkel getoond mogen worden na een échte, geaccrediteerde
+certificering; NIS2 (een richtlijn) en GDPR hebben sowieso geen officieel
+logo om te tonen. Voor een GRC-/DPO-adviesbureau zou het suggereren van een
+certificering die er niet is, precies het risico blootleggen dat klanten net
+willen vermijden. De custom glyphs hierboven zijn de geoorloofde vervanger:
+herkenbaar zonder een merk te claimen.
+
+**Opvolgende ronde — groter, meer kleur, scroll-reveal:** de glyphs bleken
+met `h-10 w-10` klein en met enkel ink+terracotta vrij mono-kleurig. Nu
+`h-14 w-14`, en de ink-accenten (`#211D18`) vervangen door terracotta-light
+(`#D97A52`) zodat elk glyph binnen dezelfde terracotta-familie meer
+kleurvariatie krijgt — geen nieuwe kleur toegevoegd aan het palet, enkel een
+extra tint ervan (CyFun's lichtste balk kreeg om diezelfde reden een pale
+terracotta-tint, `#E9C6AC`, in plaats van het neutrale `#DCD3BF`).
+`components/FrameworkGrid.tsx` (client component) voegt een scroll-reveal
+toe — exact hetzelfde eenmalige `IntersectionObserver`-patroon als
+`ScrollTimeline.tsx`, nu ook op deze sectie toegepast in plaats van dat de
+kaarten enkel statisch aanwezig zijn zodra je scrollt.
+
+## Scroll-reveal op elke sectie, niet enkel de tijdlijn
+
+Alle secties buiten de hero waren tot nu toe statisch aanwezig zodra je
+ernaartoe scrolde — enkel `ScrollTimeline`/`ScrollTimelineVertical` en
+`FrameworkGrid` beloonden het scrollen met beweging. Twee nieuwe, generieke
+componenten passen hetzelfde eenmalige `IntersectionObserver`-patroon nu
+overal toe, zonder de bestaande drie te herschrijven:
+
+- **`Reveal.tsx`** — één blok (een CTA, het credentials-blok, een
+  paragraaf) dat in zijn geheel in-fade't zodra het in beeld komt.
+- **`RevealGroup.tsx`** — de gestaggerde variant voor een grid of lijst.
+  `as`/`itemAs` laten toe de container/items als `div` of als `ul`/`li` te
+  renderen, zodat een `<ul><li>`-lijst (bv. "Wat je van Millecam mag
+  verwachten") dit kan gebruiken zonder een niet-semantische wrapper die
+  de markup breekt.
+
+Toegepast op: Home (Probleemherkenning-grid, Diensten-teaser-grid, "Een
+specialist, geen callcenter"-lijst, slot-CTA), Diensten (dienstenkaarten-
+grid, slot-CTA), Aanpak ("Wat je mag verwachten"-lijst, slot-CTA), Over
+(introtekst, credentials-blok). Bewust **niet** toegepast op FAQ, Contact
+of NIS2-check — die pagina's zijn al interactief (accordion, formulier,
+checker) en hebben dat "iets gebeurt bij scrollen"-probleem niet.
+
+Let op bij het testen: een screenshot-tool met een vaste (ook al is ze
+groot) viewporthoogte triggert de `IntersectionObserver` niet voor content
+die daarbuiten valt — enkel een écht scrollende headless-browser (of een
+menselijke bezoeker) doet dat betrouwbaar.
+
+## "Glazen" credential-badges in de hero
+
+Naar het voorbeeld van review-badges op andere sites (blur + transparantie
+over een foto), maar aangepast aan twee dingen die Millecam niet heeft:
+geen hero-foto om overheen te leggen, en geen rounded-full-vormentaal
+(Button, ServiceCard, alles op de site is hoekig — bewust, zie de
+designprincipes hierboven). De badges nemen dus enkel het glas-*materiaal*
+over (`bg-white/40 backdrop-blur-md border border-white/70`), niet de
+ronde vorm.
+
+Twee badges, beide échte, verifieerbare feiten — geen verzonnen cijfers:
+- **"Erkend Data Protection Officer"** — linkt naar `/over`, waar de DPI-
+  certificering wordt toegelicht.
+- **"KBO BE 1026.876.048"** — linkt naar de officiële KBO-pagina, zoals de
+  footer dat al deed.
+
+Ingevoegd tussen `FrameworkList` en de CTA-knop in de hero, met dezelfde
+`animate-hero-in`-sequentie (de knop schoof een stap op naar 0.4s).
+
+## Een duotone portret van Robin op de Over-pagina
+
+Eerste échte foto op de site — bewust met terughoudendheid gekozen. Geen
+stockfoto's (die zouden precies het generieke "SaaS met stockbeelden"-gevoel
+oproepen dat de rest van de site vermijdt), en geen willekeurige
+bedrijfsfoto's. Wel een portret van Robin zelf: dat onderbouwt letterlijk de
+kernpositionering ("één vast aanspreekpunt, geen callcenter, rechtstreeks
+contact met de persoon die het werk doet") beter dan tekst alleen kan.
+
+- **Bron**: `Foto Robin.png` uit de `millecam-ai`-repo (de vorige, volledig
+  vervangen merkidentiteit — zie "Wat volledig vervangen is" verderop). Enkel
+  de foto zelf is herbruikt, niet de rest van die repo: logo's, social-media-
+  assets en het "workflow-pattern"-netwerkmotief horen bij de oude
+  teal/donkere AI-automatiseringsstijl en botsen met de huidige Ledger-kleuren
+  — bewust niet meegenomen.
+- **Duotone-behandeling** (`public/images/robin.jpg`): grijswaarden gemaakt,
+  dan gekleurd van ink (`#211D18`, schaduwen) naar terracotta-light
+  (`#D97A52`, lichten) — dezelfde twee kleuren die de rest van de site al
+  gebruikt, dus geen nieuwe kleur toegevoegd. Twee andere varianten
+  (ink→paper, ink→volle terracotta) zijn overwogen: die eerste oogde als
+  gewoon zwart-wit (geen band met de huisstijl), de tweede te donker/muf om
+  details te onderscheiden.
+- **Plaatsing** (`app/over/page.tsx`): tweekoloms grid naast de introtekst,
+  zelfde `[1.3fr_0.9fr]`-verhouding als de hero. Het portret zit in een wit
+  "kader" (`bg-white p-3` + dezelfde zwevende schaduw als elders) — hetzelfde
+  "foto op papier gemonteerd"-motief in plaats van een randloze, bleedende
+  foto. Op mobiel staat de foto vóór de tekst (`order-1`/`order-2`), zodat het
+  gezicht meteen zichtbaar is in plaats van pas na een lange tekstblok.
+
+## Iets rijker kleurgebruik op enkele puur ink/paper-secties
+
+Eerste poging was te subtiel om zonder inzoomen te zien (een klein
+PillarGlyph-accent, een kolomscheiding op 30% dekking) — teruggedraaid en
+opnieuw met meer gewicht:
+
+- **Kernwoord in terracotta binnen de intro-titel** op Diensten
+  ("GAP-analyse") en Aanpak ("Millecam") — dezelfde behandeling als de
+  hero's kop, nu als klein accent i.p.v. de volledige titel.
+- **PillarGlyph-accent** (`h-6 w-5`, vol terracotta) boven diezelfde
+  intro-titels, net als op de Over-pagina/CTA-secties.
+- **Kolomscheiding op de homepage** ("Probleemherkenning"): van neutraal
+  `divide-line` naar `divide-x-2 divide-terracotta-light` — duidelijk
+  zichtbaar in plaats van een dun grijs lijntje.
+
+**Bewust niet gebruikt: de status-kleuren** (`status-conform`/`aandacht`/
+`kritiek`). Die zijn specifiek bedoeld om compliance-status weer te geven
+(zie `StatusBadge.tsx`) — als decoratie in gewone marketingsecties zou dat
+hun betekenis verwateren en verwarrend worden zodra ze ooit in een echte
+assessment-context gebruikt worden.
+
 ## Wat is hergebruikt uit `millecam-ai`
 
 - Next.js/Tailwind/TypeScript-basisconfiguratie
@@ -335,12 +485,94 @@ prominente hero, in plaats van dat alles even hard roept.
 - [ ] Privacybeleid en cookiebeleid laten nalezen/afvinken (bewaartermijn, verwerkersclausule Resend)
 - [ ] `RESEND_API_KEY` instellen in Vercel-projectinstellingen
 - [ ] BTW-nummer al verwerkt — enkel nog checken of adresgegevens correct/actueel blijven
-- [ ] Open Graph-afbeelding toevoegen (`app/opengraph-image.png` of vergelijkbaar)
-- [ ] Echte inhoud i.p.v. `[in te vullen]`-placeholders doorzoeken vóór livegang
+- [x] Open Graph-afbeelding toegevoegd (`app/opengraph-image.png` bestaat al)
+- [x] Gecontroleerd op `[in te vullen]`-placeholders — geen gevonden
 
 ## Niet meegenomen in dit skelet
 
-- Meertaligheid (NL/EN/FR) — de oude repo had dit al opgezet, maar de copy in
-  dit skelet is enkel Nederlandstalig. Toevoegen zodra de EN/FR-vertalingen
-  van de vijf pagina's klaar zijn (zie Sitemap & pagina-copy-document).
 - Cases/referenties-pagina — bewust nog niet gebouwd, zie Sitemap-document.
+
+## Meertaligheid: NL (root) + EN (`/en`) + FR (`/fr`)
+
+De site is nu ook in het Engels en Frans beschikbaar. Belangrijk om te weten:
+de `millecam-ai`-repo had wél al drie talen staan, maar die EN/FR-copy hoorde
+bij de vorige, volledig vervangen positionering (AI-automatisering voor kmo's)
+— niet bij de huidige GRC/compliance-content. Er is dus enkel het
+*technische i18n-patroon* van die repo hergebruikt, niet de tekst zelf: alle
+copy in `app/en/` en `app/fr/` is opnieuw en volledig vertaald, met
+aandacht voor consistente terminologie (NIS2/ISO 27001/CyFun blijven
+letterlijk, GDPR → RGPD in het Frans) en een formeel "vous"-register in het
+Frans (tegenover het informele "je/jij" in het Nederlands).
+
+**URL-structuur — bewust afwijkend van `millecam-ai`'s uniforme
+`/nl`-`/en`-`/fr`-aanpak:** NL blijft ongeprefixed op de root (`/`,
+`/diensten`, ...) om de bestaande SEO en live URLs niet te breken; EN en FR
+zitten onder `/en` en `/fr`, en kregen ook **eigen, idiomatische slugs** in
+plaats van de Nederlandse woorden mee te slepen — dus `/en/services` en
+`/fr/approche`, niet `/en/diensten` of `/fr/aanpak`:
+
+| pagina | NL | EN | FR |
+|---|---|---|---|
+| Diensten | `/diensten` | `/en/services` | `/fr/services` |
+| Aanpak | `/aanpak` | `/en/approach` | `/fr/approche` |
+| Over | `/over` | `/en/about` | `/fr/a-propos` |
+| Contact | `/contact` | `/en/contact` | `/fr/contact` |
+| NIS2-check | `/nis2-check` | `/en/nis2-check` | `/fr/verification-nis2` |
+| FAQ | `/veelgestelde-vragen` | `/en/faq` | `/fr/faq` |
+| Privacybeleid | `/privacybeleid` | `/en/privacy-policy` | `/fr/politique-de-confidentialite` |
+| Cookiebeleid | `/cookiebeleid` | `/en/cookie-policy` | `/fr/politique-de-cookies` |
+| Algemene voorwaarden | `/algemene-voorwaarden` | `/en/terms-and-conditions` | `/fr/conditions-generales` |
+
+Dit was aanvankelijk bewust *niet* gedaan (zie de trade-off die hierboven
+stond: identieke slugs betekenen één link-lijst i.p.v. een per-taal
+slug-map) — maar op verzoek alsnog toegevoegd. `lib/i18n.ts` houdt een
+`PageKey`-enum en een `SLUGS`-tabel (`Record<Locale, Record<PageKey,
+string>>`) bij; `pageHref(locale, key)` bouwt de juiste URL, en
+`pageKeyFromPath(pathname)` doet het omgekeerde — nodig voor de
+taalwisselaar, die anders bij het wisselen van bv. `/fr/approche` naar EN
+zou proberen naar `/en/approche` te linken (bestaat niet) in plaats van
+`/en/approach`.
+
+**Architectuur, zonder de bestaande NL-paginabestanden te verplaatsen**
+(dat had een Next.js "multiple root layouts"-routegroep-herstructurering
+vereist, met regressierisico op de live site):
+- `middleware.ts` leest het padprefix en zet een `x-locale`-request-header.
+- De ene bestaande root-`layout.tsx` leest die header via `headers()` en
+  geeft op basis daarvan `<html lang>` en gelokaliseerde `dict`-props door
+  aan `Nav`/`Footer`/`CookieBanner` — of niets, wat het bestaande
+  NL-gedrag ongewijzigd laat.
+- **Trade-off**: `headers()` in de root layout maakt de hele site dynamisch
+  (`ƒ` i.p.v. `○` in de build-output). Voor deze kleine marketingsite is dat
+  aanvaard.
+- `lib/i18n.ts` (`Locale`-type, `pageHref()`, `pageKeyFromPath()`) en
+  `lib/content/{en,fr}.ts` (dictionaries, getypeerd via
+  `lib/content/types.ts`) bevatten de vertalingen voor de gedeelde
+  interactieve componenten (Nav, Footer, CookieBanner, ContactForm,
+  Nis2Checker, SelfAssessment). Pagina-specifieke marketingcopy staat gewoon
+  inline in elke `app/en/...`/`app/fr/...`-pagina, net als bij NL — geen
+  generieke dictionary-laag voor tekst die toch maar één keer gerenderd
+  wordt.
+- Elke aangepaste shared component kreeg optionele `locale`/`dict`-props
+  **met NL als default-waarde**, zodat alle bestaande NL-call-sites
+  ongewijzigd blijven werken.
+- Taalwisselaar zit ingebouwd in `Nav`/`MobileMenu` (desktop en mobiel).
+
+**Bug onderweg, opgelost**: `Nis2CheckerDict.questionOf` was aanvankelijk een
+functie (`(step, total) => string`). Zodra een Server Component-pagina
+(`app/en/nis2-check/page.tsx`) zo'n dict doorgeeft aan de
+`"use client"`-`Nis2Checker`, faalt de statische build: functies kunnen niet
+over de Server→Client-serialisatiegrens. Opgelost door er een
+template-string van te maken (`"Question {step} of {total}"`) die de client
+component zelf invult met `.replace()`.
+
+**Tweede bug onderweg, opgelost**: de taalwisselaar bleef na een
+client-side navigatie op de eerder geladen taal staan (bv. NL bleef
+gemarkeerd na klikken naar EN). Oorzaak: de root-`layout.tsx` is een Server
+Component die Next.js **niet** opnieuw rendert bij client-side navigatie
+tussen routes die dezelfde layout delen (en dat is hier elke route, want er
+is maar één root layout) — de `locale`/`dict`-props die via `headers()`
+berekend werden, bleven dus hangen op de taal van de eerste paginalaad.
+Opgelost door `Nav`, `Footer` en `CookieBanner` de locale zelf te laten
+afleiden uit `usePathname()` (die wél reactief blijft bij elke navigatie),
+in plaats van een prop van de layout aan te nemen. `LocaleHtmlSync` houdt
+`<html lang>` op dezelfde manier synchroon.

@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
@@ -8,6 +9,17 @@ import HeroWatermark from "@/components/HeroWatermark";
 import TornDivider from "@/components/TornDivider";
 import SelfAssessment from "@/components/SelfAssessment";
 import ScrollTimeline from "@/components/ScrollTimeline";
+import Reveal from "@/components/Reveal";
+import RevealGroup from "@/components/RevealGroup";
+import IllustrationNis2 from "@/components/illustrations/IllustrationNis2";
+import IllustrationIso27001 from "@/components/illustrations/IllustrationIso27001";
+import IllustrationCyfun from "@/components/illustrations/IllustrationCyfun";
+import IllustrationGdpr from "@/components/illustrations/IllustrationGdpr";
+import IllustrationGap from "@/components/illustrations/IllustrationGap";
+import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
+import IllustrationSupport from "@/components/illustrations/IllustrationSupport";
+import IllustrationDialogue from "@/components/illustrations/IllustrationDialogue";
+import IllustrationClock from "@/components/illustrations/IllustrationClock";
 
 const DIENSTEN = [
   {
@@ -15,30 +27,40 @@ const DIENSTEN = [
     vorm: "Vaste prijs, kort traject",
     voorWie: "Organisaties die willen weten waar ze staan t.o.v. NIS2, ISO 27001 of CyFun.",
     watJeKrijgt: "Rapport met scoring per control, geprioriteerde bevindingen en een concreet stappenplan.",
+    icon: <IllustrationGap className="h-12 w-12" />,
+    accent: "border-terracotta",
   },
   {
     naam: "Implementatietraject",
     vorm: "Projectbasis",
     voorWie: "Organisaties die van bevindingen naar aantoonbare compliance willen.",
     watJeKrijgt: "Begeleiding bij beleid, documentatie en technische maatregelen. Jij houdt de regie.",
+    icon: <IllustrationBuild className="h-12 w-12" />,
+    accent: "border-ink",
   },
   {
     naam: "DPO-as-a-Service",
     vorm: "Maandelijkse retainer",
     voorWie: "Organisaties die een DPO nodig hebben, geen fulltime rol.",
     watJeKrijgt: "Erkend extern aanspreekpunt voor AVG-vraagstukken, meldingen en toezicht.",
+    icon: <IllustrationSupport className="h-12 w-12" />,
+    accent: "border-muted",
   },
   {
     naam: "Tabletop exercises & awareness",
     vorm: "Projectbasis / event",
     voorWie: "Teams die theorie willen omzetten in reflex.",
     watJeKrijgt: "Scenario-oefeningen op maat, met rapportage van leerpunten.",
+    icon: <IllustrationDialogue className="h-12 w-12" />,
+    accent: "border-terracotta-light/60",
   },
   {
     naam: "Fractional GRC-ondersteuning",
     vorm: "Dagprijs, doorlopend",
     voorWie: "Organisaties die af en toe of structureel capaciteit nodig hebben.",
     watJeKrijgt: "Vaste beschikbaarheid, op het ritme dat past.",
+    icon: <IllustrationClock className="h-12 w-12" />,
+    accent: "border-line",
   },
 ];
 
@@ -46,14 +68,44 @@ const HERKENNING = [
   {
     titel: "NIS2 of CyFun raakt jouw organisatie",
     tekst: "Je valt onder de NIS2-richtlijn of een klant/verzekeraar vraagt aantoonbaarheid, maar een interne compliance-officer heb je niet.",
+    hoeHelpt: "Een GAP-analyse brengt in kaart of, en op welk niveau, NIS2 of CyFun voor jou geldt — met een concreet stappenplan als resultaat.",
   },
   {
     titel: "Je hebt een DPO nodig, geen fulltime rol",
     tekst: "De AVG verplicht een functionaris gegevensbescherming, maar dat vult geen volledige werkweek.",
+    hoeHelpt: "Via DPO-as-a-Service nemen wij die rol extern op: een vast aanspreekpunt, op maandbasis, zonder dat je iemand aanwerft.",
   },
   {
     titel: "Een klant of aanbesteding vraagt ISO 27001",
     tekst: "Certificering is een contractvoorwaarde geworden, geen interne prioriteit.",
+    hoeHelpt: "Wij begeleiden het volledige traject, van GAP-analyse tot aantoonbare certificering — jij houdt de regie.",
+  },
+];
+
+const KADERS = [
+  {
+    naam: "NIS2",
+    tekst: "Raakt je als je in een kritieke sector zit of als een klant het van je leverancier verwacht. Wij bepalen samen of, en op welk niveau, dit voor jou geldt.",
+    glyph: <IllustrationNis2 className="h-14 w-14" />,
+    accent: "border-terracotta",
+  },
+  {
+    naam: "ISO 27001",
+    tekst: "Vaak geen eigen keuze, maar een voorwaarde van een klant of aanbesteding. Wij begeleiden van GAP-analyse tot aantoonbare certificering.",
+    glyph: <IllustrationIso27001 className="h-14 w-14" />,
+    accent: "border-terracotta-light",
+  },
+  {
+    naam: "CyberFundamentals",
+    tekst: "Het Belgische instapkader onder NIS2, met een niveau dat past bij jouw rol als belangrijke of essentiële entiteit. Wij brengen dat niveau in kaart en bouwen het stap voor stap op.",
+    glyph: <IllustrationCyfun className="h-14 w-14" />,
+    accent: "border-ink",
+  },
+  {
+    naam: "GDPR",
+    tekst: "Een doorlopende verplichting, geen eenmalig project. Als erkend extern DPO nemen wij die rol op zonder dat je iemand aanwerft.",
+    glyph: <IllustrationGdpr className="h-14 w-14" />,
+    accent: "border-muted",
   },
 ];
 
@@ -86,7 +138,26 @@ export default function HomePage() {
               className="animate-hero-in mt-8"
               style={{ animationDelay: "0.2s" }}
             />
-            <div className="animate-hero-in" style={{ animationDelay: "0.3s" }}>
+            <div
+              className="animate-hero-in mt-6 flex flex-wrap gap-3"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <Link
+                href="/over"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+              >
+                Erkend Data Protection Officer
+              </Link>
+              <a
+                href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+              >
+                KBO BE 1026.876.048
+              </a>
+            </div>
+            <div className="animate-hero-in" style={{ animationDelay: "0.4s" }}>
               <Button href="/contact" variant="primary" className="mt-9">
                 Plan een gratis kennismaking
               </Button>
@@ -110,19 +181,51 @@ export default function HomePage() {
       </Section>
       <TornDivider color="#FFFFFF" />
 
+      {/* Kaders */}
+      <Section className="bg-white pb-0">
+        <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
+          Welke kaders gelden voor jou?
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm text-ink/70">
+          Niet elk kader is voor elke organisatie relevant. Een kort overzicht van waar Millecam in
+          gespecialiseerd is.
+        </p>
+        <RevealGroup
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          items={KADERS.map((k) => (
+            <div
+              key={k.naam}
+              className={`border-t-4 ${k.accent} bg-[#FBF9F4] p-6 shadow-[0_14px_34px_rgba(33,29,24,0.09)]`}
+            >
+              {k.glyph}
+              <h3 className="mt-4 font-serif text-lg font-semibold text-ink">{k.naam}</h3>
+              <p className="mt-2 text-sm text-ink/70">{k.tekst}</p>
+            </div>
+          ))}
+        />
+      </Section>
+
       {/* Probleemherkenning */}
       <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
           Compliance is verplicht. Zelf opbouwen is dat niet.
         </h2>
-        <div className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x md:divide-line">
-          {HERKENNING.map((h) => (
-            <div key={h.titel} className="md:pl-8 md:first:pl-0">
+        <RevealGroup
+          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x-2 md:divide-terracotta-light"
+          itemClassName="md:pl-8 md:first:pl-0"
+          items={HERKENNING.map((h) => (
+            <Fragment key={h.titel}>
               <h3 className="font-serif text-lg font-semibold text-ink">{h.titel}</h3>
               <p className="mt-3 text-sm text-ink/70">{h.tekst}</p>
-            </div>
+              <div className="mt-4 border-l-2 border-terracotta-light/60 bg-[#FBF9F4]/60 py-3 pl-4 pr-3 shadow-[0_6px_16px_rgba(33,29,24,0.05)]">
+                <p className="text-[0.65rem] font-semibold uppercase tracking-wide text-terracotta-light">
+                  Hoe Millecam helpt
+                </p>
+                <p className="mt-1.5 text-sm text-ink/70">{h.hoeHelpt}</p>
+              </div>
+            </Fragment>
           ))}
-        </div>
+        />
         <p className="mt-8 italic text-muted">
           Herken je een van deze? Dan is dat precies waar Millecam voor bestaat. Niet zeker of NIS2
           voor jou geldt?{" "}
@@ -138,11 +241,12 @@ export default function HomePage() {
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
           Van eerste inzicht tot doorlopende ondersteuning
         </h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {DIENSTEN.map((d) => (
+        <RevealGroup
+          className="mt-10 grid gap-6 md:grid-cols-2"
+          items={DIENSTEN.map((d) => (
             <ServiceCard key={d.naam} {...d} />
           ))}
-        </div>
+        />
         <Link href="/diensten" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Bekijk alle diensten
         </Link>
@@ -151,29 +255,35 @@ export default function HomePage() {
       {/* Waarom Millecam */}
       <Section dark>
         <h2 className="max-w-2xl font-serif text-3xl font-semibold">Een specialist, geen callcenter</h2>
-        <ul className="mt-10 grid gap-6 md:grid-cols-3">
-          <li className="text-paper/80">
-            <PillarGlyph className="h-5 w-4" color="#D97A52" />
-            <p className="mt-3 text-sm">
-              Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
-              escalatieketen.
-            </p>
-          </li>
-          <li className="text-paper/80">
-            <PillarGlyph className="h-5 w-4" color="#D97A52" />
-            <p className="mt-3 text-sm">
-              Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
-              zelf opnemen.
-            </p>
-          </li>
-          <li className="text-paper/80">
-            <PillarGlyph className="h-5 w-4" color="#D97A52" />
-            <p className="mt-3 text-sm">
-              Bewezen aanpak bij CyFun-, ISO 27001- en NIS2-trajecten, van GAP-analyse tot volledige
-              implementatie.
-            </p>
-          </li>
-        </ul>
+        <RevealGroup
+          as="ul"
+          itemAs="li"
+          className="mt-10 grid gap-6 md:grid-cols-3"
+          itemClassName="text-paper/80"
+          items={[
+            <Fragment key="1">
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
+              <p className="mt-3 text-sm">
+                Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
+                escalatieketen.
+              </p>
+            </Fragment>,
+            <Fragment key="2">
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
+              <p className="mt-3 text-sm">
+                Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
+                zelf opnemen.
+              </p>
+            </Fragment>,
+            <Fragment key="3">
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
+              <p className="mt-3 text-sm">
+                Bewezen aanpak bij CyFun-, ISO 27001- en NIS2-trajecten, van GAP-analyse tot volledige
+                implementatie.
+              </p>
+            </Fragment>,
+          ]}
+        />
       </Section>
       <TornDivider color="#FFFFFF" />
 
@@ -185,7 +295,7 @@ export default function HomePage() {
           Lees meer over de aanpak
         </Link>
 
-        <div className="mx-auto mt-16 max-w-md pt-10 text-center">
+        <Reveal className="mx-auto mt-16 max-w-md pt-10 text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Klaar om te starten?</h2>
           <p className="mt-3 text-sm text-ink/70">
@@ -195,7 +305,7 @@ export default function HomePage() {
           <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">
             Plan een gratis kennismaking
           </Button>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

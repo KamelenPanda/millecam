@@ -1,14 +1,29 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import type { ContactFormDict } from "@/lib/content/types";
 
-const ONDERWERPEN = [
-  "GAP-analyse",
-  "DPO-ondersteuning",
-  "ISO 27001-traject",
-  "Tabletop exercise",
-  "Andere vraag",
-];
+const NL_DICT: ContactFormDict = {
+  subjects: ["GAP-analyse", "DPO-ondersteuning", "ISO 27001-traject", "Tabletop exercise", "Andere vraag"],
+  labels: {
+    name: "Naam",
+    company: "Bedrijf",
+    email: "E-mailadres",
+    phone: "Telefoonnummer",
+    subject: "Onderwerp",
+    message: "Bericht",
+  },
+  validation: {
+    name: "Vul je naam in.",
+    email: "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.be.",
+    message: "Vul een bericht in.",
+  },
+  submit: "Verstuur bericht",
+  sending: "Versturen...",
+  sentTitle: "Bericht verstuurd.",
+  sentSub: "Je krijgt binnen de 24 uur een reactie.",
+  error: "Er ging iets mis. Probeer opnieuw, of mail rechtstreeks naar info@millecam.be.",
+};
 
 // Zelfde eenvoudige check als aan de serverkant (app/api/contact/route.ts) —
 // hier enkel voor directe feedback, de server blijft de bron van waarheid.
@@ -25,7 +40,7 @@ const fieldClass =
   "w-full appearance-none rounded-none border-x-0 border-t-0 border-b border-line bg-transparent px-0 py-2 text-sm text-ink " +
   "transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none focus:ring-0";
 
-export default function ContactForm() {
+export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
 
@@ -41,9 +56,9 @@ export default function ContactForm() {
     const bericht = String(data.bericht || "").trim();
 
     const nextErrors: Errors = {};
-    if (!naam) nextErrors.naam = "Vul je naam in.";
-    if (!EMAIL_RE.test(email)) nextErrors.email = "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.be.";
-    if (!bericht) nextErrors.bericht = "Vul een bericht in.";
+    if (!naam) nextErrors.naam = dict.validation.name;
+    if (!EMAIL_RE.test(email)) nextErrors.email = dict.validation.email;
+    if (!bericht) nextErrors.bericht = dict.validation.message;
 
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
@@ -73,8 +88,8 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="border-l-2 border-status-conform bg-[#FBF9F4] py-6 pl-5 pr-4">
-        <p className="font-serif text-xl font-semibold text-ink">Bericht verstuurd.</p>
-        <p className="mt-2 text-sm text-ink/70">Je krijgt binnen de 24 uur een reactie.</p>
+        <p className="font-serif text-xl font-semibold text-ink">{dict.sentTitle}</p>
+        <p className="mt-2 text-sm text-ink/70">{dict.sentSub}</p>
       </div>
     );
   }
@@ -83,33 +98,33 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} noValidate className="space-y-7">
       <div className="grid gap-7 sm:grid-cols-2">
         <Field
-          label="Naam"
+          label={dict.labels.name}
           name="naam"
           required
           error={errors.naam}
           onChange={() => clearError("naam")}
         />
-        <Field label="Bedrijf" name="bedrijf" />
+        <Field label={dict.labels.company} name="bedrijf" />
       </div>
       <div className="grid gap-7 sm:grid-cols-2">
         <Field
-          label="E-mailadres"
+          label={dict.labels.email}
           name="email"
           type="email"
           required
           error={errors.email}
           onChange={() => clearError("email")}
         />
-        <Field label="Telefoonnummer" name="telefoon" type="tel" />
+        <Field label={dict.labels.phone} name="telefoon" type="tel" />
       </div>
 
       <div>
         <label className="block text-xs text-muted" htmlFor="onderwerp">
-          Onderwerp
+          {dict.labels.subject}
         </label>
         <div className="relative">
           <select id="onderwerp" name="onderwerp" className={`${fieldClass} appearance-none pr-6`}>
-            {ONDERWERPEN.map((o) => (
+            {dict.subjects.map((o) => (
               <option key={o} value={o}>
                 {o}
               </option>
@@ -128,7 +143,7 @@ export default function ContactForm() {
 
       <div>
         <label className="block text-xs text-muted" htmlFor="bericht">
-          Bericht {"*"}
+          {dict.labels.message} {"*"}
         </label>
         <textarea
           id="bericht"
@@ -152,9 +167,7 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-status-kritiek">
-          Er ging iets mis. Probeer opnieuw, of mail rechtstreeks naar info@millecam.be.
-        </p>
+        <p className="text-sm text-status-kritiek">{dict.error}</p>
       )}
 
       <button
@@ -162,7 +175,7 @@ export default function ContactForm() {
         disabled={status === "sending"}
         className="inline-flex items-center justify-center bg-terracotta px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-terracotta-light disabled:opacity-60"
       >
-        {status === "sending" ? "Versturen..." : "Verstuur bericht"}
+        {status === "sending" ? dict.sending : dict.submit}
       </button>
     </form>
   );

@@ -11,39 +11,39 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
-  title: "Aanpak | Millecam",
-  description: "Hoe een traject bij Millecam verloopt: GAP-analyse, implementatie, ondersteuning.",
+  title: "Approche | Millecam",
+  description: "Comment se déroule un trajet chez Millecam : analyse GAP, mise en œuvre, accompagnement.",
 };
 
 const STAPPEN = [
   {
     nummer: "1",
-    naam: "GAP-analyse",
+    naam: "Analyse GAP",
     tekst:
-      "Documentenreview, interviews met verantwoordelijken, en een tweedimensionale scoring (documentatie én implementatie) per control. Resultaat: een helder beeld, geen jargon-rapport.",
+      "Revue documentaire, entretiens avec les responsables et scoring à deux dimensions (documentation et mise en œuvre) par contrôle. Résultat : une image claire, pas un rapport truffé de jargon.",
     illustratie: <IllustrationGap className="hidden h-20 w-20 shrink-0 sm:block" />,
   },
   {
     nummer: "2",
-    naam: "Implementatie",
+    naam: "Mise en œuvre",
     tekst:
-      "Vertaling van bevindingen naar een concreet stappenplan: beleid, procedures, technische maatregelen. Millecam coördineert, jij houdt overzicht: geen zwarte-doostraject.",
+      "Les constats traduits en un plan d'action concret : politiques, procédures, mesures techniques. Millecam coordonne, vous gardez la vue d'ensemble : pas de boîte noire.",
     illustratie: <IllustrationBuild className="hidden h-20 w-20 shrink-0 sm:block" />,
   },
   {
     nummer: "3",
-    naam: "Ondersteuning",
+    naam: "Accompagnement",
     tekst:
-      "Compliance stopt niet bij een handtekening. Via DPO-as-a-Service of fractional ondersteuning blijft er een vast aanspreekpunt, zonder dat je iemand aanwerft.",
+      "La conformité ne s'arrête pas à une signature. Via le DPO-as-a-Service ou l'accompagnement fractionné, vous gardez un point de contact fixe, sans devoir recruter.",
     illustratie: <IllustrationSupport className="hidden h-20 w-20 shrink-0 sm:block" />,
   },
 ];
 
 const PRINCIPES = [
-  "Eén vast aanspreekpunt: geen wisselende consultants",
-  "Concrete rapportage: geen tachtig pagina's compliance-jargon",
-  "Realistisch tempo, afgestemd op wat een KMO aankan, niet op een corporate draaiboek",
-  "Framework-onafhankelijk advies: het kader volgt de situatie, niet omgekeerd",
+  "Un point de contact fixe : pas de consultants qui tournent",
+  "Un reporting concret : pas quatre-vingts pages de jargon de conformité",
+  "Un rythme réaliste, adapté à ce qu'une PME peut absorber, pas un playbook de grande entreprise",
+  "Un conseil indépendant du référentiel : c'est le cadre qui suit la situation, pas l'inverse",
 ];
 
 export default function AanpakPage() {
@@ -52,11 +52,12 @@ export default function AanpakPage() {
       <Section className="pb-10 pt-16">
         <PillarGlyph className="mb-4 h-6 w-5" />
         <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">
-          Hoe een traject bij <span className="text-terracotta">Millecam</span> verloopt
+          Comment se déroule un trajet chez <span className="text-terracotta">Millecam</span>
         </h1>
         <p className="mt-4 max-w-xl text-ink/70">
-          Geen generieke methodiek van de plank. Elk traject start met dezelfde vraag: waar sta je
-          vandaag, en wat is realistisch haalbaar met de middelen die je hebt.
+          Pas de méthodologie générique standardisée. Chaque trajet démarre par la même question : où
+          en êtes-vous aujourd&apos;hui, et qu&apos;est-ce qui est réalisable avec les moyens dont vous
+          disposez.
         </p>
       </Section>
 
@@ -65,7 +66,7 @@ export default function AanpakPage() {
       </Section>
 
       <Section dark>
-        <h2 className="font-serif text-3xl font-semibold">Wat je van Millecam mag verwachten</h2>
+        <h2 className="font-serif text-3xl font-semibold">Ce que vous pouvez attendre de Millecam</h2>
         <RevealGroup
           as="ul"
           itemAs="li"
@@ -84,10 +85,10 @@ export default function AanpakPage() {
         <Reveal className="mx-auto max-w-md pt-14 text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">
-            Benieuwd hoe dat er voor jouw organisatie uitziet?
+            Curieux(se) de voir ce que cela donnerait pour votre organisation ?
           </h2>
-          <Button href="/contact" variant="primary" className="mx-auto mt-6 w-fit">
-            Plan een gesprek
+          <Button href="/fr/contact" variant="primary" className="mx-auto mt-6 w-fit">
+            Planifier un appel
           </Button>
         </Reveal>
       </Section>
