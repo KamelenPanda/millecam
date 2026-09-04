@@ -11,6 +11,15 @@ import SelfAssessment from "@/components/SelfAssessment";
 import ScrollTimeline from "@/components/ScrollTimeline";
 import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
+import IllustrationNis2 from "@/components/illustrations/IllustrationNis2";
+import IllustrationIso27001 from "@/components/illustrations/IllustrationIso27001";
+import IllustrationCyfun from "@/components/illustrations/IllustrationCyfun";
+import IllustrationGdpr from "@/components/illustrations/IllustrationGdpr";
+import IllustrationGap from "@/components/illustrations/IllustrationGap";
+import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
+import IllustrationSupport from "@/components/illustrations/IllustrationSupport";
+import IllustrationDialogue from "@/components/illustrations/IllustrationDialogue";
+import IllustrationClock from "@/components/illustrations/IllustrationClock";
 
 const DIENSTEN = [
   {
@@ -18,30 +27,40 @@ const DIENSTEN = [
     vorm: "Vaste prijs, kort traject",
     voorWie: "Organisaties die willen weten waar ze staan t.o.v. NIS2, ISO 27001 of CyFun.",
     watJeKrijgt: "Rapport met scoring per control, geprioriteerde bevindingen en een concreet stappenplan.",
+    icon: <IllustrationGap className="h-12 w-12" />,
+    accent: "border-terracotta",
   },
   {
     naam: "Implementatietraject",
     vorm: "Projectbasis",
     voorWie: "Organisaties die van bevindingen naar aantoonbare compliance willen.",
     watJeKrijgt: "Begeleiding bij beleid, documentatie en technische maatregelen. Jij houdt de regie.",
+    icon: <IllustrationBuild className="h-12 w-12" />,
+    accent: "border-ink",
   },
   {
     naam: "DPO-as-a-Service",
     vorm: "Maandelijkse retainer",
     voorWie: "Organisaties die een DPO nodig hebben, geen fulltime rol.",
     watJeKrijgt: "Erkend extern aanspreekpunt voor AVG-vraagstukken, meldingen en toezicht.",
+    icon: <IllustrationSupport className="h-12 w-12" />,
+    accent: "border-muted",
   },
   {
     naam: "Tabletop exercises & awareness",
     vorm: "Projectbasis / event",
     voorWie: "Teams die theorie willen omzetten in reflex.",
     watJeKrijgt: "Scenario-oefeningen op maat, met rapportage van leerpunten.",
+    icon: <IllustrationDialogue className="h-12 w-12" />,
+    accent: "border-terracotta-light/60",
   },
   {
     naam: "Fractional GRC-ondersteuning",
     vorm: "Dagprijs, doorlopend",
     voorWie: "Organisaties die af en toe of structureel capaciteit nodig hebben.",
     watJeKrijgt: "Vaste beschikbaarheid, op het ritme dat past.",
+    icon: <IllustrationClock className="h-12 w-12" />,
+    accent: "border-line",
   },
 ];
 
@@ -60,6 +79,33 @@ const HERKENNING = [
     titel: "Een klant of aanbesteding vraagt ISO 27001",
     tekst: "Certificering is een contractvoorwaarde geworden, geen interne prioriteit.",
     hoeHelpt: "Wij begeleiden het volledige traject, van GAP-analyse tot aantoonbare certificering — jij houdt de regie.",
+  },
+];
+
+const KADERS = [
+  {
+    naam: "NIS2",
+    tekst: "Raakt je als je in een kritieke sector zit of als een klant het van je leverancier verwacht. Wij bepalen samen of, en op welk niveau, dit voor jou geldt.",
+    glyph: <IllustrationNis2 className="h-14 w-14" />,
+    accent: "border-terracotta",
+  },
+  {
+    naam: "ISO 27001",
+    tekst: "Vaak geen eigen keuze, maar een voorwaarde van een klant of aanbesteding. Wij begeleiden van GAP-analyse tot aantoonbare certificering.",
+    glyph: <IllustrationIso27001 className="h-14 w-14" />,
+    accent: "border-terracotta-light",
+  },
+  {
+    naam: "CyberFundamentals",
+    tekst: "Het Belgische instapkader onder NIS2, met een niveau dat past bij jouw rol als belangrijke of essentiële entiteit. Wij brengen dat niveau in kaart en bouwen het stap voor stap op.",
+    glyph: <IllustrationCyfun className="h-14 w-14" />,
+    accent: "border-ink",
+  },
+  {
+    naam: "GDPR",
+    tekst: "Een doorlopende verplichting, geen eenmalig project. Als erkend extern DPO nemen wij die rol op zonder dat je iemand aanwerft.",
+    glyph: <IllustrationGdpr className="h-14 w-14" />,
+    accent: "border-muted",
   },
 ];
 
@@ -134,6 +180,30 @@ export default function HomePage() {
         </div>
       </Section>
       <TornDivider color="#FFFFFF" />
+
+      {/* Kaders */}
+      <Section className="bg-white pb-0">
+        <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">
+          Welke kaders gelden voor jou?
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm text-ink/70">
+          Niet elk kader is voor elke organisatie relevant. Een kort overzicht van waar Millecam in
+          gespecialiseerd is.
+        </p>
+        <RevealGroup
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          items={KADERS.map((k) => (
+            <div
+              key={k.naam}
+              className={`border-t-4 ${k.accent} bg-[#FBF9F4] p-6 shadow-[0_14px_34px_rgba(33,29,24,0.09)]`}
+            >
+              {k.glyph}
+              <h3 className="mt-4 font-serif text-lg font-semibold text-ink">{k.naam}</h3>
+              <p className="mt-2 text-sm text-ink/70">{k.tekst}</p>
+            </div>
+          ))}
+        />
+      </Section>
 
       {/* Probleemherkenning */}
       <Section className="bg-white pt-10">
