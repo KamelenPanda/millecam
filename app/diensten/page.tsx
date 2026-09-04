@@ -82,7 +82,7 @@ export default function DienstenPage() {
         </p>
       </Section>
 
-      <Section className="bg-white pt-0">
+      <Section className="bg-white pt-10">
         <div className="grid gap-6 md:grid-cols-2">
           {DIENSTEN.map((d) => (
             <ServiceCard key={d.naam} {...d} />
