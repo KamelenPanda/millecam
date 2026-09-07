@@ -7,10 +7,14 @@ import { Resend } from "resend";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(req: Request) {
-  const { naam, bedrijf, email, telefoon, onderwerp, bericht } = await req.json();
+  const { naam, bedrijf, email, telefoon, onderwerp, bericht, akkoordPrivacy } = await req.json();
 
   if (!naam || !email || !bericht) {
     return NextResponse.json({ error: "Verplichte velden ontbreken." }, { status: 400 });
+  }
+
+  if (akkoordPrivacy !== true && akkoordPrivacy !== "on") {
+    return NextResponse.json({ error: "Je moet akkoord gaan met het privacybeleid." }, { status: 400 });
   }
 
   if (typeof email !== "string" || !EMAIL_RE.test(email.trim())) {

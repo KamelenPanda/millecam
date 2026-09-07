@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, FormEvent } from "react";
 
 const ONDERWERPEN = [
@@ -15,7 +16,7 @@ const ONDERWERPEN = [
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type Status = "idle" | "sending" | "sent" | "error";
-type Errors = { naam?: string; email?: string; bericht?: string };
+type Errors = { naam?: string; email?: string; bericht?: string; privacy?: string };
 
 // Shared underline treatment for text/email/tel/select fields — a ruled
 // field instead of a boxed input, closer to a paper form than a default
@@ -39,11 +40,13 @@ export default function ContactForm() {
     const naam = String(data.naam || "").trim();
     const email = String(data.email || "").trim();
     const bericht = String(data.bericht || "").trim();
+    const akkoordPrivacy = data.akkoordPrivacy === "on";
 
     const nextErrors: Errors = {};
     if (!naam) nextErrors.naam = "Vul je naam in.";
     if (!EMAIL_RE.test(email)) nextErrors.email = "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.be.";
     if (!bericht) nextErrors.bericht = "Vul een bericht in.";
+    if (!akkoordPrivacy) nextErrors.privacy = "Je moet akkoord gaan met het privacybeleid om te kunnen versturen.";
 
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
@@ -147,6 +150,32 @@ export default function ContactForm() {
         {errors.bericht && (
           <p id="bericht-error" className="mt-1.5 text-xs text-status-kritiek">
             {errors.bericht}
+          </p>
+        )}
+      </div>
+
+      <div>
+        <label className="flex items-start gap-2.5 text-sm text-ink/80">
+          <input
+            type="checkbox"
+            name="akkoordPrivacy"
+            required
+            onChange={() => clearError("privacy")}
+            aria-invalid={!!errors.privacy}
+            aria-describedby={errors.privacy ? "privacy-error" : undefined}
+            className="mt-0.5 h-4 w-4 shrink-0 border-line text-terracotta focus:outline-none focus:ring-1 focus:ring-terracotta"
+          />
+          <span>
+            Ik ga akkoord met het{" "}
+            <Link href="/privacybeleid" target="_blank" className="text-terracotta hover:underline">
+              privacybeleid
+            </Link>
+            . *
+          </span>
+        </label>
+        {errors.privacy && (
+          <p id="privacy-error" className="mt-1.5 text-xs text-status-kritiek">
+            {errors.privacy}
           </p>
         )}
       </div>
