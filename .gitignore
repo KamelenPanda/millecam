@@ -1,9 +1,9 @@
 node_modules/
 .next/
 out/
+*.tsbuildinfo
 .env
 .env.local
 .vercel
 *.log
 .DS_Store
-*.tsbuildinfo

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Source_Serif_4, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { headers } from "next/headers";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import LocaleHtmlSync from "@/components/LocaleHtmlSync";
+import { defaultLocale, type Locale } from "@/lib/i18n";
 
 const serif = Source_Serif_4({
   subsets: ["latin"],
@@ -58,13 +61,19 @@ const jsonLd = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // Initial SSR value only (first paint / hard reload). Client-side
+  // navigation between locales is kept in sync by LocaleHtmlSync, since
+  // this Server Component itself doesn't re-render on every navigation.
+  const locale = (headers().get("x-locale") as Locale) || defaultLocale;
+
   return (
-    <html lang="nl" className={`${serif.variable} ${sans.variable}`}>
+    <html lang={locale} className={`${serif.variable} ${sans.variable}`}>
       <body className="font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <LocaleHtmlSync />
         <Nav />
         <main>{children}</main>
         <Footer />
