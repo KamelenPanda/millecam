@@ -73,7 +73,7 @@ export default function FAQPage() {
         ))}
       </div>
 
-      <div className="mx-auto mt-16 max-w-md pt-14 text-center">
+      <div className="mx-auto mt-16 max-w-md text-center">
         <PillarGlyph className="mx-auto h-6 w-5" />
         <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Have another question?</h2>
         <p className="mt-3 text-sm text-ink/70">

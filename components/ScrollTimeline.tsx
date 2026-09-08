@@ -18,7 +18,7 @@ export default function ScrollTimeline({ stappen }: { stappen: Stap[] }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.2 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -27,7 +27,7 @@ export default function ScrollTimeline({ stappen }: { stappen: Stap[] }) {
   return (
     <div ref={ref} className="relative mt-10">
       <div
-        className="absolute top-5 hidden h-px origin-left bg-line transition-transform duration-[1200ms] ease-out md:block"
+        className="absolute top-5 hidden h-px origin-left bg-line transition-transform duration-700 ease-out md:block"
         style={{ left: "16.5%", right: "16.5%", transform: visible ? "scaleX(1)" : "scaleX(0)" }}
         aria-hidden="true"
       />
@@ -39,7 +39,7 @@ export default function ScrollTimeline({ stappen }: { stappen: Stap[] }) {
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(10px)",
-              transitionDelay: visible ? `${i * 200 + 200}ms` : "0ms",
+              transitionDelay: visible ? `${i * 120}ms` : "0ms",
             }}
           >
             <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif font-bold text-paper">

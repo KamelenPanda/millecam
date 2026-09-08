@@ -52,24 +52,44 @@ export default function CookieBanner() {
   return (
     <div
       className={cn(
-        "fixed bottom-4 left-4 right-4 z-50 sm:left-auto sm:right-6 sm:max-w-[380px]",
-        "border border-line bg-white p-5 shadow-lg"
+        "fixed bottom-0 left-0 right-0 z-50 sm:bottom-4 sm:left-auto sm:right-6 sm:max-w-[380px]",
+        "border-t border-line bg-white p-3 shadow-lg sm:border sm:p-5"
       )}
       role="dialog"
       aria-label="Cookiemelding"
     >
-      <p className="font-serif text-sm font-semibold text-ink">{dict.title}</p>
-      <p className="mt-2 text-xs leading-relaxed text-ink/70">{dict.body}</p>
-      <div className="mt-4 flex items-center gap-4">
-        <button
-          onClick={dismiss}
-          className="bg-terracotta px-4 py-2 text-xs font-medium text-paper transition-colors hover:bg-terracotta-light"
-        >
-          {dict.accept}
-        </button>
-        <Link href={pageHref(locale, "cookies")} className="text-xs text-ink/60 hover:text-terracotta hover:underline">
-          {dict.moreInfo}
-        </Link>
+      {/* Mobile: a slim single row — title plus actions, no body copy — so the
+          notice never covers a form field or hero content on a short viewport.
+          Full card (with body text) returns at sm and up, where it has room. */}
+      <div className="flex items-center justify-between gap-3 sm:hidden">
+        <p className="font-serif text-sm font-semibold text-ink">{dict.title}</p>
+        <div className="flex shrink-0 items-center gap-3">
+          <Link href={pageHref(locale, "cookies")} className="text-xs text-ink/60 hover:text-terracotta hover:underline">
+            {dict.moreInfo}
+          </Link>
+          <button
+            onClick={dismiss}
+            className="bg-terracotta px-3 py-1.5 text-xs font-medium text-paper transition-colors hover:bg-terracotta-light"
+          >
+            {dict.accept}
+          </button>
+        </div>
+      </div>
+
+      <div className="hidden sm:block">
+        <p className="font-serif text-sm font-semibold text-ink">{dict.title}</p>
+        <p className="mt-2 text-xs leading-relaxed text-ink/70">{dict.body}</p>
+        <div className="mt-4 flex items-center gap-4">
+          <button
+            onClick={dismiss}
+            className="bg-terracotta px-4 py-2 text-xs font-medium text-paper transition-colors hover:bg-terracotta-light"
+          >
+            {dict.accept}
+          </button>
+          <Link href={pageHref(locale, "cookies")} className="text-xs text-ink/60 hover:text-terracotta hover:underline">
+            {dict.moreInfo}
+          </Link>
+        </div>
       </div>
     </div>
   );

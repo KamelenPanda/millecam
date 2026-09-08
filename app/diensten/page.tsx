@@ -103,7 +103,7 @@ export default function DienstenPage() {
       </Section>
 
       <Section className="bg-white">
-        <Reveal className="mx-auto max-w-md pt-14 text-center">
+        <Reveal className="mx-auto max-w-md text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Niet zeker welke dienst past?</h2>
           <p className="mt-3 text-sm text-ink/70">

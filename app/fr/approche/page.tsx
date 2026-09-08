@@ -82,7 +82,7 @@ export default function AanpakPage() {
       </Section>
 
       <Section className="bg-white">
-        <Reveal className="mx-auto max-w-md pt-14 text-center">
+        <Reveal className="mx-auto max-w-md text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">
             Curieux(se) de voir ce que cela donnerait pour votre organisation ?

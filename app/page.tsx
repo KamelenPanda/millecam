@@ -295,7 +295,7 @@ export default function HomePage() {
           Lees meer over de aanpak
         </Link>
 
-        <Reveal className="mx-auto mt-16 max-w-md pt-10 text-center">
+        <Reveal className="mx-auto mt-16 max-w-md text-center">
           <PillarGlyph className="mx-auto h-6 w-5" />
           <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Klaar om te starten?</h2>
           <p className="mt-3 text-sm text-ink/70">

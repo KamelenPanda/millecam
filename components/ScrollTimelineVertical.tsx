@@ -38,7 +38,7 @@ export default function ScrollTimelineVertical({ stappen }: { stappen: Stap[] })
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(14px)",
-            transitionDelay: visible ? `${i * 250}ms` : "0ms",
+            transitionDelay: visible ? `${i * 120}ms` : "0ms",
           }}
         >
           <div className="flex flex-col items-center">
@@ -50,7 +50,7 @@ export default function ScrollTimelineVertical({ stappen }: { stappen: Stap[] })
                 className="mt-2 w-px flex-1 origin-top bg-line transition-transform duration-700 ease-out"
                 style={{
                   transform: visible ? "scaleY(1)" : "scaleY(0)",
-                  transitionDelay: visible ? `${i * 250 + 300}ms` : "0ms",
+                  transitionDelay: visible ? `${i * 120 + 150}ms` : "0ms",
                 }}
               />
             )}
