@@ -18,7 +18,7 @@ export default function ServiceCard({
   accent = "border-terracotta",
 }: ServiceCardProps) {
   return (
-    <div className={`border-l-2 ${accent} bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]`}>
+    <div className={`h-full border-l-2 ${accent} bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]`}>
       {icon && <div className="mb-3">{icon}</div>}
       <h3 className="font-serif text-xl font-semibold text-ink">{naam}</h3>
       <p className="mt-1 text-sm font-medium text-terracotta">{vorm}</p>

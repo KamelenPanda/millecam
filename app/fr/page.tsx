@@ -173,6 +173,7 @@ export default function HomePage() {
         </h2>
         <RevealGroup
           className="mt-10 grid gap-6 md:grid-cols-2"
+          itemClassName="h-full"
           items={DIENSTEN.map((d) => (
             <ServiceCard key={d.naam} {...d} />
           ))}

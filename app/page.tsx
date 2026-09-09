@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
@@ -192,10 +193,11 @@ export default function HomePage() {
         </p>
         <RevealGroup
           className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          itemClassName="h-full"
           items={KADERS.map((k) => (
             <div
               key={k.naam}
-              className={`border-t-4 ${k.accent} bg-[#FBF9F4] p-6 shadow-[0_14px_34px_rgba(33,29,24,0.09)]`}
+              className={`h-full border-t-4 ${k.accent} bg-[#FBF9F4] p-6 shadow-[0_14px_34px_rgba(33,29,24,0.09)]`}
             >
               {k.glyph}
               <h3 className="mt-4 font-serif text-lg font-semibold text-ink">{k.naam}</h3>
@@ -218,7 +220,7 @@ export default function HomePage() {
               <h3 className="font-serif text-lg font-semibold text-ink">{h.titel}</h3>
               <p className="mt-3 text-sm text-ink/70">{h.tekst}</p>
               <div className="mt-4 border-l-2 border-terracotta-light/60 bg-[#FBF9F4]/60 py-3 pl-4 pr-3 shadow-[0_6px_16px_rgba(33,29,24,0.05)]">
-                <p className="text-[0.65rem] font-semibold uppercase tracking-wide text-terracotta-light">
+                <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">
                   Hoe Millecam helpt
                 </p>
                 <p className="mt-1.5 text-sm text-ink/70">{h.hoeHelpt}</p>
@@ -243,6 +245,7 @@ export default function HomePage() {
         </h2>
         <RevealGroup
           className="mt-10 grid gap-6 md:grid-cols-2"
+          itemClassName="h-full"
           items={DIENSTEN.map((d) => (
             <ServiceCard key={d.naam} {...d} />
           ))}
@@ -254,36 +257,70 @@ export default function HomePage() {
 
       {/* Waarom Millecam */}
       <Section dark>
-        <h2 className="max-w-2xl font-serif text-3xl font-semibold">Een specialist, geen callcenter</h2>
-        <RevealGroup
-          as="ul"
-          itemAs="li"
-          className="mt-10 grid gap-6 md:grid-cols-3"
-          itemClassName="text-paper/80"
-          items={[
-            <Fragment key="1">
-              <PillarGlyph className="h-5 w-4" color="#D97A52" />
-              <p className="mt-3 text-sm">
-                Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
-                escalatieketen.
+        <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-start md:gap-16">
+          <Reveal className="mx-auto w-full max-w-xs md:mx-0 md:max-w-none">
+            <div className="bg-white p-3 shadow-[0_28px_70px_rgba(0,0,0,0.35)]">
+              <Image
+                src="/images/robin.jpg"
+                alt="Robin Millecam"
+                width={900}
+                height={1125}
+                className="w-full"
+                sizes="(min-width: 768px) 30vw, 320px"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <h2 className="max-w-2xl font-serif text-3xl font-semibold">Een specialist, geen callcenter</h2>
+            <p className="mt-4 max-w-xl text-sm text-paper/80">
+              Ik ben Robin Millecam. Geen team, geen escalatieketen — wie het werk doet, is wie je aan de
+              telefoon krijgt.
+            </p>
+
+            <ul className="mt-8 space-y-4">
+              <li className="flex items-start gap-3">
+                <PillarGlyph className="mt-1 h-5 w-4 shrink-0" color="#D97A52" />
+                <p className="text-sm text-paper/80">
+                  Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
+                  escalatieketen.
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <PillarGlyph className="mt-1 h-5 w-4 shrink-0" color="#D97A52" />
+                <p className="text-sm text-paper/80">
+                  Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
+                  zelf opnemen.
+                </p>
+              </li>
+            </ul>
+
+            <div className="mt-10 border-t border-paper/20 pt-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-terracotta-light">
+                Uit de praktijk
               </p>
-            </Fragment>,
-            <Fragment key="2">
-              <PillarGlyph className="h-5 w-4" color="#D97A52" />
-              <p className="mt-3 text-sm">
-                Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
-                zelf opnemen.
+              <ul className="mt-4 space-y-4">
+                <li className="text-sm text-paper/80">
+                  <span className="font-medium text-paper">ISO 27001-certificatietraject</span> —
+                  adtech/SaaS, ±40 medewerkers, begeleiding tot auditfase.
+                </li>
+                <li className="text-sm text-paper/80">
+                  <span className="font-medium text-paper">CyberFundamentals GAP-analyse</span> —
+                  accountancy, 11–50 medewerkers, concrete remediatieroadmap.
+                </li>
+                <li className="text-sm text-paper/80">
+                  <span className="font-medium text-paper">Cybersecurity governance &amp; policies</span> —
+                  industriële productie, ±50 medewerkers, technische controls vertaald naar praktisch
+                  beleid.
+                </li>
+              </ul>
+              <p className="mt-4 text-xs text-paper/50">
+                Geanonimiseerde voorbeelden op basis van eerdere consultancy-ervaring, niet als directe
+                Millecam-klantreferenties.
               </p>
-            </Fragment>,
-            <Fragment key="3">
-              <PillarGlyph className="h-5 w-4" color="#D97A52" />
-              <p className="mt-3 text-sm">
-                Bewezen aanpak bij CyFun-, ISO 27001- en NIS2-trajecten, van GAP-analyse tot volledige
-                implementatie.
-              </p>
-            </Fragment>,
-          ]}
-        />
+            </div>
+          </Reveal>
+        </div>
       </Section>
       <TornDivider color="#FFFFFF" />
 

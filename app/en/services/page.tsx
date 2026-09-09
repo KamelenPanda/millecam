@@ -86,8 +86,10 @@ export default function DienstenPage() {
       </Section>
 
       <Section className="bg-white pt-10">
+        <h2 className="font-serif text-3xl font-semibold text-ink">Our services</h2>
         <RevealGroup
-          className="grid gap-6 md:grid-cols-2"
+          className="mt-8 grid gap-6 md:grid-cols-2"
+          itemClassName="h-full"
           items={DIENSTEN.map((d) => (
             <ServiceCard key={d.naam} {...d} />
           ))}

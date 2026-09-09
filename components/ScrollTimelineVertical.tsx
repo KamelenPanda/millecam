@@ -42,7 +42,7 @@ export default function ScrollTimelineVertical({ stappen }: { stappen: Stap[] })
           }}
         >
           <div className="flex flex-col items-center">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta font-serif text-sm font-bold text-paper">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta-deep font-serif text-sm font-bold text-paper">
               {s.nummer}
             </span>
             {i < stappen.length - 1 && (

@@ -15,7 +15,7 @@ export default function Button({ href, children, variant = "primary", className 
     "transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(33,29,24,0.18)]";
   const styles =
     variant === "primary"
-      ? "bg-terracotta text-paper hover:bg-terracotta-light"
+      ? "bg-terracotta-deep text-paper hover:bg-terracotta-darker"
       : "bg-ink text-paper hover:bg-ink/90";
   return (
     <Link href={href} className={`${base} ${styles} ${className}`}>

@@ -208,7 +208,7 @@ export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex items-center justify-center bg-terracotta px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-terracotta-light disabled:opacity-60"
+        className="inline-flex items-center justify-center bg-terracotta-deep px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-terracotta-darker disabled:opacity-60"
       >
         {status === "sending" ? dict.sending : dict.submit}
       </button>

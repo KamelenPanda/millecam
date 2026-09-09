@@ -69,7 +69,7 @@ export default function CookieBanner() {
           </Link>
           <button
             onClick={dismiss}
-            className="bg-terracotta px-3 py-1.5 text-xs font-medium text-paper transition-colors hover:bg-terracotta-light"
+            className="bg-terracotta-deep px-3 py-1.5 text-xs font-medium text-paper transition-colors hover:bg-terracotta-darker"
           >
             {dict.accept}
           </button>
@@ -82,7 +82,7 @@ export default function CookieBanner() {
         <div className="mt-4 flex items-center gap-4">
           <button
             onClick={dismiss}
-            className="bg-terracotta px-4 py-2 text-xs font-medium text-paper transition-colors hover:bg-terracotta-light"
+            className="bg-terracotta-deep px-4 py-2 text-xs font-medium text-paper transition-colors hover:bg-terracotta-darker"
           >
             {dict.accept}
           </button>
