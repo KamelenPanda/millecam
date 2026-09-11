@@ -139,12 +139,22 @@ export default function HomePage() {
               className="animate-hero-in mt-8"
               style={{ animationDelay: "0.2s" }}
             />
+            <p
+              className="animate-hero-in mt-3 text-sm text-ink/60"
+              style={{ animationDelay: "0.22s" }}
+            >
+              Niet zeker of dit jouw organisatie raakt?{" "}
+              <Link href="/nis2-check" className="text-terracotta hover:underline">
+                Doe de korte NIS2-check
+              </Link>
+              .
+            </p>
             <div
               className="animate-hero-in mt-6 flex flex-wrap gap-3"
               style={{ animationDelay: "0.3s" }}
             >
               <Link
-                href="/over"
+                href="/over#credentials"
                 className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Erkend Data Protection Officer

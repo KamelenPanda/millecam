@@ -98,12 +98,22 @@ export default function HomePage() {
               className="animate-hero-in mt-8"
               style={{ animationDelay: "0.2s" }}
             />
+            <p
+              className="animate-hero-in mt-3 text-sm text-ink/60"
+              style={{ animationDelay: "0.22s" }}
+            >
+              Vous ne savez pas si cela concerne votre organisation ?{" "}
+              <Link href="/fr/verification-nis2" className="text-terracotta hover:underline">
+                Faites la courte vérification NIS2
+              </Link>
+              .
+            </p>
             <div
               className="animate-hero-in mt-6 flex flex-wrap gap-3"
               style={{ animationDelay: "0.3s" }}
             >
               <Link
-                href="/fr/a-propos"
+                href="/fr/a-propos#credentials"
                 className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Délégué à la protection des données certifié

@@ -25,12 +25,19 @@ function BarRating({ value, onChange, label }: { value: number; onChange: (v: nu
           onClick={() => onChange(n)}
           aria-label={`${n} van 5`}
           aria-pressed={n === value}
-          className="w-3.5 transition-colors"
-          style={{
-            height: `${10 + n * 5}px`,
-            backgroundColor: n <= value ? "#B2532E" : "#DCD3BF",
-          }}
-        />
+          // 44x44 touch target around the thin visual bar itself, since the
+          // bar alone (14px) is too narrow to tap reliably on a phone.
+          className="flex h-11 w-11 items-end justify-center rounded-sm transition-colors hover:bg-terracotta/10 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1"
+        >
+          <span
+            aria-hidden="true"
+            className="w-3.5 transition-colors"
+            style={{
+              height: `${10 + n * 5}px`,
+              backgroundColor: n <= value ? "#B2532E" : "#DCD3BF",
+            }}
+          />
+        </button>
       ))}
     </div>
   );
