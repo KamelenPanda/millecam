@@ -60,11 +60,11 @@ const jsonLd = {
   knowsAbout: ["NIS2", "ISO 27001", "CyFun", "GDPR"],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // Initial SSR value only (first paint / hard reload). Client-side
   // navigation between locales is kept in sync by LocaleHtmlSync, since
   // this Server Component itself doesn't re-render on every navigation.
-  const locale = (headers().get("x-locale") as Locale) || defaultLocale;
+  const locale = ((await headers()).get("x-locale") as Locale) || defaultLocale;
 
   return (
     <html lang={locale} className={`${serif.variable} ${sans.variable}`}>
