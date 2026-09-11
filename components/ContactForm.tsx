@@ -175,6 +175,19 @@ export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict
         )}
       </div>
 
+      {/* Honeypot: invisible to people, but scripted spam bots that
+          auto-fill every field will fill this one too. Kept out of the
+          tab order and off-screen rather than display:none, since some
+          bots skip fields that are display:none. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden"
+      />
+
       <div>
         <label className="flex items-start gap-2.5 text-sm text-ink/80">
           <input
