@@ -33,21 +33,37 @@ export default function CookieBanner() {
   const pathname = usePathname();
   const locale = localeFromPath(pathname);
   const dict = DICTS[locale];
-  const [visible, setVisible] = useState(false);
+  const [seen, setSeen] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
 
   useEffect(() => {
     if (!localStorage.getItem(STORAGE_KEY)) {
-      const timer = setTimeout(() => setVisible(true), 1000);
+      const timer = setTimeout(() => setSeen(true), 1000);
       return () => clearTimeout(timer);
     }
   }, []);
 
+  useEffect(() => {
+    if (!seen) return;
+    function onScroll() {
+      // Fixed-position, so it would otherwise sit on top of whatever section
+      // is under it for the rest of a long scroll. It only needs to be seen
+      // once near the top; past that it just gets in the way of the content
+      // beneath it, so we hide it (not dismiss it) once the visitor scrolls
+      // and bring it back if they scroll back up to where it was shown.
+      setPastHero(window.scrollY > 400);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [seen]);
+
   function dismiss() {
     localStorage.setItem(STORAGE_KEY, "true");
-    setVisible(false);
+    setSeen(false);
   }
 
-  if (!visible) return null;
+  if (!seen || pastHero) return null;
 
   return (
     <div

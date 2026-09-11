@@ -64,7 +64,7 @@ export default function Nav() {
               <span key={l} className="flex items-center gap-2">
                 {i > 0 && <span aria-hidden="true">/</span>}
                 {l === locale ? (
-                  <span className="font-semibold text-terracotta">{LOCALE_LABEL[l]}</span>
+                  <span className="font-semibold text-terracotta-darker">{LOCALE_LABEL[l]}</span>
                 ) : (
                   <Link href={pageKey ? pageHref(l, pageKey) : l === "nl" ? "/" : `/${l}`} className="hover:text-terracotta">
                     {LOCALE_LABEL[l]}
