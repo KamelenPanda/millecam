@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
  * right <html lang>, Nav/Footer copy, without restructuring the existing
  * NL routes into a route group.
  */
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const locale = pathname === "/en" || pathname.startsWith("/en/")
     ? "en"
