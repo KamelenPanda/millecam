@@ -29,7 +29,7 @@ const DIENSTEN = [
     voorWie: "Organisaties die willen weten waar ze staan t.o.v. NIS2, ISO 27001 of CyFun.",
     watJeKrijgt: "Rapport met scoring per control, geprioriteerde bevindingen en een concreet stappenplan.",
     icon: <IllustrationGap className="h-12 w-12" />,
-    accent: "border-terracotta",
+    accent: "border-prussian",
   },
   {
     naam: "Implementatietraject",
@@ -53,7 +53,7 @@ const DIENSTEN = [
     voorWie: "Teams die theorie willen omzetten in reflex.",
     watJeKrijgt: "Scenario-oefeningen op maat, met rapportage van leerpunten.",
     icon: <IllustrationDialogue className="h-12 w-12" />,
-    accent: "border-terracotta-light/60",
+    accent: "border-copper/60",
   },
   {
     naam: "Fractional GRC-ondersteuning",
@@ -88,13 +88,13 @@ const KADERS = [
     naam: "NIS2",
     tekst: "Raakt je als je in een kritieke sector zit of als een klant het van je leverancier verwacht. Wij bepalen samen of, en op welk niveau, dit voor jou geldt.",
     glyph: <IllustrationNis2 className="h-14 w-14" />,
-    accent: "border-terracotta",
+    accent: "border-prussian",
   },
   {
     naam: "ISO 27001",
     tekst: "Vaak geen eigen keuze, maar een voorwaarde van een klant of aanbesteding. Wij begeleiden van GAP-analyse tot aantoonbare certificering.",
     glyph: <IllustrationIso27001 className="h-14 w-14" />,
-    accent: "border-terracotta-light",
+    accent: "border-copper",
   },
   {
     naam: "CyberFundamentals",
@@ -124,7 +124,7 @@ export default function HomePage() {
         <HeroWatermark />
         <div className="grid items-center gap-14 md:grid-cols-[1.15fr_0.95fr] md:gap-10">
           <div>
-            <h1 className="animate-hero-in font-serif text-6xl font-bold italic leading-[1.05] text-terracotta sm:text-7xl lg:text-[5.5rem]">
+            <h1 className="animate-hero-in font-serif text-6xl font-bold italic leading-[1.05] text-prussian sm:text-7xl lg:text-[5.5rem]">
               Compliance die je kan bewijzen
             </h1>
             <p
@@ -144,7 +144,7 @@ export default function HomePage() {
               style={{ animationDelay: "0.22s" }}
             >
               Niet zeker of dit jouw organisatie raakt?{" "}
-              <Link href="/nis2-check" className="text-terracotta hover:underline">
+              <Link href="/nis2-check" className="text-prussian hover:underline">
                 Doe de korte NIS2-check
               </Link>
               .
@@ -155,7 +155,7 @@ export default function HomePage() {
             >
               <Link
                 href="/over#credentials"
-                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(20,24,29,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Erkend Data Protection Officer
               </Link>
@@ -163,7 +163,7 @@ export default function HomePage() {
                 href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(20,24,29,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 KBO BE 1026.876.048
               </a>
@@ -176,8 +176,8 @@ export default function HomePage() {
           </div>
 
           <div className="animate-hero-in" style={{ animationDelay: "0.25s" }}>
-            <div className="bg-white p-6 shadow-[0_28px_70px_rgba(33,29,24,0.14)] sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">
+            <div className="bg-white p-6 shadow-[0_28px_70px_rgba(20,24,29,0.14)] sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-prussian">
                 Probeer het zelf
               </p>
               <p className="mt-1 text-sm text-ink/70">
@@ -207,7 +207,7 @@ export default function HomePage() {
           items={KADERS.map((k) => (
             <div
               key={k.naam}
-              className={`h-full border-t-4 ${k.accent} bg-[#FBF9F4] p-6 shadow-[0_14px_34px_rgba(33,29,24,0.09)]`}
+              className={`h-full border-t-4 ${k.accent} bg-[#F4F5F2] p-6 shadow-[0_14px_34px_rgba(20,24,29,0.09)]`}
             >
               {k.glyph}
               <h3 className="mt-4 font-serif text-lg font-semibold text-ink">{k.naam}</h3>
@@ -223,14 +223,14 @@ export default function HomePage() {
           Compliance is verplicht. Zelf opbouwen is dat niet.
         </h2>
         <RevealGroup
-          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x-2 md:divide-terracotta-light"
+          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x-2 md:divide-copper"
           itemClassName="md:pl-8 md:first:pl-0"
           items={HERKENNING.map((h) => (
             <Fragment key={h.titel}>
               <h3 className="font-serif text-lg font-semibold text-ink">{h.titel}</h3>
               <p className="mt-3 text-sm text-ink/70">{h.tekst}</p>
-              <div className="mt-4 border-l-2 border-terracotta-light/60 bg-[#FBF9F4]/60 py-3 pl-4 pr-3 shadow-[0_6px_16px_rgba(33,29,24,0.05)]">
-                <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">
+              <div className="mt-4 border-l-2 border-copper/60 bg-[#F4F5F2]/60 py-3 pl-4 pr-3 shadow-[0_6px_16px_rgba(20,24,29,0.05)]">
+                <p className="text-xs font-semibold uppercase tracking-wide text-prussian">
                   Hoe Millecam helpt
                 </p>
                 <p className="mt-1.5 text-sm text-ink/70">{h.hoeHelpt}</p>
@@ -241,7 +241,7 @@ export default function HomePage() {
         <p className="mt-8 italic text-muted">
           Herken je een van deze? Dan is dat precies waar Millecam voor bestaat. Niet zeker of NIS2
           voor jou geldt?{" "}
-          <Link href="/nis2-check" className="not-italic text-terracotta hover:underline">
+          <Link href="/nis2-check" className="not-italic text-prussian hover:underline">
             Doe de korte NIS2-check
           </Link>
           .
@@ -260,7 +260,7 @@ export default function HomePage() {
             <ServiceCard key={d.naam} {...d} />
           ))}
         />
-        <Link href="/diensten" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
+        <Link href="/diensten" className="mt-8 inline-block text-sm font-medium text-prussian hover:underline">
           Bekijk alle diensten
         </Link>
       </Section>
@@ -290,14 +290,14 @@ export default function HomePage() {
 
             <ul className="mt-8 space-y-4">
               <li className="flex items-start gap-3">
-                <PillarGlyph className="mt-1 h-5 w-4 shrink-0" color="#D97A52" />
+                <PillarGlyph className="mt-1 h-5 w-4 shrink-0" color="#C08A54" />
                 <p className="text-sm text-paper/80">
                   Rechtstreeks contact met de persoon die het werk doet: geen junior-consultant, geen
                   escalatieketen.
                 </p>
               </li>
               <li className="flex items-start gap-3">
-                <PillarGlyph className="mt-1 h-5 w-4 shrink-0" color="#D97A52" />
+                <PillarGlyph className="mt-1 h-5 w-4 shrink-0" color="#C08A54" />
                 <p className="text-sm text-paper/80">
                   Erkend Data Protection Officer (DPI-gecertificeerd). Niet elke GRC-consultant kan die rol
                   zelf opnemen.
@@ -306,7 +306,7 @@ export default function HomePage() {
             </ul>
 
             <div className="mt-10 border-t border-paper/20 pt-8">
-              <p className="text-xs font-semibold uppercase tracking-wide text-terracotta-light">
+              <p className="text-xs font-semibold uppercase tracking-wide text-copper">
                 Uit de praktijk
               </p>
               <ul className="mt-4 space-y-4">
@@ -338,7 +338,7 @@ export default function HomePage() {
       <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">Hoe een traject verloopt</h2>
         <ScrollTimeline stappen={STAPPEN} />
-        <Link href="/aanpak" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
+        <Link href="/aanpak" className="mt-8 inline-block text-sm font-medium text-prussian hover:underline">
           Lees meer over de aanpak
         </Link>
 

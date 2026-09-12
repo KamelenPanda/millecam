@@ -16,7 +16,7 @@ type FrameworkListProps = {
  */
 export default function FrameworkList({ items, tone = "ink", className = "", style }: FrameworkListProps) {
   const textColor = tone === "ink" ? "text-ink/70" : "text-paper/70";
-  const ruleColor = tone === "ink" ? "bg-terracotta" : "bg-terracotta-light";
+  const ruleColor = tone === "ink" ? "bg-prussian" : "bg-copper";
 
   return (
     <div className={`flex flex-wrap items-center gap-4 ${className}`} style={style}>

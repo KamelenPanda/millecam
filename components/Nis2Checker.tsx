@@ -108,8 +108,8 @@ function Options({
           onClick={() => onSelect(opt)}
           className={`block w-full border-l-2 px-4 py-3 text-left text-sm transition-colors ${
             selected === opt
-              ? "border-terracotta bg-[#FBF9F4] text-ink"
-              : "border-line text-ink/70 hover:border-terracotta hover:bg-[#FBF9F4]"
+              ? "border-prussian bg-[#F4F5F2] text-ink"
+              : "border-line text-ink/70 hover:border-prussian hover:bg-[#F4F5F2]"
           }`}
         >
           {opt}
@@ -134,7 +134,7 @@ export default function Nis2Checker({ locale = "nl", dict = NL_DICT }: Nis2Check
   if (step >= steps.length) {
     const v = verdict(answers, dict);
     return (
-      <div className="border-l-2 border-terracotta bg-[#FBF9F4] px-6 py-8 shadow-[0_14px_34px_rgba(33,29,24,0.09)] sm:px-8">
+      <div className="border-l-2 border-prussian bg-[#F4F5F2] px-6 py-8 shadow-[0_14px_34px_rgba(20,24,29,0.09)] sm:px-8">
         <PillarGlyph className="h-5 w-4" />
         <p className="mt-3 font-serif text-2xl font-semibold text-ink">{v.titel}</p>
         <p className="mt-3 max-w-xl text-ink/70">{v.tekst}</p>
@@ -143,9 +143,9 @@ export default function Nis2Checker({ locale = "nl", dict = NL_DICT }: Nis2Check
         <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
           {v.tijdlijn.map((f) => (
             <div key={f.activiteit} className="flex items-start gap-3 sm:flex-1 sm:flex-col sm:gap-2">
-              <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-terracotta sm:mt-0" />
+              <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-prussian sm:mt-0" />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">{f.periode}</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-prussian">{f.periode}</p>
                 <p className="text-sm text-ink">{f.activiteit}</p>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function Nis2Checker({ locale = "nl", dict = NL_DICT }: Nis2Check
               setStep(0);
               setAnswers({});
             }}
-            className="text-sm text-ink/60 hover:text-terracotta hover:underline"
+            className="text-sm text-ink/60 hover:text-prussian hover:underline"
           >
             {dict.restart}
           </button>
@@ -194,7 +194,7 @@ export default function Nis2Checker({ locale = "nl", dict = NL_DICT }: Nis2Check
       {step > 0 && (
         <button
           onClick={() => setStep((s) => s - 1)}
-          className="mt-6 text-sm text-ink/50 hover:text-terracotta hover:underline"
+          className="mt-6 text-sm text-ink/50 hover:text-prussian hover:underline"
         >
           {dict.previous}
         </button>

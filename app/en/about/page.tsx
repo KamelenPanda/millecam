@@ -31,7 +31,7 @@ export default function OverPage() {
             </p>
             <div>
               <PillarGlyph className="h-5 w-4" />
-              <p className="mt-3 font-serif text-xl italic text-terracotta">
+              <p className="mt-3 font-serif text-xl italic text-prussian">
                 Compliance shouldn&apos;t be a goal in itself. It&apos;s a means to being demonstrably in
                 control: to a regulator, a client, or yourself. Hence the promise: Govern with
                 confidence.
@@ -41,7 +41,7 @@ export default function OverPage() {
         </div>
 
         <Reveal className="order-1 mx-auto w-full max-w-xs md:order-2 md:max-w-none">
-          <div className="bg-white p-3 shadow-[0_28px_70px_rgba(33,29,24,0.14)]">
+          <div className="bg-white p-3 shadow-[0_28px_70px_rgba(20,24,29,0.14)]">
             <Image
               src="/images/robin.jpg"
               alt="Robin Millecam"
@@ -56,7 +56,7 @@ export default function OverPage() {
 
       <Reveal className="mt-14 max-w-2xl">
         <h2 id="credentials" className="font-serif text-lg font-semibold text-ink">Credentials</h2>
-        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+        <div className="mt-4 border-l-2 border-prussian bg-[#F4F5F2] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(20,24,29,0.09)]">
           <div className="flex items-baseline justify-between gap-4">
             <p className="font-serif text-lg font-semibold text-ink">
               Certified Data Protection Officer

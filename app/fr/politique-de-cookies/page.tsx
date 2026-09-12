@@ -23,7 +23,7 @@ function LI({ children }: { children: React.ReactNode }) {
   );
 }
 
-const A = "text-terracotta hover:underline";
+const A = "text-prussian hover:underline";
 
 export default function CookiebeleidPage() {
   return (

@@ -51,7 +51,7 @@ export default function MobileMenu({
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-base text-ink hover:text-terracotta"
+                className="text-base text-ink hover:text-prussian"
               >
                 {l.label}
               </Link>
@@ -62,9 +62,9 @@ export default function MobileMenu({
               <span key={l} className="flex items-center gap-3">
                 {i > 0 && <span aria-hidden="true">/</span>}
                 {l === locale ? (
-                  <span className="font-semibold text-terracotta">{LOCALE_LABEL[l]}</span>
+                  <span className="font-semibold text-prussian">{LOCALE_LABEL[l]}</span>
                 ) : (
-                  <Link href={pageKey ? pageHref(l, pageKey) : l === "nl" ? "/" : `/${l}`} onClick={() => setOpen(false)} className="hover:text-terracotta">
+                  <Link href={pageKey ? pageHref(l, pageKey) : l === "nl" ? "/" : `/${l}`} onClick={() => setOpen(false)} className="hover:text-prussian">
                     {LOCALE_LABEL[l]}
                   </Link>
                 )}

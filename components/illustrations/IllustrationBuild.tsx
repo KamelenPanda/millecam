@@ -7,10 +7,10 @@ type Props = { className?: string };
  */
 export default function IllustrationBuild({ className = "h-24 w-24" }: Props) {
   const bars = [
-    { h: 30, color: "#DCD3BF" },
-    { h: 55, color: "#D97A52" },
-    { h: 80, color: "#B2532E" },
-    { h: 95, color: "#211D18" },
+    { h: 30, color: "#D6D9D4" },
+    { h: 55, color: "#C08A54" },
+    { h: 80, color: "#16323B" },
+    { h: 95, color: "#14181D" },
   ];
   const w = 16;
   const gap = 10;

@@ -80,12 +80,12 @@ export default function CookieBanner() {
       <div className="flex items-center justify-between gap-3 sm:hidden">
         <p className="font-serif text-sm font-semibold text-ink">{dict.title}</p>
         <div className="flex shrink-0 items-center gap-3">
-          <Link href={pageHref(locale, "cookies")} className="text-xs text-ink/60 hover:text-terracotta hover:underline">
+          <Link href={pageHref(locale, "cookies")} className="text-xs text-ink/60 hover:text-prussian hover:underline">
             {dict.moreInfo}
           </Link>
           <button
             onClick={dismiss}
-            className="bg-terracotta-deep px-3 py-1.5 text-xs font-medium text-paper transition-colors hover:bg-terracotta-darker"
+            className="bg-prussian-deep px-3 py-1.5 text-xs font-medium text-paper transition-colors hover:bg-prussian-darker"
           >
             {dict.accept}
           </button>
@@ -98,11 +98,11 @@ export default function CookieBanner() {
         <div className="mt-4 flex items-center gap-4">
           <button
             onClick={dismiss}
-            className="bg-terracotta-deep px-4 py-2 text-xs font-medium text-paper transition-colors hover:bg-terracotta-darker"
+            className="bg-prussian-deep px-4 py-2 text-xs font-medium text-paper transition-colors hover:bg-prussian-darker"
           >
             {dict.accept}
           </button>
-          <Link href={pageHref(locale, "cookies")} className="text-xs text-ink/60 hover:text-terracotta hover:underline">
+          <Link href={pageHref(locale, "cookies")} className="text-xs text-ink/60 hover:text-prussian hover:underline">
             {dict.moreInfo}
           </Link>
         </div>

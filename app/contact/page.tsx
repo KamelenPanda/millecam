@@ -31,12 +31,12 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="font-semibold text-ink">Telefoon</p>
-            <a href="tel:+32472338990" className="hover:text-terracotta hover:underline">0472 33 89 90</a>
+            <a href="tel:+32472338990" className="hover:text-prussian hover:underline">0472 33 89 90</a>
           </div>
           <div>
             <p className="font-semibold text-ink">LinkedIn</p>
-            <a href="https://www.linkedin.com/in/robin-millecam-909156b2/" target="_blank" rel="noreferrer" className="block hover:text-terracotta hover:underline">Robin Millecam</a>
-            <a href="https://www.linkedin.com/company/108526083" target="_blank" rel="noreferrer" className="block hover:text-terracotta hover:underline">Millecam</a>
+            <a href="https://www.linkedin.com/in/robin-millecam-909156b2/" target="_blank" rel="noreferrer" className="block hover:text-prussian hover:underline">Robin Millecam</a>
+            <a href="https://www.linkedin.com/company/108526083" target="_blank" rel="noreferrer" className="block hover:text-prussian hover:underline">Millecam</a>
           </div>
           {/* Optioneel: agenda-link (bv. Calendly) hier toevoegen zodra beschikbaar */}
         </div>

@@ -1,8 +1,10 @@
 # Millecam — website
 
-Next.js 14 (App Router) + TypeScript + Tailwind. Ledger-huisstijl (Ink `#211D18`,
-Paper `#F2EDE1`, Terracotta `#B2532E`) — zie de twee Brand Guidelines-documenten
-voor de volledige specificatie.
+Next.js 16 (App Router) + TypeScript + Tailwind. Inkt-huisstijl (Ink `#14181D`,
+Paper `#EDEEE9`, Prussian `#16323B`, Copper `#C08A54`) — opvolger van de eerdere
+Ledger-huisstijl (ivoor/terracotta), zie verderop in dit document voor de
+aanleiding. Zie de twee Brand Guidelines-documenten voor de volledige specificatie
+(nog te actualiseren naar de nieuwe kleuren).
 
 ## Snel starten
 

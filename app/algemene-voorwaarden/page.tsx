@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 function H2({ n, children }: { n: string; children: string }) {
   return (
     <h2 className="mt-10 font-serif text-xl font-semibold text-ink">
-      <span className="text-terracotta">{n}. </span>
+      <span className="text-prussian">{n}. </span>
       {children}
     </h2>
   );
@@ -102,7 +102,7 @@ export default function AlgemeneVoorwaardenPage() {
         <P>
           Voor de verwerking van persoonsgegevens in het kader van een opdracht (en, waar van
           toepassing, een verwerkersovereenkomst) verwijst Millecam naar het{" "}
-          <a className="text-terracotta hover:underline" href="/privacybeleid">privacybeleid</a>.
+          <a className="text-prussian hover:underline" href="/privacybeleid">privacybeleid</a>.
         </P>
 
         <H2 n="10">Overmacht</H2>
@@ -129,7 +129,7 @@ export default function AlgemeneVoorwaardenPage() {
 
         <P>
           Vragen over deze voorwaarden? Mail naar{" "}
-          <a className="text-terracotta hover:underline" href="mailto:info@millecam.be">info@millecam.be</a>.
+          <a className="text-prussian hover:underline" href="mailto:info@millecam.be">info@millecam.be</a>.
         </P>
       </div>
     </Section>

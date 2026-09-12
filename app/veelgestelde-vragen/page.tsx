@@ -64,7 +64,7 @@ export default function FAQPage() {
           <details key={f.vraag} className="group py-5">
             <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-serif text-lg font-semibold text-ink">
               {f.vraag}
-              <span className="mt-1 shrink-0 text-2xl font-normal leading-none text-terracotta transition-transform duration-200 group-open:rotate-45">
+              <span className="mt-1 shrink-0 text-2xl font-normal leading-none text-prussian transition-transform duration-200 group-open:rotate-45">
                 +
               </span>
             </summary>
