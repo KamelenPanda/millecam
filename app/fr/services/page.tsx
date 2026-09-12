@@ -78,7 +78,7 @@ export default function DienstenPage() {
       <Section className="pb-10 pt-16">
         <PillarGlyph className="mb-4 h-6 w-5" />
         <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">
-          Du premier <span className="text-prussian">diagnostic GAP</span> à l&apos;accompagnement continu
+          Du premier <span className="text-terracotta">diagnostic GAP</span> à l&apos;accompagnement continu
         </h1>
         <p className="mt-4 max-w-xl text-ink/70">
           Une offre qui évolue avec vos besoins, pas avec ce qui se trouve dans un package.

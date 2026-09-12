@@ -83,7 +83,7 @@ export default function HomePage() {
         <HeroWatermark />
         <div className="grid items-center gap-14 md:grid-cols-[1.15fr_0.95fr] md:gap-10">
           <div>
-            <h1 className="animate-hero-in font-serif text-6xl font-bold italic leading-[1.05] text-prussian sm:text-7xl lg:text-[5.5rem]">
+            <h1 className="animate-hero-in font-serif text-6xl font-bold italic leading-[1.05] text-terracotta sm:text-7xl lg:text-[5.5rem]">
               Govern with confidence.
             </h1>
             <p
@@ -103,7 +103,7 @@ export default function HomePage() {
               style={{ animationDelay: "0.22s" }}
             >
               Not sure this applies to your organisation?{" "}
-              <Link href="/en/nis2-check" className="text-prussian hover:underline">
+              <Link href="/en/nis2-check" className="text-terracotta hover:underline">
                 Take the short NIS2 check
               </Link>
               .
@@ -114,7 +114,7 @@ export default function HomePage() {
             >
               <Link
                 href="/en/about#credentials"
-                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(20,24,29,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Certified Data Protection Officer
               </Link>
@@ -122,7 +122,7 @@ export default function HomePage() {
                 href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(20,24,29,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Belgian company no. BE 1026.876.048
               </a>
@@ -135,8 +135,8 @@ export default function HomePage() {
           </div>
 
           <div className="animate-hero-in" style={{ animationDelay: "0.25s" }}>
-            <div className="bg-white p-6 shadow-[0_28px_70px_rgba(20,24,29,0.14)] sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-wide text-prussian">
+            <div className="bg-white p-6 shadow-[0_28px_70px_rgba(33,29,24,0.14)] sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">
                 Try it yourself
               </p>
               <p className="mt-1 text-sm text-ink/70">
@@ -157,7 +157,7 @@ export default function HomePage() {
           Compliance is mandatory. Building it yourself isn&apos;t.
         </h2>
         <RevealGroup
-          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x-2 md:divide-copper"
+          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x-2 md:divide-terracotta-light"
           itemClassName="md:pl-8 md:first:pl-0"
           items={HERKENNING.map((h) => (
             <Fragment key={h.titel}>
@@ -169,7 +169,7 @@ export default function HomePage() {
         <p className="mt-8 italic text-muted">
           Recognise one of these? That&apos;s exactly what Millecam exists for. Not sure whether NIS2 applies
           to you?{" "}
-          <Link href="/en/nis2-check" className="not-italic text-prussian hover:underline">
+          <Link href="/en/nis2-check" className="not-italic text-terracotta hover:underline">
             Take the short NIS2 check
           </Link>
           .
@@ -188,7 +188,7 @@ export default function HomePage() {
             <ServiceCard key={d.naam} {...d} />
           ))}
         />
-        <Link href="/en/services" className="mt-8 inline-block text-sm font-medium text-prussian hover:underline">
+        <Link href="/en/services" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           View all services
         </Link>
       </Section>
@@ -203,20 +203,20 @@ export default function HomePage() {
           itemClassName="text-paper/80"
           items={[
             <Fragment key="1">
-              <PillarGlyph className="h-5 w-4" color="#C08A54" />
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
               <p className="mt-3 text-sm">
                 Direct contact with the person doing the work: no junior consultant, no escalation chain.
               </p>
             </Fragment>,
             <Fragment key="2">
-              <PillarGlyph className="h-5 w-4" color="#C08A54" />
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
               <p className="mt-3 text-sm">
                 Certified Data Protection Officer (DPI-certified). Not every GRC consultant can take on
                 that role themselves.
               </p>
             </Fragment>,
             <Fragment key="3">
-              <PillarGlyph className="h-5 w-4" color="#C08A54" />
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
               <p className="mt-3 text-sm">
                 A proven approach across CyFun, ISO 27001 and NIS2 projects, from GAP analysis to full
                 implementation.
@@ -231,7 +231,7 @@ export default function HomePage() {
       <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">How an engagement unfolds</h2>
         <ScrollTimeline stappen={STAPPEN} />
-        <Link href="/en/approach" className="mt-8 inline-block text-sm font-medium text-prussian hover:underline">
+        <Link href="/en/approach" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Read more about the approach
         </Link>
 

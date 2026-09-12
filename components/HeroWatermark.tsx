@@ -41,7 +41,7 @@ export default function HeroWatermark() {
         className="mr-[-3vh] opacity-[0.07] transition-transform duration-300 ease-out"
         style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}
       >
-        <PillarGlyph className="h-[78vh] w-[56vh]" color="#14181D" />
+        <PillarGlyph className="h-[78vh] w-[56vh]" color="#211D18" />
       </div>
     </div>
   );

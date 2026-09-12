@@ -5,8 +5,8 @@ type MarkProps = {
 
 /** The "||" mark alone — small header uses, loading states, etc. Matches Logo's pillar geometry. */
 export default function Mark({ variant = "ink", className }: MarkProps) {
-  const bg = variant === "ink" ? "#EDEEE9" : "#14181D";
-  const pillar = variant === "ink" ? "#16323B" : "#C08A54";
+  const bg = variant === "ink" ? "#F2EDE1" : "#211D18";
+  const pillar = variant === "ink" ? "#B2532E" : "#D97A52";
   return (
     <svg viewBox="0 0 200 200" role="img" aria-label="Millecam" className={className} xmlns="http://www.w3.org/2000/svg">
       <rect width="200" height="200" rx="32" fill={bg} />

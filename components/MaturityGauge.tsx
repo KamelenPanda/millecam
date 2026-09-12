@@ -36,14 +36,14 @@ export default function MaturityGauge({ score = 3.5, domains = DEFAULT_DOMAINS }
           <path
             d="M 40,150 A 110,110 0 0 1 260,150"
             fill="none"
-            stroke="#D6D9D4"
+            stroke="#DCD3BF"
             strokeWidth="14"
             strokeLinecap="round"
           />
           <path
             d={`M 40,150 A 110,110 0 ${largeArc} 1 ${endX.toFixed(2)},${endY.toFixed(2)}`}
             fill="none"
-            stroke="#16323B"
+            stroke="#B2532E"
             strokeWidth="14"
             strokeLinecap="round"
           />
@@ -65,7 +65,7 @@ export default function MaturityGauge({ score = 3.5, domains = DEFAULT_DOMAINS }
             </div>
             <div className="h-1.5 w-full bg-line">
               <div
-                className="h-1.5 bg-prussian"
+                className="h-1.5 bg-terracotta"
                 style={{ width: `${(d.score / max) * 100}%` }}
               />
             </div>

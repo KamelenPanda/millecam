@@ -34,7 +34,7 @@ function Table({ headers, rows }: { headers: string[]; rows: (string | React.Rea
     <div className="mt-4 overflow-x-auto border border-line">
       <table className="w-full min-w-[640px] border-collapse text-left text-sm">
         <thead>
-          <tr className="border-b border-line bg-[#F4F5F2]">
+          <tr className="border-b border-line bg-[#FBF9F4]">
             {headers.map((h) => (
               <th key={h} className="px-4 py-3 font-serif font-semibold text-ink">
                 {h}
@@ -58,7 +58,7 @@ function Table({ headers, rows }: { headers: string[]; rows: (string | React.Rea
   );
 }
 
-const A = "text-prussian hover:underline";
+const A = "text-terracotta hover:underline";
 
 export default function PrivacybeleidPage() {
   return (

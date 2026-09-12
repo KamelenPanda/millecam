@@ -35,7 +35,7 @@ export default function FrameworkGrid({ frameworks }: { frameworks: Framework[] 
       {frameworks.map((f, i) => (
         <div
           key={f.naam}
-          className="flex items-start gap-5 border-l-2 border-prussian bg-[#F4F5F2] py-6 pl-6 pr-4 shadow-[0_14px_34px_rgba(20,24,29,0.09)] transition-all duration-500 ease-out"
+          className="flex items-start gap-5 border-l-2 border-terracotta bg-[#FBF9F4] py-6 pl-6 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-all duration-500 ease-out"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(14px)",

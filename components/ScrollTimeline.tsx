@@ -42,7 +42,7 @@ export default function ScrollTimeline({ stappen }: { stappen: Stap[] }) {
               transitionDelay: visible ? `${i * 120}ms` : "0ms",
             }}
           >
-            <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-prussian-deep font-serif font-bold text-paper">
+            <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-terracotta-deep font-serif font-bold text-paper">
               {i + 1}
             </span>
             <div className="mt-4">

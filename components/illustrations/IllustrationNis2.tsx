@@ -9,11 +9,11 @@ type Props = { className?: string };
 export default function IllustrationNis2({ className = "h-24 w-24" }: Props) {
   return (
     <svg viewBox="0 0 120 120" className={className} aria-hidden="true">
-      <path d="M60,55 L26,30 M60,55 L94,30 M60,55 L60,100" stroke="#D6D9D4" strokeWidth="4" />
-      <circle cx="26" cy="30" r="8" fill="#C08A54" />
-      <circle cx="94" cy="30" r="8" fill="#C08A54" />
-      <circle cx="60" cy="100" r="8" fill="#C08A54" />
-      <circle cx="60" cy="55" r="11" fill="#16323B" />
+      <path d="M60,55 L26,30 M60,55 L94,30 M60,55 L60,100" stroke="#DCD3BF" strokeWidth="4" />
+      <circle cx="26" cy="30" r="8" fill="#D97A52" />
+      <circle cx="94" cy="30" r="8" fill="#D97A52" />
+      <circle cx="60" cy="100" r="8" fill="#D97A52" />
+      <circle cx="60" cy="55" r="11" fill="#B2532E" />
     </svg>
   );
 }

@@ -9,12 +9,12 @@ type LogoProps = {
  * so this renders identically everywhere regardless of which fonts are installed —
  * see /docs/brand for why that matters.
  *
- * variant="ink"   -> dark wordmark, prussian pillars (use on light/paper backgrounds)
- * variant="paper" -> light wordmark, lighter prussian pillars (use on ink/dark backgrounds)
+ * variant="ink"   -> dark wordmark, terracotta pillars (use on light/paper backgrounds)
+ * variant="paper" -> light wordmark, lighter terracotta pillars (use on ink/dark backgrounds)
  */
 export default function Logo({ variant = "ink", className }: LogoProps) {
-  const inkColor = variant === "ink" ? "#14181D" : "#EDEEE9";
-  const pillarColor = variant === "ink" ? "#16323B" : "#C08A54";
+  const inkColor = variant === "ink" ? "#211D18" : "#F2EDE1";
+  const pillarColor = variant === "ink" ? "#B2532E" : "#D97A52";
 
   return (
     <svg

@@ -52,9 +52,9 @@ export default function Nav() {
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {dict.links.map((l) => (
-            <Link key={l.href} href={l.href} className="group relative text-sm text-ink hover:text-prussian">
+            <Link key={l.href} href={l.href} className="group relative text-sm text-ink hover:text-terracotta">
               {l.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-prussian transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-terracotta transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -64,9 +64,9 @@ export default function Nav() {
               <span key={l} className="flex items-center gap-2">
                 {i > 0 && <span aria-hidden="true">/</span>}
                 {l === locale ? (
-                  <span className="font-semibold text-prussian-darker">{LOCALE_LABEL[l]}</span>
+                  <span className="font-semibold text-terracotta-darker">{LOCALE_LABEL[l]}</span>
                 ) : (
-                  <Link href={pageKey ? pageHref(l, pageKey) : l === "nl" ? "/" : `/${l}`} className="hover:text-prussian">
+                  <Link href={pageKey ? pageHref(l, pageKey) : l === "nl" ? "/" : `/${l}`} className="hover:text-terracotta">
                     {LOCALE_LABEL[l]}
                   </Link>
                 )}

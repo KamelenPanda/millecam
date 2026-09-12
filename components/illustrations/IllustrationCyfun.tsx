@@ -8,9 +8,9 @@ type Props = { className?: string };
  */
 export default function IllustrationCyfun({ className = "h-24 w-24" }: Props) {
   const tiers = [
-    { x: 40, w: 40, fill: "#B8CDD1" },
-    { x: 25, w: 70, fill: "#4C7681" },
-    { x: 10, w: 100, fill: "#16323B" },
+    { x: 40, w: 40, fill: "#E9C6AC" },
+    { x: 25, w: 70, fill: "#D97A52" },
+    { x: 10, w: 100, fill: "#B2532E" },
   ];
   return (
     <svg viewBox="0 0 120 120" className={className} aria-hidden="true">

@@ -41,11 +41,11 @@ type Errors = { naam?: string; email?: string; bericht?: string; privacy?: strin
 
 // Shared underline treatment for text/email/tel/select fields — a ruled
 // field instead of a boxed input, closer to a paper form than a default
-// web-form control. Focus swaps to a thicker prussian rule (not just a
+// web-form control. Focus swaps to a thicker terracotta rule (not just a
 // color change) so keyboard focus stays clearly visible without a boxy ring.
 const fieldClass =
   "w-full appearance-none rounded-none border-x-0 border-t-0 border-b border-line bg-transparent px-0 py-2 text-sm text-ink " +
-  "transition-all focus:border-b-2 focus:border-prussian focus:!outline-none focus:ring-0";
+  "transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none focus:ring-0";
 
 export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict }) {
   const [status, setStatus] = useState<Status>("idle");
@@ -96,7 +96,7 @@ export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict
 
   if (status === "sent") {
     return (
-      <div className="border-l-2 border-status-conform bg-[#F4F5F2] py-6 pl-5 pr-4">
+      <div className="border-l-2 border-status-conform bg-[#FBF9F4] py-6 pl-5 pr-4">
         <p className="font-serif text-xl font-semibold text-ink">{dict.sentTitle}</p>
         <p className="mt-2 text-sm text-ink/70">{dict.sentSub}</p>
       </div>
@@ -161,10 +161,10 @@ export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict
           onChange={() => clearError("bericht")}
           aria-invalid={!!errors.bericht}
           aria-describedby={errors.bericht ? "bericht-error" : undefined}
-          className="w-full appearance-none resize-none border-x-0 border-t-0 border-b border-line bg-transparent py-2 text-sm leading-7 text-ink transition-all focus:border-b-2 focus:border-prussian focus:!outline-none"
+          className="w-full appearance-none resize-none border-x-0 border-t-0 border-b border-line bg-transparent py-2 text-sm leading-7 text-ink transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(to bottom, transparent, transparent calc(1.75rem - 1px), #D6D9D4 calc(1.75rem - 1px), #D6D9D4 1.75rem)",
+              "repeating-linear-gradient(to bottom, transparent, transparent calc(1.75rem - 1px), #DCD3BF calc(1.75rem - 1px), #DCD3BF 1.75rem)",
             backgroundPositionY: "0.6rem",
           }}
         />
@@ -197,11 +197,11 @@ export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict
             onChange={() => clearError("privacy")}
             aria-invalid={!!errors.privacy}
             aria-describedby={errors.privacy ? "privacy-error" : undefined}
-            className="mt-0.5 h-4 w-4 shrink-0 border-line text-prussian focus:outline-none focus:ring-1 focus:ring-prussian"
+            className="mt-0.5 h-4 w-4 shrink-0 border-line text-terracotta focus:outline-none focus:ring-1 focus:ring-terracotta"
           />
           <span>
             {dict.privacy.text}{" "}
-            <Link href={dict.privacy.href} target="_blank" className="text-prussian hover:underline">
+            <Link href={dict.privacy.href} target="_blank" className="text-terracotta hover:underline">
               {dict.privacy.linkLabel}
             </Link>
             . *
@@ -221,7 +221,7 @@ export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex items-center justify-center bg-prussian-deep px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-prussian-darker disabled:opacity-60"
+        className="inline-flex items-center justify-center bg-terracotta-deep px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-terracotta-darker disabled:opacity-60"
       >
         {status === "sending" ? dict.sending : dict.submit}
       </button>

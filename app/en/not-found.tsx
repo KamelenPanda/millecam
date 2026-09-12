@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <Section className="pb-24 pt-24 text-center">
       <PillarGlyph className="mx-auto h-8 w-6" />
-      <p className="mt-4 font-serif text-6xl font-bold text-prussian">404</p>
+      <p className="mt-4 font-serif text-6xl font-bold text-terracotta">404</p>
       <h1 className="mx-auto mt-4 max-w-md font-serif text-2xl font-semibold text-ink">
         This page doesn&apos;t exist, or no longer does.
       </h1>
@@ -19,7 +19,7 @@ export default function NotFound() {
       </Button>
       <p className="mt-6 text-xs text-muted">
         Looking for a service?{" "}
-        <Link href="/en/services" className="text-prussian hover:underline">
+        <Link href="/en/services" className="text-terracotta hover:underline">
           View the offering
         </Link>
         .

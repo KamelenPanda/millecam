@@ -83,7 +83,7 @@ export default function HomePage() {
         <HeroWatermark />
         <div className="grid items-center gap-14 md:grid-cols-[1.15fr_0.95fr] md:gap-10">
           <div>
-            <h1 className="animate-hero-in font-serif text-6xl font-bold italic leading-[1.05] text-prussian sm:text-7xl lg:text-[5.5rem]">
+            <h1 className="animate-hero-in font-serif text-6xl font-bold italic leading-[1.05] text-terracotta sm:text-7xl lg:text-[5.5rem]">
               Govern with confidence.
             </h1>
             <p
@@ -103,7 +103,7 @@ export default function HomePage() {
               style={{ animationDelay: "0.22s" }}
             >
               Vous ne savez pas si cela concerne votre organisation ?{" "}
-              <Link href="/fr/verification-nis2" className="text-prussian hover:underline">
+              <Link href="/fr/verification-nis2" className="text-terracotta hover:underline">
                 Faites la courte vérification NIS2
               </Link>
               .
@@ -114,7 +114,7 @@ export default function HomePage() {
             >
               <Link
                 href="/fr/a-propos#credentials"
-                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(20,24,29,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Délégué à la protection des données certifié
               </Link>
@@ -122,7 +122,7 @@ export default function HomePage() {
                 href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(20,24,29,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
+                className="inline-flex items-center border border-white/70 bg-white/40 px-4 py-2 text-xs font-medium text-ink shadow-[0_4px_14px_rgba(33,29,24,0.06)] backdrop-blur-md transition-colors hover:bg-white/60"
               >
                 Numéro d&apos;entreprise (BCE) BE 1026.876.048
               </a>
@@ -135,8 +135,8 @@ export default function HomePage() {
           </div>
 
           <div className="animate-hero-in" style={{ animationDelay: "0.25s" }}>
-            <div className="bg-white p-6 shadow-[0_28px_70px_rgba(20,24,29,0.14)] sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-wide text-prussian">
+            <div className="bg-white p-6 shadow-[0_28px_70px_rgba(33,29,24,0.14)] sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">
                 Essayez vous-même
               </p>
               <p className="mt-1 text-sm text-ink/70">
@@ -157,7 +157,7 @@ export default function HomePage() {
           La conformité est obligatoire. La construire soi-même ne l&apos;est pas.
         </h2>
         <RevealGroup
-          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x-2 md:divide-copper"
+          className="mt-10 grid gap-8 md:grid-cols-3 md:divide-x-2 md:divide-terracotta-light"
           itemClassName="md:pl-8 md:first:pl-0"
           items={HERKENNING.map((h) => (
             <Fragment key={h.titel}>
@@ -169,7 +169,7 @@ export default function HomePage() {
         <p className="mt-8 italic text-muted">
           Vous vous reconnaissez dans l&apos;une de ces situations ? C&apos;est exactement pour cela que
           Millecam existe. Vous n&apos;êtes pas sûr(e) que NIS2 vous concerne ?{" "}
-          <Link href="/fr/verification-nis2" className="not-italic text-prussian hover:underline">
+          <Link href="/fr/verification-nis2" className="not-italic text-terracotta hover:underline">
             Faites la courte vérification NIS2
           </Link>
           .
@@ -188,7 +188,7 @@ export default function HomePage() {
             <ServiceCard key={d.naam} {...d} />
           ))}
         />
-        <Link href="/fr/services" className="mt-8 inline-block text-sm font-medium text-prussian hover:underline">
+        <Link href="/fr/services" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           Voir tous les services
         </Link>
       </Section>
@@ -203,21 +203,21 @@ export default function HomePage() {
           itemClassName="text-paper/80"
           items={[
             <Fragment key="1">
-              <PillarGlyph className="h-5 w-4" color="#C08A54" />
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
               <p className="mt-3 text-sm">
                 Un contact direct avec la personne qui effectue le travail : pas de consultant junior,
                 pas de chaîne d&apos;escalade.
               </p>
             </Fragment>,
             <Fragment key="2">
-              <PillarGlyph className="h-5 w-4" color="#C08A54" />
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
               <p className="mt-3 text-sm">
                 Délégué à la protection des données certifié (certification DPI). Tous les consultants
                 GRC ne peuvent pas assumer ce rôle eux-mêmes.
               </p>
             </Fragment>,
             <Fragment key="3">
-              <PillarGlyph className="h-5 w-4" color="#C08A54" />
+              <PillarGlyph className="h-5 w-4" color="#D97A52" />
               <p className="mt-3 text-sm">
                 Une approche éprouvée pour les trajets CyFun, ISO 27001 et NIS2, de l&apos;analyse GAP à
                 la mise en œuvre complète.
@@ -232,7 +232,7 @@ export default function HomePage() {
       <Section className="bg-white pt-10">
         <h2 className="max-w-2xl font-serif text-3xl font-semibold text-ink">Comment se déroule un trajet</h2>
         <ScrollTimeline stappen={STAPPEN} />
-        <Link href="/fr/approche" className="mt-8 inline-block text-sm font-medium text-prussian hover:underline">
+        <Link href="/fr/approche" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
           En savoir plus sur l&apos;approche
         </Link>
 

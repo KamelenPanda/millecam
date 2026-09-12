@@ -22,7 +22,7 @@ export default function IllustrationGap({ className = "h-24 w-24" }: Props) {
           const x = 12 + c * (size + gap);
           const y = 12 + r * (size + gap);
           return filled ? (
-            <rect key={`${r}-${c}`} x={x} y={y} width={size} height={size} rx="3" fill="#16323B" />
+            <rect key={`${r}-${c}`} x={x} y={y} width={size} height={size} rx="3" fill="#B2532E" />
           ) : (
             <rect
               key={`${r}-${c}`}
@@ -32,7 +32,7 @@ export default function IllustrationGap({ className = "h-24 w-24" }: Props) {
               height={size}
               rx="3"
               fill="none"
-              stroke="#D6D9D4"
+              stroke="#DCD3BF"
               strokeWidth="2"
             />
           );

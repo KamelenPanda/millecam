@@ -52,7 +52,7 @@ export default function AanpakPage() {
       <Section className="pb-10 pt-16">
         <PillarGlyph className="mb-4 h-6 w-5" />
         <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">
-          Comment se déroule un trajet chez <span className="text-prussian">Millecam</span>
+          Comment se déroule un trajet chez <span className="text-terracotta">Millecam</span>
         </h1>
         <p className="mt-4 max-w-xl text-ink/70">
           Pas de méthodologie générique standardisée. Chaque trajet démarre par la même question : où
@@ -74,7 +74,7 @@ export default function AanpakPage() {
           itemClassName="flex items-center gap-3 text-sm text-paper/80"
           items={PRINCIPES.map((p) => (
             <Fragment key={p}>
-              <PillarGlyph className="h-4 w-3 shrink-0" color="#C08A54" />
+              <PillarGlyph className="h-4 w-3 shrink-0" color="#D97A52" />
               {p}
             </Fragment>
           ))}

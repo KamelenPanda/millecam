@@ -27,14 +27,14 @@ function BarRating({ value, onChange, label }: { value: number; onChange: (v: nu
           aria-pressed={n === value}
           // 44x44 touch target around the thin visual bar itself, since the
           // bar alone (14px) is too narrow to tap reliably on a phone.
-          className="flex h-11 w-11 items-end justify-center rounded-sm transition-colors hover:bg-prussian/10 focus:outline-none focus:ring-2 focus:ring-prussian focus:ring-offset-1"
+          className="flex h-11 w-11 items-end justify-center rounded-sm transition-colors hover:bg-terracotta/10 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1"
         >
           <span
             aria-hidden="true"
             className="w-3.5 transition-colors"
             style={{
               height: `${10 + n * 5}px`,
-              backgroundColor: n <= value ? "#16323B" : "#D6D9D4",
+              backgroundColor: n <= value ? "#B2532E" : "#DCD3BF",
             }}
           />
         </button>
@@ -70,14 +70,14 @@ export default function SelfAssessment({ dict = NL_DICT }: { dict?: SelfAssessme
             <path
               d="M 40,150 A 110,110 0 0 1 260,150"
               fill="none"
-              stroke="#D6D9D4"
+              stroke="#DCD3BF"
               strokeWidth="14"
               strokeLinecap="round"
             />
             <path
               d={`M 40,150 A 110,110 0 ${largeArc} 1 ${endX.toFixed(2)},${endY.toFixed(2)}`}
               fill="none"
-              stroke="#16323B"
+              stroke="#B2532E"
               strokeWidth="14"
               strokeLinecap="round"
               style={{ transition: "d 0.3s ease-out" }}

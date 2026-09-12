@@ -11,11 +11,11 @@ export default function IllustrationIso27001({ className = "h-24 w-24" }: Props)
       <polygon
         points="104,60 82,98 38,98 16,60 38,22 82,22"
         fill="none"
-        stroke="#C08A54"
+        stroke="#D97A52"
         strokeWidth="6"
         strokeLinejoin="round"
       />
-      <rect x="30" y="52" width="60" height="16" rx="3" fill="#16323B" />
+      <rect x="30" y="52" width="60" height="16" rx="3" fill="#B2532E" />
     </svg>
   );
 }
