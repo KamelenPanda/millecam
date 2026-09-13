@@ -96,9 +96,14 @@ export default function Footer() {
               </a>
             ))}
             {locale === "nl" && (
-              <a href="/insights" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                Inzichten
-              </a>
+              <>
+                <a href="/kader-check" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                  Welk kader is relevant?
+                </a>
+                <a href="/insights" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                  Inzichten
+                </a>
+              </>
             )}
           </div>
           <div>
