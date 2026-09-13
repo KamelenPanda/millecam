@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import Button from "./Button";
 import MobileMenu from "./MobileMenu";
@@ -45,8 +46,32 @@ export default function Nav() {
   const pageKey = pageKeyFromPath(pathname);
   const homeHref = locale === "nl" ? "/" : `/${locale}`;
 
+  // Only paint-affecting properties (background, border, blur) change here,
+  // never the header's box size, so this never causes layout shift.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 80);
+        ticking = false;
+      });
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="relative border-b border-line bg-paper">
+    <header
+      className={`sticky top-0 z-40 border-b transition-colors duration-200 ease-out ${
+        scrolled
+          ? "border-line bg-paper/90 shadow-[0_1px_0_rgba(33,29,24,0.04)] backdrop-blur-md"
+          : "border-transparent bg-paper"
+      }`}
+    >
       <div className="mx-auto flex max-w-container items-center justify-between px-6 py-5">
         <Link href={homeHref} aria-label={dict.homeAriaLabel}>
           <Logo variant="ink" className="h-8 w-auto" />

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Button from "./Button";
 import PillarGlyph from "./PillarGlyph";
 import { pageHref, type Locale } from "@/lib/i18n";
+import { motion } from "@/lib/motion";
 import type { Nis2CheckerDict, Nis2Verdict } from "@/lib/content/types";
 
 const NL_DICT: Nis2CheckerDict = {
@@ -134,15 +135,22 @@ export default function Nis2Checker({ locale = "nl", dict = NL_DICT }: Nis2Check
   if (step >= steps.length) {
     const v = verdict(answers, dict);
     return (
-      <div className="border-l-2 border-terracotta bg-[#FBF9F4] px-6 py-8 shadow-[0_14px_34px_rgba(33,29,24,0.09)] sm:px-8">
+      <div
+        key={v.titel}
+        className="animate-confirm-in border-l-2 border-terracotta bg-[#FBF9F4] px-6 py-8 shadow-[0_14px_34px_rgba(33,29,24,0.09)] sm:px-8"
+      >
         <PillarGlyph className="h-5 w-4" />
         <p className="mt-3 font-serif text-2xl font-semibold text-ink">{v.titel}</p>
         <p className="mt-3 max-w-xl text-ink/70">{v.tekst}</p>
 
         <p className="mt-8 text-xs font-semibold uppercase tracking-wide text-muted">{dict.possiblePath}</p>
         <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-          {v.tijdlijn.map((f) => (
-            <div key={f.activiteit} className="flex items-start gap-3 sm:flex-1 sm:flex-col sm:gap-2">
+          {v.tijdlijn.map((f, i) => (
+            <div
+              key={f.activiteit}
+              className="animate-confirm-in flex items-start gap-3 sm:flex-1 sm:flex-col sm:gap-2"
+              style={{ animationDelay: `${150 + i * motion.stagger}ms` }}
+            >
               <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-terracotta sm:mt-0" />
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">{f.periode}</p>

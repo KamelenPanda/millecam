@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { SelfAssessmentDict } from "@/lib/content/types";
+import { useReducedMotion, motion } from "@/lib/motion";
 
 const NL_DICT: SelfAssessmentDict = {
   domains: ["Governance", "Access Control", "Incident Response", "Supplier Management"],
@@ -49,7 +50,44 @@ export default function SelfAssessment({ dict = NL_DICT }: { dict?: SelfAssessme
   const max = 5;
   const score = domains.reduce((s, d) => s + d.score, 0) / domains.length;
 
-  const frac = Math.min(1, Math.max(0, score / max));
+  // PROGRESS: the gauge counts up from 0 to its (real, computed) starting
+  // average once on mount, then tracks live edits directly — the one-time
+  // entrance shows this is a computed result, not a static illustration.
+  const reducedMotion = useReducedMotion();
+  const [displayScore, setDisplayScore] = useState(0);
+  const [entered, setEntered] = useState(false);
+
+  useEffect(() => {
+    if (reducedMotion) {
+      setDisplayScore(score);
+      setEntered(true);
+      return;
+    }
+    let raf: number;
+    const start = performance.now();
+    const target = score;
+    function tick(now: number) {
+      const t = Math.min(1, (now - start) / motion.duration.slow);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setDisplayScore(target * eased);
+      if (t < 1) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        setEntered(true);
+      }
+    }
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+    // Intentionally mount-only: this is the initial count-up, not a
+    // resync on every domain edit (see the effect below for that).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reducedMotion]);
+
+  useEffect(() => {
+    if (entered) setDisplayScore(score);
+  }, [score, entered]);
+
+  const frac = Math.min(1, Math.max(0, displayScore / max));
   const angle = 180 - 180 * frac;
   const rad = (angle * Math.PI) / 180;
   const cx = 150;
@@ -81,10 +119,10 @@ export default function SelfAssessment({ dict = NL_DICT }: { dict?: SelfAssessme
               stroke="#B2532E"
               strokeWidth="14"
               strokeLinecap="round"
-              style={{ transition: "d 0.3s ease-out" }}
+              style={{ transition: entered && !reducedMotion ? "d 0.3s ease-out" : "none" }}
             />
             <text x="150" y="130" textAnchor="middle" className="fill-ink" style={{ font: "700 40px Georgia, serif" }}>
-              {score.toFixed(1)}
+              {displayScore.toFixed(1)}
             </text>
             <text x="150" y="158" textAnchor="middle" className="fill-muted" style={{ font: "400 13px Arial, sans-serif" }}>
               {dict.averageLabel}

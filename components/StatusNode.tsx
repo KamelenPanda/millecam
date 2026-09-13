@@ -9,8 +9,16 @@ type StatusNodeProps = {
    * fixed hand-off delay — lets a node confirm shortly after its own row
    * has revealed, in a staggered group, instead of every node at once. */
   delayMs?: number;
+  /** "md" (36px, default) for a process timeline; "sm" (28px) for a
+   * compact inline strip such as a case's journey summary. */
+  size?: "sm" | "md";
   className?: string;
 };
+
+const SIZE = {
+  sm: { box: "h-7 w-7", text: "text-xs", check: "h-3 w-3" },
+  md: { box: "h-9 w-9", text: "text-sm", check: "h-4 w-4" },
+} as const;
 
 /**
  * The CONFIRM motion primitive: a numbered circle that cross-fades into a
@@ -18,12 +26,13 @@ type StatusNodeProps = {
  * not just present. Used on process timelines; the number never
  * disappears abruptly, it hands off to the check.
  */
-export default function StatusNode({ index, confirmed, delayMs = 0, className = "" }: StatusNodeProps) {
+export default function StatusNode({ index, confirmed, delayMs = 0, size = "md", className = "" }: StatusNodeProps) {
   const checkDelay = confirmed ? delayMs + 250 : 0;
+  const s = SIZE[size];
 
   return (
     <span
-      className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta-deep font-serif text-sm font-bold text-paper ${className}`}
+      className={`relative flex ${s.box} shrink-0 items-center justify-center rounded-full bg-terracotta-deep font-serif ${s.text} font-bold text-paper ${className}`}
     >
       <span
         className="transition-opacity duration-300 ease-out"
@@ -34,7 +43,7 @@ export default function StatusNode({ index, confirmed, delayMs = 0, className = 
       </span>
       <svg
         viewBox="0 0 24 24"
-        className="absolute h-4 w-4 transition-opacity duration-300 ease-out"
+        className={`absolute ${s.check} transition-opacity duration-300 ease-out`}
         style={{ opacity: confirmed ? 1 : 0, transitionDelay: `${checkDelay}ms` }}
         aria-hidden="true"
       >

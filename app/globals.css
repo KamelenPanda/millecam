@@ -59,3 +59,20 @@ body {
     animation: none;
   }
 }
+
+/* REVEAL for content that appears from a state change rather than a scroll
+   position (a computed result, a step change) — same fadeInUp language as
+   .animate-hero-in, at the "standard" motion duration. Apply per item with
+   an inline animationDelay for a stagger; each item still needs its own key
+   so React remounts it and the animation replays for the new content. */
+.animate-confirm-in {
+  animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-confirm-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

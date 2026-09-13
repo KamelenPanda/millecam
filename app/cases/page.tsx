@@ -3,6 +3,7 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 import PillarGlyph from "@/components/PillarGlyph";
 import Reveal from "@/components/Reveal";
+import CaseJourney from "@/components/CaseJourney";
 import IllustrationIso27001 from "@/components/illustrations/IllustrationIso27001";
 import IllustrationCyfun from "@/components/illustrations/IllustrationCyfun";
 import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
@@ -103,6 +104,10 @@ export default function CasesPage() {
                     </p>
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-8 hidden max-w-xl md:block">
+                <CaseJourney />
               </div>
 
               <div className="mt-6 grid gap-6 md:grid-cols-2">
