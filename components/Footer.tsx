@@ -44,7 +44,27 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-sm font-semibold">{dict.servicesHeading}</p>
-            <FrameworkList items={dict.frameworks} tone="paper" className="mt-3" />
+            {locale === "nl" ? (
+              <div className="mt-3 flex flex-wrap items-center gap-4">
+                {(
+                  [
+                    ["NIS2", "/nis2"],
+                    ["ISO 27001", "/iso-27001"],
+                    ["CyFun", "/cyberfundamentals"],
+                    ["GDPR", "/gdpr"],
+                  ] as const
+                ).map(([label, href], i) => (
+                  <span key={href} className="flex items-center gap-4">
+                    {i > 0 && <span className="h-3.5 w-[3px] bg-terracotta-light" aria-hidden="true" />}
+                    <a href={href} className="text-sm font-medium text-paper/70 hover:text-paper hover:underline">
+                      {label}
+                    </a>
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <FrameworkList items={dict.frameworks} tone="paper" className="mt-3" />
+            )}
             <a href={pageHref(locale, "faq")} className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
               {dict.faqLink}
             </a>
@@ -52,9 +72,23 @@ export default function Footer() {
               {dict.nis2CheckLink}
             </a>
             {locale === "nl" && (
-              <a href="/cases" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                Praktijkvoorbeelden
-              </a>
+              <>
+                <a href="/cases" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                  Praktijkvoorbeelden
+                </a>
+                <a href="/dpo-as-a-service" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                  DPO-as-a-Service
+                </a>
+                <a href="/gap-analyse" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                  GAP-analyse
+                </a>
+                <a href="/fractional-grc" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                  Fractional GRC
+                </a>
+                <a href="/tabletop-exercises" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                  Tabletop exercises
+                </a>
+              </>
             )}
           </div>
           <div>
