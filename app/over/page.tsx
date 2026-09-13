@@ -56,6 +56,7 @@ export default function OverPage() {
 
       <Reveal className="mt-14 max-w-2xl">
         <h2 id="credentials" className="font-serif text-lg font-semibold text-ink">Credentials</h2>
+
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <div className="flex items-baseline justify-between gap-4">
             <p className="font-serif text-lg font-semibold text-ink">
@@ -65,6 +66,44 @@ export default function OverPage() {
           </div>
           <p className="mt-1 text-sm text-ink/70">
             Data Protection Institute (DPI): certificaat geldig 3 jaar, verlengbaar.
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Kaderexpertise</p>
+          <p className="mt-1 text-sm text-ink/70">
+            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) en GDPR/AVG — praktijkervaring opgebouwd bij
+            KMO&apos;s in uiteenlopende sectoren, van bouw en transport tot voeding, tech, accountancy en
+            industriële productie.
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Vertrouwelijkheid &amp; gegevensverwerking</p>
+          <p className="mt-1 text-sm text-ink/70">
+            Zakelijke communicatie en documenten lopen via een professionele Microsoft 365-omgeving.
+            Waar AI-ondersteuning wordt ingezet, gebeurt dat met dataminimalisatie en passende contractuele
+            en technische waarborgen — details in het{" "}
+            <a href="/privacybeleid" className="text-terracotta hover:underline">
+              privacybeleid
+            </a>
+            .
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Onderneming</p>
+          <p className="mt-1 text-sm text-ink/70">
+            Millecam — Robin Millecam, Sinte Annalaan 34, 9300 Aalst.{" "}
+            <a
+              href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
+              target="_blank"
+              rel="noreferrer"
+              className="text-terracotta hover:underline"
+            >
+              KBO BE 1026.876.048
+            </a>
+            .
           </p>
         </div>
       </Reveal>

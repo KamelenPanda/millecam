@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
@@ -22,30 +23,35 @@ const DIENSTEN = [
     vorm: "Vaste prijs, kort traject",
     voorWie: "Organisaties die willen weten waar ze staan t.o.v. NIS2, ISO 27001 of CyFun.",
     watJeKrijgt: "Rapport met scoring per control, geprioriteerde bevindingen en een concreet stappenplan.",
+    href: "/gap-analyse",
   },
   {
     naam: "Implementatietraject",
     vorm: "Projectbasis",
     voorWie: "Organisaties die van bevindingen naar aantoonbare compliance willen.",
     watJeKrijgt: "Begeleiding bij beleid, documentatie en technische maatregelen. Jij houdt de regie.",
+    href: "/aanpak",
   },
   {
     naam: "DPO-as-a-Service",
     vorm: "Maandelijkse retainer",
     voorWie: "Organisaties die een DPO nodig hebben, geen fulltime rol.",
     watJeKrijgt: "Erkend extern aanspreekpunt voor AVG-vraagstukken, meldingen en toezicht op verwerkingen.",
+    href: "/dpo-as-a-service",
   },
   {
     naam: "Tabletop exercises & awareness",
     vorm: "Projectbasis / event",
     voorWie: "Teams die theorie willen omzetten in reflex: vóór een incident, niet erna.",
     watJeKrijgt: "Interactieve scenario-oefeningen op maat, met een concrete rapportage van leerpunten.",
+    href: "/tabletop-exercises",
   },
   {
     naam: "Fractional GRC-ondersteuning",
     vorm: "Dagprijs, doorlopend",
     voorWie: "Organisaties die af en toe (of structureel) compliance-capaciteit nodig hebben zonder aan te werven.",
     watJeKrijgt: "Vaste beschikbaarheid, op het ritme dat past.",
+    href: "/fractional-grc",
   },
 ];
 
@@ -54,21 +60,25 @@ const FRAMEWORKS = [
     naam: "NIS2",
     tekst: "Europese cybersecurity-richtlijn voor essentiële en belangrijke entiteiten, relevant vanaf een bepaalde omvang of sector.",
     glyph: <IllustrationNis2 className="h-14 w-14 shrink-0" />,
+    href: "/nis2",
   },
   {
     naam: "ISO 27001",
     tekst: "Internationale norm voor informatiebeveiliging. Vaak een contractvoorwaarde bij klanten of aanbestedingen.",
     glyph: <IllustrationIso27001 className="h-14 w-14 shrink-0" />,
+    href: "/iso-27001",
   },
   {
     naam: "CyFun",
     tekst: "Het Belgische CyberFundamentals-kader van het Centre for Cybersecurity Belgium: een toegankelijk alternatief voor NIS2-aantoonbaarheid.",
     glyph: <IllustrationCyfun className="h-14 w-14 shrink-0" />,
+    href: "/cyberfundamentals",
   },
   {
     naam: "GDPR / AVG",
     tekst: "Europese privacywetgeving, van toepassing op vrijwel elke organisatie die persoonsgegevens verwerkt.",
     glyph: <IllustrationGdpr className="h-14 w-14 shrink-0" />,
+    href: "/gdpr",
   },
 ];
 
@@ -91,8 +101,10 @@ export default function DienstenPage() {
         <RevealGroup
           className="mt-8 grid gap-6 md:grid-cols-2"
           itemClassName="h-full"
-          items={DIENSTEN.map((d) => (
-            <ServiceCard key={d.naam} {...d} />
+          items={DIENSTEN.map(({ href, ...d }) => (
+            <Link key={d.naam} href={href} className="block h-full">
+              <ServiceCard {...d} />
+            </Link>
           ))}
         />
       </Section>
@@ -102,6 +114,9 @@ export default function DienstenPage() {
         <div className="mt-8">
           <FrameworkGrid frameworks={FRAMEWORKS} />
         </div>
+        <Link href="/cases" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
+          Bekijk praktijkvoorbeelden
+        </Link>
       </Section>
 
       <Section className="bg-white">

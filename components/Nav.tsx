@@ -14,6 +14,7 @@ const NL_DICT: NavDict = {
   links: [
     { href: "/diensten", label: "Diensten" },
     { href: "/aanpak", label: "Aanpak" },
+    { href: "/cases", label: "Cases" },
     { href: "/nis2-check", label: "NIS2-check" },
     { href: "/veelgestelde-vragen", label: "FAQ" },
     { href: "/over", label: "Over" },

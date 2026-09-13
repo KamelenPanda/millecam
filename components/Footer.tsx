@@ -51,6 +51,11 @@ export default function Footer() {
             <a href={pageHref(locale, "nis2check")} className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
               {dict.nis2CheckLink}
             </a>
+            {locale === "nl" && (
+              <a href="/cases" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                Praktijkvoorbeelden
+              </a>
+            )}
           </div>
           <div>
             <p className="text-sm font-semibold">{dict.contactHeading}</p>
