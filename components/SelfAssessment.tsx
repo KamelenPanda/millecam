@@ -17,7 +17,7 @@ type Domain = { label: string; score: number };
  * a generic HTML range slider. */
 function BarRating({ value, onChange, label }: { value: number; onChange: (v: number) => void; label: string }) {
   return (
-    <div className="flex items-end gap-1" role="group" aria-label={`Score voor ${label}`}>
+    <div className="flex h-11 items-end gap-1" role="group" aria-label={`Score voor ${label}`}>
       {[1, 2, 3, 4, 5].map((n) => (
         <button
           key={n}
@@ -25,13 +25,14 @@ function BarRating({ value, onChange, label }: { value: number; onChange: (v: nu
           onClick={() => onChange(n)}
           aria-label={`${n} van 5`}
           aria-pressed={n === value}
-          // 44x44 touch target around the thin visual bar itself, since the
-          // bar alone (14px) is too narrow to tap reliably on a phone.
-          className="flex h-11 w-11 items-end justify-center rounded-sm transition-colors hover:bg-terracotta/10 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1"
+          // The tap target is the full height of the row (44px) but only as
+          // wide as the bar plus a small margin, so the bars still read as
+          // one continuous chart instead of scattered blocks.
+          className="flex h-full w-6 items-end justify-center rounded-sm transition-colors hover:bg-terracotta/10 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1"
         >
           <span
             aria-hidden="true"
-            className="w-3.5 transition-colors"
+            className="w-full transition-colors"
             style={{
               height: `${10 + n * 5}px`,
               backgroundColor: n <= value ? "#B2532E" : "#DCD3BF",
