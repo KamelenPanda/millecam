@@ -27,9 +27,9 @@ export default function OverPage() {
             </p>
             <p>
               Des années d&apos;expérience dans le scoping NIS2, les analyses GAP CyFun, la documentation
-              ISO 27001 et les questions RGPD auprès de PME dans des secteurs très variés, de la
-              construction et du transport à l&apos;alimentation et à la tech. Délégué à la protection des
-              données certifié (certification DPI, février 2025).
+              ISO 27001 et les questions RGPD auprès de PME dans des secteurs très variés : SaaS et tech,
+              production, logistique, services professionnels, comptabilité, alimentation et publicité.
+              Délégué à la protection des données certifié (certification DPI, février 2025).
             </p>
             <div>
               <PillarGlyph className="h-5 w-4" />

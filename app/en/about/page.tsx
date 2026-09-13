@@ -26,8 +26,9 @@ export default function OverPage() {
             </p>
             <p>
               Years of experience with NIS2 scoping, CyFun GAP analyses, ISO 27001 documentation and
-              GDPR questions at SMEs across a wide range of sectors, from construction and transport to
-              food and tech. Certified Data Protection Officer (DPI-certified, February 2025).
+              GDPR questions at SMEs across a wide range of sectors: SaaS and tech, manufacturing,
+              logistics, professional services, accountancy, food &amp; beverage and advertising. Certified
+              Data Protection Officer (DPI-certified, February 2025).
             </p>
             <div>
               <PillarGlyph className="h-5 w-4" />

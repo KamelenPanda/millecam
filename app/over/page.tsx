@@ -26,8 +26,9 @@ export default function OverPage() {
             </p>
             <p>
               Jarenlange ervaring met NIS2-scoping, CyFun-gapanalyses, ISO 27001-documentatie en
-              AVG-vraagstukken bij KMO&apos;s in uiteenlopende sectoren, van bouw en transport tot voeding
-              en tech. Erkend Data Protection Officer (DPI-gecertificeerd, februari 2025).
+              AVG-vraagstukken bij KMO&apos;s in uiteenlopende sectoren: SaaS en tech, productie, logistiek,
+              professionele dienstverlening, accountancy, voeding en adverteren. Erkend Data Protection
+              Officer (DPI-gecertificeerd, februari 2025).
             </p>
             <div>
               <PillarGlyph className="h-5 w-4" />
@@ -73,8 +74,8 @@ export default function OverPage() {
           <p className="font-serif text-lg font-semibold text-ink">Kaderexpertise</p>
           <p className="mt-1 text-sm text-ink/70">
             NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) en GDPR/AVG — praktijkervaring opgebouwd bij
-            KMO&apos;s in uiteenlopende sectoren, van bouw en transport tot voeding, tech, accountancy en
-            industriële productie.
+            KMO&apos;s in SaaS/tech, productie, logistiek, professionele dienstverlening, accountancy, voeding
+            en adverteren.
           </p>
         </div>
 
