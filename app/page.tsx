@@ -135,7 +135,12 @@ export default function HomePage() {
               wel moeten aantonen.
             </p>
             <FrameworkList
-              items={["NIS2", "ISO 27001", "CyFun", "GDPR"]}
+              items={[
+                { label: "NIS2", href: "/nis2" },
+                { label: "ISO 27001", href: "/iso-27001" },
+                { label: "CyFun", href: "/cyberfundamentals" },
+                { label: "GDPR", href: "/gdpr" },
+              ]}
               className="animate-hero-in mt-8"
               style={{ animationDelay: "0.2s" }}
             />

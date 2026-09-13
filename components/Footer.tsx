@@ -44,27 +44,20 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-sm font-semibold">{dict.servicesHeading}</p>
-            {locale === "nl" ? (
-              <div className="mt-3 flex flex-wrap items-center gap-4">
-                {(
-                  [
-                    ["NIS2", "/nis2"],
-                    ["ISO 27001", "/iso-27001"],
-                    ["CyFun", "/cyberfundamentals"],
-                    ["GDPR", "/gdpr"],
-                  ] as const
-                ).map(([label, href], i) => (
-                  <span key={href} className="flex items-center gap-4">
-                    {i > 0 && <span className="h-3.5 w-[3px] bg-terracotta-light" aria-hidden="true" />}
-                    <a href={href} className="text-sm font-medium text-paper/70 hover:text-paper hover:underline">
-                      {label}
-                    </a>
-                  </span>
-                ))}
-              </div>
-            ) : (
-              <FrameworkList items={dict.frameworks} tone="paper" className="mt-3" />
-            )}
+            <FrameworkList
+              items={
+                locale === "nl"
+                  ? [
+                      { label: "NIS2", href: "/nis2" },
+                      { label: "ISO 27001", href: "/iso-27001" },
+                      { label: "CyFun", href: "/cyberfundamentals" },
+                      { label: "GDPR", href: "/gdpr" },
+                    ]
+                  : dict.frameworks
+              }
+              tone="paper"
+              className="mt-3"
+            />
             <a href={pageHref(locale, "faq")} className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
               {dict.faqLink}
             </a>
