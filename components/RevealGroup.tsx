@@ -1,6 +1,7 @@
 "use client";
 
-import { createElement, ReactNode, useEffect, useRef, useState } from "react";
+import { createElement, ReactNode } from "react";
+import { useRevealOnce, motion } from "@/lib/motion";
 
 type RevealGroupProps = {
   items: ReactNode[];
@@ -12,10 +13,9 @@ type RevealGroupProps = {
 };
 
 /**
- * Staggered version of Reveal, for a grid or list of items — same
- * once-only IntersectionObserver pattern as ScrollTimeline/FrameworkGrid.
- * `as`/`itemAs` let a <ul>/<li> list use this without an extra
- * non-semantic wrapper breaking its markup.
+ * Staggered version of Reveal, for a grid or list of items. `as`/`itemAs`
+ * let a <ul>/<li> list use this without an extra non-semantic wrapper
+ * breaking its markup.
  */
 export default function RevealGroup({
   items,
@@ -23,26 +23,9 @@ export default function RevealGroup({
   itemClassName = "",
   as = "div",
   itemAs = "div",
-  stagger = 120,
+  stagger = motion.stagger,
 }: RevealGroupProps) {
-  const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const { ref, visible, reduced } = useRevealOnce<HTMLElement>(0.2);
 
   return createElement(
     as,
@@ -52,11 +35,14 @@ export default function RevealGroup({
         itemAs,
         {
           key: i,
-          className: `transition-all duration-500 ease-out ${itemClassName}`,
+          className: itemClassName,
           style: {
             opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(14px)",
-            transitionDelay: visible ? `${i * stagger}ms` : "0ms",
+            transform: visible ? "translateY(0)" : `translateY(${motion.distance.reveal}px)`,
+            transition: reduced
+              ? "none"
+              : `opacity ${motion.duration.standard}ms ${motion.ease}, transform ${motion.duration.standard}ms ${motion.ease}`,
+            transitionDelay: visible && !reduced ? `${i * stagger}ms` : "0ms",
           },
         },
         item

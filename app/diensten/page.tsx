@@ -103,7 +103,7 @@ export default function DienstenPage() {
           itemClassName="h-full"
           items={DIENSTEN.map(({ href, ...d }) => (
             <Link key={d.naam} href={href} className="block h-full">
-              <ServiceCard {...d} />
+              <ServiceCard {...d} interactive />
             </Link>
           ))}
         />

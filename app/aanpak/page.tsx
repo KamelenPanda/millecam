@@ -3,39 +3,45 @@ import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import PillarGlyph from "@/components/PillarGlyph";
-import IllustrationGap from "@/components/illustrations/IllustrationGap";
-import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
-import IllustrationSupport from "@/components/illustrations/IllustrationSupport";
 import ScrollTimelineVertical from "@/components/ScrollTimelineVertical";
 import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
   title: "Aanpak | Millecam",
-  description: "Hoe een traject bij Millecam verloopt: GAP-analyse, implementatie, ondersteuning.",
+  description: "Van huidige situatie tot aantoonbare compliance: hoe een traject bij Millecam verloopt, stap voor stap.",
 };
 
 const STAPPEN = [
   {
     nummer: "1",
-    naam: "GAP-analyse",
+    naam: "Begrijpen",
     tekst:
-      "Documentenreview, interviews met verantwoordelijken, en een tweedimensionale scoring (documentatie én implementatie) per control. Resultaat: een helder beeld, geen jargon-rapport.",
-    illustratie: <IllustrationGap className="hidden h-20 w-20 shrink-0 sm:block" />,
+      "Welke verplichtingen gelden, wat de scope is, en welk kader — NIS2, CyFun, ISO 27001 of AVG — voor jouw organisatie relevant is, vóór er iets geïmplementeerd wordt.",
   },
   {
     nummer: "2",
-    naam: "Implementatie",
+    naam: "Beoordelen",
     tekst:
-      "Vertaling van bevindingen naar een concreet stappenplan: beleid, procedures, technische maatregelen. Millecam coördineert, jij houdt overzicht: geen zwarte-doostraject.",
-    illustratie: <IllustrationBuild className="hidden h-20 w-20 shrink-0 sm:block" />,
+      "Een GAP-analyse: documentenreview, interviews met verantwoordelijken, en een tweedimensionale scoring (documentatie én implementatie) per control. Resultaat: een helder beeld, geen jargon-rapport.",
   },
   {
     nummer: "3",
-    naam: "Ondersteuning",
+    naam: "Bouwen",
     tekst:
-      "Compliance stopt niet bij een handtekening. Via DPO-as-a-Service of fractional ondersteuning blijft er een vast aanspreekpunt, zonder dat je iemand aanwerft.",
-    illustratie: <IllustrationSupport className="hidden h-20 w-20 shrink-0 sm:block" />,
+      "Bevindingen vertaald naar beleid, procedures en technische maatregelen, met bewijsvoering die overeind blijft. Millecam coördineert, jij houdt overzicht: geen zwarte-doostraject.",
+  },
+  {
+    nummer: "4",
+    naam: "Valideren",
+    tekst:
+      "Interne audit, directiebeoordeling en waar relevant een tabletop-oefening om te toetsen of de maatregelen ook standhouden — met remediatie waar nodig.",
+  },
+  {
+    nummer: "5",
+    naam: "Aantonen",
+    tekst:
+      "Auditklaar wanneer een toezichthouder, klant of certificeringsaudit erom vraagt. Daarna blijft er een vast aanspreekpunt via DPO-as-a-Service of fractional ondersteuning, zonder dat je iemand aanwerft.",
   },
 ];
 
@@ -56,7 +62,8 @@ export default function AanpakPage() {
         </h1>
         <p className="mt-4 max-w-xl text-ink/70">
           Geen generieke methodiek van de plank. Elk traject start met dezelfde vraag: waar sta je
-          vandaag, en wat is realistisch haalbaar met de middelen die je hebt.
+          vandaag, en wat is realistisch haalbaar met de middelen die je hebt. Vijf stappen van
+          huidige situatie naar aantoonbare compliance.
         </p>
       </Section>
 

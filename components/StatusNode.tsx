@@ -1,0 +1,52 @@
+"use client";
+
+import type { ReactNode } from "react";
+
+type StatusNodeProps = {
+  index: ReactNode;
+  confirmed: boolean;
+  /** Extra delay (ms) before the checkmark cross-fades in, on top of the
+   * fixed hand-off delay — lets a node confirm shortly after its own row
+   * has revealed, in a staggered group, instead of every node at once. */
+  delayMs?: number;
+  className?: string;
+};
+
+/**
+ * The CONFIRM motion primitive: a numbered circle that cross-fades into a
+ * checkmark once its step is confirmed — evidence that a milestone is done,
+ * not just present. Used on process timelines; the number never
+ * disappears abruptly, it hands off to the check.
+ */
+export default function StatusNode({ index, confirmed, delayMs = 0, className = "" }: StatusNodeProps) {
+  const checkDelay = confirmed ? delayMs + 250 : 0;
+
+  return (
+    <span
+      className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta-deep font-serif text-sm font-bold text-paper ${className}`}
+    >
+      <span
+        className="transition-opacity duration-300 ease-out"
+        style={{ opacity: confirmed ? 0 : 1, transitionDelay: `${checkDelay}ms` }}
+        aria-hidden={confirmed}
+      >
+        {index}
+      </span>
+      <svg
+        viewBox="0 0 24 24"
+        className="absolute h-4 w-4 transition-opacity duration-300 ease-out"
+        style={{ opacity: confirmed ? 1 : 0, transitionDelay: `${checkDelay}ms` }}
+        aria-hidden="true"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          fill="none"
+          stroke="#F2EDE1"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}

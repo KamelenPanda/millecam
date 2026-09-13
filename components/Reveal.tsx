@@ -1,6 +1,7 @@
 "use client";
 
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode } from "react";
+import { useRevealOnce, motion } from "@/lib/motion";
 
 type RevealProps = {
   children: ReactNode;
@@ -8,38 +9,21 @@ type RevealProps = {
 };
 
 /**
- * Generic once-only scroll-reveal — same IntersectionObserver pattern as
- * ScrollTimeline/FrameworkGrid, factored out for standalone blocks (a CTA,
- * a credentials card, a paragraph) that just need a plain fade-up rather
- * than a staggered group (see RevealGroup for that).
+ * The REVEAL motion primitive for a standalone block (a CTA, a credentials
+ * card, a paragraph) that just needs a plain fade-up — see RevealGroup for
+ * a staggered list of items instead.
  */
 export default function Reveal({ children, className = "" }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const { ref, visible, reduced } = useRevealOnce<HTMLDivElement>(0.2);
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${className}`}
+      className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(16px)",
+        transform: visible ? "translateY(0)" : `translateY(${motion.distance.reveal}px)`,
+        transition: reduced ? "none" : `opacity ${motion.duration.standard}ms ${motion.ease}, transform ${motion.duration.standard}ms ${motion.ease}`,
       }}
     >
       {children}
