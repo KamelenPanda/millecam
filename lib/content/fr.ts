@@ -5,6 +5,7 @@ import type {
   ContactFormDict,
   Nis2CheckerDict,
   SelfAssessmentDict,
+  FrameworkCheckerDict,
 } from "./types";
 
 export const nav: NavDict = {
@@ -150,4 +151,90 @@ export const selfAssessment: SelfAssessmentDict = {
   averageLabel: "score moyen / 5",
   helper:
     "Ajustez les scores pour voir comment la moyenne évolue : c'est ainsi que fonctionne le scoring dans chaque analyse GAP, avec votre propre situation plutôt que cet exemple.",
+};
+
+export const frameworkChecker: FrameworkCheckerDict = {
+  sectoren: [
+    "Énergie, eau ou gestion des déchets",
+    "Transport ou logistique",
+    "Secteur bancaire ou infrastructure financière",
+    "Soins de santé",
+    "Infrastructure numérique (cloud, hébergement, centres de données)",
+    "Services informatiques fournis à d'autres entreprises",
+    "Administration publique",
+    "Industrie alimentaire",
+    "Autre / aucun de ces secteurs",
+  ],
+  groottes: [
+    "Moins de 50 employés et moins de 10 millions d'euros de chiffre d'affaires",
+    "De 50 à 249 employés, ou de 10 à 50 millions d'euros de chiffre d'affaires",
+    "250 employés ou plus, ou plus de 50 millions d'euros de chiffre d'affaires",
+  ],
+  jaNeeNietZeker: ["Oui", "Non", "Pas sûr(e)"],
+  vragen: [
+    "Dans quel secteur votre organisation est-elle active ?",
+    "Combien d'employés (ou quel chiffre d'affaires annuel) compte votre organisation ?",
+    "Un client, un assureur ou une autorité publique vous demande-t-il déjà de démontrer vos mesures de cybersécurité ou de protection des données ?",
+    "Un client, un assureur ou un appel d'offres demande-t-il spécifiquement une certification ISO 27001 ?",
+  ],
+  questionOf: "Question {step} sur {total}",
+  previous: "Question précédente",
+  resultTitle: "Votre indication par cadre",
+  resultIntro:
+    "Basé sur quatre courtes questions — pas une réponse juridiquement contraignante. Une analyse GAP apporte la certitude.",
+  ctaPrimary: "Discuter de votre situation",
+  restart: "Recommencer",
+  relevantieLabels: {
+    waarschijnlijk: "Probablement pertinent",
+    mogelijk: "Peut-être pertinent",
+    minderWaarschijnlijk: "Moins probable",
+    vrijwelAltijd: "Presque toujours pertinent",
+  },
+  frameworks: {
+    nis2: {
+      naam: "NIS2",
+      waarschijnlijk: {
+        titel: "Probablement pertinent",
+        tekst: "Selon votre secteur et votre taille, vous êtes probablement soumis à NIS2.",
+      },
+      mogelijkSector: {
+        titel: "Peut-être pertinent",
+        tekst: "Votre secteur est concerné, mais votre taille se situe sous le seuil habituel de NIS2 — des exceptions existent pour les services critiques.",
+      },
+      mogelijkGevraagd: {
+        titel: "Peut-être pertinent",
+        tekst: "Pas votre secteur en tant que tel, mais la demande d'un client ou d'un assureur oriente bien vers la démontrabilité.",
+      },
+      minderWaarschijnlijk: {
+        titel: "Moins probable",
+        tekst: "Selon le secteur et la taille, NIS2 ne semble pas s'appliquer pour l'instant.",
+      },
+    },
+    cyfun: {
+      naam: "CyFun",
+      waarschijnlijk: {
+        titel: "Probablement pertinent",
+        tekst: "Une alternative accessible pour tout de même être démontrable, sans démarrer immédiatement un trajet NIS2 lourd.",
+      },
+      mogelijk: {
+        titel: "Peut-être pertinent",
+        tekst: "Même sans pression NIS2 directe, une base utile pour qui veut aborder la cybersécurité de façon structurelle.",
+      },
+    },
+    iso27001: {
+      naam: "ISO 27001",
+      waarschijnlijk: {
+        titel: "Probablement pertinent",
+        tekst: "Un client ou un appel d'offres le demande spécifiquement — souvent le point de départ direct d'un trajet ISO 27001.",
+      },
+      mogelijk: {
+        titel: "Peut-être pertinent",
+        tekst: "Pas de demande explicite pour l'instant, mais souvent pertinent dès qu'un client ou un appel d'offres l'exige.",
+      },
+    },
+    gdpr: {
+      naam: "RGPD",
+      tekst: "Applicable à pratiquement toute organisation qui traite des données à caractère personnel — quel que soit le secteur ou la taille.",
+    },
+  },
 };

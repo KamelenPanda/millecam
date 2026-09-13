@@ -5,6 +5,7 @@ import type {
   ContactFormDict,
   Nis2CheckerDict,
   SelfAssessmentDict,
+  FrameworkCheckerDict,
 } from "./types";
 
 export const nav: NavDict = {
@@ -150,4 +151,90 @@ export const selfAssessment: SelfAssessmentDict = {
   averageLabel: "average score / 5",
   helper:
     "Adjust the scores to see how the average changes: that's how scoring works in every GAP analysis, using your own situation instead of this example.",
+};
+
+export const frameworkChecker: FrameworkCheckerDict = {
+  sectoren: [
+    "Energy, water or waste management",
+    "Transport or logistics",
+    "Banking or financial infrastructure",
+    "Healthcare",
+    "Digital infrastructure (cloud, hosting, data centres)",
+    "IT services provided to other businesses",
+    "Government",
+    "Food industry",
+    "Other / none of these",
+  ],
+  groottes: [
+    "Fewer than 50 employees and less than €10 million turnover",
+    "50 to 249 employees, or €10 to 50 million turnover",
+    "250 or more employees, or more than €50 million turnover",
+  ],
+  jaNeeNietZeker: ["Yes", "No", "Not sure"],
+  vragen: [
+    "Which sector is your organisation active in?",
+    "How many employees (or annual turnover) does your organisation have?",
+    "Is a client, insurer, or government body already asking you to demonstrate your cybersecurity or data protection measures?",
+    "Does a client, insurer, or tender specifically ask for an ISO 27001 certificate?",
+  ],
+  questionOf: "Question {step} of {total}",
+  previous: "Previous question",
+  resultTitle: "Your indication per framework",
+  resultIntro:
+    "Based on four short questions — not a legally binding answer. A GAP analysis provides certainty.",
+  ctaPrimary: "Discuss your situation",
+  restart: "Start again",
+  relevantieLabels: {
+    waarschijnlijk: "Likely relevant",
+    mogelijk: "Possibly relevant",
+    minderWaarschijnlijk: "Less likely",
+    vrijwelAltijd: "Almost always relevant",
+  },
+  frameworks: {
+    nis2: {
+      naam: "NIS2",
+      waarschijnlijk: {
+        titel: "Likely relevant",
+        tekst: "Based on your sector and size, you likely fall under NIS2.",
+      },
+      mogelijkSector: {
+        titel: "Possibly relevant",
+        tekst: "Your sector is relevant, but your size is below the usual NIS2 threshold — exceptions can apply for critical services.",
+      },
+      mogelijkGevraagd: {
+        titel: "Possibly relevant",
+        tekst: "Not your sector as such, but a client's or insurer's request does point towards demonstrability.",
+      },
+      minderWaarschijnlijk: {
+        titel: "Less likely",
+        tekst: "Based on sector and size, NIS2 doesn't seem to apply right now.",
+      },
+    },
+    cyfun: {
+      naam: "CyFun",
+      waarschijnlijk: {
+        titel: "Likely relevant",
+        tekst: "An accessible alternative to still be demonstrable, without starting a heavy NIS2 track right away.",
+      },
+      mogelijk: {
+        titel: "Possibly relevant",
+        tekst: "Even without direct NIS2 pressure, a useful baseline for anyone who wants to tackle cybersecurity structurally.",
+      },
+    },
+    iso27001: {
+      naam: "ISO 27001",
+      waarschijnlijk: {
+        titel: "Likely relevant",
+        tekst: "A client or tender specifically asks for it — often the direct starting point for an ISO 27001 track.",
+      },
+      mogelijk: {
+        titel: "Possibly relevant",
+        tekst: "No explicit request yet, but often becomes relevant once a client or tender starts requiring it.",
+      },
+    },
+    gdpr: {
+      naam: "GDPR",
+      tekst: "Applies to virtually every organisation that processes personal data — regardless of sector or size.",
+    },
+  },
 };

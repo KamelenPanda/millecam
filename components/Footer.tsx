@@ -17,6 +17,8 @@ const EXTRA_LINKS: Record<Locale, { key: PageKey; label: string }[]> = {
     { key: "gapAnalysis", label: "GAP-analyse" },
     { key: "fractionalGrc", label: "Fractional GRC" },
     { key: "tabletopExercises", label: "Tabletop exercises" },
+    { key: "kaderCheck", label: "Welk kader is relevant?" },
+    { key: "insights", label: "Inzichten" },
   ],
   en: [
     { key: "cases", label: "Case studies" },
@@ -24,6 +26,8 @@ const EXTRA_LINKS: Record<Locale, { key: PageKey; label: string }[]> = {
     { key: "gapAnalysis", label: "Gap analysis" },
     { key: "fractionalGrc", label: "Fractional GRC" },
     { key: "tabletopExercises", label: "Tabletop exercises" },
+    { key: "kaderCheck", label: "Which framework is relevant?" },
+    { key: "insights", label: "Insights" },
   ],
   fr: [
     { key: "cases", label: "Études de cas" },
@@ -31,6 +35,8 @@ const EXTRA_LINKS: Record<Locale, { key: PageKey; label: string }[]> = {
     { key: "gapAnalysis", label: "Analyse GAP" },
     { key: "fractionalGrc", label: "GRC fractionné" },
     { key: "tabletopExercises", label: "Exercices tabletop" },
+    { key: "kaderCheck", label: "Quel cadre est pertinent ?" },
+    { key: "insights", label: "Perspectives" },
   ],
 };
 
@@ -95,16 +101,6 @@ export default function Footer() {
                 {l.label}
               </a>
             ))}
-            {locale === "nl" && (
-              <>
-                <a href="/kader-check" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                  Welk kader is relevant?
-                </a>
-                <a href="/insights" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                  Inzichten
-                </a>
-              </>
-            )}
           </div>
           <div>
             <p className="text-sm font-semibold">{dict.contactHeading}</p>

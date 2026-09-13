@@ -87,3 +87,48 @@ export type SelfAssessmentDict = {
   averageLabel: string;
   helper: string;
 };
+
+export type FrameworkVerdictText = { titel: string; tekst: string };
+
+export type FrameworkCheckerDict = {
+  sectoren: string[];
+  groottes: string[];
+  jaNeeNietZeker: string[];
+  vragen: string[];
+  /** Template with {step} and {total} placeholders. */
+  questionOf: string;
+  previous: string;
+  resultTitle: string;
+  resultIntro: string;
+  ctaPrimary: string;
+  restart: string;
+  relevantieLabels: {
+    waarschijnlijk: string;
+    mogelijk: string;
+    minderWaarschijnlijk: string;
+    vrijwelAltijd: string;
+  };
+  frameworks: {
+    nis2: {
+      naam: string;
+      waarschijnlijk: FrameworkVerdictText;
+      mogelijkSector: FrameworkVerdictText;
+      mogelijkGevraagd: FrameworkVerdictText;
+      minderWaarschijnlijk: FrameworkVerdictText;
+    };
+    cyfun: {
+      naam: string;
+      waarschijnlijk: FrameworkVerdictText;
+      mogelijk: FrameworkVerdictText;
+    };
+    iso27001: {
+      naam: string;
+      waarschijnlijk: FrameworkVerdictText;
+      mogelijk: FrameworkVerdictText;
+    };
+    gdpr: {
+      naam: string;
+      tekst: string;
+    };
+  };
+};

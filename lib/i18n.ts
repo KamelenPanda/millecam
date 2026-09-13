@@ -21,7 +21,9 @@ export type PageKey =
   | "gapAnalysis"
   | "fractionalGrc"
   | "tabletopExercises"
-  | "cases";
+  | "cases"
+  | "kaderCheck"
+  | "insights";
 
 /** Per-locale URL slugs for every non-home page, so EN/FR get idiomatic URLs
  * instead of carrying the Dutch slug (e.g. /fr/approche, not /fr/aanpak). */
@@ -45,6 +47,8 @@ const SLUGS: Record<Locale, Record<PageKey, string>> = {
     fractionalGrc: "fractional-grc",
     tabletopExercises: "tabletop-exercises",
     cases: "cases",
+    kaderCheck: "kader-check",
+    insights: "insights",
   },
   en: {
     services: "services",
@@ -65,6 +69,8 @@ const SLUGS: Record<Locale, Record<PageKey, string>> = {
     fractionalGrc: "fractional-grc",
     tabletopExercises: "tabletop-exercises",
     cases: "case-studies",
+    kaderCheck: "framework-check",
+    insights: "insights",
   },
   fr: {
     services: "services",
@@ -85,6 +91,8 @@ const SLUGS: Record<Locale, Record<PageKey, string>> = {
     fractionalGrc: "grc-fractionne",
     tabletopExercises: "exercices-tabletop",
     cases: "etudes-de-cas",
+    kaderCheck: "verification-cadres",
+    insights: "perspectives",
   },
 };
 
