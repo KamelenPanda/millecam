@@ -3,10 +3,36 @@
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import FrameworkList from "./FrameworkList";
-import { pageHref, localeFromPath, type Locale } from "@/lib/i18n";
+import { pageHref, localeFromPath, type Locale, type PageKey } from "@/lib/i18n";
 import type { FooterDict } from "@/lib/content/types";
 import { footer as enFooter } from "@/lib/content/en";
 import { footer as frFooter } from "@/lib/content/fr";
+
+/** Footer-only extra links (below FAQ/NIS2-check) — kept local rather than
+ * added to the shared FooterDict, since nothing else consumes them. */
+const EXTRA_LINKS: Record<Locale, { key: PageKey; label: string }[]> = {
+  nl: [
+    { key: "cases", label: "Praktijkvoorbeelden" },
+    { key: "dpoService", label: "DPO-as-a-Service" },
+    { key: "gapAnalysis", label: "GAP-analyse" },
+    { key: "fractionalGrc", label: "Fractional GRC" },
+    { key: "tabletopExercises", label: "Tabletop exercises" },
+  ],
+  en: [
+    { key: "cases", label: "Case studies" },
+    { key: "dpoService", label: "DPO-as-a-Service" },
+    { key: "gapAnalysis", label: "Gap analysis" },
+    { key: "fractionalGrc", label: "Fractional GRC" },
+    { key: "tabletopExercises", label: "Tabletop exercises" },
+  ],
+  fr: [
+    { key: "cases", label: "Études de cas" },
+    { key: "dpoService", label: "DPO externalisé" },
+    { key: "gapAnalysis", label: "Analyse GAP" },
+    { key: "fractionalGrc", label: "GRC fractionné" },
+    { key: "tabletopExercises", label: "Exercices tabletop" },
+  ],
+};
 
 const NL_DICT: FooterDict = {
   servicesHeading: "Diensten",
@@ -45,16 +71,12 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold">{dict.servicesHeading}</p>
             <FrameworkList
-              items={
-                locale === "nl"
-                  ? [
-                      { label: "NIS2", href: "/nis2" },
-                      { label: "ISO 27001", href: "/iso-27001" },
-                      { label: "CyFun", href: "/cyberfundamentals" },
-                      { label: "GDPR", href: "/gdpr" },
-                    ]
-                  : dict.frameworks
-              }
+              items={[
+                { label: "NIS2", href: pageHref(locale, "nis2") },
+                { label: "ISO 27001", href: pageHref(locale, "iso27001") },
+                { label: "CyFun", href: pageHref(locale, "cyfun") },
+                { label: locale === "fr" ? "RGPD" : "GDPR", href: pageHref(locale, "gdpr") },
+              ]}
               tone="paper"
               className="mt-3"
             />
@@ -64,25 +86,15 @@ export default function Footer() {
             <a href={pageHref(locale, "nis2check")} className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
               {dict.nis2CheckLink}
             </a>
-            {locale === "nl" && (
-              <>
-                <a href="/cases" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                  Praktijkvoorbeelden
-                </a>
-                <a href="/dpo-as-a-service" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                  DPO-as-a-Service
-                </a>
-                <a href="/gap-analyse" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                  GAP-analyse
-                </a>
-                <a href="/fractional-grc" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                  Fractional GRC
-                </a>
-                <a href="/tabletop-exercises" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-                  Tabletop exercises
-                </a>
-              </>
-            )}
+            {EXTRA_LINKS[locale].map((l) => (
+              <a
+                key={l.key}
+                href={pageHref(locale, l.key)}
+                className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline"
+              >
+                {l.label}
+              </a>
+            ))}
           </div>
           <div>
             <p className="text-sm font-semibold">{dict.contactHeading}</p>

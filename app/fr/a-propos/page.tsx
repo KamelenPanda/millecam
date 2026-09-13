@@ -58,6 +58,7 @@ export default function OverPage() {
 
       <Reveal className="mt-14 max-w-2xl">
         <h2 id="credentials" className="font-serif text-lg font-semibold text-ink">Certifications</h2>
+
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <div className="flex items-baseline justify-between gap-4">
             <p className="font-serif text-lg font-semibold text-ink">
@@ -67,6 +68,44 @@ export default function OverPage() {
           </div>
           <p className="mt-1 text-sm text-ink/70">
             Data Protection Institute (DPI) : certificat valable 3 ans, renouvelable.
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Expertise des cadres réglementaires</p>
+          <p className="mt-1 text-sm text-ink/70">
+            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) et RGPD — expérience pratique acquise
+            auprès de PME dans les secteurs SaaS/tech, production, logistique, services professionnels,
+            comptabilité, alimentation et publicité.
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Confidentialité &amp; traitement des données</p>
+          <p className="mt-1 text-sm text-ink/70">
+            La communication professionnelle et les documents transitent par un environnement Microsoft
+            365 professionnel. Lorsqu&apos;un support IA est utilisé, cela se fait avec minimisation des
+            données et des garanties contractuelles et techniques appropriées — détails dans la{" "}
+            <a href="/fr/politique-de-confidentialite" className="text-terracotta hover:underline">
+              politique de confidentialité
+            </a>
+            .
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Entreprise</p>
+          <p className="mt-1 text-sm text-ink/70">
+            Millecam — Robin Millecam, Sinte Annalaan 34, 9300 Alost, Belgique.{" "}
+            <a
+              href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
+              target="_blank"
+              rel="noreferrer"
+              className="text-terracotta hover:underline"
+            >
+              BCE BE 1026.876.048
+            </a>
+            .
           </p>
         </div>
       </Reveal>

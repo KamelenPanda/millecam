@@ -94,7 +94,12 @@ export default function HomePage() {
               conformité en interne, mais doivent pourtant la démontrer.
             </p>
             <FrameworkList
-              items={["NIS2", "ISO 27001", "CyFun", "RGPD"]}
+              items={[
+                { label: "NIS2", href: "/fr/nis2" },
+                { label: "ISO 27001", href: "/fr/iso-27001" },
+                { label: "CyFun", href: "/fr/cyberfundamentals" },
+                { label: "RGPD", href: "/fr/rgpd" },
+              ]}
               className="animate-hero-in mt-8"
               style={{ animationDelay: "0.2s" }}
             />

@@ -12,7 +12,16 @@ export type PageKey =
   | "faq"
   | "privacy"
   | "cookies"
-  | "terms";
+  | "terms"
+  | "nis2"
+  | "iso27001"
+  | "cyfun"
+  | "gdpr"
+  | "dpoService"
+  | "gapAnalysis"
+  | "fractionalGrc"
+  | "tabletopExercises"
+  | "cases";
 
 /** Per-locale URL slugs for every non-home page, so EN/FR get idiomatic URLs
  * instead of carrying the Dutch slug (e.g. /fr/approche, not /fr/aanpak). */
@@ -27,6 +36,15 @@ const SLUGS: Record<Locale, Record<PageKey, string>> = {
     privacy: "privacybeleid",
     cookies: "cookiebeleid",
     terms: "algemene-voorwaarden",
+    nis2: "nis2",
+    iso27001: "iso-27001",
+    cyfun: "cyberfundamentals",
+    gdpr: "gdpr",
+    dpoService: "dpo-as-a-service",
+    gapAnalysis: "gap-analyse",
+    fractionalGrc: "fractional-grc",
+    tabletopExercises: "tabletop-exercises",
+    cases: "cases",
   },
   en: {
     services: "services",
@@ -38,6 +56,15 @@ const SLUGS: Record<Locale, Record<PageKey, string>> = {
     privacy: "privacy-policy",
     cookies: "cookie-policy",
     terms: "terms-and-conditions",
+    nis2: "nis2",
+    iso27001: "iso-27001",
+    cyfun: "cyberfundamentals",
+    gdpr: "gdpr",
+    dpoService: "dpo-as-a-service",
+    gapAnalysis: "gap-analysis",
+    fractionalGrc: "fractional-grc",
+    tabletopExercises: "tabletop-exercises",
+    cases: "case-studies",
   },
   fr: {
     services: "services",
@@ -49,6 +76,15 @@ const SLUGS: Record<Locale, Record<PageKey, string>> = {
     privacy: "politique-de-confidentialite",
     cookies: "politique-de-cookies",
     terms: "conditions-generales",
+    nis2: "nis2",
+    iso27001: "iso-27001",
+    cyfun: "cyberfundamentals",
+    gdpr: "rgpd",
+    dpoService: "dpo-externalise",
+    gapAnalysis: "analyse-gap",
+    fractionalGrc: "grc-fractionne",
+    tabletopExercises: "exercices-tabletop",
+    cases: "etudes-de-cas",
   },
 };
 

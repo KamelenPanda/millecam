@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
@@ -22,30 +23,35 @@ const DIENSTEN = [
     vorm: "Prix fixe, trajet court",
     voorWie: "Les organisations qui veulent savoir où elles en sont par rapport à NIS2, ISO 27001 ou CyFun.",
     watJeKrijgt: "Un rapport avec un score par contrôle, des constats priorisés et un plan d'action concret.",
+    href: "/fr/analyse-gap",
   },
   {
     naam: "Trajet de mise en œuvre",
     vorm: "Sur base de projet",
     voorWie: "Les organisations qui veulent transformer les constats en conformité démontrable.",
     watJeKrijgt: "Accompagnement sur les politiques, la documentation et les mesures techniques. Vous gardez la main.",
+    href: "/fr/approche",
   },
   {
     naam: "DPO-as-a-Service",
     vorm: "Forfait mensuel",
     voorWie: "Les organisations qui ont besoin d'un DPO, pas d'un poste à temps plein.",
     watJeKrijgt: "Un point de contact externe reconnu pour les questions RGPD, les notifications de fuites et le suivi des traitements.",
+    href: "/fr/dpo-externalise",
   },
   {
     naam: "Tabletop exercises & awareness",
     vorm: "Sur base de projet / événement",
     voorWie: "Les équipes qui veulent transformer la théorie en réflexe — avant un incident, pas après.",
     watJeKrijgt: "Des exercices de simulation interactifs sur mesure, avec un rapport concret des enseignements tirés.",
+    href: "/fr/exercices-tabletop",
   },
   {
     naam: "Accompagnement GRC fractionné",
     vorm: "Tarif journalier, continu",
     voorWie: "Les organisations qui ont besoin de capacité de conformité ponctuellement (ou structurellement) sans recruter.",
     watJeKrijgt: "Une disponibilité fiable, au rythme qui vous convient.",
+    href: "/fr/grc-fractionne",
   },
 ];
 
@@ -54,21 +60,25 @@ const FRAMEWORKS = [
     naam: "NIS2",
     tekst: "Directive européenne sur la cybersécurité pour les entités essentielles et importantes, pertinente à partir d'une certaine taille ou d'un certain secteur.",
     glyph: <IllustrationNis2 className="h-14 w-14 shrink-0" />,
+    href: "/fr/nis2",
   },
   {
     naam: "ISO 27001",
     tekst: "Norme internationale pour la sécurité de l'information. Souvent une exigence contractuelle des clients ou des appels d'offres.",
     glyph: <IllustrationIso27001 className="h-14 w-14 shrink-0" />,
+    href: "/fr/iso-27001",
   },
   {
     naam: "CyFun",
     tekst: "Le référentiel belge CyberFundamentals du Centre pour la Cybersécurité Belgique : une alternative accessible pour démontrer la conformité NIS2.",
     glyph: <IllustrationCyfun className="h-14 w-14 shrink-0" />,
+    href: "/fr/cyberfundamentals",
   },
   {
     naam: "RGPD",
     tekst: "Législation européenne sur la vie privée, applicable à pratiquement toute organisation qui traite des données à caractère personnel.",
     glyph: <IllustrationGdpr className="h-14 w-14 shrink-0" />,
+    href: "/fr/rgpd",
   },
 ];
 
@@ -90,8 +100,10 @@ export default function DienstenPage() {
         <RevealGroup
           className="mt-8 grid gap-6 md:grid-cols-2"
           itemClassName="h-full"
-          items={DIENSTEN.map((d) => (
-            <ServiceCard key={d.naam} {...d} />
+          items={DIENSTEN.map(({ href, ...d }) => (
+            <Link key={d.naam} href={href} className="block h-full">
+              <ServiceCard {...d} interactive />
+            </Link>
           ))}
         />
       </Section>
@@ -101,6 +113,9 @@ export default function DienstenPage() {
         <div className="mt-8">
           <FrameworkGrid frameworks={FRAMEWORKS} />
         </div>
+        <Link href="/fr/etudes-de-cas" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
+          Voir les études de cas
+        </Link>
       </Section>
 
       <Section className="bg-white">
