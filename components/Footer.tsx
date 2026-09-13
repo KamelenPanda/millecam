@@ -95,6 +95,11 @@ export default function Footer() {
                 {l.label}
               </a>
             ))}
+            {locale === "nl" && (
+              <a href="/insights" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+                Inzichten
+              </a>
+            )}
           </div>
           <div>
             <p className="text-sm font-semibold">{dict.contactHeading}</p>
