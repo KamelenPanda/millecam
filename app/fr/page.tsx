@@ -26,30 +26,35 @@ const DIENSTEN = [
     vorm: "Prix fixe, trajet court",
     voorWie: "Les organisations qui veulent savoir où elles en sont par rapport à NIS2, ISO 27001 ou CyFun.",
     watJeKrijgt: "Un rapport avec un score par contrôle, des constats priorisés et un plan d'action concret.",
+    href: "/fr/analyse-gap",
   },
   {
     naam: "Trajet de mise en œuvre",
     vorm: "Sur base de projet",
     voorWie: "Les organisations qui veulent transformer les constats en conformité démontrable.",
     watJeKrijgt: "Accompagnement sur les politiques, la documentation et les mesures techniques. Vous gardez la main.",
+    href: "/fr/approche",
   },
   {
     naam: "DPO-as-a-Service",
     vorm: "Forfait mensuel",
     voorWie: "Les organisations qui ont besoin d'un DPO, pas d'un poste à temps plein.",
     watJeKrijgt: "Un point de contact externe reconnu pour les questions RGPD, les notifications et le suivi.",
+    href: "/fr/dpo-externalise",
   },
   {
     naam: "Tabletop exercises & awareness",
     vorm: "Sur base de projet / événement",
     voorWie: "Les équipes qui veulent transformer la théorie en réflexe.",
     watJeKrijgt: "Des exercices de simulation sur mesure, avec un rapport des enseignements tirés.",
+    href: "/fr/exercices-tabletop",
   },
   {
     naam: "Accompagnement GRC fractionné",
     vorm: "Tarif journalier, continu",
     voorWie: "Les organisations qui ont besoin de capacité ponctuellement ou structurellement.",
     watJeKrijgt: "Une disponibilité fiable, au rythme qui vous convient.",
+    href: "/fr/grc-fractionne",
   },
 ];
 
@@ -189,8 +194,10 @@ export default function HomePage() {
         <RevealGroup
           className="mt-10 grid gap-6 md:grid-cols-2"
           itemClassName="h-full"
-          items={DIENSTEN.slice(0, 4).map((d) => (
-            <ServiceCard key={d.naam} {...d} />
+          items={DIENSTEN.slice(0, 4).map(({ href, ...d }) => (
+            <Link key={d.naam} href={href} className="block h-full">
+              <ServiceCard {...d} interactive />
+            </Link>
           ))}
         />
         <Link href="/fr/services" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">

@@ -30,6 +30,7 @@ const DIENSTEN = [
     watJeKrijgt: "Rapport met scoring per control, geprioriteerde bevindingen en een concreet stappenplan.",
     icon: <IllustrationGap className="h-12 w-12" />,
     accent: "border-terracotta",
+    href: "/gap-analyse",
   },
   {
     naam: "Implementatietraject",
@@ -38,6 +39,7 @@ const DIENSTEN = [
     watJeKrijgt: "Begeleiding bij beleid, documentatie en technische maatregelen. Jij houdt de regie.",
     icon: <IllustrationBuild className="h-12 w-12" />,
     accent: "border-ink",
+    href: "/aanpak",
   },
   {
     naam: "DPO-as-a-Service",
@@ -46,6 +48,7 @@ const DIENSTEN = [
     watJeKrijgt: "Erkend extern aanspreekpunt voor AVG-vraagstukken, meldingen en toezicht.",
     icon: <IllustrationSupport className="h-12 w-12" />,
     accent: "border-muted",
+    href: "/dpo-as-a-service",
   },
   {
     naam: "Tabletop exercises & awareness",
@@ -54,6 +57,7 @@ const DIENSTEN = [
     watJeKrijgt: "Scenario-oefeningen op maat, met rapportage van leerpunten.",
     icon: <IllustrationDialogue className="h-12 w-12" />,
     accent: "border-terracotta-light/60",
+    href: "/tabletop-exercises",
   },
   {
     naam: "Fractional GRC-ondersteuning",
@@ -62,6 +66,7 @@ const DIENSTEN = [
     watJeKrijgt: "Vaste beschikbaarheid, op het ritme dat past.",
     icon: <IllustrationClock className="h-12 w-12" />,
     accent: "border-line",
+    href: "/fractional-grc",
   },
 ];
 
@@ -261,8 +266,10 @@ export default function HomePage() {
         <RevealGroup
           className="mt-10 grid gap-6 md:grid-cols-2"
           itemClassName="h-full"
-          items={DIENSTEN.slice(0, 4).map((d) => (
-            <ServiceCard key={d.naam} {...d} />
+          items={DIENSTEN.slice(0, 4).map(({ href, ...d }) => (
+            <Link key={d.naam} href={href} className="block h-full">
+              <ServiceCard {...d} interactive />
+            </Link>
           ))}
         />
         <Link href="/diensten" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">

@@ -26,30 +26,35 @@ const DIENSTEN = [
     vorm: "Fixed price, short track",
     voorWie: "Organisations that want to know where they stand against NIS2, ISO 27001 or CyFun.",
     watJeKrijgt: "A report with scoring per control, prioritised findings and a concrete action plan.",
+    href: "/en/gap-analysis",
   },
   {
     naam: "Implementation track",
     vorm: "Project basis",
     voorWie: "Organisations that want to turn findings into demonstrable compliance.",
     watJeKrijgt: "Guidance on policy, documentation and technical measures. You stay in control.",
+    href: "/en/approach",
   },
   {
     naam: "DPO-as-a-Service",
     vorm: "Monthly retainer",
     voorWie: "Organisations that need a DPO, not a full-time role.",
     watJeKrijgt: "A recognised external point of contact for GDPR questions, breach notifications and oversight.",
+    href: "/en/dpo-as-a-service",
   },
   {
     naam: "Tabletop exercises & awareness",
     vorm: "Project basis / event",
     voorWie: "Teams that want to turn theory into reflex.",
     watJeKrijgt: "Tailored scenario exercises, with a report of lessons learned.",
+    href: "/en/tabletop-exercises",
   },
   {
     naam: "Fractional GRC support",
     vorm: "Day rate, ongoing",
     voorWie: "Organisations that need capacity occasionally or structurally.",
     watJeKrijgt: "Consistent availability, at whatever pace fits.",
+    href: "/en/fractional-grc",
   },
 ];
 
@@ -189,8 +194,10 @@ export default function HomePage() {
         <RevealGroup
           className="mt-10 grid gap-6 md:grid-cols-2"
           itemClassName="h-full"
-          items={DIENSTEN.slice(0, 4).map((d) => (
-            <ServiceCard key={d.naam} {...d} />
+          items={DIENSTEN.slice(0, 4).map(({ href, ...d }) => (
+            <Link key={d.naam} href={href} className="block h-full">
+              <ServiceCard {...d} interactive />
+            </Link>
           ))}
         />
         <Link href="/en/services" className="mt-8 inline-block text-sm font-medium text-terracotta hover:underline">
