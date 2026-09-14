@@ -94,24 +94,28 @@ const KADERS = [
     tekst: "Raakt je als je in een kritieke sector zit of als een klant het van je leverancier verwacht. Wij bepalen samen of, en op welk niveau, dit voor jou geldt.",
     glyph: <IllustrationNis2 className="h-14 w-14" />,
     accent: "border-terracotta",
+    href: "/nis2",
   },
   {
     naam: "ISO 27001",
     tekst: "Vaak geen eigen keuze, maar een voorwaarde van een klant of aanbesteding. Wij begeleiden van GAP-analyse tot aantoonbare certificering.",
     glyph: <IllustrationIso27001 className="h-14 w-14" />,
     accent: "border-terracotta-light",
+    href: "/iso-27001",
   },
   {
     naam: "CyberFundamentals",
     tekst: "Het Belgische instapkader onder NIS2, met een niveau dat past bij jouw rol als belangrijke of essentiële entiteit. Wij brengen dat niveau in kaart en bouwen het stap voor stap op.",
     glyph: <IllustrationCyfun className="h-14 w-14" />,
     accent: "border-ink",
+    href: "/cyberfundamentals",
   },
   {
     naam: "GDPR",
     tekst: "Een doorlopende verplichting, geen eenmalig project. Als erkend extern DPO nemen wij die rol op zonder dat je iemand aanwerft.",
     glyph: <IllustrationGdpr className="h-14 w-14" />,
     accent: "border-muted",
+    href: "/gdpr",
   },
 ];
 
@@ -215,14 +219,15 @@ export default function HomePage() {
           className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
           itemClassName="h-full"
           items={KADERS.map((k) => (
-            <div
-              key={k.naam}
-              className={`h-full border-t-4 ${k.accent} bg-[#FBF9F4] p-6 shadow-[0_14px_34px_rgba(33,29,24,0.09)]`}
-            >
-              {k.glyph}
-              <h3 className="mt-4 font-serif text-lg font-semibold text-ink">{k.naam}</h3>
-              <p className="mt-2 text-sm text-ink/70">{k.tekst}</p>
-            </div>
+            <Link key={k.naam} href={k.href} className="block h-full">
+              <div
+                className={`h-full border-t-4 ${k.accent} bg-[#FBF9F4] p-6 shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-[transform,background-color,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-terracotta-darker hover:bg-white`}
+              >
+                {k.glyph}
+                <h3 className="mt-4 font-serif text-lg font-semibold text-ink">{k.naam}</h3>
+                <p className="mt-2 text-sm text-ink/70">{k.tekst}</p>
+              </div>
+            </Link>
           ))}
         />
       </Section>
