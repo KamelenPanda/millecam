@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 import PillarGlyph from "@/components/PillarGlyph";
 import FrameworkGrid from "@/components/FrameworkGrid";
+import FrameworkStrip from "@/components/FrameworkStrip";
 import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 import IllustrationNis2 from "@/components/illustrations/IllustrationNis2";
@@ -106,6 +107,15 @@ export default function DienstenPage() {
             </Link>
           ))}
         />
+      </Section>
+
+      <Section className="hidden bg-white py-8 md:block">
+        <p className="text-xs font-semibold uppercase tracking-wide text-ink/40">Cadres</p>
+        <div className="mt-5">
+          <FrameworkStrip
+            items={FRAMEWORKS.map(({ naam, href }) => ({ label: naam, href }))}
+          />
+        </div>
       </Section>
 
       <Section>
