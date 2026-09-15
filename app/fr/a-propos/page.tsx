@@ -1,0 +1,118 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Section from "@/components/Section";
+import Button from "@/components/Button";
+import PillarGlyph from "@/components/PillarGlyph";
+import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "À propos | Millecam",
+  description: "Millecam est le cabinet de conseil GRC indépendant de Robin Millecam.",
+};
+
+export default function OverPage() {
+  return (
+    <Section className="pb-24 pt-16">
+      <div className="grid gap-10 md:grid-cols-[1.3fr_0.9fr] md:items-start md:gap-14">
+        <div className="order-2 md:order-1">
+          <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">À propos de Millecam</h1>
+
+          <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
+            <p>
+              Derrière Millecam se cache un seul nom : Robin Millecam. Ce n&apos;est pas un hasard —
+              Millecam n&apos;est pas qu&apos;un nom de marque, c&apos;est aussi tout simplement qui se
+              trouve à l&apos;autre bout du fil. Un point de contact fixe plutôt qu&apos;une équipe qui
+              tourne, pour les organisations qui ont besoin d&apos;une expertise en conformité sans créer
+              un poste en interne.
+            </p>
+            <p>
+              Des années d&apos;expérience dans le scoping NIS2, les analyses GAP CyFun, la documentation
+              ISO 27001 et les questions RGPD auprès de PME dans des secteurs très variés : SaaS et tech,
+              production, logistique, services professionnels, comptabilité, alimentation et publicité.
+              Délégué à la protection des données certifié (certification DPI, février 2025).
+            </p>
+            <div>
+              <PillarGlyph className="h-5 w-4" />
+              <p className="mt-3 font-serif text-xl italic text-terracotta">
+                La conformité ne doit pas être une fin en soi. C&apos;est un moyen d&apos;être
+                démontrablement en contrôle : envers un régulateur, un client, ou soi-même. D&apos;où la
+                promesse : Govern with confidence.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal className="order-1 mx-auto w-full max-w-xs md:order-2 md:max-w-none">
+          <div className="bg-white p-3 shadow-[0_28px_70px_rgba(33,29,24,0.14)]">
+            <Image
+              src="/images/robin.jpg"
+              alt="Robin Millecam"
+              width={900}
+              height={1125}
+              className="w-full"
+              sizes="(min-width: 768px) 30vw, 320px"
+            />
+          </div>
+        </Reveal>
+      </div>
+
+      <Reveal className="mt-14 max-w-2xl">
+        <h2 id="credentials" className="font-serif text-lg font-semibold text-ink">Certifications</h2>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="font-serif text-lg font-semibold text-ink">
+              Délégué à la protection des données certifié
+            </p>
+            <p className="whitespace-nowrap text-xs text-muted">Depuis février 2025</p>
+          </div>
+          <p className="mt-1 text-sm text-ink/70">
+            Data Protection Institute (DPI) : certificat valable 3 ans, renouvelable.
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Expertise des cadres réglementaires</p>
+          <p className="mt-1 text-sm text-ink/70">
+            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) et RGPD — expérience pratique acquise
+            auprès de PME dans les secteurs SaaS/tech, production, logistique, services professionnels,
+            comptabilité, alimentation et publicité.
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Confidentialité &amp; traitement des données</p>
+          <p className="mt-1 text-sm text-ink/70">
+            La communication professionnelle et les documents transitent par un environnement Microsoft
+            365 professionnel. Lorsqu&apos;un support IA est utilisé, cela se fait avec minimisation des
+            données et des garanties contractuelles et techniques appropriées — détails dans la{" "}
+            <a href="/fr/politique-de-confidentialite" className="text-terracotta hover:underline">
+              politique de confidentialité
+            </a>
+            .
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Entreprise</p>
+          <p className="mt-1 text-sm text-ink/70">
+            Millecam — Robin Millecam, Sinte Annalaan 34, 9300 Alost, Belgique.{" "}
+            <a
+              href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
+              target="_blank"
+              rel="noreferrer"
+              className="text-terracotta hover:underline"
+            >
+              BCE BE 1026.876.048
+            </a>
+            .
+          </p>
+        </div>
+      </Reveal>
+
+      <Button href="/fr/contact" variant="primary" className="mt-10">
+        Envie de parler directement avec Robin ? Planifiez un appel d&apos;introduction.
+      </Button>
+    </Section>
+  );
+}

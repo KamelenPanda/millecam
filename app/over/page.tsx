@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import PillarGlyph from "@/components/PillarGlyph";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Over | Millecam",
@@ -11,32 +13,51 @@ export const metadata: Metadata = {
 export default function OverPage() {
   return (
     <Section className="pb-24 pt-16">
-      <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">Over Millecam</h1>
+      <div className="grid gap-10 md:grid-cols-[1.3fr_0.9fr] md:items-start md:gap-14">
+        <div className="order-2 md:order-1">
+          <h1 className="max-w-2xl font-serif text-4xl font-bold text-ink">Over Millecam</h1>
 
-      <div className="mt-8 max-w-2xl space-y-6 text-ink/80">
-        <p>
-          Achter Millecam staat één naam: Robin Millecam. Geen toeval: Millecam is niet enkel de
-          merknaam, het is ook gewoon wie er aan de andere kant van de lijn zit. Eén vast
-          aanspreekpunt in plaats van een wisselend team, voor organisaties die
-          compliance-expertise nodig hebben zonder een interne rol te creëren.
-        </p>
-        <p>
-          Jarenlange ervaring met NIS2-scoping, CyFun-gapanalyses, ISO 27001-documentatie en
-          AVG-vraagstukken bij KMO&apos;s in uiteenlopende sectoren, van bouw en transport tot voeding
-          en tech. Erkend Data Protection Officer (DPI-gecertificeerd, februari 2025).
-        </p>
-        <div>
-          <PillarGlyph className="h-5 w-4" />
-          <p className="mt-3 font-serif text-xl italic text-terracotta">
-            Compliance hoort geen doel op zich te zijn. Het is een middel om aantoonbaar in controle te
-            zijn: naar een toezichthouder, een klant, of jezelf. Vandaar de belofte: Govern with
-            confidence.
-          </p>
+          <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
+            <p>
+              Achter Millecam staat één naam: Robin Millecam. Geen toeval: Millecam is niet enkel de
+              merknaam, het is ook gewoon wie er aan de andere kant van de lijn zit. Eén vast
+              aanspreekpunt in plaats van een wisselend team, voor organisaties die
+              compliance-expertise nodig hebben zonder een interne rol te creëren.
+            </p>
+            <p>
+              Jarenlange ervaring met NIS2-scoping, CyFun-gapanalyses, ISO 27001-documentatie en
+              AVG-vraagstukken bij KMO&apos;s in uiteenlopende sectoren: SaaS en tech, productie, logistiek,
+              professionele dienstverlening, accountancy, voeding en adverteren. Erkend Data Protection
+              Officer (DPI-gecertificeerd, februari 2025).
+            </p>
+            <div>
+              <PillarGlyph className="h-5 w-4" />
+              <p className="mt-3 font-serif text-xl italic text-terracotta">
+                Compliance hoort geen doel op zich te zijn. Het is een middel om aantoonbaar in controle te
+                zijn: naar een toezichthouder, een klant, of jezelf. Vandaar de belofte: Govern with
+                confidence.
+              </p>
+            </div>
+          </Reveal>
         </div>
+
+        <Reveal className="order-1 mx-auto w-full max-w-xs md:order-2 md:max-w-none">
+          <div className="bg-white p-3 shadow-[0_28px_70px_rgba(33,29,24,0.14)]">
+            <Image
+              src="/images/robin.jpg"
+              alt="Robin Millecam"
+              width={900}
+              height={1125}
+              className="w-full"
+              sizes="(min-width: 768px) 30vw, 320px"
+            />
+          </div>
+        </Reveal>
       </div>
 
-      <div className="mt-14 max-w-2xl">
-        <h2 className="font-serif text-lg font-semibold text-ink">Credentials</h2>
+      <Reveal className="mt-14 max-w-2xl">
+        <h2 id="credentials" className="font-serif text-lg font-semibold text-ink">Credentials</h2>
+
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <div className="flex items-baseline justify-between gap-4">
             <p className="font-serif text-lg font-semibold text-ink">
@@ -48,7 +69,45 @@ export default function OverPage() {
             Data Protection Institute (DPI): certificaat geldig 3 jaar, verlengbaar.
           </p>
         </div>
-      </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Kaderexpertise</p>
+          <p className="mt-1 text-sm text-ink/70">
+            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) en GDPR/AVG — praktijkervaring opgebouwd bij
+            KMO&apos;s in SaaS/tech, productie, logistiek, professionele dienstverlening, accountancy, voeding
+            en adverteren.
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Vertrouwelijkheid &amp; gegevensverwerking</p>
+          <p className="mt-1 text-sm text-ink/70">
+            Zakelijke communicatie en documenten lopen via een professionele Microsoft 365-omgeving.
+            Waar AI-ondersteuning wordt ingezet, gebeurt dat met dataminimalisatie en passende contractuele
+            en technische waarborgen — details in het{" "}
+            <a href="/privacybeleid" className="text-terracotta hover:underline">
+              privacybeleid
+            </a>
+            .
+          </p>
+        </div>
+
+        <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
+          <p className="font-serif text-lg font-semibold text-ink">Onderneming</p>
+          <p className="mt-1 text-sm text-ink/70">
+            Millecam — Robin Millecam, Sinte Annalaan 34, 9300 Aalst.{" "}
+            <a
+              href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
+              target="_blank"
+              rel="noreferrer"
+              className="text-terracotta hover:underline"
+            >
+              KBO BE 1026.876.048
+            </a>
+            .
+          </p>
+        </div>
+      </Reveal>
 
       <Button href="/contact" variant="primary" className="mt-10">
         Robin rechtstreeks spreken? Plan een kennismaking.
