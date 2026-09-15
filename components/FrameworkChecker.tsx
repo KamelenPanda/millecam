@@ -195,7 +195,7 @@ export default function FrameworkChecker({ locale = "nl", dict = NL_DICT }: Fram
   if (step >= steps.length) {
     const verdicts = computeVerdicts(answers, dict, locale);
     return (
-      <div className="animate-confirm-in">
+      <div className="animate-confirm-in" role="status" aria-live="polite">
         <PillarGlyph className="h-5 w-4" />
         <p className="mt-3 font-serif text-2xl font-semibold text-ink">{dict.resultTitle}</p>
         <p className="mt-2 max-w-xl text-sm text-ink/70">{dict.resultIntro}</p>

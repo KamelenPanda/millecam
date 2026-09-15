@@ -47,6 +47,7 @@ export const cookieBanner: CookieBannerDict = {
 
 export const contactForm: ContactFormDict = {
   subjects: ["GAP analysis", "DPO support", "ISO 27001 track", "Tabletop exercise", "Other question"],
+  requiredHint: "* = required field",
   labels: {
     name: "Name",
     company: "Company",

@@ -30,6 +30,8 @@ export type CookieBannerDict = {
 
 export type ContactFormDict = {
   subjects: string[];
+  /** Shown once near the top of the form to explain what the `*` on required fields means. */
+  requiredHint: string;
   labels: {
     name: string;
     company: string;

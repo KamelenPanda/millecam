@@ -137,6 +137,8 @@ export default function Nis2Checker({ locale = "nl", dict = NL_DICT }: Nis2Check
     return (
       <div
         key={v.titel}
+        role="status"
+        aria-live="polite"
         className="animate-confirm-in border-l-2 border-terracotta bg-[#FBF9F4] px-6 py-8 shadow-[0_14px_34px_rgba(33,29,24,0.09)] sm:px-8"
       >
         <PillarGlyph className="h-5 w-4" />

@@ -6,6 +6,7 @@ import type { ContactFormDict } from "@/lib/content/types";
 
 const NL_DICT: ContactFormDict = {
   subjects: ["GAP-analyse", "DPO-ondersteuning", "ISO 27001-traject", "Tabletop exercise", "Andere vraag"],
+  requiredHint: "* = verplicht veld",
   labels: {
     name: "Naam",
     company: "Bedrijf",
@@ -105,6 +106,7 @@ export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-7">
+      <p className="text-xs text-muted">{dict.requiredHint}</p>
       <div className="grid gap-7 sm:grid-cols-2">
         <Field
           label={dict.labels.name}
@@ -159,6 +161,7 @@ export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict
           name="bericht"
           rows={5}
           onChange={() => clearError("bericht")}
+          aria-required="true"
           aria-invalid={!!errors.bericht}
           aria-describedby={errors.bericht ? "bericht-error" : undefined}
           className="w-full appearance-none resize-none border-x-0 border-t-0 border-b border-line bg-transparent py-2 text-sm leading-7 text-ink transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none"
@@ -254,6 +257,7 @@ function Field({
         name={name}
         type={type}
         onChange={onChange}
+        aria-required={required || undefined}
         aria-invalid={!!error}
         aria-describedby={error ? `${name}-error` : undefined}
         className={`${fieldClass} ${error ? "border-status-kritiek" : ""}`}
