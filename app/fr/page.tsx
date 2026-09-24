@@ -89,14 +89,14 @@ export default function HomePage() {
         <div className="grid items-center gap-14 md:grid-cols-[1.15fr_0.95fr] md:gap-10">
           <div>
             <h1 className="animate-hero-in font-serif text-6xl font-bold italic leading-[1.05] text-terracotta sm:text-7xl lg:text-[5.5rem]">
-              Govern with confidence.
+              En règle. Et pouvoir le prouver.
             </h1>
             <p
               className="animate-hero-in mt-7 max-w-lg text-lg text-ink/80"
               style={{ animationDelay: "0.1s" }}
             >
-              Une expertise GRC indépendante pour les PME qui ne peuvent pas mettre en place leur
-              conformité en interne, mais doivent pourtant la démontrer.
+              Une expertise GRC indépendante pour les PME qui n&apos;ont pas d&apos;équipe conformité en
+              interne, mais doivent pourtant la démontrer.
             </p>
             <FrameworkList
               items={[
