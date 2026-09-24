@@ -19,6 +19,8 @@ export const nav: NavDict = {
   ],
   frameworksHeading: "Cadres",
   frameworks: ["NIS2", "ISO 27001", "CyFun", "RGPD"],
+  servicesHeading: "Services",
+  services: ["Analyse GAP", "Trajet de mise en œuvre", "DPO externalisé", "Exercices tabletop", "GRC fractionné"],
   cta: "Planifier un appel",
   homeAriaLabel: "Page d'accueil Millecam",
   menuOpen: "Ouvrir le menu",

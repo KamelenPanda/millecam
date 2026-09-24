@@ -23,6 +23,8 @@ const NL_DICT: NavDict = {
   ],
   frameworksHeading: "Kaders",
   frameworks: ["NIS2", "ISO 27001", "CyFun", "GDPR"],
+  servicesHeading: "Diensten",
+  services: ["GAP-analyse", "Implementatietraject", "DPO-as-a-Service", "Tabletop exercises", "Fractional GRC"],
   cta: "Plan gesprek",
   homeAriaLabel: "Millecam homepage",
   menuOpen: "Menu openen",
@@ -34,6 +36,8 @@ const LOCALE_LABEL: Record<Locale, string> = { nl: "NL", en: "EN", fr: "FR" };
 
 /** Fixed order matching each NavDict's `frameworks` label array. */
 const FRAMEWORK_KEYS: PageKey[] = ["nis2", "iso27001", "cyfun", "gdpr"];
+/** Fixed order matching each NavDict's `services` label array. */
+const SERVICE_KEYS: PageKey[] = ["gapAnalysis", "approach", "dpoService", "tabletopExercises", "fractionalGrc"];
 
 /**
  * Locale is derived from the live pathname rather than passed down from the
@@ -69,14 +73,14 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // The frameworks dropdown is state-driven rather than pure CSS
-  // hover/focus: a click on one of its links navigates without the mouse
-  // leaving the panel, so a hover-only dropdown would stay stuck open on
-  // top of the new page. Closing explicitly on click (and on navigation)
-  // fixes that; hover/focus still open it for the pointer/keyboard case.
-  const [frameworksOpen, setFrameworksOpen] = useState(false);
+  // The Diensten dropdown is state-driven rather than pure CSS hover/focus:
+  // a click on one of its links navigates without the mouse leaving the
+  // panel, so a hover-only dropdown would stay stuck open on top of the new
+  // page. Closing explicitly on click (and on navigation) fixes that;
+  // hover/focus still open it for the pointer/keyboard case.
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   useEffect(() => {
-    setFrameworksOpen(false);
+    setDropdownOpen(false);
   }, [pathname]);
 
   return (
@@ -92,47 +96,67 @@ export default function Nav() {
           <Logo variant="ink" className="h-8 w-auto" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
-          {/* The first link (Diensten/Services) always carries the frameworks
-              dropdown — the four framework pages otherwise live only in the
-              footer, below the fold on every page. */}
+          {/* The first link (Diensten/Services) carries a two-column
+              dropdown: the 5 actual services, and — since those otherwise
+              live only in the footer, below the fold on every page — the 4
+              frameworks Millecam works with. Kept as two separate labeled
+              columns so the frameworks (regulations, not services) never
+              read as if they were part of the service list. */}
           <div
             className="relative"
-            onMouseEnter={() => setFrameworksOpen(true)}
-            onMouseLeave={() => setFrameworksOpen(false)}
-            onFocus={() => setFrameworksOpen(true)}
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+            onFocus={() => setDropdownOpen(true)}
             onBlur={(e) => {
-              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFrameworksOpen(false);
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDropdownOpen(false);
             }}
             onKeyDown={(e) => {
-              if (e.key === "Escape") setFrameworksOpen(false);
+              if (e.key === "Escape") setDropdownOpen(false);
             }}
           >
             <Link
               href={dict.links[0].href}
-              onClick={() => setFrameworksOpen(false)}
+              onClick={() => setDropdownOpen(false)}
               className="group relative text-sm text-ink hover:text-terracotta"
             >
               {dict.links[0].label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-terracotta transition-all duration-300 group-hover:w-full" />
             </Link>
             <div
-              className={`absolute left-0 top-full z-50 mt-3 min-w-[170px] border border-line bg-paper shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-[opacity,visibility] duration-150 ${
-                frameworksOpen ? "visible opacity-100" : "invisible opacity-0"
+              className={`absolute left-0 top-full z-50 mt-3 flex min-w-[360px] border border-line bg-paper shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-[opacity,visibility] duration-150 ${
+                dropdownOpen ? "visible opacity-100" : "invisible opacity-0"
               }`}
             >
-              <p className="border-b border-line px-4 py-2 text-xs font-semibold uppercase tracking-wide text-ink/40">
-                {dict.frameworksHeading}
-              </p>
-              {FRAMEWORK_KEYS.map((key, i) => (
-                <Link
-                  key={key}
-                  href={pageHref(locale, key)}
-                  onClick={() => setFrameworksOpen(false)}
-                  className="block px-4 py-2.5 text-sm text-ink hover:bg-[#FBF9F4] hover:text-terracotta"
-                >
-                  {dict.frameworks[i]}
-                </Link>
-              ))}
+              <div className="flex-1 py-2">
+                <p className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink/40">
+                  {dict.servicesHeading}
+                </p>
+                {SERVICE_KEYS.map((key, i) => (
+                  <Link
+                    key={key}
+                    href={pageHref(locale, key)}
+                    onClick={() => setDropdownOpen(false)}
+                    className="block px-4 py-2 text-sm text-ink hover:bg-[#FBF9F4] hover:text-terracotta"
+                  >
+                    {dict.services[i]}
+                  </Link>
+                ))}
+              </div>
+              <div className="flex-1 border-l border-line py-2">
+                <p className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink/40">
+                  {dict.frameworksHeading}
+                </p>
+                {FRAMEWORK_KEYS.map((key, i) => (
+                  <Link
+                    key={key}
+                    href={pageHref(locale, key)}
+                    onClick={() => setDropdownOpen(false)}
+                    className="block px-4 py-2 text-sm text-ink hover:bg-[#FBF9F4] hover:text-terracotta"
+                  >
+                    {dict.frameworks[i]}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
           {dict.links.slice(1).map((l) => (
@@ -170,6 +194,8 @@ export default function Nav() {
           menuCloseLabel={dict.menuClose}
           frameworksHeading={dict.frameworksHeading}
           frameworks={FRAMEWORK_KEYS.map((key, i) => ({ label: dict.frameworks[i], href: pageHref(locale, key) }))}
+          servicesHeading={dict.servicesHeading}
+          services={SERVICE_KEYS.map((key, i) => ({ label: dict.services[i], href: pageHref(locale, key) }))}
         />
       </div>
     </header>

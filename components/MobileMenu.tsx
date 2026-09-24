@@ -14,6 +14,8 @@ type MobileMenuProps = {
   menuCloseLabel?: string;
   frameworksHeading?: string;
   frameworks?: { href: string; label: string }[];
+  servicesHeading?: string;
+  services?: { href: string; label: string }[];
 };
 
 const LOCALE_LABEL: Record<Locale, string> = { nl: "NL", en: "EN", fr: "FR" };
@@ -27,6 +29,8 @@ export default function MobileMenu({
   menuCloseLabel = "Menu sluiten",
   frameworksHeading,
   frameworks = [],
+  servicesHeading,
+  services = [],
 }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
 
@@ -61,6 +65,25 @@ export default function MobileMenu({
               </Link>
             ))}
           </nav>
+          {services.length > 0 && (
+            <div className="mt-6 border-t border-line pt-5">
+              {servicesHeading && (
+                <p className="text-xs font-semibold uppercase tracking-wide text-ink/40">{servicesHeading}</p>
+              )}
+              <nav className="mt-3 flex flex-col gap-4">
+                {services.map((s) => (
+                  <Link
+                    key={s.href}
+                    href={s.href}
+                    onClick={() => setOpen(false)}
+                    className="text-sm text-ink/80 hover:text-terracotta"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          )}
           {frameworks.length > 0 && (
             <div className="mt-6 border-t border-line pt-5">
               {frameworksHeading && (

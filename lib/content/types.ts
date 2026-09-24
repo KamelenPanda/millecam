@@ -4,6 +4,11 @@ export type NavDict = {
   frameworksHeading: string;
   /** Labels for NIS2, ISO 27001, CyFun and GDPR/RGPD, in that fixed order. */
   frameworks: string[];
+  /** Heading above the services dropdown/mobile section. */
+  servicesHeading: string;
+  /** Labels for GAP analysis, implementation track, DPO-as-a-Service,
+   * tabletop exercises and fractional GRC, in that fixed order. */
+  services: string[];
   cta: string;
   homeAriaLabel: string;
   menuOpen: string;

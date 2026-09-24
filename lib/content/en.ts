@@ -19,6 +19,8 @@ export const nav: NavDict = {
   ],
   frameworksHeading: "Frameworks",
   frameworks: ["NIS2", "ISO 27001", "CyFun", "GDPR"],
+  servicesHeading: "Services",
+  services: ["GAP analysis", "Implementation track", "DPO-as-a-Service", "Tabletop exercises", "Fractional GRC"],
   cta: "Book a call",
   homeAriaLabel: "Millecam homepage",
   menuOpen: "Open menu",
