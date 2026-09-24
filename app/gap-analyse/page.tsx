@@ -21,7 +21,7 @@ const VOORWIE = [
   },
   {
     titel: "Twijfel over het juiste kader",
-    tekst: "NIS2, ISO 27001 of CyberFundamentals — welk kader past, en op welk niveau, is nog niet duidelijk.",
+    tekst: "NIS2, ISO 27001 of CyberFundamentals: welk kader past, en op welk niveau, is nog niet duidelijk.",
   },
   {
     titel: "Een bestaand programma laten toetsen",
@@ -55,7 +55,7 @@ export default function GapAnalysePage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               Een vaste-prijs, kort traject dat in kaart brengt waar je organisatie vandaag staat tegenover
-              een gekozen kader — NIS2, ISO 27001, CyberFundamentals of de AVG — voor er geïnvesteerd wordt
+              een gekozen kader (NIS2, ISO 27001, CyberFundamentals of de AVG) voor er geïnvesteerd wordt
               in een volledig implementatietraject.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -84,8 +84,8 @@ export default function GapAnalysePage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">Wat Millecam doet</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Documentenreview, interviews met verantwoordelijken, en een tweedimensionale scoring —
-          documentatie én effectieve implementatie — per control van het gekozen kader. Het resultaat is
+          Documentenreview, interviews met verantwoordelijken, en een tweedimensionale scoring
+          (documentatie én effectieve implementatie) per control van het gekozen kader. Het resultaat is
           een helder beeld, geen jargon-rapport.
         </p>
       </Section>
@@ -127,14 +127,14 @@ export default function GapAnalysePage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Resultaat</h2>
             <p className="mt-4 text-ink/70">
-              Een onderbouwde basis om te beslissen — verder investeren, en waarin precies, in plaats van
+              Een onderbouwde basis om te beslissen: verder investeren, en waarin precies, in plaats van
               te gokken.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Waarom Millecam</h2>
             <p className="mt-4 text-ink/70">
-              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert —
+              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert:
               geen junior-consultant, geen escalatieketen.{" "}
               <Link href="/over#credentials" className="text-terracotta hover:underline">
                 Meer over Robin

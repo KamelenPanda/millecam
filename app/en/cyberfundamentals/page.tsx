@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "CyberFundamentals (CyFun) consultant in Belgium | Millecam",
   description:
-    "CyFun GAP analysis and level determination (Basic, Important, Essential) for Belgian SMEs — an accessible alternative for demonstrating NIS2 compliance.",
+    "CyFun GAP analysis and level determination (Basic, Important, Essential) for Belgian SMEs: an accessible alternative for demonstrating NIS2 compliance.",
 };
 
 const VOORWIE = [
@@ -57,7 +57,7 @@ export default function CyberfundamentalsPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               CyFun is the Belgian self-assessment framework from the Centre for Cybersecurity Belgium
-              (CCB), with three levels — Basic, Important, Essential — offering a more accessible entry
+              (CCB), with three levels (Basic, Important, Essential) offering a more accessible entry
               point than full ISO 27001 certification for anyone seeking NIS2 demonstrability.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -88,8 +88,8 @@ export default function CyberfundamentalsPage() {
         <p className="mt-4 max-w-2xl text-ink/70">
           A GAP analysis against the chosen or still-to-be-determined CyFun level (Basic, Important or
           Essential) maps out where you stand today. This comes with honest advice on which level is
-          realistic and sufficient for the organisation&apos;s actual risks and obligations — not
-          automatically the highest — followed by a prioritised remediation plan.
+          realistic and sufficient for the organisation&apos;s actual risks and obligations (not
+          automatically the highest), followed by a prioritised remediation plan.
         </p>
       </Section>
 
@@ -137,7 +137,7 @@ export default function CyberfundamentalsPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Why Millecam</h2>
             <p className="mt-4 text-ink/70">
-              One fixed point of contact, no rotating team. Direct contact with whoever does the work —
+              One fixed point of contact, no rotating team. Direct contact with whoever does the work:
               no junior consultant, no escalation chain.{" "}
               <Link href="/en/about#credentials" className="text-terracotta hover:underline">
                 More about Robin

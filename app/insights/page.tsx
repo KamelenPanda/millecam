@@ -7,7 +7,7 @@ import { ARTICLES } from "@/lib/insights";
 
 export const metadata: Metadata = {
   title: "Inzichten | Millecam",
-  description: "Praktische duiding bij NIS2, ISO 27001, CyFun en GDPR — geschreven vanuit consultancy-ervaring, niet vanuit een marketingkalender.",
+  description: "Praktische duiding bij NIS2, ISO 27001, CyFun en GDPR, geschreven vanuit consultancy-ervaring, niet vanuit een marketingkalender.",
 };
 
 function formatDate(iso: string) {

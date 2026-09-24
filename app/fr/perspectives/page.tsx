@@ -7,7 +7,7 @@ import { ARTICLES_FR } from "@/lib/insights";
 
 export const metadata: Metadata = {
   title: "Perspectives | Millecam",
-  description: "Un éclairage pratique sur NIS2, ISO 27001, CyFun et le RGPD — écrit depuis l'expérience du terrain, pas depuis un calendrier marketing.",
+  description: "Un éclairage pratique sur NIS2, ISO 27001, CyFun et le RGPD, écrit depuis l'expérience du terrain, pas depuis un calendrier marketing.",
 };
 
 function formatDate(iso: string) {

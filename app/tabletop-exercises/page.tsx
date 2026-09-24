@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "Tabletop exercise & incident response oefening | Millecam",
   description:
-    "Interactieve scenario-oefeningen die testen of jouw incidentresponsplan standhoudt in de praktijk — niet enkel op papier.",
+    "Interactieve scenario-oefeningen die testen of jouw incidentresponsplan standhoudt in de praktijk, niet enkel op papier.",
 };
 
 const VOORWIE = [
@@ -55,7 +55,7 @@ export default function TabletopExercisesPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               Interactieve scenario-oefeningen die een team door een gesimuleerd incident leiden, om te
-              testen of procedures in de praktijk standhouden — vóór een echt incident, niet erna.
+              testen of procedures in de praktijk standhouden: vóór een echt incident, niet erna.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/contact" variant="primary">Plan een tabletop exercise</Button>
@@ -83,8 +83,8 @@ export default function TabletopExercisesPage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">Wat Millecam doet</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Een scenario op maat — bijvoorbeeld ransomware, een datalek, of uitval bij een kritieke
-          leverancier — afgestemd op de sector en de risico&apos;s van de organisatie, gevolgd door een
+          Een scenario op maat (bijvoorbeeld ransomware, een datalek, of uitval bij een kritieke
+          leverancier) afgestemd op de sector en de risico&apos;s van de organisatie, gevolgd door een
           begeleide sessie waarin besluitvorming en communicatie onder realistische druk worden getest.
         </p>
       </Section>
@@ -126,8 +126,8 @@ export default function TabletopExercisesPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Resultaat</h2>
             <p className="mt-4 text-ink/70">
-              Een team dat weet wat te doen vóór een incident zich voordoet, met een geteste — niet enkel
-              geschreven — respons.
+              Een team dat weet wat te doen vóór een incident zich voordoet, met een geteste (niet enkel
+              geschreven) respons.
             </p>
           </div>
           <div>

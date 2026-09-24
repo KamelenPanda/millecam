@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const VOORWIE = [
   {
     titel: "A client or tender requires it",
-    tekst: "ISO 27001 has become a contractual requirement from a client, insurer or tender — not (only) an internal priority.",
+    tekst: "ISO 27001 has become a contractual requirement from a client, insurer or tender, not (only) an internal priority.",
   },
   {
     titel: "Growing team, growing risk",
@@ -45,7 +45,7 @@ const DELIVERABLES = [
 
 const STAPPEN = [
   { naam: "GAP analysis", tekst: "Where you stand today against ISO/IEC 27001:2022, resulting in a concrete step-by-step plan." },
-  { naam: "Implementation", tekst: "ISMS scope, risk assessment, Statement of Applicability, policy and procedures — built, not just written." },
+  { naam: "Implementation", tekst: "ISMS scope, risk assessment, Statement of Applicability, policy and procedures: built, not just written." },
   { naam: "Certification", tekst: "Internal audit, management review and guidance up to and during the certification audit." },
 ];
 
@@ -62,7 +62,7 @@ export default function Iso27001Page() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               The international standard for information security. Often a contractual requirement for
-              clients or tenders — and a good reason to organise security structurally instead of ad hoc.
+              clients or tenders, and a good reason to organise security structurally instead of ad hoc.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/en/contact" variant="primary">Discuss your ISO 27001 track</Button>
@@ -90,7 +90,7 @@ export default function Iso27001Page() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">What Millecam does</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          A GAP analysis maps out where you stand today against ISO/IEC 27001:2022 — per control, not in
+          A GAP analysis maps out where you stand today against ISO/IEC 27001:2022: per control, not in
           vague generalities. From there, the ISMS is built: scope, risk assessment, Statement of
           Applicability, policy and procedures that fit how the organisation actually works. Millecam also
           guides the final phase: internal audit, management review and the certification audit itself.
@@ -135,14 +135,14 @@ export default function Iso27001Page() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Result</h2>
             <p className="mt-4 text-ink/70">
               An ISMS an auditor can review without surprises: evidence that holds up, policy that&apos;s
-              actually followed, and a certificate that demonstrates what actually happens — not just what
+              actually followed, and a certificate that demonstrates what actually happens, not just what
               is written on paper.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Why Millecam</h2>
             <p className="mt-4 text-ink/70">
-              One fixed point of contact, no rotating team. Direct contact with whoever does the work —
+              One fixed point of contact, no rotating team. Direct contact with whoever does the work:
               pragmatic implementation instead of purely theoretical advice.{" "}
               <Link href="/en/about#credentials" className="text-terracotta hover:underline">
                 More about Robin

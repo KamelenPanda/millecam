@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "GDPR-consultant (AVG) voor KMO's in België | Millecam",
   description:
-    "GDPR/AVG GAP-analyse, verwerkingsregister, DPIA's en datalekprocedures — praktisch opgezet, niet enkel een privacyverklaring op de website.",
+    "GDPR/AVG GAP-analyse, verwerkingsregister, DPIA's en datalekprocedures. Praktisch opgezet, niet enkel een privacyverklaring op de website.",
 };
 
 const VOORWIE = [
@@ -69,7 +69,7 @@ export default function GdprPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               GDPR (AVG) is Europese privacywetgeving, van toepassing op vrijwel elke organisatie die
-              persoonsgegevens verwerkt — maar een privacyverklaring op de website is niet hetzelfde als een
+              persoonsgegevens verwerkt, maar een privacyverklaring op de website is niet hetzelfde als een
               werkend privacyprogramma.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -99,7 +99,7 @@ export default function GdprPage() {
         <h2 className="font-serif text-3xl font-semibold text-ink">Wat Millecam doet</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
           Een GAP-analyse tegen de AVG-verplichtingen, gevolgd door de opbouw van een verwerkingsregister,
-          een werkbaar DPIA-proces, en het reviewen of opstellen van verwerkersovereenkomsten — met aandacht
+          een werkbaar DPIA-proces, en het reviewen of opstellen van verwerkersovereenkomsten: met aandacht
           voor wat praktisch haalbaar is voor een KMO, niet een compliance-programma van een multinational.
         </p>
       </Section>
@@ -141,14 +141,14 @@ export default function GdprPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Resultaat</h2>
             <p className="mt-4 text-ink/70">
-              Een privacyprogramma dat standhoudt bij een klacht, audit of datalek — niet enkel een
+              Een privacyprogramma dat standhoudt bij een klacht, audit of datalek, niet enkel een
               documentenmap die nooit geraadpleegd wordt.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Waarom Millecam</h2>
             <p className="mt-4 text-ink/70">
-              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert —
+              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert:
               geen junior-consultant, geen escalatieketen.{" "}
               <Link href="/over#credentials" className="text-terracotta hover:underline">
                 Meer over Robin

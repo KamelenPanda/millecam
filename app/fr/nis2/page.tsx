@@ -41,7 +41,7 @@ const DELIVERABLES = [
 
 const STAPPEN = [
   { naam: "Scoping & analyse GAP", tekst: "Si vous relevez de NIS2, et où vous en êtes aujourd'hui par rapport aux mesures de gestion des risques." },
-  { naam: "Mise en œuvre", tekst: "Les constats traduits en politiques, procédures et mesures techniques — vous gardez la main." },
+  { naam: "Mise en œuvre", tekst: "Les constats traduits en politiques, procédures et mesures techniques. Vous gardez la main." },
   { naam: "Conformité démontrable", tekst: "Documentation et éléments de preuve en ordre, prêts pour un contrôle éventuel." },
 ];
 
@@ -58,7 +58,7 @@ export default function Nis2Page() {
             <p className="mt-4 max-w-xl text-ink/70">
               La directive européenne sur la cybersécurité pour les entités essentielles et importantes,
               transposée en droit belge. Pertinente à partir d&apos;une certaine taille ou d&apos;un
-              certain secteur — avec une responsabilité des administrateurs si rien n&apos;est entrepris.
+              certain secteur, avec une responsabilité des administrateurs si rien n&apos;est entrepris.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/fr/contact" variant="primary">Discuter de votre trajet NIS2</Button>
@@ -96,8 +96,8 @@ export default function Nis2Page() {
           Une analyse de scoping détermine si, et en tant que quoi, votre organisation relève de NIS2.
           Elle est suivie d&apos;une analyse GAP par rapport aux mesures de gestion des risques de
           l&apos;article 21 : où vous en êtes aujourd&apos;hui, avec un score tant pour la documentation
-          que pour la mise en œuvre effective. Les constats sont traduits en un plan d&apos;action concret
-          — pas quatre-vingts pages de jargon, mais une liste de ce qui doit se faire en premier, et par
+          que pour la mise en œuvre effective. Les constats sont traduits en un plan d&apos;action concret :
+          pas quatre-vingts pages de jargon, mais une liste de ce qui doit se faire en premier, et par
           qui.
         </p>
       </Section>
@@ -149,7 +149,7 @@ export default function Nis2Page() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Pourquoi Millecam</h2>
             <p className="mt-4 text-ink/70">
               Un seul point de contact fixe, pas d&apos;équipe qui change. Un contact direct avec la
-              personne qui exécute le travail — pas de consultant junior, pas de chaîne d&apos;escalade.{" "}
+              personne qui exécute le travail : pas de consultant junior, pas de chaîne d&apos;escalade.{" "}
               <Link href="/fr/a-propos#credentials" className="text-terracotta hover:underline">
                 En savoir plus sur Robin
               </Link>

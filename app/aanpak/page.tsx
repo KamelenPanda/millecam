@@ -17,7 +17,7 @@ const STAPPEN = [
     nummer: "1",
     naam: "Begrijpen",
     tekst:
-      "Welke verplichtingen gelden, wat de scope is, en welk kader — NIS2, CyFun, ISO 27001 of AVG — voor jouw organisatie relevant is, vóór er iets geïmplementeerd wordt.",
+      "Welke verplichtingen gelden, wat de scope is, en welk kader (NIS2, CyFun, ISO 27001 of AVG) voor jouw organisatie relevant is, vóór er iets geïmplementeerd wordt.",
   },
   {
     nummer: "2",
@@ -35,7 +35,7 @@ const STAPPEN = [
     nummer: "4",
     naam: "Valideren",
     tekst:
-      "Interne audit, directiebeoordeling en waar relevant een tabletop-oefening om te toetsen of de maatregelen ook standhouden — met remediatie waar nodig.",
+      "Interne audit, directiebeoordeling en waar relevant een tabletop-oefening om te toetsen of de maatregelen ook standhouden, met remediatie waar nodig.",
   },
   {
     nummer: "5",

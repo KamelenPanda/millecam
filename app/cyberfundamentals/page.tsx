@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "CyberFundamentals (CyFun) consultant in België | Millecam",
   description:
-    "CyFun GAP-analyse en niveaubepaling (Basic, Important, Essential) voor Belgische KMO's — een toegankelijk alternatief voor NIS2-aantoonbaarheid.",
+    "CyFun GAP-analyse en niveaubepaling (Basic, Important, Essential) voor Belgische KMO's: een toegankelijk alternatief voor NIS2-aantoonbaarheid.",
 };
 
 const VOORWIE = [
@@ -57,7 +57,7 @@ export default function CyberfundamentalsPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               CyFun is het Belgische zelfevaluatiekader van het Centre for Cybersecurity Belgium (CCB), met
-              drie niveaus — Basic, Important, Essential — en een toegankelijker instapmogelijkheid dan een
+              drie niveaus (Basic, Important, Essential) en een toegankelijker instapmogelijkheid dan een
               volledige ISO 27001-certificering voor wie NIS2-aantoonbaarheid zoekt.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -89,7 +89,7 @@ export default function CyberfundamentalsPage() {
           Een GAP-analyse tegen het gekozen of nog te bepalen CyFun-niveau (Basic, Important of Essential)
           brengt in kaart waar je vandaag staat. Daarbij hoort een eerlijk advies over welk niveau
           realistisch en voldoende is voor de werkelijke risico&apos;s en verplichtingen van de organisatie
-          — niet automatisch het hoogste — gevolgd door een geprioriteerd remediatieplan.
+          (niet automatisch het hoogste), gevolgd door een geprioriteerd remediatieplan.
         </p>
       </Section>
 
@@ -137,7 +137,7 @@ export default function CyberfundamentalsPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Waarom Millecam</h2>
             <p className="mt-4 text-ink/70">
-              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert —
+              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert:
               geen junior-consultant, geen escalatieketen.{" "}
               <Link href="/over#credentials" className="text-terracotta hover:underline">
                 Meer over Robin

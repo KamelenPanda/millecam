@@ -35,7 +35,7 @@ const NL_DICT: FrameworkCheckerDict = {
   previous: "Vorige vraag",
   resultTitle: "Jouw indicatie per kader",
   resultIntro:
-    "Gebaseerd op vier korte vragen — geen juridisch sluitend antwoord. Een GAP-analyse geeft zekerheid.",
+    "Gebaseerd op vier korte vragen, geen juridisch sluitend antwoord. Een GAP-analyse geeft zekerheid.",
   ctaPrimary: "Bespreek je situatie",
   restart: "Opnieuw beginnen",
   relevantieLabels: {
@@ -53,7 +53,7 @@ const NL_DICT: FrameworkCheckerDict = {
       },
       mogelijkSector: {
         titel: "Mogelijk relevant",
-        tekst: "Je sector is relevant, maar de omvang ligt onder de gebruikelijke NIS2-drempel — dat kan uitzonderingen kennen voor kritieke diensten.",
+        tekst: "Je sector is relevant, maar de omvang ligt onder de gebruikelijke NIS2-drempel: dat kan uitzonderingen kennen voor kritieke diensten.",
       },
       mogelijkGevraagd: {
         titel: "Mogelijk relevant",
@@ -79,7 +79,7 @@ const NL_DICT: FrameworkCheckerDict = {
       naam: "ISO 27001",
       waarschijnlijk: {
         titel: "Waarschijnlijk relevant",
-        tekst: "Een klant of aanbesteding vraagt er specifiek naar — vaak het directe startpunt voor een ISO 27001-traject.",
+        tekst: "Een klant of aanbesteding vraagt er specifiek naar: vaak het directe startpunt voor een ISO 27001-traject.",
       },
       mogelijk: {
         titel: "Mogelijk relevant",
@@ -88,7 +88,7 @@ const NL_DICT: FrameworkCheckerDict = {
     },
     gdpr: {
       naam: "GDPR / AVG",
-      tekst: "Van toepassing op vrijwel elke organisatie die persoonsgegevens verwerkt — ongeacht sector of omvang.",
+      tekst: "Van toepassing op vrijwel elke organisatie die persoonsgegevens verwerkt, ongeacht sector of omvang.",
     },
   },
 };

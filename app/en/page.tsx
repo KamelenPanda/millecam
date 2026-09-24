@@ -62,7 +62,7 @@ const HERKENNING = [
   {
     titel: "NIS2 or CyFun affects your organisation",
     tekst:
-      "You fall under the NIS2 directive, or a client/insurer is asking for proof of compliance — but you don't have an in-house compliance officer.",
+      "You fall under the NIS2 directive, or a client/insurer is asking for proof of compliance, but you don't have an in-house compliance officer.",
   },
   {
     titel: "You need a DPO, not a full-time role",

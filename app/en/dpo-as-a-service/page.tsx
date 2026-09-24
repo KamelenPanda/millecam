@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "DPO-as-a-Service | External DPO in Belgium | Millecam",
   description:
-    "A recognised, external Data Protection Officer on a monthly basis — for organisations that need a DPO, not a full-time role.",
+    "A recognised, external Data Protection Officer on a monthly basis: for organisations that need a DPO, not a full-time role.",
 };
 
 const WHOFOR = [
@@ -86,7 +86,7 @@ export default function DpoAsAServicePage() {
         <h2 className="font-serif text-3xl font-semibold text-ink">What Millecam does</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
           Robin takes on the statutory DPO role as a certified Data Protection Officer (DPI-certified,
-          since February 2025) — overseeing compliance, advising on processing activities and DPIAs, and
+          since February 2025): overseeing compliance, advising on processing activities and DPIAs, and
           acting as the point of contact for both the supervisory authority and data subjects, on a
           fixed, predictable rhythm.
         </p>
@@ -129,14 +129,14 @@ export default function DpoAsAServicePage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Result</h2>
             <p className="mt-4 text-ink/70">
-              A DPO function that actually works — not just a name on a GDPR register — without the cost
+              A DPO function that actually works (not just a name on a GDPR register), without the cost
               and risk of a mis-hire.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Why Millecam</h2>
             <p className="mt-4 text-ink/70">
-              One fixed point of contact, no rotating team. Direct contact with whoever does the work —
+              One fixed point of contact, no rotating team. Direct contact with whoever does the work:
               no junior consultant, no escalation chain.{" "}
               <Link href="/en/about#credentials" className="text-terracotta hover:underline">
                 More about Robin

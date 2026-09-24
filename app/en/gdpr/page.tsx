@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "GDPR consultant for SMEs in Belgium | Millecam",
   description:
-    "GDPR GAP analysis, record of processing activities, DPIAs and data breach procedures — set up in practice, not just a privacy statement on the website.",
+    "GDPR GAP analysis, record of processing activities, DPIAs and data breach procedures. Set up in practice, not just a privacy statement on the website.",
 };
 
 const VOORWIE = [
@@ -69,7 +69,7 @@ export default function GdprPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               GDPR is European privacy legislation, applicable to virtually every organisation that
-              processes personal data — but a privacy statement on the website is not the same as a
+              processes personal data, but a privacy statement on the website is not the same as a
               working privacy programme.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -99,7 +99,7 @@ export default function GdprPage() {
         <h2 className="font-serif text-3xl font-semibold text-ink">What Millecam does</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
           A GAP analysis against GDPR obligations, followed by building a record of processing
-          activities, a workable DPIA process, and reviewing or drafting data processing agreements —
+          activities, a workable DPIA process, and reviewing or drafting data processing agreements:
           with attention to what&apos;s practically feasible for an SME, not a compliance programme built
           for a multinational.
         </p>
@@ -142,7 +142,7 @@ export default function GdprPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Result</h2>
             <p className="mt-4 text-ink/70">
-              A privacy programme that holds up under a complaint, audit or data breach — not just a
+              A privacy programme that holds up under a complaint, audit or data breach, not just a
               folder of documents that never gets consulted.
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function GdprPage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Why Millecam</h2>
             <p className="mt-4 text-ink/70">
               One fixed point of contact, no rotating team. Direct contact with the person doing the
-              work — no junior consultant, no escalation chain.{" "}
+              work: no junior consultant, no escalation chain.{" "}
               <Link href="/en/about#credentials" className="text-terracotta hover:underline">
                 More about Robin
               </Link>

@@ -52,7 +52,7 @@ const CASES: Case[] = [
     situatie:
       "Een boekhoudkantoor wilde weten waar het stond tegenover NIS2-aantoonbaarheid, zonder meteen een zwaar certificeringstraject te starten.",
     uitdaging:
-      "Geen interne securityachtergrond, en onduidelijkheid over welk kader — en welk niveau — het meest haalbare startpunt was.",
+      "Geen interne securityachtergrond, en onduidelijkheid over welk kader (en welk niveau) het meest haalbare startpunt was.",
     aanpak:
       "GAP-analyse tegen het gekozen CyFun-niveau, met remediatiestappen die realistisch waren voor een kantooromgeving zonder eigen IT-team.",
     geleverd: "Een concrete remediatieroadmap.",
@@ -69,7 +69,7 @@ const CASES: Case[] = [
     uitdaging:
       "Technische maatregelen waren deels al aanwezig, maar nergens vertaald naar beleid, procedures of aantoonbare governance.",
     aanpak:
-      "Vertaling van bestaande technische controls naar praktisch, gedragen beleid — afgestemd op een productieomgeving, niet op een generiek kantoor-sjabloon.",
+      "Vertaling van bestaande technische controls naar praktisch, gedragen beleid, afgestemd op een productieomgeving, niet op een generiek kantoor-sjabloon.",
     geleverd: "Technische controls vertaald naar praktisch beleid.",
     resultaat: "Beleidsdocumentatie die de praktijk op de productievloer weerspiegelde, geen generieke policy-set.",
     glyph: <IllustrationBuild className="h-16 w-16 shrink-0" />,

@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "Fractional GRC-consultant in België | Millecam",
   description:
-    "Externe GRC-capaciteit op dagprijs, doorlopend of periodiek — compliance-ondersteuning zonder iemand aan te werven.",
+    "Externe GRC-capaciteit op dagprijs, doorlopend of periodiek. Compliance-ondersteuning zonder iemand aan te werven.",
 };
 
 const VOORWIE = [
@@ -54,7 +54,7 @@ export default function FractionalGrcPage() {
               <span className="text-terracotta">Fractional GRC</span>: capaciteit zonder aanwerving
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
-              Externe GRC-capaciteit op dagprijs, af en toe of structureel ingezet — voor organisaties die
+              Externe GRC-capaciteit op dagprijs, af en toe of structureel ingezet: voor organisaties die
               compliance-ondersteuning nodig hebben zonder de kost en het risico van een vaste aanwerving.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ export default function FractionalGrcPage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">Wat Millecam doet</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Vaste, geplande beschikbaarheid op het ritme dat past — bijvoorbeeld een aantal dagen per maand —
+          Vaste, geplande beschikbaarheid op het ritme dat past (bijvoorbeeld een aantal dagen per maand),
           inzetbaar over het volledige spectrum: van beleidswerk en auditvoorbereiding tot ad-hoc vragen die
           zich tussendoor aandienen.
         </p>
@@ -133,7 +133,7 @@ export default function FractionalGrcPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Waarom Millecam</h2>
             <p className="mt-4 text-ink/70">
-              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert —
+              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert:
               geen junior-consultant, geen escalatieketen.{" "}
               <Link href="/over#credentials" className="text-terracotta hover:underline">
                 Meer over Robin

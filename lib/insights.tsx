@@ -36,7 +36,7 @@ export const ARTICLES: InsightArticle[] = [
           NIS2 wordt vaak beschreven als &ldquo;de nieuwe cybersecurity-richtlijn&rdquo;, alsof het om één
           extra checklist gaat naast wat een organisatie al doet. Dat is een onderschatting. NIS2 verschuift
           de vraag van <em>&ldquo;hebben we maatregelen?&rdquo;</em> naar <em>&ldquo;kunnen we aantonen dat ze
-          werken?&rdquo;</em> — en dat tweede is voor de meeste KMO&apos;s de eigenlijke uitdaging.
+          werken?&rdquo;</em> En dat tweede is voor de meeste KMO&apos;s de eigenlijke uitdaging.
         </p>
 
         <h2>Wie valt eronder?</h2>
@@ -44,7 +44,7 @@ export const ARTICLES: InsightArticle[] = [
           NIS2 is relevant vanaf een bepaalde omvang of sector: essentiële en belangrijke entiteiten in
           onder meer energie, transport, digitale infrastructuur, gezondheidszorg en overheid. Maar
           aantoonbaarheid reikt verder dan die directe scope. Wie toelevert aan een entiteit die wél onder
-          NIS2 valt, krijgt vaak dezelfde vraag doorgeschoven via het contract — zonder zelf formeel
+          NIS2 valt, krijgt vaak dezelfde vraag doorgeschoven via het contract, zonder zelf formeel
           NIS2-plichtig te zijn.
         </p>
 
@@ -54,7 +54,7 @@ export const ARTICLES: InsightArticle[] = [
           leveranciersbeheer, bedrijfscontinuïteit, incidentrespons, en meer. Het is niet genoeg dat die
           maatregelen ergens bestaan. Een auditor of toezichthouder wil twee dingen zien: documentatie
           (beleid, procedures) én bewijs van effectieve implementatie (logs, trainingen, testresultaten,
-          incidentregistraties). Een GAP-analyse scoort daarom altijd op beide dimensies apart — een
+          incidentregistraties). Een GAP-analyse scoort daarom altijd op beide dimensies apart: een
           organisatie kan perfect gedocumenteerd beleid hebben en toch laag scoren op aantoonbaarheid, simpelweg
           omdat niemand kan bewijzen dat het beleid ook gevolgd wordt.
         </p>
@@ -65,7 +65,7 @@ export const ARTICLES: InsightArticle[] = [
           uit de GAP-analyse worden vertaald naar een concreet actieplan met eigenaarschap en een realistisch
           tijdspad, gevolgd door een meldingsprocedure die aansluit bij de NIS2-rapportagetermijnen, en
           voorbereiding van het leidinggevend orgaan op zijn eigen verantwoordelijkheid. Aantoonbaarheid is
-          geen eindpunt — het is iets wat blijft draaien nadat het project is afgerond.
+          geen eindpunt. Het is iets wat blijft draaien nadat het project is afgerond.
         </p>
 
         <h2>Niet zeker of dit voor jou geldt?</h2>
@@ -88,7 +88,7 @@ export const ARTICLES_EN: InsightArticle[] = [
     slug: "nis2-demonstrability",
     framework: "NIS2",
     title: "NIS2 in Belgium: who does it apply to, and what does ‘demonstrable’ really mean?",
-    dek: "NIS2 doesn't just ask you to take measures — it asks you to prove they work. That distinction changes what a GAP analysis actually delivers.",
+    dek: "NIS2 doesn't just ask you to take measures. It asks you to prove they work. That distinction changes what a GAP analysis actually delivers.",
     publishedAt: "2026-09-13",
     readingTime: "6 min",
     relatedHref: "/en/nis2",
@@ -99,7 +99,7 @@ export const ARTICLES_EN: InsightArticle[] = [
           NIS2 is often described as &ldquo;the new cybersecurity directive&rdquo;, as if it were just one
           more checklist alongside what an organisation already does. That undersells it. NIS2 shifts the
           question from <em>&ldquo;do we have measures in place?&rdquo;</em> to <em>&ldquo;can we prove they
-          work?&rdquo;</em> — and for most SMEs, that second question is the real challenge.
+          work?&rdquo;</em> And for most SMEs, that second question is the real challenge.
         </p>
 
         <h2>Who does it apply to?</h2>
@@ -107,7 +107,7 @@ export const ARTICLES_EN: InsightArticle[] = [
           NIS2 becomes relevant from a certain size or sector onward: essential and important entities in,
           among others, energy, transport, digital infrastructure, healthcare, and government. But
           demonstrability reaches further than that direct scope. Anyone who supplies an entity that does
-          fall under NIS2 often gets the same question passed down through the contract — without being
+          fall under NIS2 often gets the same question passed down through the contract, without being
           formally subject to NIS2 themselves.
         </p>
 
@@ -118,7 +118,7 @@ export const ARTICLES_EN: InsightArticle[] = [
           exist somewhere on paper. An auditor or supervisory authority wants to see two things:
           documentation (policy, procedures) <em>and</em> evidence of effective implementation (logs,
           training records, test results, incident logs). That&apos;s why a GAP analysis always scores both
-          dimensions separately — an organisation can have perfectly documented policy and still score low
+          dimensions separately: an organisation can have perfectly documented policy and still score low
           on demonstrability, simply because no one can prove the policy is actually being followed.
         </p>
 
@@ -128,7 +128,7 @@ export const ARTICLES_EN: InsightArticle[] = [
           GAP analysis are translated into a concrete action plan with ownership and a realistic timeline,
           followed by an incident notification procedure aligned with the NIS2 reporting deadlines, and
           preparation of the management body for its own responsibility. Demonstrability isn&apos;t an
-          endpoint — it&apos;s something that keeps running after the project is done.
+          endpoint. It&apos;s something that keeps running after the project is done.
         </p>
 
         <h2>Not sure whether this applies to you?</h2>
@@ -163,7 +163,7 @@ export const ARTICLES_FR: InsightArticle[] = [
           s&apos;agissait d&apos;une simple case à cocher en plus de ce qu&apos;une organisation fait déjà.
           C&apos;est sous-estimer la portée du texte. NIS2 déplace la question de{" "}
           <em>&laquo; avons-nous des mesures ? &raquo;</em> vers{" "}
-          <em>&laquo; pouvons-nous démontrer qu&apos;elles fonctionnent ? &raquo;</em> — et pour la plupart
+          <em>&laquo; pouvons-nous démontrer qu&apos;elles fonctionnent ? &raquo;</em> Et pour la plupart
           des PME, c&apos;est cette seconde question qui constitue le véritable défi.
         </p>
 
@@ -173,7 +173,7 @@ export const ARTICLES_FR: InsightArticle[] = [
           entités essentielles et importantes, notamment dans l&apos;énergie, le transport,
           l&apos;infrastructure numérique, les soins de santé et les administrations publiques. Mais la
           conformité démontrable dépasse ce champ d&apos;application direct. Quiconque fournit une entité
-          qui, elle, relève de NIS2 se voit souvent transmettre la même exigence par contrat — sans être
+          qui, elle, relève de NIS2 se voit souvent transmettre la même exigence par contrat, sans être
           elle-même formellement soumise à NIS2.
         </p>
 
@@ -185,7 +185,7 @@ export const ARTICLES_FR: InsightArticle[] = [
           contrôle veut voir deux choses : la documentation (politiques, procédures) <em>et</em> la preuve
           d&apos;une mise en œuvre effective (journaux, formations, résultats de tests, registres
           d&apos;incidents). C&apos;est pourquoi une analyse GAP note toujours ces deux dimensions
-          séparément — une organisation peut avoir une politique parfaitement documentée et pourtant
+          séparément : une organisation peut avoir une politique parfaitement documentée et pourtant
           obtenir un score faible en matière de conformité démontrable, simplement parce que personne ne
           peut prouver que cette politique est réellement suivie.
         </p>
@@ -197,7 +197,7 @@ export const ARTICLES_FR: InsightArticle[] = [
           avec répartition des responsabilités et un calendrier réaliste, suivi d&apos;une procédure de
           notification d&apos;incident alignée sur les délais de notification NIS2, et de la préparation de
           l&apos;organe de direction à sa propre responsabilité. La conformité démontrable n&apos;est pas
-          un aboutissement — c&apos;est quelque chose qui continue de vivre une fois le projet terminé.
+          un aboutissement. C&apos;est quelque chose qui continue de vivre une fois le projet terminé.
         </p>
 
         <h2>Vous n&apos;êtes pas sûr(e) que cela vous concerne ?</h2>

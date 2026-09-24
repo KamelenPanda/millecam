@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "Consultant CyberFundamentals (CyFun) en Belgique | Millecam",
   description:
-    "Analyse GAP CyFun et détermination du niveau (Basic, Important, Essential) pour les PME belges — une alternative accessible pour démontrer votre conformité NIS2.",
+    "Analyse GAP CyFun et détermination du niveau (Basic, Important, Essential) pour les PME belges : une alternative accessible pour démontrer votre conformité NIS2.",
 };
 
 const VOORWIE = [
@@ -57,7 +57,7 @@ export default function CyberfundamentalsPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               CyFun est le référentiel belge d&apos;auto-évaluation du Centre pour la Cybersécurité
-              Belgique (CCB), avec trois niveaux — Basic, Important, Essential — offrant un point
+              Belgique (CCB), avec trois niveaux (Basic, Important, Essential) offrant un point
               d&apos;entrée plus accessible qu&apos;une certification ISO 27001 complète pour les
               organisations en quête d&apos;une conformité démontrable NIS2.
             </p>
@@ -90,7 +90,7 @@ export default function CyberfundamentalsPage() {
           Une analyse GAP par rapport au niveau CyFun choisi ou encore à déterminer (Basic, Important ou
           Essential) permet de cartographier où vous en êtes aujourd&apos;hui. S&apos;y ajoute un avis
           honnête sur le niveau réaliste et suffisant compte tenu des risques et obligations réels de
-          votre organisation — pas automatiquement le plus élevé — suivi d&apos;un plan de remédiation
+          votre organisation (pas automatiquement le plus élevé), suivi d&apos;un plan de remédiation
           priorisé.
         </p>
       </Section>
@@ -140,7 +140,7 @@ export default function CyberfundamentalsPage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Pourquoi Millecam</h2>
             <p className="mt-4 text-ink/70">
               Un point de contact fixe, pas d&apos;équipe qui tourne. Contact direct avec la personne qui
-              réalise le travail — pas de consultant junior, pas de chaîne d&apos;escalade.{" "}
+              réalise le travail : pas de consultant junior, pas de chaîne d&apos;escalade.{" "}
               <Link href="/fr/a-propos#credentials" className="text-terracotta hover:underline">
                 En savoir plus sur Robin
               </Link>

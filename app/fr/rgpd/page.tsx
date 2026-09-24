@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "Consultant RGPD pour PME en Belgique | Millecam",
   description:
-    "Analyse GAP RGPD, registre des traitements, AIPD et procédures de notification des violations de données — mises en place de façon concrète, pas seulement une déclaration de confidentialité sur le site web.",
+    "Analyse GAP RGPD, registre des traitements, AIPD et procédures de notification des violations de données. Mises en place de façon concrète, pas seulement une déclaration de confidentialité sur le site web.",
 };
 
 const VOORWIE = [
@@ -69,7 +69,7 @@ export default function GdprPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               Le RGPD est une législation européenne sur la vie privée, applicable à pratiquement toute
-              organisation qui traite des données à caractère personnel — mais une déclaration de
+              organisation qui traite des données à caractère personnel, mais une déclaration de
               confidentialité sur le site web n&apos;équivaut pas à un programme de protection de la vie
               privée opérationnel.
             </p>
@@ -101,7 +101,7 @@ export default function GdprPage() {
         <p className="mt-4 max-w-2xl text-ink/70">
           Une analyse GAP par rapport aux obligations RGPD, suivie de la construction d&apos;un registre
           des traitements, d&apos;un processus AIPD opérationnel, et de la révision ou rédaction des
-          contrats de sous-traitance — avec une attention particulière à ce qui est réalisable pour une
+          contrats de sous-traitance : avec une attention particulière à ce qui est réalisable pour une
           PME, pas un programme de conformité pensé pour une multinationale.
         </p>
       </Section>
@@ -144,7 +144,7 @@ export default function GdprPage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Résultat</h2>
             <p className="mt-4 text-ink/70">
               Un programme de protection de la vie privée qui tient la route en cas de plainte,
-              d&apos;audit ou de violation de données — pas seulement un dossier de documents jamais
+              d&apos;audit ou de violation de données, pas seulement un dossier de documents jamais
               consulté.
             </p>
           </div>
@@ -152,7 +152,7 @@ export default function GdprPage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Pourquoi Millecam</h2>
             <p className="mt-4 text-ink/70">
               Un seul point de contact fixe, pas d&apos;équipe changeante. Contact direct avec la
-              personne qui exécute le travail — pas de consultant junior, pas de chaîne
+              personne qui exécute le travail : pas de consultant junior, pas de chaîne
               d&apos;escalade.{" "}
               <Link href="/fr/a-propos#credentials" className="text-terracotta hover:underline">
                 En savoir plus sur Robin

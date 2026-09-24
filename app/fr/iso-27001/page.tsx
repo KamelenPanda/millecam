@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const VOORWIE = [
   {
     titel: "Un client ou un appel d'offres l'exige",
-    tekst: "L'ISO 27001 est devenue une exigence contractuelle d'un client, d'un assureur ou d'un appel d'offres — pas (uniquement) une priorité interne.",
+    tekst: "L'ISO 27001 est devenue une exigence contractuelle d'un client, d'un assureur ou d'un appel d'offres, pas (uniquement) une priorité interne.",
   },
   {
     titel: "Équipe en croissance, risque en croissance",
@@ -45,7 +45,7 @@ const DELIVERABLES = [
 
 const STAPPEN = [
   { naam: "Analyse GAP", tekst: "Où vous en êtes aujourd'hui par rapport à l'ISO/IEC 27001:2022, avec un plan d'action concret à la clé." },
-  { naam: "Mise en œuvre", tekst: "Périmètre du SMSI, appréciation des risques, déclaration d'applicabilité, politiques et procédures — construits, pas seulement rédigés." },
+  { naam: "Mise en œuvre", tekst: "Périmètre du SMSI, appréciation des risques, déclaration d'applicabilité, politiques et procédures : construits, pas seulement rédigés." },
   { naam: "Certification", tekst: "Audit interne, revue de direction et accompagnement jusqu'à l'audit de certification, et pendant celui-ci." },
 ];
 
@@ -62,7 +62,7 @@ export default function Iso27001Page() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               La norme internationale pour la sécurité de l&apos;information. Souvent une exigence
-              contractuelle des clients ou des appels d&apos;offres — et une bonne raison d&apos;organiser
+              contractuelle des clients ou des appels d&apos;offres, et une bonne raison d&apos;organiser
               la sécurité de manière structurelle plutôt qu&apos;au coup par coup.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -92,7 +92,7 @@ export default function Iso27001Page() {
         <h2 className="font-serif text-3xl font-semibold text-ink">Ce que fait Millecam</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
           Une analyse GAP détermine où vous en êtes aujourd&apos;hui par rapport à l&apos;ISO/IEC
-          27001:2022 — par contrôle, sans généralités vagues. Le SMSI est ensuite construit à partir de
+          27001:2022 : par contrôle, sans généralités vagues. Le SMSI est ensuite construit à partir de
           là : périmètre, appréciation des risques, déclaration d&apos;applicabilité, politiques et
           procédures adaptées à la façon dont l&apos;organisation fonctionne réellement. Millecam
           accompagne également la dernière phase : audit interne, revue de direction et l&apos;audit de
@@ -138,15 +138,15 @@ export default function Iso27001Page() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Résultat</h2>
             <p className="mt-4 text-ink/70">
               Un SMSI qu&apos;un auditeur peut examiner sans surprise : des preuves qui tiennent la route,
-              des politiques réellement suivies, et un certificat qui démontre ce qui se passe réellement
-              — pas seulement ce qui est écrit sur papier.
+              des politiques réellement suivies, et un certificat qui démontre ce qui se passe réellement,
+              pas seulement ce qui est écrit sur papier.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Pourquoi Millecam</h2>
             <p className="mt-4 text-ink/70">
               Un seul point de contact fixe, pas d&apos;équipe qui change. Un contact direct avec la
-              personne qui exécute le travail — une mise en œuvre pragmatique plutôt qu&apos;un conseil
+              personne qui exécute le travail : une mise en œuvre pragmatique plutôt qu&apos;un conseil
               purement théorique.{" "}
               <Link href="/fr/a-propos#credentials" className="text-terracotta hover:underline">
                 En savoir plus sur Robin

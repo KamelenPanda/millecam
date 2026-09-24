@@ -52,7 +52,7 @@ const CASES: Case[] = [
     situatie:
       "An accounting firm wanted to know where it stood on demonstrating NIS2 compliance, without immediately starting a heavy certification track.",
     uitdaging:
-      "No internal security background, and no clarity on which framework — and which level — was the most realistic starting point.",
+      "No internal security background, and no clarity on which framework (and which level) was the most realistic starting point.",
     aanpak:
       "A GAP analysis against the chosen CyFun level, with remediation steps that were realistic for an office environment without its own IT team.",
     geleverd: "A concrete remediation roadmap.",
@@ -69,7 +69,7 @@ const CASES: Case[] = [
     uitdaging:
       "Technical measures were partly already in place, but nowhere translated into policy, procedures or demonstrable governance.",
     aanpak:
-      "Translation of existing technical controls into practical, supported policy — tailored to a production environment, not a generic office template.",
+      "Translation of existing technical controls into practical, supported policy, tailored to a production environment, not a generic office template.",
     geleverd: "Technical controls translated into practical policy.",
     resultaat: "Policy documentation that reflected practice on the shop floor, not a generic policy set.",
     glyph: <IllustrationBuild className="h-16 w-16 shrink-0" />,

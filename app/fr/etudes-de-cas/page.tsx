@@ -52,7 +52,7 @@ const CASES: Case[] = [
     situatie:
       "Un cabinet comptable souhaitait savoir où il en était en matière de démonstration de conformité NIS2, sans se lancer d'emblée dans un lourd trajet de certification.",
     uitdaging:
-      "Aucune expertise interne en sécurité, et une incertitude sur le référentiel — et le niveau — constituant le point de départ le plus réaliste.",
+      "Aucune expertise interne en sécurité, et une incertitude sur le référentiel (et le niveau) constituant le point de départ le plus réaliste.",
     aanpak:
       "Une analyse GAP par rapport au niveau CyFun retenu, avec des mesures de remédiation réalistes pour un environnement de bureau sans équipe IT propre.",
     geleverd: "Une feuille de route de remédiation concrète.",
@@ -69,7 +69,7 @@ const CASES: Case[] = [
     uitdaging:
       "Des mesures techniques étaient partiellement déjà en place, mais nulle part traduites en politiques, procédures ou gouvernance démontrable.",
     aanpak:
-      "Traduction des contrôles techniques existants en politiques pratiques et partagées par les équipes — adaptées à un environnement de production, et non à un modèle de bureau générique.",
+      "Traduction des contrôles techniques existants en politiques pratiques et partagées par les équipes, adaptées à un environnement de production, et non à un modèle de bureau générique.",
     geleverd: "Contrôles techniques traduits en politiques pratiques.",
     resultaat: "Une documentation de politique reflétant la réalité de l'atelier de production, et non un ensemble de politiques générique.",
     glyph: <IllustrationBuild className="h-16 w-16 shrink-0" />,

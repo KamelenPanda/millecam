@@ -184,7 +184,7 @@ export const frameworkChecker: FrameworkCheckerDict = {
   previous: "Previous question",
   resultTitle: "Your indication per framework",
   resultIntro:
-    "Based on four short questions — not a legally binding answer. A GAP analysis provides certainty.",
+    "Based on four short questions, not a legally binding answer. A GAP analysis provides certainty.",
   ctaPrimary: "Discuss your situation",
   restart: "Start again",
   relevantieLabels: {
@@ -202,7 +202,7 @@ export const frameworkChecker: FrameworkCheckerDict = {
       },
       mogelijkSector: {
         titel: "Possibly relevant",
-        tekst: "Your sector is relevant, but your size is below the usual NIS2 threshold — exceptions can apply for critical services.",
+        tekst: "Your sector is relevant, but your size is below the usual NIS2 threshold: exceptions can apply for critical services.",
       },
       mogelijkGevraagd: {
         titel: "Possibly relevant",
@@ -228,7 +228,7 @@ export const frameworkChecker: FrameworkCheckerDict = {
       naam: "ISO 27001",
       waarschijnlijk: {
         titel: "Likely relevant",
-        tekst: "A client or tender specifically asks for it — often the direct starting point for an ISO 27001 track.",
+        tekst: "A client or tender specifically asks for it: often the direct starting point for an ISO 27001 track.",
       },
       mogelijk: {
         titel: "Possibly relevant",
@@ -237,7 +237,7 @@ export const frameworkChecker: FrameworkCheckerDict = {
     },
     gdpr: {
       naam: "GDPR",
-      tekst: "Applies to virtually every organisation that processes personal data — regardless of sector or size.",
+      tekst: "Applies to virtually every organisation that processes personal data, regardless of sector or size.",
     },
   },
 };

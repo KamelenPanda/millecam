@@ -74,7 +74,7 @@ const HERKENNING = [
   {
     titel: "NIS2 of CyFun raakt jouw organisatie",
     tekst: "Je valt onder de NIS2-richtlijn of een klant/verzekeraar vraagt aantoonbaarheid, maar een interne compliance-officer heb je niet.",
-    hoeHelpt: "Een GAP-analyse brengt in kaart of, en op welk niveau, NIS2 of CyFun voor jou geldt — met een concreet stappenplan als resultaat.",
+    hoeHelpt: "Een GAP-analyse brengt in kaart of, en op welk niveau, NIS2 of CyFun voor jou geldt, met een concreet stappenplan als resultaat.",
   },
   {
     titel: "Je hebt een DPO nodig, geen fulltime rol",
@@ -84,7 +84,7 @@ const HERKENNING = [
   {
     titel: "Een klant of aanbesteding vraagt ISO 27001",
     tekst: "Certificering is een contractvoorwaarde geworden, geen interne prioriteit.",
-    hoeHelpt: "Wij begeleiden het volledige traject, van GAP-analyse tot aantoonbare certificering — jij houdt de regie.",
+    hoeHelpt: "Wij begeleiden het volledige traject, van GAP-analyse tot aantoonbare certificering. Jij houdt de regie.",
   },
 ];
 
@@ -301,7 +301,7 @@ export default function HomePage() {
           <Reveal>
             <h2 className="max-w-2xl font-serif text-3xl font-semibold">Een specialist, geen callcenter</h2>
             <p className="mt-4 max-w-xl text-sm text-paper/80">
-              Ik ben Robin Millecam. Geen team, geen escalatieketen — wie het werk doet, is wie je aan de
+              Ik ben Robin Millecam. Geen team, geen escalatieketen: wie het werk doet, is wie je aan de
               telefoon krijgt.
             </p>
 
@@ -328,15 +328,15 @@ export default function HomePage() {
               </p>
               <ul className="mt-4 space-y-4">
                 <li className="text-sm text-paper/80">
-                  <span className="font-medium text-paper">ISO 27001-certificatietraject</span> —
+                  <span className="font-medium text-paper">ISO 27001-certificatietraject:</span>{" "}
                   adtech/SaaS, ±40 medewerkers, begeleiding tot auditfase.
                 </li>
                 <li className="text-sm text-paper/80">
-                  <span className="font-medium text-paper">CyberFundamentals GAP-analyse</span> —
+                  <span className="font-medium text-paper">CyberFundamentals GAP-analyse:</span>{" "}
                   accountancy, 11–50 medewerkers, concrete remediatieroadmap.
                 </li>
                 <li className="text-sm text-paper/80">
-                  <span className="font-medium text-paper">Cybersecurity governance &amp; policies</span> —
+                  <span className="font-medium text-paper">Cybersecurity governance &amp; policies:</span>{" "}
                   industriële productie, ±50 medewerkers, technische controls vertaald naar praktisch
                   beleid.
                 </li>

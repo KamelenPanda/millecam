@@ -7,7 +7,7 @@ import { ARTICLES_EN } from "@/lib/insights";
 
 export const metadata: Metadata = {
   title: "Insights | Millecam",
-  description: "Practical guidance on NIS2, ISO 27001, CyFun and GDPR — written from consultancy experience, not a marketing calendar.",
+  description: "Practical guidance on NIS2, ISO 27001, CyFun and GDPR, written from consultancy experience, not a marketing calendar.",
 };
 
 function formatDate(iso: string) {
@@ -23,7 +23,7 @@ export default function InsightsPage() {
           Insights on <span className="text-terracotta">compliance in practice</span>
         </h1>
         <p className="mt-4 max-w-xl text-ink/70">
-          No content calendar — just guidance on what actually goes wrong or surprises people in real projects.
+          No content calendar, just guidance on what actually goes wrong or surprises people in real projects.
         </p>
       </Section>
 

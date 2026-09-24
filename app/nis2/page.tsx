@@ -41,7 +41,7 @@ const DELIVERABLES = [
 
 const STAPPEN = [
   { naam: "Scoping & GAP-analyse", tekst: "Val je onder NIS2, en waar sta je vandaag tegenover de risicobeheersmaatregelen." },
-  { naam: "Implementatie", tekst: "Bevindingen vertaald naar beleid, procedures en technische maatregelen — jij houdt de regie." },
+  { naam: "Implementatie", tekst: "Bevindingen vertaald naar beleid, procedures en technische maatregelen. Jij houdt de regie." },
   { naam: "Aantoonbaarheid", tekst: "Documentatie en bewijsvoering op orde, klaar voor een eventuele controle." },
 ];
 
@@ -57,7 +57,7 @@ export default function Nis2Page() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               De Europese cybersecurity-richtlijn voor essentiële en belangrijke entiteiten, omgezet in
-              Belgisch recht. Relevant vanaf een bepaalde omvang of sector — en met bestuurdersaansprakelijkheid
+              Belgisch recht. Relevant vanaf een bepaalde omvang of sector, en met bestuurdersaansprakelijkheid
               als er niets mee gebeurt.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -96,7 +96,7 @@ export default function Nis2Page() {
           Een scopingsanalyse bepaalt of, en als wat, je organisatie onder NIS2 valt. Daarna volgt een
           GAP-analyse tegen de risicobeheersmaatregelen uit artikel 21: waar sta je vandaag, gescoord op
           zowel documentatie als effectieve implementatie. Bevindingen worden vertaald naar een concreet
-          stappenplan — geen tachtig pagina&apos;s jargon, maar een lijst met wat eerst moet gebeuren en
+          stappenplan: geen tachtig pagina&apos;s jargon, maar een lijst met wat eerst moet gebeuren en
           door wie.
         </p>
       </Section>
@@ -146,7 +146,7 @@ export default function Nis2Page() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Waarom Millecam</h2>
             <p className="mt-4 text-ink/70">
-              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert —
+              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert:
               geen junior-consultant, geen escalatieketen.{" "}
               <Link href="/over#credentials" className="text-terracotta hover:underline">
                 Meer over Robin

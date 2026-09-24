@@ -21,7 +21,7 @@ const VOORWIE = [
   },
   {
     titel: "Unsure which framework fits",
-    tekst: "NIS2, ISO 27001 or CyberFundamentals — which framework fits, and at what level, isn't clear yet.",
+    tekst: "NIS2, ISO 27001 or CyberFundamentals: which framework fits, and at what level, isn't clear yet.",
   },
   {
     titel: "Having an existing programme checked",
@@ -55,7 +55,7 @@ export default function GapAnalysisPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               A fixed-price, short engagement that maps out where your organisation stands today against
-              a chosen framework — NIS2, ISO 27001, CyberFundamentals or GDPR — before you invest in a
+              a chosen framework (NIS2, ISO 27001, CyberFundamentals or GDPR) before you invest in a
               full implementation track.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -84,8 +84,8 @@ export default function GapAnalysisPage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">What Millecam does</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Document review, interviews with responsible staff, and two-dimensional scoring —
-          documentation and effective implementation — per control of the chosen framework. The result
+          Document review, interviews with responsible staff, and two-dimensional scoring
+          (documentation and effective implementation) per control of the chosen framework. The result
           is a clear picture, not a jargon-filled report.
         </p>
       </Section>
@@ -127,14 +127,14 @@ export default function GapAnalysisPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Result</h2>
             <p className="mt-4 text-ink/70">
-              A substantiated basis for deciding — whether to invest further, and in exactly what, instead
+              A substantiated basis for deciding: whether to invest further, and in exactly what, instead
               of guessing.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Why Millecam</h2>
             <p className="mt-4 text-ink/70">
-              One fixed point of contact, no rotating team. Direct contact with whoever does the work —
+              One fixed point of contact, no rotating team. Direct contact with whoever does the work:
               no junior consultant, no escalation chain.{" "}
               <Link href="/en/about#credentials" className="text-terracotta hover:underline">
                 More about Robin

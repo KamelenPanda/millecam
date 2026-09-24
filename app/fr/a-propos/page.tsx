@@ -19,7 +19,7 @@ export default function OverPage() {
 
           <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
             <p>
-              Derrière Millecam se cache un seul nom : Robin Millecam. Ce n&apos;est pas un hasard —
+              Derrière Millecam se cache un seul nom : Robin Millecam. Ce n&apos;est pas un hasard.
               Millecam n&apos;est pas qu&apos;un nom de marque, c&apos;est aussi tout simplement qui se
               trouve à l&apos;autre bout du fil. Un point de contact fixe plutôt qu&apos;une équipe qui
               tourne, pour les organisations qui ont besoin d&apos;une expertise en conformité sans créer
@@ -74,7 +74,7 @@ export default function OverPage() {
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <p className="font-serif text-lg font-semibold text-ink">Expertise des cadres réglementaires</p>
           <p className="mt-1 text-sm text-ink/70">
-            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) et RGPD — expérience pratique acquise
+            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) et RGPD : expérience pratique acquise
             auprès de PME dans les secteurs SaaS/tech, production, logistique, services professionnels,
             comptabilité, alimentation et publicité.
           </p>
@@ -85,7 +85,7 @@ export default function OverPage() {
           <p className="mt-1 text-sm text-ink/70">
             La communication professionnelle et les documents transitent par un environnement Microsoft
             365 professionnel. Lorsqu&apos;un support IA est utilisé, cela se fait avec minimisation des
-            données et des garanties contractuelles et techniques appropriées — détails dans la{" "}
+            données et des garanties contractuelles et techniques appropriées. Détails dans la{" "}
             <a href="/fr/politique-de-confidentialite" className="text-terracotta hover:underline">
               politique de confidentialité
             </a>
@@ -96,7 +96,7 @@ export default function OverPage() {
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <p className="font-serif text-lg font-semibold text-ink">Entreprise</p>
           <p className="mt-1 text-sm text-ink/70">
-            Millecam — Robin Millecam, Sinte Annalaan 34, 9300 Alost, Belgique.{" "}
+            Millecam : Robin Millecam, Sinte Annalaan 34, 9300 Alost, Belgique.{" "}
             <a
               href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
               target="_blank"

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const VOORWIE = [
   {
     titel: "Klant of aanbesteding vraagt het",
-    tekst: "ISO 27001 is een contractvoorwaarde geworden bij een klant, verzekeraar of aanbesteding — niet (enkel) een interne prioriteit.",
+    tekst: "ISO 27001 is een contractvoorwaarde geworden bij een klant, verzekeraar of aanbesteding, niet (enkel) een interne prioriteit.",
   },
   {
     titel: "Groeiend team, groeiend risico",
@@ -45,7 +45,7 @@ const DELIVERABLES = [
 
 const STAPPEN = [
   { naam: "GAP-analyse", tekst: "Waar sta je vandaag tegenover ISO/IEC 27001:2022, met een concreet stappenplan als resultaat." },
-  { naam: "Implementatie", tekst: "ISMS-scope, risicobeoordeling, SoA, beleid en procedures — opgebouwd, niet enkel geschreven." },
+  { naam: "Implementatie", tekst: "ISMS-scope, risicobeoordeling, SoA, beleid en procedures: opgebouwd, niet enkel geschreven." },
   { naam: "Certificering", tekst: "Interne audit, directiebeoordeling en begeleiding tot en tijdens de certificeringsaudit." },
 ];
 
@@ -62,7 +62,7 @@ export default function Iso27001Page() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               De internationale norm voor informatiebeveiliging. Vaak een contractvoorwaarde bij klanten of
-              aanbestedingen — en een goede reden om beveiliging structureel te organiseren in plaats van
+              aanbestedingen, en een goede reden om beveiliging structureel te organiseren in plaats van
               ad hoc.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -91,7 +91,7 @@ export default function Iso27001Page() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">Wat Millecam doet</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Een GAP-analyse brengt in kaart waar je vandaag staat tegenover ISO/IEC 27001:2022 — per control,
+          Een GAP-analyse brengt in kaart waar je vandaag staat tegenover ISO/IEC 27001:2022: per control,
           niet in vage algemeenheden. Van daaruit wordt het ISMS opgebouwd: scope, risicobeoordeling,
           verklaring van toepasselijkheid, beleid en procedures die passen bij hoe de organisatie echt
           werkt. Millecam begeleidt ook de laatste fase: interne audit, directiebeoordeling en de
@@ -137,14 +137,14 @@ export default function Iso27001Page() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Resultaat</h2>
             <p className="mt-4 text-ink/70">
               Een ISMS dat een auditor kan doorlichten zonder verrassingen: bewijsvoering die klopt,
-              beleid dat effectief gevolgd wordt, en een certificaat dat aantoont wat er ook echt gebeurt —
+              beleid dat effectief gevolgd wordt, en een certificaat dat aantoont wat er ook echt gebeurt,
               niet enkel wat er op papier staat.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Waarom Millecam</h2>
             <p className="mt-4 text-ink/70">
-              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert —
+              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert:
               pragmatische implementatie in plaats van louter theoretisch advies.{" "}
               <Link href="/over#credentials" className="text-terracotta hover:underline">
                 Meer over Robin

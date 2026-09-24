@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "Exercice tabletop & simulation de réponse aux incidents | Millecam",
   description:
-    "Des exercices de simulation interactifs qui testent si votre plan de réponse aux incidents tient la route en pratique — pas seulement sur papier.",
+    "Des exercices de simulation interactifs qui testent si votre plan de réponse aux incidents tient la route en pratique, pas seulement sur papier.",
 };
 
 const VOORWIE = [
@@ -56,7 +56,7 @@ export default function ExercicesTabletopPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               Des exercices de simulation interactifs qui font traverser à une équipe un incident simulé,
-              pour tester si les procédures tiennent la route en pratique — avant un incident réel, pas
+              pour tester si les procédures tiennent la route en pratique : avant un incident réel, pas
               après.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -85,8 +85,8 @@ export default function ExercicesTabletopPage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">Ce que fait Millecam</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Un scénario sur mesure — par exemple un ransomware, une fuite de données, ou une panne chez un
-          fournisseur critique — adapté au secteur et aux risques de l&apos;organisation, suivi
+          Un scénario sur mesure (par exemple un ransomware, une fuite de données, ou une panne chez un
+          fournisseur critique) adapté au secteur et aux risques de l&apos;organisation, suivi
           d&apos;une séance encadrée durant laquelle la prise de décision et la communication sont
           testées sous une pression réaliste.
         </p>
@@ -130,7 +130,7 @@ export default function ExercicesTabletopPage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Résultat</h2>
             <p className="mt-4 text-ink/70">
               Une équipe qui sait quoi faire avant qu&apos;un incident ne survienne, avec une réponse
-              testée — pas seulement rédigée.
+              testée, pas seulement rédigée.
             </p>
           </div>
           <div>

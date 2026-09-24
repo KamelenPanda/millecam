@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "Tabletop exercise & incident response drill | Millecam",
   description:
-    "Interactive scenario exercises that test whether your incident response plan holds up in practice — not just on paper.",
+    "Interactive scenario exercises that test whether your incident response plan holds up in practice, not just on paper.",
 };
 
 const VOORWIE = [
@@ -55,7 +55,7 @@ export default function TabletopExercisesPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               Interactive scenario exercises that walk a team through a simulated incident, to test
-              whether procedures hold up in practice — before a real incident, not after.
+              whether procedures hold up in practice: before a real incident, not after.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/en/contact" variant="primary">Schedule a tabletop exercise</Button>
@@ -83,8 +83,8 @@ export default function TabletopExercisesPage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">What Millecam does</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          A tailored scenario — for example ransomware, a data breach, or an outage at a critical
-          supplier — matched to the organisation&apos;s sector and risks, followed by a guided session in
+          A tailored scenario (for example ransomware, a data breach, or an outage at a critical
+          supplier) matched to the organisation&apos;s sector and risks, followed by a guided session in
           which decision-making and communication are tested under realistic pressure.
         </p>
       </Section>
@@ -127,7 +127,7 @@ export default function TabletopExercisesPage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Result</h2>
             <p className="mt-4 text-ink/70">
               A team that knows what to do before an incident occurs, with a response that&apos;s been
-              tested — not just written.
+              tested, not just written.
             </p>
           </div>
           <div>

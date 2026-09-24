@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "Fractional GRC consultant in Belgium | Millecam",
   description:
-    "External GRC capacity at a day rate, ongoing or periodic — compliance support without hiring anyone.",
+    "External GRC capacity at a day rate, ongoing or periodic. Compliance support without hiring anyone.",
 };
 
 const VOORWIE = [
@@ -54,7 +54,7 @@ export default function FractionalGrcPage() {
               <span className="text-terracotta">Fractional GRC</span>: capacity without hiring
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
-              External GRC capacity at a day rate, deployed occasionally or structurally — for organisations
+              External GRC capacity at a day rate, deployed occasionally or structurally: for organisations
               that need compliance support without the cost and risk of a permanent hire.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ export default function FractionalGrcPage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">What Millecam does</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Fixed, scheduled availability at whatever pace fits — for example a number of days per month —
+          Fixed, scheduled availability at whatever pace fits (for example a number of days per month),
           deployable across the full spectrum: from policy work and audit preparation to ad-hoc questions
           that come up along the way.
         </p>
@@ -133,7 +133,7 @@ export default function FractionalGrcPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Why Millecam</h2>
             <p className="mt-4 text-ink/70">
-              One fixed point of contact, not a rotating team. Direct contact with whoever does the work —
+              One fixed point of contact, not a rotating team. Direct contact with whoever does the work:
               no junior consultant, no escalation chain.{" "}
               <Link href="/en/about#credentials" className="text-terracotta hover:underline">
                 More about Robin

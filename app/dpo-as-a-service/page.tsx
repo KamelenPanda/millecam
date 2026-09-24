@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "DPO-as-a-Service | Externe DPO in België | Millecam",
   description:
-    "Een erkend, extern Data Protection Officer op maandelijkse basis — voor organisaties die een DPO nodig hebben, geen fulltime rol.",
+    "Een erkend, extern Data Protection Officer op maandelijkse basis: voor organisaties die een DPO nodig hebben, geen fulltime rol.",
 };
 
 const VOORWIE = [
@@ -86,7 +86,7 @@ export default function DpoAsAServicePage() {
         <h2 className="font-serif text-3xl font-semibold text-ink">Wat Millecam doet</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
           Robin neemt de wettelijke DPO-rol op als erkend Data Protection Officer (DPI-gecertificeerd,
-          sinds februari 2025) — toezicht op naleving, advies bij verwerkingen en DPIA&apos;s, en
+          sinds februari 2025): toezicht op naleving, advies bij verwerkingen en DPIA&apos;s, en
           aanspreekpunt voor zowel de toezichthouder als betrokkenen, op een vast, voorspelbaar ritme.
         </p>
       </Section>
@@ -128,14 +128,14 @@ export default function DpoAsAServicePage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Resultaat</h2>
             <p className="mt-4 text-ink/70">
-              Een DPO-functie die effectief werkt — niet enkel een naam op een AVG-register — zonder de
+              Een DPO-functie die effectief werkt (niet enkel een naam op een AVG-register), zonder de
               kost en het risico van een verkeerde interne aanwerving.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Waarom Millecam</h2>
             <p className="mt-4 text-ink/70">
-              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert —
+              Eén vast aanspreekpunt, geen wisselend team. Rechtstreeks contact met wie het werk uitvoert:
               geen junior-consultant, geen escalatieketen.{" "}
               <Link href="/over#credentials" className="text-terracotta hover:underline">
                 Meer over Robin

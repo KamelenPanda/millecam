@@ -41,7 +41,7 @@ const DELIVERABLES = [
 
 const STAPPEN = [
   { naam: "Scoping & GAP analysis", tekst: "Whether you fall under NIS2, and where you stand today against the risk management measures." },
-  { naam: "Implementation", tekst: "Findings translated into policy, procedures and technical measures — you stay in control." },
+  { naam: "Implementation", tekst: "Findings translated into policy, procedures and technical measures. You stay in control." },
   { naam: "Demonstrability", tekst: "Documentation and evidence in order, ready for a possible audit." },
 ];
 
@@ -57,7 +57,7 @@ export default function Nis2Page() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               The European cybersecurity directive for essential and important entities, transposed into
-              Belgian law. Relevant from a certain size or sector onward — with director liability if
+              Belgian law. Relevant from a certain size or sector onward, with director liability if
               nothing is done about it.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -96,7 +96,7 @@ export default function Nis2Page() {
           A scoping analysis determines whether, and as what, your organisation falls under NIS2. This is
           followed by a GAP analysis against the risk management measures from Article 21: where you stand
           today, scored on both documentation and effective implementation. Findings are translated into a
-          concrete action plan — not eighty pages of jargon, but a list of what needs to happen first, and
+          concrete action plan: not eighty pages of jargon, but a list of what needs to happen first, and
           by whom.
         </p>
       </Section>
@@ -146,7 +146,7 @@ export default function Nis2Page() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Why Millecam</h2>
             <p className="mt-4 text-ink/70">
-              One fixed point of contact, no rotating team. Direct contact with whoever does the work —
+              One fixed point of contact, no rotating team. Direct contact with whoever does the work:
               no junior consultant, no escalation chain.{" "}
               <Link href="/en/about#credentials" className="text-terracotta hover:underline">
                 More about Robin

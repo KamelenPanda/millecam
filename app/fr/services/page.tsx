@@ -43,7 +43,7 @@ const DIENSTEN = [
   {
     naam: "Tabletop exercises & awareness",
     vorm: "Sur base de projet / événement",
-    voorWie: "Les équipes qui veulent transformer la théorie en réflexe — avant un incident, pas après.",
+    voorWie: "Les équipes qui veulent transformer la théorie en réflexe : avant un incident, pas après.",
     watJeKrijgt: "Des exercices de simulation interactifs sur mesure, avec un rapport concret des enseignements tirés.",
     href: "/fr/exercices-tabletop",
   },

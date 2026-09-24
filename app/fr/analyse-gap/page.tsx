@@ -21,7 +21,7 @@ const VOORWIE = [
   },
   {
     titel: "Un doute sur le bon cadre",
-    tekst: "NIS2, ISO 27001 ou CyberFundamentals — quel cadre convient, et à quel niveau, n'est pas encore clair.",
+    tekst: "NIS2, ISO 27001 ou CyberFundamentals : quel cadre convient, et à quel niveau, n'est pas encore clair.",
   },
   {
     titel: "Faire évaluer un programme existant",
@@ -55,7 +55,7 @@ export default function AnalyseGapPage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               Un trajet court, à prix fixe, qui détermine où en est votre organisation aujourd&apos;hui
-              par rapport à un référentiel choisi — NIS2, ISO 27001, CyberFundamentals ou le RGPD — avant
+              par rapport à un référentiel choisi (NIS2, ISO 27001, CyberFundamentals ou le RGPD) avant
               d&apos;investir dans un trajet de mise en œuvre complet.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -84,8 +84,8 @@ export default function AnalyseGapPage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">Ce que fait Millecam</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Revue documentaire, entretiens avec les responsables, et un scoring à deux dimensions —
-          documentation et mise en œuvre effective — par contrôle du cadre choisi. Le résultat est une
+          Revue documentaire, entretiens avec les responsables, et un scoring à deux dimensions
+          (documentation et mise en œuvre effective) par contrôle du cadre choisi. Le résultat est une
           image claire, pas un rapport truffé de jargon.
         </p>
       </Section>
@@ -127,7 +127,7 @@ export default function AnalyseGapPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Résultat</h2>
             <p className="mt-4 text-ink/70">
-              Une base solide pour décider — investir davantage, et dans quoi précisément, plutôt que de
+              Une base solide pour décider : investir davantage, et dans quoi précisément, plutôt que de
               deviner.
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function AnalyseGapPage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Pourquoi Millecam</h2>
             <p className="mt-4 text-ink/70">
               Un point de contact fixe unique, pas d&apos;équipe qui change. Contact direct avec la
-              personne qui exécute le travail — pas de consultant junior, pas de chaîne
+              personne qui exécute le travail : pas de consultant junior, pas de chaîne
               d&apos;escalade.{" "}
               <Link href="/fr/a-propos#credentials" className="text-terracotta hover:underline">
                 En savoir plus sur Robin

@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "Consultant GRC fractionné en Belgique | Millecam",
   description:
-    "Capacité GRC externe au tarif journalier, en continu ou ponctuellement — un accompagnement conformité sans recruter.",
+    "Capacité GRC externe au tarif journalier, en continu ou ponctuellement. Un accompagnement conformité sans recruter.",
 };
 
 const VOORWIE = [
@@ -55,7 +55,7 @@ export default function GrcFractionnePage() {
             </h1>
             <p className="mt-4 max-w-xl text-ink/70">
               Une capacité GRC externe au tarif journalier, déployée ponctuellement ou de façon
-              structurelle — pour les organisations qui ont besoin d&apos;un accompagnement conformité sans
+              structurelle : pour les organisations qui ont besoin d&apos;un accompagnement conformité sans
               le coût ni le risque d&apos;un recrutement permanent.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -84,8 +84,8 @@ export default function GrcFractionnePage() {
       <Section>
         <h2 className="font-serif text-3xl font-semibold text-ink">Ce que fait Millecam</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
-          Une disponibilité fixe et planifiée, au rythme qui vous convient — par exemple quelques jours par
-          mois — mobilisable sur l&apos;ensemble du spectre : des politiques et de la préparation
+          Une disponibilité fixe et planifiée, au rythme qui vous convient (par exemple quelques jours par
+          mois), mobilisable sur l&apos;ensemble du spectre : des politiques et de la préparation
           d&apos;audits aux questions ponctuelles qui se présentent entre-temps.
         </p>
       </Section>
@@ -135,7 +135,7 @@ export default function GrcFractionnePage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Pourquoi Millecam</h2>
             <p className="mt-4 text-ink/70">
               Un point de contact unique et fixe, pas d&apos;équipe changeante. Un contact direct avec la
-              personne qui effectue le travail — pas de consultant junior, pas de chaîne d&apos;escalade.{" "}
+              personne qui effectue le travail : pas de consultant junior, pas de chaîne d&apos;escalade.{" "}
               <Link href="/fr/a-propos#credentials" className="text-terracotta hover:underline">
                 En savoir plus sur Robin
               </Link>

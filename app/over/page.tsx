@@ -73,7 +73,7 @@ export default function OverPage() {
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <p className="font-serif text-lg font-semibold text-ink">Kaderexpertise</p>
           <p className="mt-1 text-sm text-ink/70">
-            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) en GDPR/AVG — praktijkervaring opgebouwd bij
+            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) en GDPR/AVG: praktijkervaring opgebouwd bij
             KMO&apos;s in SaaS/tech, productie, logistiek, professionele dienstverlening, accountancy, voeding
             en adverteren.
           </p>
@@ -84,7 +84,7 @@ export default function OverPage() {
           <p className="mt-1 text-sm text-ink/70">
             Zakelijke communicatie en documenten lopen via een professionele Microsoft 365-omgeving.
             Waar AI-ondersteuning wordt ingezet, gebeurt dat met dataminimalisatie en passende contractuele
-            en technische waarborgen — details in het{" "}
+            en technische waarborgen. Details in het{" "}
             <a href="/privacybeleid" className="text-terracotta hover:underline">
               privacybeleid
             </a>
@@ -95,7 +95,7 @@ export default function OverPage() {
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <p className="font-serif text-lg font-semibold text-ink">Onderneming</p>
           <p className="mt-1 text-sm text-ink/70">
-            Millecam — Robin Millecam, Sinte Annalaan 34, 9300 Aalst.{" "}
+            Millecam: Robin Millecam, Sinte Annalaan 34, 9300 Aalst.{" "}
             <a
               href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
               target="_blank"

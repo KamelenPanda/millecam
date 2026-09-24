@@ -11,7 +11,7 @@ import RevealGroup from "@/components/RevealGroup";
 export const metadata: Metadata = {
   title: "DPO externalisé | DPO externe en Belgique | Millecam",
   description:
-    "Un délégué à la protection des données (DPO) externe et reconnu, sur base mensuelle — pour les organisations qui ont besoin d'un DPO, pas d'un poste à temps plein.",
+    "Un délégué à la protection des données (DPO) externe et reconnu, sur base mensuelle : pour les organisations qui ont besoin d'un DPO, pas d'un poste à temps plein.",
 };
 
 const VOORWIE = [
@@ -87,7 +87,7 @@ export default function DpoExternalisePage() {
         <h2 className="font-serif text-3xl font-semibold text-ink">Ce que fait Millecam</h2>
         <p className="mt-4 max-w-2xl text-ink/70">
           Robin assume le rôle légal de DPO en tant que délégué à la protection des données certifié
-          (certification DPI, depuis février 2025) — supervision de la conformité, conseil sur les
+          (certification DPI, depuis février 2025) : supervision de la conformité, conseil sur les
           nouveaux traitements et les DPIA, et point de contact tant pour l&apos;autorité de contrôle que
           pour les personnes concernées, selon un rythme fixe et prévisible.
         </p>
@@ -130,7 +130,7 @@ export default function DpoExternalisePage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-ink">Résultat</h2>
             <p className="mt-4 text-ink/70">
-              Une fonction de DPO qui fonctionne réellement — pas seulement un nom sur un registre RGPD —
+              Une fonction de DPO qui fonctionne réellement (pas seulement un nom sur un registre RGPD),
               sans le coût ni le risque d&apos;un recrutement interne mal ajusté.
             </p>
           </div>
@@ -138,7 +138,7 @@ export default function DpoExternalisePage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">Pourquoi Millecam</h2>
             <p className="mt-4 text-ink/70">
               Un seul point de contact fixe, pas d&apos;équipe qui change. Un contact direct avec la
-              personne qui effectue le travail — pas de consultant junior, pas de chaîne
+              personne qui effectue le travail : pas de consultant junior, pas de chaîne
               d&apos;escalade.{" "}
               <Link href="/fr/a-propos#credentials" className="text-terracotta hover:underline">
                 En savoir plus sur Robin

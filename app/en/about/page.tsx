@@ -19,7 +19,7 @@ export default function OverPage() {
 
           <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
             <p>
-              Behind Millecam stands one name: Robin Millecam. That&apos;s no coincidence — Millecam
+              Behind Millecam stands one name: Robin Millecam. That&apos;s no coincidence. Millecam
               isn&apos;t just the brand name, it&apos;s also simply who&apos;s on the other end of the
               line. One fixed point of contact instead of a rotating team, for organisations that need
               compliance expertise without creating an internal role.
@@ -73,7 +73,7 @@ export default function OverPage() {
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <p className="font-serif text-lg font-semibold text-ink">Framework expertise</p>
           <p className="mt-1 text-sm text-ink/70">
-            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) and GDPR — practical experience built up
+            NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) and GDPR: practical experience built up
             at SMEs in SaaS/tech, manufacturing, logistics, professional services, accountancy, food &amp;
             beverage and advertising.
           </p>
@@ -84,7 +84,7 @@ export default function OverPage() {
           <p className="mt-1 text-sm text-ink/70">
             Business communication and documents run through a professional Microsoft 365 environment.
             Where AI support is used, it&apos;s applied with data minimisation and appropriate contractual
-            and technical safeguards — details in the{" "}
+            and technical safeguards. Details in the{" "}
             <a href="/en/privacy-policy" className="text-terracotta hover:underline">
               privacy policy
             </a>
@@ -95,7 +95,7 @@ export default function OverPage() {
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <p className="font-serif text-lg font-semibold text-ink">Company</p>
           <p className="mt-1 text-sm text-ink/70">
-            Millecam — Robin Millecam, Sinte Annalaan 34, 9300 Aalst, Belgium.{" "}
+            Millecam: Robin Millecam, Sinte Annalaan 34, 9300 Aalst, Belgium.{" "}
             <a
               href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
               target="_blank"
