@@ -1,5 +1,9 @@
 export type NavDict = {
   links: { href: string; label: string }[];
+  /** Heading above the framework dropdown/mobile section. */
+  frameworksHeading: string;
+  /** Labels for NIS2, ISO 27001, CyFun and GDPR/RGPD, in that fixed order. */
+  frameworks: string[];
   cta: string;
   homeAriaLabel: string;
   menuOpen: string;

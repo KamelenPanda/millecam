@@ -12,6 +12,8 @@ type MobileMenuProps = {
   pageKey?: PageKey | null;
   menuOpenLabel?: string;
   menuCloseLabel?: string;
+  frameworksHeading?: string;
+  frameworks?: { href: string; label: string }[];
 };
 
 const LOCALE_LABEL: Record<Locale, string> = { nl: "NL", en: "EN", fr: "FR" };
@@ -23,6 +25,8 @@ export default function MobileMenu({
   pageKey = null,
   menuOpenLabel = "Menu openen",
   menuCloseLabel = "Menu sluiten",
+  frameworksHeading,
+  frameworks = [],
 }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
 
@@ -57,6 +61,25 @@ export default function MobileMenu({
               </Link>
             ))}
           </nav>
+          {frameworks.length > 0 && (
+            <div className="mt-6 border-t border-line pt-5">
+              {frameworksHeading && (
+                <p className="text-xs font-semibold uppercase tracking-wide text-ink/40">{frameworksHeading}</p>
+              )}
+              <nav className="mt-3 flex flex-col gap-4">
+                {frameworks.map((f) => (
+                  <Link
+                    key={f.href}
+                    href={f.href}
+                    onClick={() => setOpen(false)}
+                    className="text-sm text-ink/80 hover:text-terracotta"
+                  >
+                    {f.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          )}
           <div className="mt-6 flex items-center gap-3 text-sm text-ink/50">
             {locales.map((l, i) => (
               <span key={l} className="flex items-center gap-3">

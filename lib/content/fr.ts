@@ -17,6 +17,8 @@ export const nav: NavDict = {
     { href: "/fr/a-propos", label: "À propos" },
     { href: "/fr/contact", label: "Contact" },
   ],
+  frameworksHeading: "Cadres",
+  frameworks: ["NIS2", "ISO 27001", "CyFun", "RGPD"],
   cta: "Planifier un appel",
   homeAriaLabel: "Page d'accueil Millecam",
   menuOpen: "Ouvrir le menu",

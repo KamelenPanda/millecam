@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import Button from "./Button";
 import MobileMenu from "./MobileMenu";
-import { locales, pageHref, localeFromPath, pageKeyFromPath, type Locale } from "@/lib/i18n";
+import { locales, pageHref, localeFromPath, pageKeyFromPath, type Locale, type PageKey } from "@/lib/i18n";
 import type { NavDict } from "@/lib/content/types";
 import { nav as enNav } from "@/lib/content/en";
 import { nav as frNav } from "@/lib/content/fr";
@@ -21,6 +21,8 @@ const NL_DICT: NavDict = {
     { href: "/over", label: "Over" },
     { href: "/contact", label: "Contact" },
   ],
+  frameworksHeading: "Kaders",
+  frameworks: ["NIS2", "ISO 27001", "CyFun", "GDPR"],
   cta: "Plan gesprek",
   homeAriaLabel: "Millecam homepage",
   menuOpen: "Menu openen",
@@ -29,6 +31,9 @@ const NL_DICT: NavDict = {
 
 const DICTS: Record<Locale, NavDict> = { nl: NL_DICT, en: enNav, fr: frNav };
 const LOCALE_LABEL: Record<Locale, string> = { nl: "NL", en: "EN", fr: "FR" };
+
+/** Fixed order matching each NavDict's `frameworks` label array. */
+const FRAMEWORK_KEYS: PageKey[] = ["nis2", "iso27001", "cyfun", "gdpr"];
 
 /**
  * Locale is derived from the live pathname rather than passed down from the
@@ -77,7 +82,35 @@ export default function Nav() {
           <Logo variant="ink" className="h-8 w-auto" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
-          {dict.links.map((l) => (
+          {/* The first link (Diensten/Services) always carries the frameworks
+              dropdown — the four framework pages otherwise live only in the
+              footer, below the fold on every page. */}
+          <div className="group/frameworks relative">
+            <Link
+              href={dict.links[0].href}
+              className="group relative text-sm text-ink hover:text-terracotta"
+            >
+              {dict.links[0].label}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-terracotta transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <div
+              className="invisible absolute left-0 top-full z-50 mt-3 min-w-[170px] border border-line bg-paper opacity-0 shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-[opacity,visibility] duration-150 group-hover/frameworks:visible group-hover/frameworks:opacity-100 group-focus-within/frameworks:visible group-focus-within/frameworks:opacity-100"
+            >
+              <p className="border-b border-line px-4 py-2 text-xs font-semibold uppercase tracking-wide text-ink/40">
+                {dict.frameworksHeading}
+              </p>
+              {FRAMEWORK_KEYS.map((key, i) => (
+                <Link
+                  key={key}
+                  href={pageHref(locale, key)}
+                  className="block px-4 py-2.5 text-sm text-ink hover:bg-[#FBF9F4] hover:text-terracotta"
+                >
+                  {dict.frameworks[i]}
+                </Link>
+              ))}
+            </div>
+          </div>
+          {dict.links.slice(1).map((l) => (
             <Link key={l.href} href={l.href} className="group relative text-sm text-ink hover:text-terracotta">
               {l.label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-terracotta transition-all duration-300 group-hover:w-full" />
@@ -103,7 +136,16 @@ export default function Nav() {
             {dict.cta}
           </Button>
         </div>
-        <MobileMenu links={dict.links} cta={dict.cta} locale={locale} pageKey={pageKey} menuOpenLabel={dict.menuOpen} menuCloseLabel={dict.menuClose} />
+        <MobileMenu
+          links={dict.links}
+          cta={dict.cta}
+          locale={locale}
+          pageKey={pageKey}
+          menuOpenLabel={dict.menuOpen}
+          menuCloseLabel={dict.menuClose}
+          frameworksHeading={dict.frameworksHeading}
+          frameworks={FRAMEWORK_KEYS.map((key, i) => ({ label: dict.frameworks[i], href: pageHref(locale, key) }))}
+        />
       </div>
     </header>
   );
