@@ -69,6 +69,16 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // The frameworks dropdown is state-driven rather than pure CSS
+  // hover/focus: a click on one of its links navigates without the mouse
+  // leaving the panel, so a hover-only dropdown would stay stuck open on
+  // top of the new page. Closing explicitly on click (and on navigation)
+  // fixes that; hover/focus still open it for the pointer/keyboard case.
+  const [frameworksOpen, setFrameworksOpen] = useState(false);
+  useEffect(() => {
+    setFrameworksOpen(false);
+  }, [pathname]);
+
   return (
     <header
       className={`sticky top-0 z-40 border-b transition-colors duration-200 ease-out ${
@@ -85,16 +95,30 @@ export default function Nav() {
           {/* The first link (Diensten/Services) always carries the frameworks
               dropdown — the four framework pages otherwise live only in the
               footer, below the fold on every page. */}
-          <div className="group/frameworks relative">
+          <div
+            className="relative"
+            onMouseEnter={() => setFrameworksOpen(true)}
+            onMouseLeave={() => setFrameworksOpen(false)}
+            onFocus={() => setFrameworksOpen(true)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFrameworksOpen(false);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Escape") setFrameworksOpen(false);
+            }}
+          >
             <Link
               href={dict.links[0].href}
+              onClick={() => setFrameworksOpen(false)}
               className="group relative text-sm text-ink hover:text-terracotta"
             >
               {dict.links[0].label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-terracotta transition-all duration-300 group-hover:w-full" />
             </Link>
             <div
-              className="invisible absolute left-0 top-full z-50 mt-3 min-w-[170px] border border-line bg-paper opacity-0 shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-[opacity,visibility] duration-150 group-hover/frameworks:visible group-hover/frameworks:opacity-100 group-focus-within/frameworks:visible group-focus-within/frameworks:opacity-100"
+              className={`absolute left-0 top-full z-50 mt-3 min-w-[170px] border border-line bg-paper shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-[opacity,visibility] duration-150 ${
+                frameworksOpen ? "visible opacity-100" : "invisible opacity-0"
+              }`}
             >
               <p className="border-b border-line px-4 py-2 text-xs font-semibold uppercase tracking-wide text-ink/40">
                 {dict.frameworksHeading}
@@ -103,6 +127,7 @@ export default function Nav() {
                 <Link
                   key={key}
                   href={pageHref(locale, key)}
+                  onClick={() => setFrameworksOpen(false)}
                   className="block px-4 py-2.5 text-sm text-ink hover:bg-[#FBF9F4] hover:text-terracotta"
                 >
                   {dict.frameworks[i]}
