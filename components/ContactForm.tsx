@@ -1,21 +1,44 @@
 "use client";
 
+import Link from "next/link";
 import { useState, FormEvent } from "react";
+import type { ContactFormDict } from "@/lib/content/types";
 
-const ONDERWERPEN = [
-  "GAP-analyse",
-  "DPO-ondersteuning",
-  "ISO 27001-traject",
-  "Tabletop exercise",
-  "Andere vraag",
-];
+const NL_DICT: ContactFormDict = {
+  subjects: ["GAP-analyse", "DPO-ondersteuning", "ISO 27001-traject", "Tabletop exercise", "Andere vraag"],
+  requiredHint: "* = verplicht veld",
+  labels: {
+    name: "Naam",
+    company: "Bedrijf",
+    email: "E-mailadres",
+    phone: "Telefoonnummer",
+    subject: "Onderwerp",
+    message: "Bericht",
+  },
+  validation: {
+    name: "Vul je naam in.",
+    email: "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.be.",
+    message: "Vul een bericht in.",
+    privacy: "Je moet akkoord gaan met het privacybeleid om te kunnen versturen.",
+  },
+  privacy: {
+    text: "Ik ga akkoord met het",
+    linkLabel: "privacybeleid",
+    href: "/privacybeleid",
+  },
+  submit: "Verstuur bericht",
+  sending: "Versturen...",
+  sentTitle: "Bericht verstuurd.",
+  sentSub: "Je krijgt binnen de 24 uur een reactie.",
+  error: "Er ging iets mis. Probeer opnieuw, of mail rechtstreeks naar info@millecam.be.",
+};
 
 // Zelfde eenvoudige check als aan de serverkant (app/api/contact/route.ts) —
 // hier enkel voor directe feedback, de server blijft de bron van waarheid.
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type Status = "idle" | "sending" | "sent" | "error";
-type Errors = { naam?: string; email?: string; bericht?: string };
+type Errors = { naam?: string; email?: string; bericht?: string; privacy?: string };
 
 // Shared underline treatment for text/email/tel/select fields — a ruled
 // field instead of a boxed input, closer to a paper form than a default
@@ -25,7 +48,7 @@ const fieldClass =
   "w-full appearance-none rounded-none border-x-0 border-t-0 border-b border-line bg-transparent px-0 py-2 text-sm text-ink " +
   "transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none focus:ring-0";
 
-export default function ContactForm() {
+export default function ContactForm({ dict = NL_DICT }: { dict?: ContactFormDict }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
 
@@ -39,11 +62,13 @@ export default function ContactForm() {
     const naam = String(data.naam || "").trim();
     const email = String(data.email || "").trim();
     const bericht = String(data.bericht || "").trim();
+    const akkoordPrivacy = data.akkoordPrivacy === "on";
 
     const nextErrors: Errors = {};
-    if (!naam) nextErrors.naam = "Vul je naam in.";
-    if (!EMAIL_RE.test(email)) nextErrors.email = "Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.be.";
-    if (!bericht) nextErrors.bericht = "Vul een bericht in.";
+    if (!naam) nextErrors.naam = dict.validation.name;
+    if (!EMAIL_RE.test(email)) nextErrors.email = dict.validation.email;
+    if (!bericht) nextErrors.bericht = dict.validation.message;
+    if (!akkoordPrivacy) nextErrors.privacy = dict.validation.privacy;
 
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
@@ -73,43 +98,44 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="border-l-2 border-status-conform bg-[#FBF9F4] py-6 pl-5 pr-4">
-        <p className="font-serif text-xl font-semibold text-ink">Bericht verstuurd.</p>
-        <p className="mt-2 text-sm text-ink/70">Je krijgt binnen de 24 uur een reactie.</p>
+        <p className="font-serif text-xl font-semibold text-ink">{dict.sentTitle}</p>
+        <p className="mt-2 text-sm text-ink/70">{dict.sentSub}</p>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-7">
+      <p className="text-xs text-muted">{dict.requiredHint}</p>
       <div className="grid gap-7 sm:grid-cols-2">
         <Field
-          label="Naam"
+          label={dict.labels.name}
           name="naam"
           required
           error={errors.naam}
           onChange={() => clearError("naam")}
         />
-        <Field label="Bedrijf" name="bedrijf" />
+        <Field label={dict.labels.company} name="bedrijf" />
       </div>
       <div className="grid gap-7 sm:grid-cols-2">
         <Field
-          label="E-mailadres"
+          label={dict.labels.email}
           name="email"
           type="email"
           required
           error={errors.email}
           onChange={() => clearError("email")}
         />
-        <Field label="Telefoonnummer" name="telefoon" type="tel" />
+        <Field label={dict.labels.phone} name="telefoon" type="tel" />
       </div>
 
       <div>
         <label className="block text-xs text-muted" htmlFor="onderwerp">
-          Onderwerp
+          {dict.labels.subject}
         </label>
         <div className="relative">
           <select id="onderwerp" name="onderwerp" className={`${fieldClass} appearance-none pr-6`}>
-            {ONDERWERPEN.map((o) => (
+            {dict.subjects.map((o) => (
               <option key={o} value={o}>
                 {o}
               </option>
@@ -128,13 +154,14 @@ export default function ContactForm() {
 
       <div>
         <label className="block text-xs text-muted" htmlFor="bericht">
-          Bericht {"*"}
+          {dict.labels.message} {"*"}
         </label>
         <textarea
           id="bericht"
           name="bericht"
           rows={5}
           onChange={() => clearError("bericht")}
+          aria-required="true"
           aria-invalid={!!errors.bericht}
           aria-describedby={errors.bericht ? "bericht-error" : undefined}
           className="w-full appearance-none resize-none border-x-0 border-t-0 border-b border-line bg-transparent py-2 text-sm leading-7 text-ink transition-all focus:border-b-2 focus:border-terracotta focus:!outline-none"
@@ -151,18 +178,55 @@ export default function ContactForm() {
         )}
       </div>
 
+      {/* Honeypot: invisible to people, but scripted spam bots that
+          auto-fill every field will fill this one too. Kept out of the
+          tab order and off-screen rather than display:none, since some
+          bots skip fields that are display:none. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden"
+      />
+
+      <div>
+        <label className="flex items-start gap-2.5 text-sm text-ink/80">
+          <input
+            type="checkbox"
+            name="akkoordPrivacy"
+            required
+            onChange={() => clearError("privacy")}
+            aria-invalid={!!errors.privacy}
+            aria-describedby={errors.privacy ? "privacy-error" : undefined}
+            className="mt-0.5 h-4 w-4 shrink-0 border-line text-terracotta focus:outline-none focus:ring-1 focus:ring-terracotta"
+          />
+          <span>
+            {dict.privacy.text}{" "}
+            <Link href={dict.privacy.href} target="_blank" className="text-terracotta hover:underline">
+              {dict.privacy.linkLabel}
+            </Link>
+            . *
+          </span>
+        </label>
+        {errors.privacy && (
+          <p id="privacy-error" className="mt-1.5 text-xs text-status-kritiek">
+            {errors.privacy}
+          </p>
+        )}
+      </div>
+
       {status === "error" && (
-        <p className="text-sm text-status-kritiek">
-          Er ging iets mis. Probeer opnieuw, of mail rechtstreeks naar info@millecam.be.
-        </p>
+        <p className="text-sm text-status-kritiek">{dict.error}</p>
       )}
 
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex items-center justify-center bg-terracotta px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-terracotta-light disabled:opacity-60"
+        className="inline-flex items-center justify-center bg-terracotta-deep px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-terracotta-darker disabled:opacity-60"
       >
-        {status === "sending" ? "Versturen..." : "Verstuur bericht"}
+        {status === "sending" ? dict.sending : dict.submit}
       </button>
     </form>
   );
@@ -193,6 +257,7 @@ function Field({
         name={name}
         type={type}
         onChange={onChange}
+        aria-required={required || undefined}
         aria-invalid={!!error}
         aria-describedby={error ? `${name}-error` : undefined}
         className={`${fieldClass} ${error ? "border-status-kritiek" : ""}`}
