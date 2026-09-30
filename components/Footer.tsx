@@ -1,7 +1,68 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import FrameworkList from "./FrameworkList";
+import { pageHref, localeFromPath, type Locale, type PageKey } from "@/lib/i18n";
+import type { FooterDict } from "@/lib/content/types";
+import { footer as enFooter } from "@/lib/content/en";
+import { footer as frFooter } from "@/lib/content/fr";
 
+/** Footer-only extra links (below FAQ/NIS2-check) — kept local rather than
+ * added to the shared FooterDict, since nothing else consumes them. */
+const EXTRA_LINKS: Record<Locale, { key: PageKey; label: string }[]> = {
+  nl: [
+    { key: "cases", label: "Praktijkvoorbeelden" },
+    { key: "dpoService", label: "DPO-as-a-Service" },
+    { key: "gapAnalysis", label: "GAP-analyse" },
+    { key: "fractionalGrc", label: "Fractional GRC" },
+    { key: "tabletopExercises", label: "Tabletop exercises" },
+    { key: "kaderCheck", label: "Welk kader is relevant?" },
+    { key: "insights", label: "Inzichten" },
+  ],
+  en: [
+    { key: "cases", label: "Case studies" },
+    { key: "dpoService", label: "DPO-as-a-Service" },
+    { key: "gapAnalysis", label: "Gap analysis" },
+    { key: "fractionalGrc", label: "Fractional GRC" },
+    { key: "tabletopExercises", label: "Tabletop exercises" },
+    { key: "kaderCheck", label: "Which framework is relevant?" },
+    { key: "insights", label: "Insights" },
+  ],
+  fr: [
+    { key: "cases", label: "Études de cas" },
+    { key: "dpoService", label: "DPO externalisé" },
+    { key: "gapAnalysis", label: "Analyse GAP" },
+    { key: "fractionalGrc", label: "GRC fractionné" },
+    { key: "tabletopExercises", label: "Exercices tabletop" },
+    { key: "kaderCheck", label: "Quel cadre est pertinent ?" },
+    { key: "insights", label: "Perspectives" },
+  ],
+};
+
+const NL_DICT: FooterDict = {
+  servicesHeading: "Diensten",
+  frameworks: ["NIS2", "ISO 27001", "CyFun", "GDPR"],
+  faqLink: "Veelgestelde vragen",
+  nis2CheckLink: "NIS2-check",
+  contactHeading: "Contact",
+  rights: "Millecam",
+  linkedinPerson: "LinkedIn: Robin Millecam",
+  linkedinCompany: "LinkedIn: Millecam",
+  privacy: "Privacybeleid",
+  cookies: "Cookiebeleid",
+  terms: "Algemene voorwaarden",
+  vatLabel: "BTW",
+};
+
+const DICTS: Record<Locale, FooterDict> = { nl: NL_DICT, en: enFooter, fr: frFooter };
+
+/** Locale is derived from the live pathname — see Nav.tsx for why. */
 export default function Footer() {
+  const pathname = usePathname();
+  const locale = localeFromPath(pathname);
+  const dict = DICTS[locale];
+
   return (
     <footer className="bg-ink text-paper">
       <div className="mx-auto max-w-container px-6 py-14">
@@ -14,31 +75,49 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold">Diensten</p>
-            <FrameworkList items={["NIS2", "ISO 27001", "CyFun", "GDPR"]} tone="paper" className="mt-3" />
-            <a href="/veelgestelde-vragen" className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
-              Veelgestelde vragen
+            <p className="text-sm font-semibold">{dict.servicesHeading}</p>
+            <FrameworkList
+              items={[
+                { label: "NIS2", href: pageHref(locale, "nis2") },
+                { label: "ISO 27001", href: pageHref(locale, "iso27001") },
+                { label: "CyFun", href: pageHref(locale, "cyfun") },
+                { label: locale === "fr" ? "RGPD" : "GDPR", href: pageHref(locale, "gdpr") },
+              ]}
+              tone="paper"
+              className="mt-3"
+            />
+            <a href={pageHref(locale, "faq")} className="mt-4 block text-sm text-paper/60 hover:text-paper hover:underline">
+              {dict.faqLink}
             </a>
-            <a href="/nis2-check" className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
-              NIS2-check
+            <a href={pageHref(locale, "nis2check")} className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline">
+              {dict.nis2CheckLink}
             </a>
+            {EXTRA_LINKS[locale].map((l) => (
+              <a
+                key={l.key}
+                href={pageHref(locale, l.key)}
+                className="mt-1 block text-sm text-paper/60 hover:text-paper hover:underline"
+              >
+                {l.label}
+              </a>
+            ))}
           </div>
           <div>
-            <p className="text-sm font-semibold">Contact</p>
-            <p className="mt-3 text-sm text-paper/60">© {new Date().getFullYear()} Millecam</p>
+            <p className="text-sm font-semibold">{dict.contactHeading}</p>
+            <p className="mt-3 text-sm text-paper/60">© {new Date().getFullYear()} {dict.rights}</p>
             <div className="mt-3 flex flex-col gap-1 text-sm text-paper/60">
-              <a href="https://www.linkedin.com/in/robin-millecam-909156b2/" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">LinkedIn: Robin Millecam</a>
-              <a href="https://www.linkedin.com/company/108526083" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">LinkedIn: Millecam</a>
+              <a href="https://www.linkedin.com/in/robin-millecam-909156b2/" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">{dict.linkedinPerson}</a>
+              <a href="https://www.linkedin.com/company/108526083" target="_blank" rel="noreferrer" className="hover:text-paper hover:underline">{dict.linkedinCompany}</a>
             </div>
             <div className="mt-4 flex flex-wrap gap-3 text-xs text-paper/50">
-              <a href="/privacybeleid" className="hover:text-paper hover:underline">Privacybeleid</a>
-              <a href="/cookiebeleid" className="hover:text-paper hover:underline">Cookiebeleid</a>
-              <a href="/algemene-voorwaarden" className="hover:text-paper hover:underline">Algemene voorwaarden</a>
+              <a href={pageHref(locale, "privacy")} className="hover:text-paper hover:underline">{dict.privacy}</a>
+              <a href={pageHref(locale, "cookies")} className="hover:text-paper hover:underline">{dict.cookies}</a>
+              <a href={pageHref(locale, "terms")} className="hover:text-paper hover:underline">{dict.terms}</a>
             </div>
           </div>
         </div>
         <div className="mt-10 border-t border-paper/10 pt-6 text-xs text-paper/40">
-          Millecam · Robin Millecam · Sinte Annalaan 34, 9300 Aalst · BTW{" "}
+          Millecam · Robin Millecam · Sinte Annalaan 34, 9300 Aalst · {dict.vatLabel}{" "}
           <a
             href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
             target="_blank"
