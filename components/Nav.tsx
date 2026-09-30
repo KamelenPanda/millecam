@@ -123,7 +123,7 @@ export default function Nav() {
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-terracotta transition-all duration-300 group-hover:w-full" />
             </Link>
             <div
-              className={`absolute left-0 top-full z-50 mt-3 flex min-w-[360px] border border-line bg-paper shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-[opacity,visibility] duration-150 ${
+              className={`absolute left-0 top-full z-50 mt-3 flex max-h-[calc(100dvh-100px)] min-w-[360px] overflow-y-auto border border-line bg-paper shadow-[0_14px_34px_rgba(33,29,24,0.09)] transition-[opacity,visibility] duration-150 ${
                 dropdownOpen ? "visible opacity-100" : "invisible opacity-0"
               }`}
             >
