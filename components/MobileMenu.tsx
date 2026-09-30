@@ -52,7 +52,7 @@ export default function MobileMenu({
       </button>
 
       {open && (
-        <div className="absolute inset-x-0 top-full z-50 border-b border-line bg-paper px-6 py-6 shadow-lg">
+        <div className="absolute inset-x-0 top-full z-50 max-h-[calc(100dvh-80px)] overflow-y-auto border-b border-line bg-paper px-6 py-6 shadow-lg">
           <nav className="flex flex-col gap-5">
             {links.map((l) => (
               <Link
