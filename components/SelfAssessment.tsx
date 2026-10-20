@@ -1,22 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { SelfAssessmentDict } from "@/lib/content/types";
+import { useReducedMotion, motion } from "@/lib/motion";
+
+const NL_DICT: SelfAssessmentDict = {
+  domains: ["Governance", "Access Control", "Incident Response", "Supplier Management"],
+  averageLabel: "gemiddelde score / 5",
+  helper:
+    "Pas de scores aan om te zien hoe het gemiddelde verandert: zo werkt de scoring in elke GAP-analyse, met je eigen situatie in plaats van dit voorbeeld.",
+};
 
 type Domain = { label: string; score: number };
-
-const INITIAL: Domain[] = [
-  { label: "Governance", score: 3 },
-  { label: "Access Control", score: 3 },
-  { label: "Incident Response", score: 3 },
-  { label: "Supplier Management", score: 3 },
-];
 
 /** Five small ascending bars, click one to set the score — echoes the same
  * bar-chart language used in the illustrations and domain rows, rather than
  * a generic HTML range slider. */
 function BarRating({ value, onChange, label }: { value: number; onChange: (v: number) => void; label: string }) {
   return (
-    <div className="flex items-end gap-1" role="group" aria-label={`Score voor ${label}`}>
+    <div className="flex h-11 items-end gap-1" role="group" aria-label={`Score voor ${label}`}>
       {[1, 2, 3, 4, 5].map((n) => (
         <button
           key={n}
@@ -24,23 +26,68 @@ function BarRating({ value, onChange, label }: { value: number; onChange: (v: nu
           onClick={() => onChange(n)}
           aria-label={`${n} van 5`}
           aria-pressed={n === value}
-          className="w-3.5 transition-colors"
-          style={{
-            height: `${10 + n * 5}px`,
-            backgroundColor: n <= value ? "#B2532E" : "#DCD3BF",
-          }}
-        />
+          // The tap target is the full height of the row (44px) but only as
+          // wide as the bar plus a small margin, so the bars still read as
+          // one continuous chart instead of scattered blocks.
+          className="flex h-full w-6 items-end justify-center rounded-sm transition-colors hover:bg-terracotta/10 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-1"
+        >
+          <span
+            aria-hidden="true"
+            className="w-full transition-colors"
+            style={{
+              height: `${10 + n * 5}px`,
+              backgroundColor: n <= value ? "#B2532E" : "#DCD3BF",
+            }}
+          />
+        </button>
       ))}
     </div>
   );
 }
 
-export default function SelfAssessment() {
-  const [domains, setDomains] = useState<Domain[]>(INITIAL);
+export default function SelfAssessment({ dict = NL_DICT }: { dict?: SelfAssessmentDict }) {
+  const [domains, setDomains] = useState<Domain[]>(() => dict.domains.map((label) => ({ label, score: 3 })));
   const max = 5;
   const score = domains.reduce((s, d) => s + d.score, 0) / domains.length;
 
-  const frac = Math.min(1, Math.max(0, score / max));
+  // PROGRESS: the gauge counts up from 0 to its (real, computed) starting
+  // average once on mount, then tracks live edits directly — the one-time
+  // entrance shows this is a computed result, not a static illustration.
+  const reducedMotion = useReducedMotion();
+  const [displayScore, setDisplayScore] = useState(0);
+  const [entered, setEntered] = useState(false);
+
+  useEffect(() => {
+    if (reducedMotion) {
+      setDisplayScore(score);
+      setEntered(true);
+      return;
+    }
+    let raf: number;
+    const start = performance.now();
+    const target = score;
+    function tick(now: number) {
+      const t = Math.min(1, (now - start) / motion.duration.slow);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setDisplayScore(target * eased);
+      if (t < 1) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        setEntered(true);
+      }
+    }
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+    // Intentionally mount-only: this is the initial count-up, not a
+    // resync on every domain edit (see the effect below for that).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reducedMotion]);
+
+  useEffect(() => {
+    if (entered) setDisplayScore(score);
+  }, [score, entered]);
+
+  const frac = Math.min(1, Math.max(0, displayScore / max));
   const angle = 180 - 180 * frac;
   const rad = (angle * Math.PI) / 180;
   const cx = 150;
@@ -72,13 +119,13 @@ export default function SelfAssessment() {
               stroke="#B2532E"
               strokeWidth="14"
               strokeLinecap="round"
-              style={{ transition: "d 0.3s ease-out" }}
+              style={{ transition: entered && !reducedMotion ? "d 0.3s ease-out" : "none" }}
             />
             <text x="150" y="130" textAnchor="middle" className="fill-ink" style={{ font: "700 40px Georgia, serif" }}>
-              {score.toFixed(1)}
+              {displayScore.toFixed(1)}
             </text>
             <text x="150" y="158" textAnchor="middle" className="fill-muted" style={{ font: "400 13px Arial, sans-serif" }}>
-              gemiddelde score / 5
+              {dict.averageLabel}
             </text>
           </svg>
         </div>
@@ -95,10 +142,7 @@ export default function SelfAssessment() {
           ))}
         </div>
       </div>
-      <p className="mt-6 text-xs text-muted">
-        Pas de scores aan om te zien hoe het gemiddelde verandert: zo werkt de scoring in elke
-        GAP-analyse, met je eigen situatie in plaats van dit voorbeeld.
-      </p>
+      <p className="mt-6 text-xs text-muted">{dict.helper}</p>
     </div>
   );
 }
