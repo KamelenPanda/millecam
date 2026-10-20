@@ -27,7 +27,7 @@ export default function TermsPage() {
 
         <P>
           Les présentes conditions s&apos;appliquent à toute offre et tout contrat entre Millecam (Robin
-          Millecam, entreprise individuelle, Sinte Annalaan 34, 9300 Alost, Belgique, TVA BE
+          Millecam, entreprise individuelle, Weverijstraat 22, 9300 Alost, Belgique, TVA BE
           1026.876.048, ci-après « Millecam ») et un client, sauf accord écrit contraire.
         </P>
 

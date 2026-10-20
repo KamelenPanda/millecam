@@ -27,7 +27,7 @@ export default function TermsPage() {
 
         <P>
           These terms apply to every quotation and agreement between Millecam (Robin Millecam, sole
-          proprietorship, Sinte Annalaan 34, 9300 Aalst, Belgium, VAT BE 1026.876.048, hereinafter
+          proprietorship, Weverijstraat 22, 9300 Aalst, Belgium, VAT BE 1026.876.048, hereinafter
           &quot;Millecam&quot;) and a client, unless agreed otherwise in writing.
         </P>
 

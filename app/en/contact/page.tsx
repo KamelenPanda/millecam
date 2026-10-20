@@ -28,7 +28,7 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="font-semibold text-ink">Address</p>
-            <p>Sinte Annalaan 34, 9300 Aalst, Belgium</p>
+            <p>Weverijstraat 22, 9300 Aalst, Belgium</p>
           </div>
           <div>
             <p className="font-semibold text-ink">Phone</p>

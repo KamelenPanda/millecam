@@ -44,7 +44,7 @@ const jsonLd = {
   vatID: "BE1026876048",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Sinte Annalaan 34",
+    streetAddress: "Weverijstraat 22",
     postalCode: "9300",
     addressLocality: "Aalst",
     addressCountry: "BE",

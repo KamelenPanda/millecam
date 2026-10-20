@@ -68,7 +68,7 @@ nieuwe waarde voor de `variant`-prop, niet als losse tekstcomponent.
 ## Privacybeleid, cookiebeleid & cookiemelding
 
 - `/privacybeleid` — volledige AVG-tekst: verwerkingsverantwoordelijke (Robin Millecam,
-  Sinte Annalaan 34, 9300 Aalst), verwerkte gegevens, rechtsgrond, verwerkers
+  Weverijstraat 22, 9300 Aalst), verwerkte gegevens, rechtsgrond, verwerkers
   (Resend, Vercel), bewaartermijn, alle AVG-rechten, klachtprocedure bij de GBA.
 - `/cookiebeleid` — legt uit dat de site geen trackingcookies gebruikt; Vercel
   Analytics is cookieless en verwerkt geen persoonsgegevens, dus geen

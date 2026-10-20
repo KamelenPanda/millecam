@@ -117,7 +117,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-10 border-t border-paper/10 pt-6 text-xs text-paper/40">
-          Millecam · Robin Millecam · Sinte Annalaan 34, 9300 Aalst · {dict.vatLabel}{" "}
+          Millecam · Robin Millecam · Weverijstraat 22, 9300 Aalst · {dict.vatLabel}{" "}
           <a
             href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
             target="_blank"

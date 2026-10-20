@@ -95,7 +95,7 @@ export default function OverPage() {
         <div className="mt-4 border-l-2 border-terracotta bg-[#FBF9F4] py-5 pl-5 pr-4 shadow-[0_14px_34px_rgba(33,29,24,0.09)]">
           <p className="font-serif text-lg font-semibold text-ink">Company</p>
           <p className="mt-1 text-sm text-ink/70">
-            Millecam: Robin Millecam, Sinte Annalaan 34, 9300 Aalst, Belgium.{" "}
+            Millecam: Robin Millecam, Weverijstraat 22, 9300 Aalst, Belgium.{" "}
             <a
               href="https://kbopub.economie.fgov.be/kbopub/toonondernemingps.html?ondernemingsnummer=1026876048"
               target="_blank"

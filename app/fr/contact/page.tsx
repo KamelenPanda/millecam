@@ -28,7 +28,7 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="font-semibold text-ink">Adresse</p>
-            <p>Sinte Annalaan 34, 9300 Alost, Belgique</p>
+            <p>Weverijstraat 22, 9300 Alost, Belgique</p>
           </div>
           <div>
             <p className="font-semibold text-ink">Téléphone</p>

@@ -86,7 +86,7 @@ export default function PrivacybeleidPage() {
         <P>
           <strong className="font-medium text-ink">Millecam – Robin Millecam</strong>
           <br />
-          Sinte Annalaan 34
+          Weverijstraat 22
           <br />
           9300 Alost
           <br />
