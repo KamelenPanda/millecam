@@ -6,6 +6,15 @@ import RevealGroup from "@/components/RevealGroup";
 import { ARTICLES_FR } from "@/lib/insights";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/perspectives",
+    languages: {
+      nl: "/insights",
+      en: "/en/insights",
+      fr: "/fr/perspectives",
+      "x-default": "/insights",
+    },
+  },
   title: "Perspectives | Millecam",
   description: "Un éclairage pratique sur NIS2, ISO 27001, CyFun et le RGPD, écrit depuis l'expérience du terrain, pas depuis un calendrier marketing.",
 };

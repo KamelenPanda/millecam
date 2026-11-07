@@ -3,6 +3,15 @@ import Section from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/contact",
+    languages: {
+      nl: "/contact",
+      en: "/en/contact",
+      fr: "/fr/contact",
+      "x-default": "/contact",
+    },
+  },
   title: "Contact | Millecam",
   description: "Plan een vrijblijvend gesprek met Millecam.",
 };

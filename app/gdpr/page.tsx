@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/gdpr",
+    languages: {
+      nl: "/gdpr",
+      en: "/en/gdpr",
+      fr: "/fr/rgpd",
+      "x-default": "/gdpr",
+    },
+  },
   title: "GDPR-consultant (AVG) voor KMO's in België | Millecam",
   description:
     "GDPR/AVG GAP-analyse, verwerkingsregister, DPIA's en datalekprocedures. Praktisch opgezet, niet enkel een privacyverklaring op de website.",

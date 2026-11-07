@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/nis2",
+    languages: {
+      nl: "/nis2",
+      en: "/en/nis2",
+      fr: "/fr/nis2",
+      "x-default": "/nis2",
+    },
+  },
   title: "NIS2 consultant for SMEs in Belgium | Millecam",
   description:
     "Does your organisation fall under NIS2 and do you have no internal compliance officer? Millecam guides Belgian SMEs from scoping and GAP analysis to demonstrable compliance.",

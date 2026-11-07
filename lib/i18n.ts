@@ -96,6 +96,8 @@ const SLUGS: Record<Locale, Record<PageKey, string>> = {
   },
 };
 
+export const pageKeys = Object.keys(SLUGS.nl) as PageKey[];
+
 /** Builds the localized URL for a canonical page, e.g. pageHref("fr", "approach") -> "/fr/approche". */
 export function pageHref(locale: Locale, key: PageKey): string {
   const prefix = locale === defaultLocale ? "" : `/${locale}`;

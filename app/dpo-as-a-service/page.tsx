@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/dpo-as-a-service",
+    languages: {
+      nl: "/dpo-as-a-service",
+      en: "/en/dpo-as-a-service",
+      fr: "/fr/dpo-externalise",
+      "x-default": "/dpo-as-a-service",
+    },
+  },
   title: "DPO-as-a-Service | Externe DPO in België | Millecam",
   description:
     "Een erkend, extern Data Protection Officer op maandelijkse basis: voor organisaties die een DPO nodig hebben, geen fulltime rol.",

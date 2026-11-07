@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/grc-fractionne",
+    languages: {
+      nl: "/fractional-grc",
+      en: "/en/fractional-grc",
+      fr: "/fr/grc-fractionne",
+      "x-default": "/fractional-grc",
+    },
+  },
   title: "Consultant GRC fractionné en Belgique | Millecam",
   description:
     "Capacité GRC externe au tarif journalier, en continu ou ponctuellement. Un accompagnement conformité sans recruter.",

@@ -3,6 +3,15 @@ import Section from "@/components/Section";
 import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/cookiebeleid",
+    languages: {
+      nl: "/cookiebeleid",
+      en: "/en/cookie-policy",
+      fr: "/fr/politique-de-cookies",
+      "x-default": "/cookiebeleid",
+    },
+  },
   title: "Cookiebeleid | Millecam",
   description: "Welke cookies deze website gebruikt (bijna geen).",
 };

@@ -4,6 +4,15 @@ import Section from "@/components/Section";
 import FrameworkChecker from "@/components/FrameworkChecker";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/kader-check",
+    languages: {
+      nl: "/kader-check",
+      en: "/en/framework-check",
+      fr: "/fr/verification-cadres",
+      "x-default": "/kader-check",
+    },
+  },
   title: "Welk kader is relevant? | Millecam",
   description: "Vier korte vragen voor een eerste indicatie welke van NIS2, ISO 27001, CyFun en GDPR voor jouw organisatie relevant zijn.",
 };

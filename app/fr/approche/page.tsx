@@ -11,6 +11,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/approche",
+    languages: {
+      nl: "/aanpak",
+      en: "/en/approach",
+      fr: "/fr/approche",
+      "x-default": "/aanpak",
+    },
+  },
   title: "Approche | Millecam",
   description: "Comment se déroule un trajet chez Millecam : analyse GAP, mise en œuvre, accompagnement.",
 };

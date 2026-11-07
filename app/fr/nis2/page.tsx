@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/nis2",
+    languages: {
+      nl: "/nis2",
+      en: "/en/nis2",
+      fr: "/fr/nis2",
+      "x-default": "/nis2",
+    },
+  },
   title: "Consultant NIS2 pour PME en Belgique | Millecam",
   description:
     "Votre organisation relève-t-elle de NIS2 et n'avez-vous pas de responsable conformité en interne ? Millecam accompagne les PME belges du scoping et de l'analyse GAP jusqu'à la conformité démontrable.",

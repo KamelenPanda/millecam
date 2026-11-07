@@ -5,6 +5,15 @@ import FrameworkChecker from "@/components/FrameworkChecker";
 import { frameworkChecker as dict } from "@/lib/content/en";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/framework-check",
+    languages: {
+      nl: "/kader-check",
+      en: "/en/framework-check",
+      fr: "/fr/verification-cadres",
+      "x-default": "/kader-check",
+    },
+  },
   title: "Which framework is relevant? | Millecam",
   description: "Four short questions for a first indication of which of NIS2, ISO 27001, CyFun and GDPR are relevant for your organisation.",
 };

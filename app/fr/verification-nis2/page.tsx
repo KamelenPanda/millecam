@@ -4,6 +4,15 @@ import Nis2Checker from "@/components/Nis2Checker";
 import { nis2Checker as nis2CheckerDict } from "@/lib/content/fr";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/verification-nis2",
+    languages: {
+      nl: "/nis2-check",
+      en: "/en/nis2-check",
+      fr: "/fr/verification-nis2",
+      "x-default": "/nis2-check",
+    },
+  },
   title: "Vérification NIS2 | Millecam",
   description: "Trois questions courtes pour une première indication de savoir si votre organisation relève de NIS2.",
 };

@@ -8,6 +8,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/aanpak",
+    languages: {
+      nl: "/aanpak",
+      en: "/en/approach",
+      fr: "/fr/approche",
+      "x-default": "/aanpak",
+    },
+  },
   title: "Aanpak | Millecam",
   description: "Van huidige situatie tot aantoonbare compliance: hoe een traject bij Millecam verloopt, stap voor stap.",
 };

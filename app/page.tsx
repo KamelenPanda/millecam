@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,6 +22,18 @@ import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
 import IllustrationSupport from "@/components/illustrations/IllustrationSupport";
 import IllustrationDialogue from "@/components/illustrations/IllustrationDialogue";
 import IllustrationClock from "@/components/illustrations/IllustrationClock";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    languages: {
+      nl: "/",
+      en: "/en",
+      fr: "/fr",
+      "x-default": "/",
+    },
+  },
+};
 
 const DIENSTEN = [
   {

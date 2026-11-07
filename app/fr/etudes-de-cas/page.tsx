@@ -9,6 +9,15 @@ import IllustrationCyfun from "@/components/illustrations/IllustrationCyfun";
 import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/etudes-de-cas",
+    languages: {
+      nl: "/cases",
+      en: "/en/case-studies",
+      fr: "/fr/etudes-de-cas",
+      "x-default": "/cases",
+    },
+  },
   title: "Études de cas | Millecam",
   description:
     "Études de cas anonymisées de trajets ISO 27001, CyberFundamentals et gouvernance de la cybersécurité.",

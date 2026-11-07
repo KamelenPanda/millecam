@@ -9,6 +9,15 @@ import IllustrationCyfun from "@/components/illustrations/IllustrationCyfun";
 import IllustrationBuild from "@/components/illustrations/IllustrationBuild";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/cases",
+    languages: {
+      nl: "/cases",
+      en: "/en/case-studies",
+      fr: "/fr/etudes-de-cas",
+      "x-default": "/cases",
+    },
+  },
   title: "Praktijkvoorbeelden | Millecam",
   description:
     "Geanonimiseerde praktijkvoorbeelden van ISO 27001-, CyberFundamentals- en cybersecurity-governance-trajecten.",

@@ -6,6 +6,15 @@ import RevealGroup from "@/components/RevealGroup";
 import { ARTICLES_EN } from "@/lib/insights";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/insights",
+    languages: {
+      nl: "/insights",
+      en: "/en/insights",
+      fr: "/fr/perspectives",
+      "x-default": "/insights",
+    },
+  },
   title: "Insights | Millecam",
   description: "Practical guidance on NIS2, ISO 27001, CyFun and GDPR, written from consultancy experience, not a marketing calendar.",
 };

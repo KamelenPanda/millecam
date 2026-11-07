@@ -3,6 +3,15 @@ import Section from "@/components/Section";
 import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/privacy-policy",
+    languages: {
+      nl: "/privacybeleid",
+      en: "/en/privacy-policy",
+      fr: "/fr/politique-de-confidentialite",
+      "x-default": "/privacybeleid",
+    },
+  },
   title: "Privacy Policy | Millecam",
   description:
     "How Millecam collects, uses, shares and protects personal data across our website, consultancy engagements and client relationships.",

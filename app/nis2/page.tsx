@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/nis2",
+    languages: {
+      nl: "/nis2",
+      en: "/en/nis2",
+      fr: "/fr/nis2",
+      "x-default": "/nis2",
+    },
+  },
   title: "NIS2-consultant voor KMO's in België | Millecam",
   description:
     "Val je onder NIS2 en heb je geen interne compliance-officer? Millecam begeleidt Belgische KMO's van scoping en GAP-analyse tot aantoonbare naleving.",

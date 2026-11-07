@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/iso-27001",
+    languages: {
+      nl: "/iso-27001",
+      en: "/en/iso-27001",
+      fr: "/fr/iso-27001",
+      "x-default": "/iso-27001",
+    },
+  },
   title: "Consultant ISO 27001 pour PME en Belgique | Millecam",
   description:
     "Mise en œuvre de l'ISO/IEC 27001:2022, de l'analyse GAP à l'audit de certification. Millecam accompagne les PME belges étape par étape vers un SMSI opérationnel.",

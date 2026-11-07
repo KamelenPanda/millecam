@@ -14,6 +14,15 @@ import IllustrationCyfun from "@/components/illustrations/IllustrationCyfun";
 import IllustrationGdpr from "@/components/illustrations/IllustrationGdpr";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/services",
+    languages: {
+      nl: "/diensten",
+      en: "/en/services",
+      fr: "/fr/services",
+      "x-default": "/diensten",
+    },
+  },
   title: "Services | Millecam",
   description: "GAP analysis, implementation tracks, DPO-as-a-Service, tabletop exercises and fractional GRC support.",
 };

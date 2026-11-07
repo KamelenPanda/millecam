@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/fractional-grc",
+    languages: {
+      nl: "/fractional-grc",
+      en: "/en/fractional-grc",
+      fr: "/fr/grc-fractionne",
+      "x-default": "/fractional-grc",
+    },
+  },
   title: "Fractional GRC consultant in Belgium | Millecam",
   description:
     "External GRC capacity at a day rate, ongoing or periodic. Compliance support without hiring anyone.",

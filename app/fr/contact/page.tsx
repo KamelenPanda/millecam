@@ -4,6 +4,15 @@ import ContactForm from "@/components/ContactForm";
 import { contactForm as contactFormDict } from "@/lib/content/fr";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/contact",
+    languages: {
+      nl: "/contact",
+      en: "/en/contact",
+      fr: "/fr/contact",
+      "x-default": "/contact",
+    },
+  },
   title: "Contact | Millecam",
   description: "Planifiez un entretien sans engagement avec Millecam.",
 };

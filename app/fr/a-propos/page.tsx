@@ -6,6 +6,15 @@ import PillarGlyph from "@/components/PillarGlyph";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/a-propos",
+    languages: {
+      nl: "/over",
+      en: "/en/about",
+      fr: "/fr/a-propos",
+      "x-default": "/over",
+    },
+  },
   title: "À propos | Millecam",
   description: "Millecam est le cabinet de conseil GRC indépendant de Robin Millecam.",
 };

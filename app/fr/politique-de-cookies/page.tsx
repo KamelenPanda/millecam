@@ -3,6 +3,15 @@ import Section from "@/components/Section";
 import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/politique-de-cookies",
+    languages: {
+      nl: "/cookiebeleid",
+      en: "/en/cookie-policy",
+      fr: "/fr/politique-de-cookies",
+      "x-default": "/cookiebeleid",
+    },
+  },
   title: "Politique en matière de cookies | Millecam",
   description:
     "Millecam.be n'utilise pas de cookies : ce que fait Vercel Web Analytics et comment le traitement technique du site fonctionne.",

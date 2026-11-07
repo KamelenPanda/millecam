@@ -6,6 +6,15 @@ import PillarGlyph from "@/components/PillarGlyph";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/over",
+    languages: {
+      nl: "/over",
+      en: "/en/about",
+      fr: "/fr/a-propos",
+      "x-default": "/over",
+    },
+  },
   title: "Over | Millecam",
   description: "Millecam is het onafhankelijke GRC-adviesbureau van Robin Millecam.",
 };

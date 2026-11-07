@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/tabletop-exercises",
+    languages: {
+      nl: "/tabletop-exercises",
+      en: "/en/tabletop-exercises",
+      fr: "/fr/exercices-tabletop",
+      "x-default": "/tabletop-exercises",
+    },
+  },
   title: "Tabletop exercise & incident response oefening | Millecam",
   description:
     "Interactieve scenario-oefeningen die testen of jouw incidentresponsplan standhoudt in de praktijk, niet enkel op papier.",

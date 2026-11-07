@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/cyberfundamentals",
+    languages: {
+      nl: "/cyberfundamentals",
+      en: "/en/cyberfundamentals",
+      fr: "/fr/cyberfundamentals",
+      "x-default": "/cyberfundamentals",
+    },
+  },
   title: "Consultant CyberFundamentals (CyFun) en Belgique | Millecam",
   description:
     "Analyse GAP CyFun et détermination du niveau (Basic, Important, Essential) pour les PME belges : une alternative accessible pour démontrer votre conformité NIS2.",

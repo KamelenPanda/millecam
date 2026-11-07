@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/dpo-externalise",
+    languages: {
+      nl: "/dpo-as-a-service",
+      en: "/en/dpo-as-a-service",
+      fr: "/fr/dpo-externalise",
+      "x-default": "/dpo-as-a-service",
+    },
+  },
   title: "DPO externalisé | DPO externe en Belgique | Millecam",
   description:
     "Un délégué à la protection des données (DPO) externe et reconnu, sur base mensuelle : pour les organisations qui ont besoin d'un DPO, pas d'un poste à temps plein.",

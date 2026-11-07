@@ -4,6 +4,15 @@ import Button from "@/components/Button";
 import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/faq",
+    languages: {
+      nl: "/veelgestelde-vragen",
+      en: "/en/faq",
+      fr: "/fr/faq",
+      "x-default": "/veelgestelde-vragen",
+    },
+  },
   title: "FAQ | Millecam",
   description: "Answers to frequently asked questions about NIS2, ISO 27001, CyFun, GDPR and working with Millecam.",
 };

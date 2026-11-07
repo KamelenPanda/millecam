@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import Section from "@/components/Section";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/terms-and-conditions",
+    languages: {
+      nl: "/algemene-voorwaarden",
+      en: "/en/terms-and-conditions",
+      fr: "/fr/conditions-generales",
+      "x-default": "/algemene-voorwaarden",
+    },
+  },
   title: "Terms & Conditions | Millecam",
   description: "The terms that apply to engagements with Millecam.",
 };

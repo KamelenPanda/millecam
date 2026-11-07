@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/analyse-gap",
+    languages: {
+      nl: "/gap-analyse",
+      en: "/en/gap-analysis",
+      fr: "/fr/analyse-gap",
+      "x-default": "/gap-analyse",
+    },
+  },
   title: "Analyse GAP conformité | NIS2, ISO 27001, CyFun | Millecam",
   description:
     "Une analyse GAP à prix fixe par rapport à NIS2, ISO 27001, CyberFundamentals ou au RGPD : une vision claire de votre situation, avant d'investir dans la mise en œuvre.",

@@ -5,6 +5,15 @@ import FrameworkChecker from "@/components/FrameworkChecker";
 import { frameworkChecker as dict } from "@/lib/content/fr";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/verification-cadres",
+    languages: {
+      nl: "/kader-check",
+      en: "/en/framework-check",
+      fr: "/fr/verification-cadres",
+      "x-default": "/kader-check",
+    },
+  },
   title: "Quel cadre est pertinent ? | Millecam",
   description: "Quatre courtes questions pour une première indication sur la pertinence de NIS2, ISO 27001, CyFun et RGPD pour votre organisation.",
 };

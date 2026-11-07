@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/gdpr",
+    languages: {
+      nl: "/gdpr",
+      en: "/en/gdpr",
+      fr: "/fr/rgpd",
+      "x-default": "/gdpr",
+    },
+  },
   title: "GDPR consultant for SMEs in Belgium | Millecam",
   description:
     "GDPR GAP analysis, record of processing activities, DPIAs and data breach procedures. Set up in practice, not just a privacy statement on the website.",

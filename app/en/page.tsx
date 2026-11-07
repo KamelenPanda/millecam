@@ -15,6 +15,15 @@ import RevealGroup from "@/components/RevealGroup";
 import { selfAssessment as selfAssessmentDict } from "@/lib/content/en";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en",
+    languages: {
+      nl: "/",
+      en: "/en",
+      fr: "/fr",
+      "x-default": "/",
+    },
+  },
   title: "Millecam: Govern with confidence.",
   description:
     "Independent GRC expertise for SMEs that can't build compliance in-house, but still have to demonstrate it. NIS2 · ISO 27001 · CyFun · GDPR.",

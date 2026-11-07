@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/iso-27001",
+    languages: {
+      nl: "/iso-27001",
+      en: "/en/iso-27001",
+      fr: "/fr/iso-27001",
+      "x-default": "/iso-27001",
+    },
+  },
   title: "ISO 27001-consultant voor KMO's in België | Millecam",
   description:
     "ISO/IEC 27001:2022-implementatie van GAP-analyse tot certificeringsaudit. Millecam begeleidt Belgische KMO's stap voor stap naar een werkend ISMS.",

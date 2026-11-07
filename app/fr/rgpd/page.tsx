@@ -9,6 +9,15 @@ import Reveal from "@/components/Reveal";
 import RevealGroup from "@/components/RevealGroup";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/fr/rgpd",
+    languages: {
+      nl: "/gdpr",
+      en: "/en/gdpr",
+      fr: "/fr/rgpd",
+      "x-default": "/gdpr",
+    },
+  },
   title: "Consultant RGPD pour PME en Belgique | Millecam",
   description:
     "Analyse GAP RGPD, registre des traitements, AIPD et procédures de notification des violations de données. Mises en place de façon concrète, pas seulement une déclaration de confidentialité sur le site web.",
