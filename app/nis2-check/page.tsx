@@ -3,6 +3,15 @@ import Section from "@/components/Section";
 import Nis2Checker from "@/components/Nis2Checker";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/nis2-check",
+    languages: {
+      nl: "/nis2-check",
+      en: "/en/nis2-check",
+      fr: "/fr/verification-nis2",
+      "x-default": "/nis2-check",
+    },
+  },
   title: "NIS2-check | Millecam",
   description: "Drie vragen om een eerste indicatie te krijgen of jouw organisatie onder NIS2 valt.",
 };

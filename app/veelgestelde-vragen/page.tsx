@@ -4,6 +4,15 @@ import Button from "@/components/Button";
 import PillarGlyph from "@/components/PillarGlyph";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/veelgestelde-vragen",
+    languages: {
+      nl: "/veelgestelde-vragen",
+      en: "/en/faq",
+      fr: "/fr/faq",
+      "x-default": "/veelgestelde-vragen",
+    },
+  },
   title: "Veelgestelde vragen | Millecam",
   description: "Antwoorden op veelgestelde vragen over NIS2, ISO 27001, CyFun, GDPR en werken met Millecam.",
 };
@@ -73,7 +82,7 @@ export default function FAQPage() {
         ))}
       </div>
 
-      <div className="mx-auto mt-16 max-w-md pt-14 text-center">
+      <div className="mx-auto mt-16 max-w-md text-center">
         <PillarGlyph className="mx-auto h-6 w-5" />
         <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">Nog een andere vraag?</h2>
         <p className="mt-3 text-sm text-ink/70">

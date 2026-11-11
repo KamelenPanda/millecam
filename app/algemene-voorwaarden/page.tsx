@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import Section from "@/components/Section";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/algemene-voorwaarden",
+    languages: {
+      nl: "/algemene-voorwaarden",
+      en: "/en/terms-and-conditions",
+      fr: "/fr/conditions-generales",
+      "x-default": "/algemene-voorwaarden",
+    },
+  },
   title: "Algemene voorwaarden | Millecam",
   description: "De voorwaarden die van toepassing zijn op opdrachten bij Millecam.",
 };
@@ -27,7 +36,7 @@ export default function AlgemeneVoorwaardenPage() {
 
         <P>
           Deze voorwaarden zijn van toepassing op elke offerte en overeenkomst tussen Millecam
-          (Robin Millecam, eenmanszaak, Sinte Annalaan 34, 9300 Aalst, BTW BE 1026.876.048, hierna
+          (Robin Millecam, eenmanszaak, Weverijstraat 22, 9300 Aalst, BTW BE 1026.876.048, hierna
           &quot;Millecam&quot;) en een opdrachtgever, tenzij schriftelijk anders overeengekomen.
         </P>
 

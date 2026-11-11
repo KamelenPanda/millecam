@@ -3,6 +3,15 @@ import Section from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/contact",
+    languages: {
+      nl: "/contact",
+      en: "/en/contact",
+      fr: "/fr/contact",
+      "x-default": "/contact",
+    },
+  },
   title: "Contact | Millecam",
   description: "Plan een vrijblijvend gesprek met Millecam.",
 };
@@ -27,7 +36,7 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="font-semibold text-ink">Adres</p>
-            <p>Sinte Annalaan 34, 9300 Aalst</p>
+            <p>Weverijstraat 22, 9300 Aalst</p>
           </div>
           <div>
             <p className="font-semibold text-ink">Telefoon</p>
