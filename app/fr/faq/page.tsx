@@ -21,7 +21,7 @@ const FAQS = [
   {
     vraag: "Quelle est la différence entre NIS2, ISO 27001, CyFun et RGPD ?",
     antwoord:
-      "NIS2 est une directive européenne, une obligation légale pour certains secteurs et certaines tailles d'organisation. ISO 27001 est une norme internationale, volontaire mais souvent exigée contractuellement par des clients ou des appels d'offres. CyFun est un référentiel belge d'auto-évaluation du Centre pour la Cybersécurité Belgique, une alternative plus accessible pour démontrer la conformité NIS2. Le RGPD est la législation européenne sur la vie privée, applicable à pratiquement toute organisation qui traite des données à caractère personnel. Ils se recoupent en partie, par exemple sur les contrôles de sécurité de l'information, mais chacun a un objectif différent.",
+      "NIS2 est une directive européenne. En Belgique, elle a été transposée dans la loi NIS2, qui est une obligation légale pour les organisations de certains secteurs et à partir d'une certaine taille. L'ISO 27001 est une norme internationale volontaire, souvent exigée par des clients ou des appels d'offres. CyFun est le référentiel du Centre pour la Cybersécurité Belgique (CCB). C'est l'une des manières reconnues de démontrer la conformité NIS2, mais cela ne remplace pas les obligations légales. Le RGPD est la législation européenne sur la vie privée, avec l'Autorité de protection des données (APD) comme autorité belge compétente. Les référentiels se recoupent en partie, mais chacun a un objectif différent.",
   },
   {
     vraag: "Mon entreprise relève-t-elle de NIS2 ?",
@@ -36,7 +36,7 @@ const FAQS = [
   {
     vraag: "Millecam peut-il agir en tant que notre DPO externe ?",
     antwoord:
-      "Oui. Robin est délégué à la protection des données certifié DPI et assume ce rôle en externe via le DPO-as-a-Service, sur une base mensuelle.",
+      "Oui. Robin est délégué à la protection des données certifié (DPI) et assume ce rôle via le DPO-as-a-Service, pour un montant mensuel fixe.",
   },
   {
     vraag: "Millecam travaille-t-il uniquement avec des PME ?",

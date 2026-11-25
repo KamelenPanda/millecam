@@ -21,7 +21,7 @@ const FAQS = [
   {
     vraag: "What's the difference between NIS2, ISO 27001, CyFun and GDPR?",
     antwoord:
-      "NIS2 is a European directive, a legal obligation for certain sectors and organisation sizes. ISO 27001 is an international standard, voluntary but often contractually required by clients or tenders. CyFun is a Belgian self-assessment framework from the Centre for Cybersecurity Belgium, a more accessible alternative for demonstrating NIS2 compliance. GDPR is European privacy legislation, applicable to virtually every organisation that processes personal data. They overlap partly, for example on information security controls, but each serves a different purpose.",
+      "NIS2 is a European directive. In Belgium it has been transposed into the NIS2 law, which is a legal obligation for organisations in certain sectors and above a certain size. ISO 27001 is a voluntary international standard, often required by clients or tenders. CyFun is the framework of the Centre for Cybersecurity Belgium (CCB). It's one of the recognised ways to demonstrate NIS2 compliance, but it doesn't replace the legal obligations. GDPR is the European privacy legislation, with the Belgian Data Protection Authority as the Belgian supervisory authority. The frameworks overlap partly, but each serves a different purpose.",
   },
   {
     vraag: "Does my company fall under NIS2?",
@@ -36,7 +36,7 @@ const FAQS = [
   {
     vraag: "Can Millecam act as our external DPO?",
     antwoord:
-      "Yes. Robin is a DPI-certified Data Protection Officer and takes on that role externally through DPO-as-a-Service, on a monthly basis.",
+      "Yes. Robin is a certified Data Protection Officer (DPI) and takes on that role through DPO-as-a-Service, for a fixed monthly fee.",
   },
   {
     vraag: "Does Millecam only work with SMEs?",
