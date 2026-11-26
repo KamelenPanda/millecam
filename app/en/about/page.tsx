@@ -28,23 +28,20 @@ export default function OverPage() {
 
           <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
             <p>
-              Behind Millecam stands one name: Robin Millecam. That&apos;s no coincidence. Millecam
-              isn&apos;t just the brand name, it&apos;s also simply who&apos;s on the other end of the
-              line. One fixed point of contact instead of a rotating team, for organisations that need
-              compliance expertise without creating an internal role.
+              Millecam is an independent GRC advisory firm, led by Robin Millecam. You get one fixed point
+              of contact, not a rotating team. That way you bring compliance expertise in-house without
+              creating an internal role for it.
             </p>
             <p>
-              Years of experience with NIS2 scoping, CyFun GAP analyses, ISO 27001 documentation and
-              GDPR questions at SMEs across a wide range of sectors: SaaS and tech, manufacturing,
-              logistics, professional services, accountancy, food &amp; beverage and advertising. Certified
-              Data Protection Officer (DPI-certified, February 2025).
+              Robin has hands-on experience with NIS2 scoping, CyFun GAP analyses, ISO 27001 documentation
+              and GDPR questions at SMEs. That included organisations in SaaS and tech, manufacturing,
+              logistics, professional services, accountancy, food &amp; beverage and advertising.
             </p>
             <div>
               <PillarGlyph className="h-5 w-4" />
               <p className="mt-3 font-serif text-xl italic text-terracotta">
-                Compliance shouldn&apos;t be a goal in itself. It&apos;s a means to being demonstrably in
-                control: to a regulator, a client, or yourself. Hence the promise: Govern with
-                confidence.
+                Compliance shouldn&apos;t be a goal in itself. It&apos;s a way to demonstrate that
+                you&apos;re in control: to a regulator, a client, or yourself.
               </p>
             </div>
           </Reveal>
@@ -75,7 +72,7 @@ export default function OverPage() {
             <p className="whitespace-nowrap text-xs text-muted">Since February 2025</p>
           </div>
           <p className="mt-1 text-sm text-ink/70">
-            Data Protection Institute (DPI): certificate valid for 3 years, renewable.
+            Data Protection Institute (DPI): the certificate is valid for three years and is then renewed.
           </p>
         </div>
 
@@ -83,8 +80,7 @@ export default function OverPage() {
           <p className="font-serif text-lg font-semibold text-ink">Framework expertise</p>
           <p className="mt-1 text-sm text-ink/70">
             NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) and GDPR: practical experience built up
-            at SMEs in SaaS/tech, manufacturing, logistics, professional services, accountancy, food &amp;
-            beverage and advertising.
+            at SMEs.
           </p>
         </div>
 

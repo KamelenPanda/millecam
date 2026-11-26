@@ -28,24 +28,21 @@ export default function OverPage() {
 
           <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
             <p>
-              Derrière Millecam se cache un seul nom : Robin Millecam. Ce n&apos;est pas un hasard.
-              Millecam n&apos;est pas qu&apos;un nom de marque, c&apos;est aussi tout simplement qui se
-              trouve à l&apos;autre bout du fil. Un point de contact fixe plutôt qu&apos;une équipe qui
-              tourne, pour les organisations qui ont besoin d&apos;une expertise en conformité sans créer
-              un poste en interne.
+              Millecam est un cabinet de conseil GRC indépendant, dirigé par Robin Millecam. Vous avez un
+              point de contact fixe, pas une équipe qui change. Vous intégrez ainsi une expertise en
+              conformité sans devoir créer un poste en interne.
             </p>
             <p>
-              Des années d&apos;expérience dans le scoping NIS2, les analyses GAP CyFun, la documentation
-              ISO 27001 et les questions RGPD auprès de PME dans des secteurs très variés : SaaS et tech,
-              production, logistique, services professionnels, comptabilité, alimentation et publicité.
-              Délégué à la protection des données certifié (certification DPI, février 2025).
+              Robin a une expérience pratique du scoping NIS2, des analyses GAP CyFun, de la documentation
+              ISO 27001 et des questions RGPD auprès de PME. Cela concernait notamment des entreprises dans
+              les secteurs SaaS et tech, production, logistique, services professionnels, comptabilité,
+              alimentation et publicité.
             </p>
             <div>
               <PillarGlyph className="h-5 w-4" />
               <p className="mt-3 font-serif text-xl italic text-terracotta">
-                La conformité ne doit pas être une fin en soi. C&apos;est un moyen d&apos;être
-                démontrablement en contrôle : envers un régulateur, un client, ou soi-même. D&apos;où la
-                promesse : Govern with confidence.
+                La conformité ne doit pas être une fin en soi. C&apos;est une manière de démontrer que vous
+                êtes en contrôle : envers un régulateur, un client, ou vous-même.
               </p>
             </div>
           </Reveal>
@@ -76,7 +73,7 @@ export default function OverPage() {
             <p className="whitespace-nowrap text-xs text-muted">Depuis février 2025</p>
           </div>
           <p className="mt-1 text-sm text-ink/70">
-            Data Protection Institute (DPI) : certificat valable 3 ans, renouvelable.
+            Data Protection Institute (DPI) : le certificat est valable trois ans et est ensuite renouvelé.
           </p>
         </div>
 
@@ -84,8 +81,7 @@ export default function OverPage() {
           <p className="font-serif text-lg font-semibold text-ink">Expertise des cadres réglementaires</p>
           <p className="mt-1 text-sm text-ink/70">
             NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) et RGPD : expérience pratique acquise
-            auprès de PME dans les secteurs SaaS/tech, production, logistique, services professionnels,
-            comptabilité, alimentation et publicité.
+            auprès de PME.
           </p>
         </div>
 

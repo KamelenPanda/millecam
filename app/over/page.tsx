@@ -28,23 +28,20 @@ export default function OverPage() {
 
           <Reveal className="mt-8 max-w-2xl space-y-6 text-ink/80">
             <p>
-              Achter Millecam staat één naam: Robin Millecam. Geen toeval: Millecam is niet enkel de
-              merknaam, het is ook gewoon wie er aan de andere kant van de lijn zit. Eén vast
-              aanspreekpunt in plaats van een wisselend team, voor organisaties die
-              compliance-expertise nodig hebben zonder een interne rol te creëren.
+              Millecam is een onafhankelijk GRC-advieskantoor, geleid door Robin Millecam. Je hebt één vast
+              aanspreekpunt, geen wisselend team. Zo haal je compliance-expertise in huis zonder er een
+              interne functie voor te creëren.
             </p>
             <p>
-              Jarenlange ervaring met NIS2-scoping, CyFun-gapanalyses, ISO 27001-documentatie en
-              AVG-vraagstukken bij KMO&apos;s in uiteenlopende sectoren: SaaS en tech, productie, logistiek,
-              professionele dienstverlening, accountancy, voeding en adverteren. Erkend Data Protection
-              Officer (DPI-gecertificeerd, februari 2025).
+              Robin heeft praktijkervaring met NIS2-scoping, CyFun-gapanalyses, ISO 27001-documentatie en
+              GDPR-vraagstukken bij KMO&apos;s. Dat ging onder meer om bedrijven in SaaS en tech, productie,
+              logistiek, professionele dienstverlening, accountancy, voeding en reclame.
             </p>
             <div>
               <PillarGlyph className="h-5 w-4" />
               <p className="mt-3 font-serif text-xl italic text-terracotta">
-                Compliance hoort geen doel op zich te zijn. Het is een middel om aantoonbaar in controle te
-                zijn: naar een toezichthouder, een klant, of jezelf. Vandaar de belofte: Govern with
-                confidence.
+                Compliance is geen doel op zich. Het is een manier om aan te tonen dat je in controle bent:
+                tegenover een toezichthouder, een klant of jezelf.
               </p>
             </div>
           </Reveal>
@@ -75,7 +72,7 @@ export default function OverPage() {
             <p className="whitespace-nowrap text-xs text-muted">Sinds februari 2025</p>
           </div>
           <p className="mt-1 text-sm text-ink/70">
-            Data Protection Institute (DPI): certificaat geldig 3 jaar, verlengbaar.
+            Data Protection Institute (DPI): het certificaat is drie jaar geldig en wordt daarna hernieuwd.
           </p>
         </div>
 
@@ -83,8 +80,7 @@ export default function OverPage() {
           <p className="font-serif text-lg font-semibold text-ink">Kaderexpertise</p>
           <p className="mt-1 text-sm text-ink/70">
             NIS2, ISO/IEC 27001:2022, CyberFundamentals (CyFun) en GDPR/AVG: praktijkervaring opgebouwd bij
-            KMO&apos;s in SaaS/tech, productie, logistiek, professionele dienstverlening, accountancy, voeding
-            en adverteren.
+            KMO&apos;s.
           </p>
         </div>
 
