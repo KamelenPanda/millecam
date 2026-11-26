@@ -83,6 +83,9 @@ export default function Nav() {
     setDropdownOpen(false);
   }, [pathname]);
 
+  // /sofie is a standalone, deliberately unbranded page — no site nav on it.
+  if (pathname === "/sofie") return null;
+
   return (
     <header
       className={`sticky top-0 z-40 border-b transition-colors duration-200 ease-out ${
