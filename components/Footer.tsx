@@ -63,6 +63,9 @@ export default function Footer() {
   const locale = localeFromPath(pathname);
   const dict = DICTS[locale];
 
+  // /sofie is a standalone, deliberately unbranded page — no site footer on it.
+  if (pathname === "/sofie") return null;
+
   return (
     <footer className="bg-ink text-paper">
       <div className="mx-auto max-w-container px-6 py-14">
